@@ -1,0 +1,52 @@
+path.countries{
+	stroke-width: .5;
+	stroke: black;
+	opacity: .5;
+	fill: red;
+}
+
+path.cities{
+	fill: #3182bd;
+	stroke: white;
+	stroke-width: .5;
+	opacity: .8;
+}
+
+path.centroid{
+	fill: red;
+	pointer-events: none;
+}
+
+rect.bbox{
+	fill: none;
+	stroke-dasharray: 5 5;
+	stroke: black;
+	stroke-width: 2;
+	pointer-events: none;
+}
+
+path.graticule{
+	fill: none;
+	stroke-width: .5px;
+	stroke: lightgray;
+}
+
+path.graticule.outline{
+	fill: none;
+	stroke: black;
+	stroke-width: 1;
+}
+
+path.arc{
+	fill: none;
+	stroke: lightgray;
+	stroke-width: 0.5px;
+}
+
+path.farc{
+	fill: none;
+	stroke: red;
+	stroke-width: 0.5px;
+}
+
+

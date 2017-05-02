@@ -1,0 +1,51 @@
+<style type="text/css">ul.about li { margin-top: 12px; }</style>
+<h3>About</h3>
+<p>
+	Hello, this is the about section which I have yet to write. It's a
+	work in progress, folks.
+</p>
+<p>
+	This application was made with R's
+	<code>shiny</code>
+	package and the
+	<code>D3.js</code>
+	JavaScript library.
+</p>
+<p>
+	The underlying data come from the
+	<a target="_blank" href="https://www.ffiec.gov/nicpubweb/nicweb/nichome.aspx">National Information Center</a>
+	(NIC) website, where holding company data can be queried via the
+	Institution Search form. The organization hierarchies are returned
+	as pdf documents, so some light wrangling is necessary.
+</p>
+<p>
+	The company structures are not strict hierarchies, in the sense
+	that subsidiaries may be partially controlled by multiple parent
+	companies (this is not uncommon). The definition of "control"
+	(say, of company B by company A) is established in the instructions
+	for the
+	<a target="_blank" href="https://www.federalreserve.gov/apps/reportforms/reportdetail.aspx?sOoYJ+5BzDaGhRRQo6EFJQ==">FR Y-10 Reporting Form</a>
+	and includes such criteria as
+</p>
+<ul class="about">
+	<li>Ownership of 25% or more of any class of B's voting securities;</li>
+	<li>
+		Election of a majority of B's board of directors, trustees,
+		general partners, or other high-level management positions;
+	</li>
+	<li>Ownership of "all or substantially all" of B's assets;</li>
+	<li>...</li>
+</ul>
+<p>
+	The forms also provide information on entity types and locations.
+	(What does the "location" represent? Place of incorporation?) Some
+	holding companies control large numbers of domestic and international
+	non-bank subsidiaries.
+</p>
+<h3>References</h3>
+<ul>
+	<li>
+		A Structural View of U.S. Bank Holding Companies.
+		FRBNY Economic Policy Review, July 2012.
+	</li>
+</ul>

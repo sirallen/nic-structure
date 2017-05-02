@@ -1,0 +1,26 @@
+domain,count,group,range
+Domestic Entity Other,27131,,#3182bd
+International Nonbank Sub of Domestic Entities,19207,International Nonbank,#4f0024
+Foreign Entity Other,775,,#905136
+Finance Company,371,,
+Data Processing Servicer,136,,#116043
+Securities Broker/Dealer,107,,#ff7373
+International Bank of U.S. Depository - Edge or Trust Co.,47,,
+Financial Holding Company - Domestic,42,,
+National Bank,38,,
+Non-deposit Trust Company - Non- member,25,,#ff6a32
+Bank Holding Company,22,,
+Non-deposit Trust Company - Member,14,,#cc3700
+Non-member Bank,14,,
+State Member Bank,13,,#fff58f
+Edge Corporation - Investment,12,,
+Agreement Corporation - Investment,11,,
+Intermediate Holding Companies,11,,
+Nonbank Sub of Domestic Entities,7,,#023851
+Savings & Loan Holding Company,6,,
+Federal Savings Bank,4,,
+Edge Corporation - Banking,3,,
+Savings & Loan Association,2,,
+Foreign Banking Organization,1,,
+State Savings Bank,1,,
+Article XII New York Investment Company,1,,
