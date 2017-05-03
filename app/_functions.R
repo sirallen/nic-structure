@@ -1,14 +1,16 @@
 quoteStr = function(v) paste(paste0('\"', v, '\"'), collapse=',')
 
-d3IO    = function(id) div(id=id, class=id)#, tag('svg', '')))
+d3IO    = function(id) div(id=id, class=id)
 
 load_data = function(bhc, asOfDate) {
-  dateStr = gsub('-','',asOfDate)
-  #dateStr = format.Date(asOfDate, '%Y%m%d')
+  dateStr = format.Date(asOfDate, '%Y%m%d')
   
   file = paste0('txt/', bhc,'-',dateStr,'.txt')
   
-  if (!file %in% dir('txt/', full.names=T)) { return(NULL) }
+  if (!file.exists(file)) {
+    message = paste('File', file, 'not found.')
+    shinyjs::logjs(message)
+    NULL }
   
   df = fread(file)
   

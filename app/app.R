@@ -1,5 +1,5 @@
-#setwd('C:/Users/sirallen/Dropbox/FRBR/NIC-structure/app')
 library(shiny)
+library(shinyjs)
 library(data.table)
 library(networkD3)
 library(stringr)
@@ -15,13 +15,14 @@ ColorScale = paste0(
   '.range([',quoteStr(cc$range),'])')
 
 ui = fluidPage(
+  shinyjs::useShinyjs(),
+  
   tags$head(
     tags$link(rel='shortcut icon', href=''),
     includeScript('www/math.min.js'),
     includeScript('colorbrewer.js'),
     # var countries
     includeScript('ne_50m_admin.json'),
-    includeScript('async.js'),
 
     includeCSS('_bhcMap.css')
   ),
@@ -79,7 +80,7 @@ server = function(input,output,session) {
   
   data = reactive({
     if (input$bhc != '' && input$asOfDate != '') {
-
+      
       load_data(input$bhc, input$asOfDate)
 
     } else NULL })
@@ -108,6 +109,7 @@ server = function(input,output,session) {
         opacity=.8, opacityNoHover=.5, fontSize=10, fontFamily='sans-serif')
 
     } })
+    
 
   output$bhcTable = renderDataTable({
     if (!is.null(data())) {
