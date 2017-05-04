@@ -4,7 +4,6 @@ Shiny.addCustomMessageHandler('jsondata', function(message) {
 
 	var d3io = d3.select('#d3io');
 
-	//if (d3io[0][0].children.length == 0) {
 	if (typeof d3io[0] == 'undefined') {
 		// create svg, map
 		var svg = d3io.append('svg')
@@ -15,11 +14,12 @@ Shiny.addCustomMessageHandler('jsondata', function(message) {
 	}
 
 	var svg = d3io.select('svg');
+
 	updateMap(svg, cities, dfnet);
 
 });
 
-// global vars (need to access in updateMap)
+// global vars (need to access in both createMap and updateMap)
 var maxTier = 3;
 var width = 1000;
 var height = 670;
@@ -137,7 +137,7 @@ function createMap(svg) {
 
 	var graticule = d3.geoGraticule();
 
-	var mapZoom = d3.zoom().on('zoom',zoomed)
+	var mapZoom = d3.zoom().on('zoom', zoomed)
 
 	svg.call(mapZoom)
 
@@ -151,23 +151,18 @@ function createMap(svg) {
         .domain([0, height])
         .range([90, -90]);
 
-    var drag = d3.drag().on('drag',rotated)
-/*    			 .origin(function() {
-    			 	var r = projection.rotate();
-    			 	return {
-    			 		x: λ.invert(r[0]),
-    			 		y: φ.invert(r[1])
-    			 	};
-    			 }).on('drag', rotated)*/
+    var mapRotate = d3.drag().on('drag', rotated);
 
     function rotated(){
-    	//var s = projection.scale()/250
-        projection.rotate([λ(d3.event.x), φ(d3.event.y)]);
+    	var r = projection.rotate();
+    	var origin = {x: λ.invert(r[0]), y: φ.invert(r[1])};
+
+        projection.rotate([λ(origin.x + d3.event.x), φ(origin.y + d3.event.y)]);
         svg.selectAll('path').attr('d', geoPath);
-        svg.selectAll('path.farc').attr('d', function(d) {return(swoosh(flying_arc(d)))});
+        //svg.selectAll('path.farc').attr('d', function(d) {return(swoosh(flying_arc(d)))});
     };
 
-    svg.call(drag);
+    svg.call(mapRotate);
     ////
 
 	svg.append('path')
@@ -186,10 +181,16 @@ function createMap(svg) {
 
 	function zoomed(){
 		var currentRotate = projection.rotate()[0]; // in [-360,360]
-		projection.translate(projection.translate()).scale(projection.scale());
+		var transform = d3.event.transform;
+		var invert_old = projection.invert
+		projection.scale(300*transform.k);
 		d3.selectAll('path.graticule').datum(graticule).attr('d', geoPath);
-		d3.selectAll('path').filter('.countries, .cities, .arc').attr('d', geoPath);
-		d3.selectAll('path.farc').attr('d', function(d) {return(swoosh(flying_arc(d)))});
+		d3.selectAll('path').filter('.countries, .citynode, .arc').attr('d', geoPath);
+		d3.selectAll('text.citylabel').each(function(d, i) {
+			d.x = projection(invert_old([d.x,d.y]))[0]
+			d.y = projection(invert_old([d.x,d.y]))[1]
+		})
+		//d3.selectAll('path.farc').attr('d', function(d) {return(swoosh(flying_arc(d)))});
 	};
 
 };
@@ -206,7 +207,8 @@ function updateMap(svg, cities, dfnet) {
 				coordinates: [
 					[d['from.lng'], d['from.lat']],
 					[d['to.lng'], d['to.lat']]
-				]
+				],
+				cityname: d['label']
 			})
 		}
 	});
@@ -219,35 +221,65 @@ function updateMap(svg, cities, dfnet) {
 	   .append('path')
 	   .attr('class','arc')
 
-	var farc = svg.selectAll('path.farc').data(links);
+/*	var farc = svg.selectAll('path.farc').data(links);
 
 	farc.exit().remove();
 
 	farc.enter()
 	    .append('path')
 	    .attr('class','farc')
-	    .attr('d', function(d) {return(swoosh(flying_arc(d)))});
+	    .attr('d', function(d) {return(swoosh(flying_arc(d)))});*/
 
-	cities.forEach(function(d) {
+	cities.forEach(function(d, i) {
 		if (d.Tier <= maxTier) {
 			nodes.push({
 				type: 'Point',
-				coordinates: [d.lng, d.lat]
+				coordinates: [d.lng, d.lat],
+				citylabel: d.label
 			});
 		}
 	});
 
-	var city = svg.selectAll('path.cities').data(nodes);
+	var allcities = svg.selectAll('g.cities').data(nodes);
 
-	city.exit().remove();
+	allcities.exit().remove();
 
-	city.enter()
-	   .append('path')
-	   .attr('class', 'cities')
-	   .attr('d', geoPath.pointRadius(3));
+	var city = allcities.enter()
+		.append('g')
+		.attr('class', 'cities')
+		.on('mouseover',mouseover)
+		.on('mouseout', mouseout);
+	
+	city.append('path')
+		.attr('class','citynode')
+		.attr('d', geoPath.pointRadius(3));
+
+	city.append('text')
+		.attr('class', 'citylabel')
+		.attr('x', function(d) {return projection(d.coordinates)[0]})
+		.attr('y', function(d) {return projection(d.coordinates)[1]})
+		.text(function(d) {return d.citylabel});
+
+	function mouseover(d){
+		d3.select(this).select('path').transition()
+		  .duration(750)
+		  .attr('d', geoPath.pointRadius(5))
+		d3.select(this).select('text').transition()
+		  .duration(750)
+		  .style('opacity', 1)
+	};
+
+	function mouseout(d){
+		d3.select(this).select('path').transition()
+		  .duration(750)
+		  .attr('d', geoPath.pointRadius(3))
+		d3.select(this).select('text').transition()
+		  .duration(750)
+		  .style('opacity', 0)
+	};
 
 	d3.selectAll('path.cities').attr('d', geoPath);
 	d3.selectAll('path.arc').attr('d', geoPath);
-	d3.selectAll('path.farc').attr('d', function(d) {return(swoosh(flying_arc(d)))});
+	//d3.selectAll('path.farc').attr('d', function(d) {return(swoosh(flying_arc(d)))});
 };
 

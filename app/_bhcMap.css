@@ -5,11 +5,18 @@ path.countries{
 	fill: red;
 }
 
-path.cities{
+path.citynode {
 	fill: #3182bd;
 	stroke: white;
 	stroke-width: .5;
 	opacity: .8;
+}
+
+text.citylabel {
+	color: black;
+	font: 6px;
+	font-family: sans-serif;
+	opacity: 0;
 }
 
 path.centroid{

@@ -2,16 +2,20 @@ import pandas as pd
 import numpy as np
 import os, googlemaps, pickle
 
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
+
 api_key = open('GOOGLEMAPS_API_KEY').read()
 
 gmaps = googlemaps.Client(key=api_key)
 
-if os.path.isfile('LocationMaster'):
-	master = pickle.load(open('LocationMaster', 'rb+'))
+if os.path.isfile('app/LocationMaster'):
+	master = pickle.load(open('app/LocationMaster', 'rb+'))
 else:
 	master = dict()
 
-readfiles = [os.path.join('txt',f) for f in os.listdir('txt')]
+readfiles = [os.path.join('app/txt',f) for f in os.listdir('app/txt')]
 
 
 for readfile in readfiles:
@@ -52,6 +56,6 @@ for readfile in readfiles:
   df.to_csv(readfile, index=False, encoding='utf-8')
   #df.to_json(readfile.replace('txt','json'), orient='records')
 
-pickle.dump(master, open('LocationMaster', 'wb+'))
+pickle.dump(master, open('app/LocationMaster', 'wb+'))
 
 
