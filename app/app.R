@@ -89,7 +89,7 @@ server = function(input,output,session) {
     if (!is.null(data())) {
       nodes = data()[[3]]
       nodes[, Tier:= min(Tier), by='label']
-      nodes = unique(nodes[, .(Tier, lat, lng, Loc, label)])
+      nodes = unique(nodes[, .(Tier, lat, lng, label)])
       nodes = unname(split(nodes, 1:nrow(nodes)))
 
       links = data()[[1]]

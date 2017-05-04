@@ -4,7 +4,7 @@ Shiny.addCustomMessageHandler('jsondata', function(message) {
 
 	var d3io = d3.select('#d3io');
 
-	if (typeof d3io[0] == 'undefined') {
+	if (d3io['_groups'][0][0].children.length == 0) {
 		// create svg, map
 		var svg = d3io.append('svg')
 					  .attr('width', 1000)
@@ -23,11 +23,16 @@ Shiny.addCustomMessageHandler('jsondata', function(message) {
 var maxTier = 3;
 var width = 1000;
 var height = 670;
+// initial scale and rotation (lng, lat)
+var scale = 300;
+var origin = {x: 55, y:-40};
+var nodes;
+var links;
 
 var projection = d3.geoOrthographic()
-	.scale(300)
-	.translate([width/2, height/2])
-	.rotate([55,-40])
+	.scale(scale)
+	.translate([2*width/5, height/2])
+	.rotate([origin.x, origin.y])
 	.center([0,0])
 	.clipAngle(90);
 
@@ -137,6 +142,7 @@ function createMap(svg) {
 
 	var graticule = d3.geoGraticule();
 
+	// zoom AND rotate
 	var mapZoom = d3.zoom().on('zoom', zoomed)
 
 	svg.call(mapZoom)
@@ -144,26 +150,12 @@ function createMap(svg) {
 	// code snippet from http://stackoverflow.com/questions/36614251/
 	// dj3s-graticule-removed-when-rotation-is-done-in-orthographic-projection
 	var λ = d3.scaleLinear()
-        .domain([0, width])
+        .domain([-width, width])
         .range([-180, 180]);
 
     var φ = d3.scaleLinear()
-        .domain([0, height])
+        .domain([-height, height])
         .range([90, -90]);
-
-    var mapRotate = d3.drag().on('drag', rotated);
-
-    function rotated(){
-    	var r = projection.rotate();
-    	var origin = {x: λ.invert(r[0]), y: φ.invert(r[1])};
-
-        projection.rotate([λ(origin.x + d3.event.x), φ(origin.y + d3.event.y)]);
-        svg.selectAll('path').attr('d', geoPath);
-        //svg.selectAll('path.farc').attr('d', function(d) {return(swoosh(flying_arc(d)))});
-    };
-
-    svg.call(mapRotate);
-    ////
 
 	svg.append('path')
 	  .datum(graticule)
@@ -179,17 +171,18 @@ function createMap(svg) {
 	  	return countryColor(d3.geoArea(d))
 	  });
 
+	 //https://bl.ocks.org/emeeks/af3c0114adfd9ead565e6c0f4a9c494e
 	function zoomed(){
-		var currentRotate = projection.rotate()[0]; // in [-360,360]
 		var transform = d3.event.transform;
-		var invert_old = projection.invert
-		projection.scale(300*transform.k);
+		var r = {x: λ(transform.x), y: φ(transform.y)};
+
+		projection.scale(scale*transform.k).rotate([origin.x + r.x, origin.y + r.y]);
+
 		d3.selectAll('path.graticule').datum(graticule).attr('d', geoPath);
 		d3.selectAll('path').filter('.countries, .citynode, .arc').attr('d', geoPath);
-		d3.selectAll('text.citylabel').each(function(d, i) {
-			d.x = projection(invert_old([d.x,d.y]))[0]
-			d.y = projection(invert_old([d.x,d.y]))[1]
-		})
+		d3.selectAll('text.citylabel').data(nodes)
+		  .attr('x', function(d) {return projection(d.coordinates)[0]})
+		  .attr('y', function(d) {return projection(d.coordinates)[1]})
 		//d3.selectAll('path.farc').attr('d', function(d) {return(swoosh(flying_arc(d)))});
 	};
 
@@ -198,7 +191,7 @@ function createMap(svg) {
 function updateMap(svg, cities, dfnet) {
 
 	var links = [];
-	var nodes = [];
+	nodes = [];
 
 	dfnet.forEach(function(d) {
 		if (d.Tier <= maxTier) {
@@ -213,19 +206,15 @@ function updateMap(svg, cities, dfnet) {
 		}
 	});
 
-	var arc = svg.selectAll('path.arc').data(links);
+	svg.selectAll('path.arc').data([]).exit().remove();
 
-	arc.exit().remove();
-
-	arc.enter()
+	svg.selectAll('path.arc').data(links).enter()
 	   .append('path')
 	   .attr('class','arc')
 
-/*	var farc = svg.selectAll('path.farc').data(links);
+/*	svg.selectAll('path.farc').data([]).exit().remove();
 
-	farc.exit().remove();
-
-	farc.enter()
+	svg.selectAll('path.farc').data(links).enter()
 	    .append('path')
 	    .attr('class','farc')
 	    .attr('d', function(d) {return(swoosh(flying_arc(d)))});*/
@@ -240,46 +229,44 @@ function updateMap(svg, cities, dfnet) {
 		}
 	});
 
-	var allcities = svg.selectAll('g.cities').data(nodes);
+	svg.selectAll('g.cities').data([]).exit().remove();
 
-	allcities.exit().remove();
-
-	var city = allcities.enter()
+	city = svg.selectAll('g.cities').data(nodes).enter()
 		.append('g')
-		.attr('class', 'cities')
-		.on('mouseover',mouseover)
-		.on('mouseout', mouseout);
-	
+		.attr('class', 'cities');
+
 	city.append('path')
 		.attr('class','citynode')
-		.attr('d', geoPath.pointRadius(3));
+		.attr('d', geoPath.pointRadius(3))
+		.on('mouseover',mouseover)
+		.on('mouseout', mouseout);
 
 	city.append('text')
 		.attr('class', 'citylabel')
 		.attr('x', function(d) {return projection(d.coordinates)[0]})
 		.attr('y', function(d) {return projection(d.coordinates)[1]})
-		.text(function(d) {return d.citylabel});
+		.text(function(d) {return d.citylabel})
+		.style('pointer-events', 'none');
 
 	function mouseover(d){
-		d3.select(this).select('path').transition()
+		d3.select(this).transition()
 		  .duration(750)
 		  .attr('d', geoPath.pointRadius(5))
-		d3.select(this).select('text').transition()
+		d3.select(this.parentNode).select('text').transition()
 		  .duration(750)
 		  .style('opacity', 1)
 	};
 
 	function mouseout(d){
-		d3.select(this).select('path').transition()
+		d3.select(this).transition()
 		  .duration(750)
 		  .attr('d', geoPath.pointRadius(3))
-		d3.select(this).select('text').transition()
+		d3.select(this.parentNode).select('text').transition()
 		  .duration(750)
 		  .style('opacity', 0)
 	};
 
-	d3.selectAll('path.cities').attr('d', geoPath);
+	d3.selectAll('path.citynode').attr('d', geoPath);
 	d3.selectAll('path.arc').attr('d', geoPath);
 	//d3.selectAll('path.farc').attr('d', function(d) {return(swoosh(flying_arc(d)))});
 };
-

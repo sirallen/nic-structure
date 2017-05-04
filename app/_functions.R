@@ -10,7 +10,7 @@ load_data = function(bhc, asOfDate) {
   if (!file.exists(file)) {
     message = paste('File', file, 'not found.')
     shinyjs::logjs(message)
-    NULL }
+    return(NULL) }
   
   df = fread(file)
   

@@ -14,7 +14,7 @@ path.citynode {
 
 text.citylabel {
 	color: black;
-	font: 6px;
+	font: 5px;
 	font-family: sans-serif;
 	opacity: 0;
 }
@@ -55,5 +55,3 @@ path.farc{
 	stroke: red;
 	stroke-width: 0.5px;
 }
-
-
