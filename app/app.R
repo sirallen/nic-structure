@@ -4,15 +4,27 @@ library(data.table)
 library(networkD3)
 library(stringr)
 library(rjson)
+library(gplots)
 source('_functions.R')
 
 load('bhcList.RData')
 
-cc = fread('colorcode.csv')
+legend.key = list(
+  'Bank Holding Company'  = 'red',
+  'Domestic Bank'         = 'darkorange3',
+  'Domestic Nonbank'      = '#3182bd',
+  'International Bank'    = 'black',
+  'International Nonbank' = 'darkmagenta',
+  'Finance Company'       = 'limegreen',
+  'Data Processing Servicer' = '#116043',
+  'Securities Broker/Dealer' = '#ff7373'
+)
+
+legend.key = lapply(legend.key, col2hex)
 
 ColorScale = paste0(
-  'd3.scaleOrdinal().domain([',quoteStr(cc$domain),'])',
-  '.range([',quoteStr(cc$range),'])')
+  'd3.scaleOrdinal().domain([',quoteStr(names(legend.key)),'])',
+  '.range([',quoteStr(legend.key),'])')
 
 ui = fluidPage(
   shinyjs::useShinyjs(),
@@ -43,6 +55,8 @@ ui = fluidPage(
       
       radioButtons(inputId='dispType', label='Select display type:',
                    choices=c('Network','Map')),
+      
+      checkboxInput(inputId='legend', label='Show legend', value=TRUE),
       width = 3),
     
     mainPanel(
@@ -106,7 +120,8 @@ server = function(input,output,session) {
       forceNetwork(
         as.data.frame(data()[[1]]), as.data.frame(data()[[2]]), 'from.id', 'to.id',
         NodeID='name', Group='Type', zoom=T, colourScale = JS(ColorScale),
-        opacity=.8, opacityNoHover=.5, fontSize=10, fontFamily='sans-serif')
+        opacity=.8, opacityNoHover=.5, fontSize=10, fontFamily='sans-serif',
+        legend = input$legend)
 
     } })
     

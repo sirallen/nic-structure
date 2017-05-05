@@ -1,3 +1,5 @@
+cc = fread('colorcode.csv')
+
 quoteStr = function(v) paste(paste0('\"', v, '\"'), collapse=',')
 
 d3IO    = function(id) div(id=id, class=id)
@@ -17,6 +19,9 @@ load_data = function(bhc, asOfDate) {
   dfnet = df[, .(from = Name[match(Parent, Idx)], to = Name, Id_Rssd, Type, Tier,
                  from.lat = lat[match(Parent, Idx)], from.lng = lng[match(Parent, Idx)],
                  to.lat = lat, to.lng = lng)][-1,]
+  
+  # Group entity types
+  dfnet = dfnet[cc[, .(domain, group)], on=.(Type==domain), Type:= group]
   
   dfnet[, Tier:= min(Tier), by=.(from,to)]
   
