@@ -6,6 +6,7 @@ library(networkD3)
 library(stringr)
 library(rjson)
 library(gplots)
+library(ggplot2)
 source('_functions.R')
 
 load('bhcList.RData')
