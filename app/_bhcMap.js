@@ -20,7 +20,7 @@ Shiny.addCustomMessageHandler('jsondata', function(message) {
 });
 
 // global vars (need to access in both createMap and updateMap)
-var maxTier = 3;
+var maxTier = 5;
 var width = 1000;
 var height = 670;
 // initial scale and rotation (lng, lat)
@@ -131,6 +131,10 @@ function flying_arc(d) {
 	return result;
 }
 
+Array.prototype.move = function (from, to) {
+  this.splice(to, 0, this.splice(from, 1)[0]);
+};
+
 
 function createMap(svg) {
 	var realFeatureSize = d3.extent(countries.geometries,
@@ -176,6 +180,7 @@ function createMap(svg) {
 		var transform = d3.event.transform;
 		var r = {x: λ(transform.x), y: φ(transform.y)};
 
+		console.log(transform);
 		projection.scale(scale*transform.k).rotate([origin.x + r.x, origin.y + r.y]);
 
 		d3.selectAll('path.graticule').datum(graticule).attr('d', geoPath);
@@ -249,9 +254,15 @@ function updateMap(svg, cities, dfnet) {
 		.style('pointer-events', 'none');
 
 	function mouseover(d){
+		var j = Array.from(d3.selectAll('g.cities')._groups[0]).indexOf(this.parentNode)
+		// move <g> element to end so text appears in front
+		this.parentNode.parentNode.appendChild(this.parentNode);
+		// update nodes order to preserve correspondence with {<g>}
+		nodes.move(j, nodes.length)
+
 		d3.select(this).transition()
 		  .duration(750)
-		  .attr('d', geoPath.pointRadius(5))
+		  .attr('d', geoPath.pointRadius(5));
 		d3.select(this.parentNode).select('text').transition()
 		  .duration(750)
 		  .style('opacity', 1)
@@ -260,7 +271,7 @@ function updateMap(svg, cities, dfnet) {
 	function mouseout(d){
 		d3.select(this).transition()
 		  .duration(750)
-		  .attr('d', geoPath.pointRadius(3))
+		  .attr('d', geoPath.pointRadius(3));
 		d3.select(this.parentNode).select('text').transition()
 		  .duration(750)
 		  .style('opacity', 0)

@@ -1,5 +1,6 @@
 library(shiny)
 library(shinyjs)
+library(knitr)
 library(data.table)
 library(networkD3)
 library(stringr)
@@ -8,6 +9,8 @@ library(gplots)
 source('_functions.R')
 
 load('bhcList.RData')
+
+knit('About.Rmd', quiet=TRUE)
 
 legend.key = list(
   'Bank Holding Company'  = 'red',
@@ -43,7 +46,8 @@ ui = fluidPage(
   tags$style(type='text/css', 'body { overflow-y: scroll; }'),
   
   titlePanel(
-    tags$p(style='font-size:22px', 'Bank Holding Company Organization Hierarchies'),
+    tags$p(style='font-size:22px', 'Visualizing the Structure of U.S. Bank 
+           Holding Companies'),
     windowTitle = 'shinyApp'),
   
   sidebarLayout(
@@ -62,7 +66,7 @@ ui = fluidPage(
     mainPanel(
       tabsetPanel(
         tabPanel(
-          title='Plot',
+          title='Display',
           conditionalPanel(
             "input.dispType == 'Network'",
             forceNetworkOutput('network', height='670px')),
@@ -77,8 +81,13 @@ ui = fluidPage(
           div(dataTableOutput(outputId='bhcTable'), style='font-size:85%')),
         
         tabPanel(
+          title='Plots'
+          ),
+        
+        tabPanel(
           title='About',
-          includeHTML('About.html'))
+          #includeHTML('About.html'),
+          withMathJax(includeMarkdown('About.md')))
       ),
       
       width = 9 )
@@ -139,3 +148,5 @@ server = function(input,output,session) {
 
 #runApp( shinyApp(ui=ui, server=server), port=8080, host='192.168.1.124')
 shinyApp(ui=ui, server=server)
+
+
