@@ -6,9 +6,9 @@ output: html_document
 
 This application was made with R's <code>shiny</code>, <code>RMarkdown</code>, and <code>networkD3</code> packages and the <code>D3.js</code> JavaScript library.
 
-A _bank holding company_ (BHC) is simply a firm that controls one or more banks. I've made an attempt here of visualizing the structures of such firms, with an eye toward portraying the scale and complexity of organization. (No analysis yet!) The underlying data come from the <a href='https://www.ffiec.gov/nicpubweb/nicweb/nichome.aspx' target='_blank'>National Information Center</a> (NIC) website, where holding company data can be queried via the Institution Search form. While the NIC reports data for U.S. companies only, many of them control a large number of international subsidiaries based in Europe, Asia, and elsewhere. Together, these BHCs control over $15 trillion in assets.
+A _bank holding company_ (BHC) is simply a firm that controls one or more banks. I've made an attempt here to visualize the structures of such firms, with an eye toward portraying the scale and complexity of organization. (No analysis yet!) The underlying data come from the <a href='https://www.ffiec.gov/nicpubweb/nicweb/nichome.aspx' target='_blank'>National Information Center</a> (NIC) website, where holding company data can be queried via the Institution Search form. While the NIC reports data for U.S. companies only, many of them control a large number of international subsidiaries based in Europe, Asia, and elsewhere. Together, these BHCs control over $15 trillion in assets.
 
-The figure below shows the total assets of the 20 largest BHCs as of the end of 2016:
+The figure below shows the size (measured by total assets) of the 20 largest BHCs as of the end of 2016, along with their share of assets among the 115 BHCs with at least $10 billion in assets:
 
 <img src="figure/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" />
 
@@ -22,7 +22,7 @@ The company structures are not strict hierarchies, in the sense that subsidiarie
 
 * ...
 	
-The forms also provide information on entity types and locations. Most entities are given nondescript labels of either "Domestic Entity Other" or "International Nonbank Sub of Domestic Entities"; others have more precise labels such as "Data Processing Servicer", "Securities Broker/Dealer", "Federal Savings Bank" and "Edge Corporation." (A glossary describing each of these types is available <a href='https://www.ffiec.gov/nicpubweb/content/help/institution%20type%20description.htm' target='_blank'>here</a>.) To simplify visualization, I've aggregated the types into eight broad categories as shown in the network legend. (A "nonbank", while classified as such, may engage in banking-related activities.) An entity's "location" refers to its physical location as reported in the FR Y-10.
+The forms also provide information on entity types and locations. Most entities are given nondescript labels of either "Domestic Entity Other" or "International Nonbank Sub of Domestic Entities"; others have more precise labels such as "Data Processing Servicer", "Securities Broker/Dealer", "Federal Savings Bank" and "Edge Corporation." (A glossary describing each of these types is available <a href='https://www.ffiec.gov/nicpubweb/content/help/institution%20type%20description.htm' target='_blank'>here</a>.) To simplify visualization, I've aggregated the types into eight categories as shown in the network legend. (A "nonbank", while classified as such, may engage in banking-related activities.) An entity's "location" refers to its physical location as reported in the FR Y-10.
 
 ### Research Questions
 * How can this data be used to characterize the complexity of financial instutitions? (Is there a better measure than simply counting the number of controlled entities?)

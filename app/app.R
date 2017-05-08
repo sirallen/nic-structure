@@ -56,7 +56,7 @@ ui = fluidPage(
     sidebarPanel(
       selectInput(inputId='bhc', label='Select holding company:', choices=bhcList),
       
-      selectInput(inputId='asOfDate', label='as of Date:', choices=''),
+      selectInput(inputId='asOfDate', label='Date:', choices=''),
       
       radioButtons(inputId='dispType', label='Select display type:',
                    choices=c('Network','Map')),
@@ -82,8 +82,8 @@ ui = fluidPage(
           div(dataTableOutput(outputId='bhcTable'), style='font-size:85%')),
         
         tabPanel(
-          title='Plots'
-          ),
+          title='Plots',
+          plotOutput('plot1', width='80%', height='600px')),
         
         tabPanel(
           title='About',
@@ -98,9 +98,9 @@ ui = fluidPage(
 server = function(input,output,session) {
   
   observeEvent(input$bhc, updateSelectInput(
-    session, 'asOfDate', choices=as.character(as.Date(
+    session, 'asOfDate', choices=rev(as.character(as.Date(
       str_sub( dir('txt/', paste0(input$bhc,'-.*.txt')), -12, -5 ),
-      format='%Y%m%d'))))
+      format='%Y%m%d')))))
   
   data = reactive({
     if (input$bhc != '' && input$asOfDate != '') {
@@ -134,8 +134,22 @@ server = function(input,output,session) {
         legend = input$legend)
 
     } })
-    
+  
+  output$plot1 = renderPlot({
+    rssd = input$bhc
+    if (entity.region[Id_Rssd==rssd, uniqueN(asOfDate) > 2]) {
+      dat = entity.region[Id_Rssd==rssd]
+      lev = dat[, N[.N], by='Region'][order(V1), Region]
+      dat[, Region:= factor(Region, lev)]
 
+      ggplot(dat, aes(x=asOfDate, y=N)) +
+        #geom_line(lwd=1.2) +
+        geom_area(aes(fill=Region), color='lightgray', position='stack',
+                  size=.2, alpha=.9) +
+        labs(x='', y='Number of entities')
+
+    } else NULL })
+  
   output$bhcTable = renderDataTable({
     if (!is.null(data())) {
 

@@ -1,4 +1,7 @@
-cc = fread('colorcode.csv')
+cc = fread('entityTypeGrouping.csv')
+entity.region = fread('data/EntitiesByRegion.csv')
+entity.region[, asOfDate:= as.Date(asOfDate)]
+#regions = fread('Country-regions.csv')
 
 quoteStr = function(v) paste(paste0('\"', v, '\"'), collapse=',')
 
@@ -11,10 +14,16 @@ load_data = function(bhc, asOfDate) {
   
   if (!file.exists(file)) {
     message = paste('File', file, 'not found.')
-    shinyjs::logjs(message)
+    tryCatch(
+      { shinyjs::logjs(message) },
+      error = function(e) NULL )
     return(NULL) }
   
   df = fread(file)
+  
+  # Regions
+  # df[, Country:= gsub('.*(?<=, )(.*)', '\\1', label, perl=T)]
+  # df = regions[df, on='Country']
   
   dfnet = df[, .(from = Name[match(Parent, Idx)], to = Name, Id_Rssd, Type, Tier,
                  from.lat = lat[match(Parent, Idx)], from.lng = lng[match(Parent, Idx)],

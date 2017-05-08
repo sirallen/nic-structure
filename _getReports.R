@@ -21,7 +21,8 @@ txt2clean = function(f, save_name) {
   
   # Drop this pattern: <br>------ Repeat at ####
   # Sometimes splits into multiple lines
-  txt = txt[-(which(grepl('<br>', V1) & !grepl('at \\d+', V1)) + 1)]
+  drop = txt[, which(grepl('<br>', V1) & !grepl('at \\d+', V1)) + 1]
+  if (length(drop) > 0) txt = txt[-drop]
   
   # Careful -- txt[-v] drops all rows when v is empty
   paste.idx = txt[, which(grepl('<br>', V1) & !grepl('^\\d+ -+\\*', V1))]
@@ -46,7 +47,7 @@ txt2clean = function(f, save_name) {
   if (length(paste.idx) > 0) { txt = txt[-(paste.idx + 1)] }
   
   # Remove header/footer - vectorization "trick"
-  txt[, V2:= cumsum( c(1, grepl('^\\d+ -+(\\*|[A-Z])', V1[-1])) )]
+  txt[, V2:= cumsum( c(1, grepl('^\\d+ -+(\\*|[^ ])', V1[-1])) )]
   txt[, V3:= ifelse(grepl('^Report created', V1), V2, 0)]
   txt[, drop:= V2 - cummax(V3) == 0]
   
@@ -55,6 +56,9 @@ txt2clean = function(f, save_name) {
   txt = txt[, paste(V1, collapse=' '), by='V2']
   
   txt = txt[!duplicated(V1)][!grepl('Repeat', V1)]
+  
+  # manual fix (affects Goldman, Citigroup)
+  txt[, V1:= sub('(SALVADOR)(International)', '\\1 \\2', V1)]
   
   # Insert "~" delimiters, split
   txt[, V1:= sub('(\\d+) ', '\\1~', V1)]
@@ -111,8 +115,8 @@ getReport = function(rssd, dt_end, as_of_date) {
 # http://stackoverflow.com/questions/41357811/passing-correct-params-to-rcurl-postform
 
 # last day of quarter
-# as_of_dates = seq.Date(as.Date('2009-04-01'), as.Date('2016-10-01'), by='3 months') - 1
-# mapply(getReport, rssd=2380443, dt_end=99991231, as_of_date=as_of_dates)
+#as_of_dates = seq.Date(as.Date('2009-04-01'), as.Date('2016-10-01'), by='3 months') - 1
+#mapply(getReport, rssd=2380443, dt_end=99991231, as_of_date=as_of_dates)
 
 
 

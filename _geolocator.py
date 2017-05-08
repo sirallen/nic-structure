@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import os, googlemaps, pickle
+import os, googlemaps, pickle, re
 
 abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
@@ -16,7 +16,6 @@ else:
 	master = dict()
 
 readfiles = [os.path.join('app/txt',f) for f in os.listdir('app/txt')]
-
 
 for readfile in readfiles:
   print('Reading  ', readfile)
@@ -37,7 +36,11 @@ for readfile in readfiles:
       
       if result:
         coord = result[0]['geometry']['location']
-        addr  = result[0]['formatted_address']
+        addr = result[0]['formatted_address']
+        
+        addr = addr.replace(', USA', '')
+        addr = re.sub('([^,]*,).*, (.*)', '\\1 \\2', addr)
+        addr = re.sub('[0-9]', '', addr).strip()
         
         master[u] = dict()
         master[u]['label'] = addr

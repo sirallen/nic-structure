@@ -6,25 +6,30 @@ output: html_document
 
 This application was made with R's <code>shiny</code>, <code>RMarkdown</code>, and <code>networkD3</code> packages and the <code>D3.js</code> JavaScript library.
 
-A _bank holding company_ (BHC) is simply a firm that controls one or more banks. I've made an attempt here of visualizing the structures of such firms, with an eye toward portraying the scale and complexity of organization. (No analysis yet!) The underlying data come from the <a href='https://www.ffiec.gov/nicpubweb/nicweb/nichome.aspx' target='_blank'>National Information Center</a> (NIC) website, where holding company data can be queried via the Institution Search form. While the NIC reports data for U.S. companies only, many of them control a large number of international subsidiaries based in Europe, Asia, and elsewhere. Together, these BHCs control over $15 trillion in assets.
+A _bank holding company_ (BHC) is simply a firm that controls one or more banks. I've made an attempt here to visualize the structures of such firms, with an eye toward portraying the scale and complexity of organization. (No analysis yet!) The underlying data come from the <a href='https://www.ffiec.gov/nicpubweb/nicweb/nichome.aspx' target='_blank'>National Information Center</a> (NIC) website, where holding company data can be queried via the Institution Search form. While the NIC reports data for U.S. companies only, many of them control a large number of international subsidiaries based in Europe, Asia, and elsewhere. Together, these BHCs control over $15 trillion in assets.
 
-The figure below shows the total assets of the 20 largest BHCs as of the end of 2016:
+The figure below shows the size (measured by total assets) of the 20 largest BHCs as of the end of 2016, along with their share of assets among the 115 BHCs with at least $10 billion in assets:
 
 ```{r, echo=FALSE, fig.align='center', fig.width=9, fig.height=7.5}
-top20 = fread('../Top20.csv')
-setnames(top20, 'Institution Name (RSSD ID)', 'Institution Name')
+hc10bn = fread('data/HC10bn.csv')
+setnames(hc10bn, 'Institution Name (RSSD ID)', 'name')
+setnames(hc10bn, '12/31/2016 Total Assets', 'asset')
 # Note: Assets in thousands of dollars
-top20[, `12/31/2016 Total Assets`:= as.numeric(
-  gsub('[^0-9]','',`12/31/2016 Total Assets`))/1e6]
-top20[, `Institution Name`:= gsub(' \\(\\d+\\)', '', `Institution Name`)]
-top20[, `Institution Name`:= gsub('ASSOCIATION', 'ASSOC.', `Institution Name`)]
-top20[, `Institution Name`:= factor(`Institution Name`, `Institution Name`)]
+hc10bn[, asset:= as.numeric(gsub('[^0-9]','',asset))/1e6]
+hc10bn[, name:= gsub(' \\(\\d+\\)', '', name)]
+hc10bn[, name:= gsub('ASSOCIATION', 'ASSOC.', name)]
+hc10bn[, name:= factor(name, name)]
+hc10bn[, cumAsset:= cumsum(asset)/sum(asset)]
+hc10bn[, cumAssetTransform:= cumAsset*max(asset)]
 
-ggplot(top20, aes(y=`12/31/2016 Total Assets`, x=`Institution Name`)) +
+ggplot(hc10bn[1:20], aes(y=asset, x=name)) +
   geom_bar(stat='identity', fill='royalblue') +
+  geom_line(aes(x=1:20, y=cumAssetTransform), lty=2, lwd=1.3, col='red') +
+  scale_y_continuous(sec.axis = sec_axis(
+    ~./hc10bn[, max(asset)], 'Cum. Share of Assets')) +
   labs(x='', y='12/31/2016 Total Assets (billions)') +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
-        plot.margin = unit(c(.2,1.4,0,1.4), 'cm'))
+        plot.margin = unit(c(.6,1.4,0,1.4), 'cm'))
 ```
 
 The company structures are not strict hierarchies, in the sense that subsidiaries may be partially controlled by multiple parent companies (this is not uncommon). The definition of "control" (say, of company B by company A) is established in the instructions for the <a href='https://www.federalreserve.gov/apps/reportforms/reportdetail.aspx?sOoYJ+5BzDaGhRRQo6EFJQ==' target='_blank'>FR Y-10 Reporting Form</a> and includes such criteria as
@@ -37,7 +42,7 @@ The company structures are not strict hierarchies, in the sense that subsidiarie
 
 * ...
 	
-The forms also provide information on entity types and locations. Most entities are given nondescript labels of either "Domestic Entity Other" or "International Nonbank Sub of Domestic Entities"; others have more precise labels such as "Data Processing Servicer", "Securities Broker/Dealer", "Federal Savings Bank" and "Edge Corporation." (A glossary describing each of these types is available <a href='https://www.ffiec.gov/nicpubweb/content/help/institution%20type%20description.htm' target='_blank'>here</a>.) To simplify visualization, I've aggregated the types into eight broad categories as shown in the network legend. (A "nonbank", while classified as such, may engage in banking-related activities.) An entity's "location" refers to its physical location as reported in the FR Y-10.
+The forms also provide information on entity types and locations. Most entities are given nondescript labels of either "Domestic Entity Other" or "International Nonbank Sub of Domestic Entities"; others have more precise labels such as "Data Processing Servicer", "Securities Broker/Dealer", "Federal Savings Bank" and "Edge Corporation." (A glossary describing each of these types is available <a href='https://www.ffiec.gov/nicpubweb/content/help/institution%20type%20description.htm' target='_blank'>here</a>.) To simplify visualization, I've aggregated the types into eight categories as shown in the network legend. (A "nonbank", while classified as such, may engage in banking-related activities.) An entity's "location" refers to its physical location as reported in the FR Y-10.
 
 ### Research Questions
 * How can this data be used to characterize the complexity of financial instutitions? (Is there a better measure than simply counting the number of controlled entities?)

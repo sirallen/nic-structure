@@ -46,7 +46,7 @@ path.graticule.outline{
 
 path.arc{
 	fill: none;
-	stroke: lightgray;
+	stroke: gray;
 	stroke-width: 0.5px;
 }
 

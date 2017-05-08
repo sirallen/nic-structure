@@ -172,7 +172,8 @@ function createMap(svg) {
 	  .attr('d', geoPath)
 	  .attr('class', 'countries')
 	  .style('fill', function(d) {
-	  	return countryColor(d3.geoArea(d))
+	  	//return countryColor(d3.geoArea(d))
+	  	return "#FF9186"
 	  });
 
 	 //https://bl.ocks.org/emeeks/af3c0114adfd9ead565e6c0f4a9c494e
