@@ -20,24 +20,18 @@ load_data = function(bhc, asOfDate) {
     return(NULL) }
   
   df = fread(file)
-  
-  # Regions
-  # df[, Country:= gsub('.*(?<=, )(.*)', '\\1', label, perl=T)]
-  # df = regions[df, on='Country']
+  df = df[cc[, .(domain, group)], on=.(Type==domain), Group:= group]
   
   dfnet = df[, .(from = Name[match(Parent, Idx)], to = Name, Id_Rssd, Type, Tier,
                  from.lat = lat[match(Parent, Idx)], from.lng = lng[match(Parent, Idx)],
                  to.lat = lat, to.lng = lng)][-1,]
-  
-  # Group entity types
-  dfnet = dfnet[cc[, .(domain, group)], on=.(Type==domain), Type:= group]
   
   dfnet[, Tier:= min(Tier), by=.(from,to)]
   
   dfnet = dfnet[!duplicated(dfnet)]
   
   nodes = dfnet[, .(id = 0:uniqueN(to), name = c(from[1], unique(to)))]
-  nodes[dfnet, on=.(name==to), Type:= Type]
+  nodes[df, on=.(name==Name), Group:= Group]
   
   dfnet[nodes, on=.(from==name), from.id:= id]
   dfnet[nodes, on=.(to==name), to.id:= id]

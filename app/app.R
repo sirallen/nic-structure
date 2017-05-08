@@ -128,8 +128,8 @@ server = function(input,output,session) {
     if (!is.null(data())) {
 
       forceNetwork(
-        as.data.frame(data()[[1]]), as.data.frame(data()[[2]]), 'from.id', 'to.id',
-        NodeID='name', Group='Type', zoom=T, colourScale = JS(ColorScale),
+        Links=data()[[1]], Nodes=data()[[2]], Source='from.id', Target='to.id',
+        NodeID='name', Group='Group', zoom=T, colourScale = JS(ColorScale),
         opacity=.8, opacityNoHover=.5, fontSize=10, fontFamily='sans-serif',
         legend = input$legend)
 
