@@ -1,7 +1,7 @@
+# Load data
 cc = fread('entityTypeGrouping.csv')
 entity.region = fread('data/EntitiesByRegion.csv')
 entity.region[, asOfDate:= as.Date(asOfDate)]
-#regions = fread('Country-regions.csv')
 
 quoteStr = function(v) paste(paste0('\"', v, '\"'), collapse=',')
 
@@ -22,9 +22,10 @@ load_data = function(bhc, asOfDate) {
   df = fread(file)
   df = df[cc[, .(domain, group)], on=.(Type==domain), Group:= group]
   
-  dfnet = df[, .(from = Name[match(Parent, Idx)], to = Name, Id_Rssd, Type, Tier,
-                 from.lat = lat[match(Parent, Idx)], from.lng = lng[match(Parent, Idx)],
-                 to.lat = lat, to.lng = lng)][-1,]
+  dfnet = df[, .(
+    from = Name[match(Parent, Idx)], to = Name, Id_Rssd, Type, Tier,
+    from.lat = lat[match(Parent, Idx)], from.lng = lng[match(Parent, Idx)],
+    to.lat = lat, to.lng = lng)][-1,]
   
   dfnet[, Tier:= min(Tier), by=.(from,to)]
   
@@ -35,6 +36,7 @@ load_data = function(bhc, asOfDate) {
   
   dfnet[nodes, on=.(from==name), from.id:= id]
   dfnet[nodes, on=.(to==name), to.id:= id]
+  dfnet[, value:= 1L]
   
   list(dfnet, nodes, df)
 }
@@ -50,7 +52,5 @@ updateBhcList = function() {
   
   save(bhcList, file = 'bhcList.RData')
 }
-
-
 
 

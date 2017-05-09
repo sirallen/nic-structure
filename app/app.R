@@ -45,6 +45,11 @@ ui = fluidPage(
   
   # inside <body>
   tags$style(type='text/css', 'body { overflow-y: scroll; }'),
+  tags$head(tags$script(paste0(
+    '$(document).on("shiny:connected", function(e) {',
+    'Shiny.onInputChange("innerWidth", window.innerWidth);});
+    $(window).resize(function(e) {
+    Shiny.onInputChange("innerWidth", window.innerWidth);});'))),
   
   titlePanel(
     tags$p(style='font-size:22px', 'Visualizing the Structure of U.S. Bank 
@@ -54,7 +59,8 @@ ui = fluidPage(
   sidebarLayout(
     
     sidebarPanel(
-      selectInput(inputId='bhc', label='Select holding company:', choices=bhcList),
+      selectInput(inputId='bhc', label='Select holding company:',
+                  choices=bhcList),
       
       selectInput(inputId='asOfDate', label='Date:', choices=''),
       
@@ -129,9 +135,10 @@ server = function(input,output,session) {
 
       forceNetwork(
         Links=data()[[1]], Nodes=data()[[2]], Source='from.id', Target='to.id',
-        NodeID='name', Group='Group', zoom=T, colourScale = JS(ColorScale),
-        opacity=.8, opacityNoHover=.5, fontSize=10, fontFamily='sans-serif',
-        legend = input$legend)
+        NodeID='name', Group='Group', Value='value', zoom=T, opacity=.8,
+        opacityNoHover=.5, fontSize=10, fontFamily='sans-serif', arrows = T,
+        linkDistance = JS('function(d){return 50}'), legend=input$legend,
+        colourScale = JS(ColorScale))
 
     } })
   
@@ -143,7 +150,6 @@ server = function(input,output,session) {
       dat[, Region:= factor(Region, lev)]
 
       ggplot(dat, aes(x=asOfDate, y=N)) +
-        #geom_line(lwd=1.2) +
         geom_area(aes(fill=Region), color='lightgray', position='stack',
                   size=.2, alpha=.9) +
         labs(x='', y='Number of entities')
@@ -158,6 +164,8 @@ server = function(input,output,session) {
     }} )
 
   observe({session$sendCustomMessage(type='jsondata', json_data())})
+  
+  observe({session$sendCustomMessage(type='windowResize', list(input$innerWidth))})
   
 }
 

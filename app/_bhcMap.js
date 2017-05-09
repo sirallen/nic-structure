@@ -2,12 +2,14 @@ Shiny.addCustomMessageHandler('jsondata', function(message) {
 	var cities = message[0];
 	var dfnet  = message[1];
 
+	width = d3.select('.tab-pane.active').node().getBoundingClientRect().width;
+
 	var d3io = d3.select('#d3io');
 
 	if (d3io['_groups'][0][0].children.length == 0) {
 		// create svg, map
 		var svg = d3io.append('svg')
-					  .attr('width', 1000)
+					  .attr('width', width)
 					  .attr('height', 670);
 
 		createMap(svg);
@@ -17,6 +19,16 @@ Shiny.addCustomMessageHandler('jsondata', function(message) {
 
 	updateMap(svg, cities, dfnet);
 
+});
+
+Shiny.addCustomMessageHandler('windowResize', function(message) {
+	// when change in window size detected, update svg width & projection
+	width = d3.select('.tab-pane.active').node().getBoundingClientRect().width;
+	projection.translate([7*width/15, height/2]);
+	
+	var svg = d3.select('#d3io svg').attr('width', width);
+	
+	updatePaths();
 });
 
 // global vars (need to access in both createMap and updateMap)
@@ -37,6 +49,8 @@ var projection = d3.geoOrthographic()
 	.clipAngle(90);
 
 var geoPath = d3.geoPath().projection(projection);
+
+var graticule = d3.geoGraticule();
 
 // interpolation *function* for flying arcs
 var swoosh = d3.line()
@@ -144,8 +158,6 @@ function createMap(svg) {
 						 .domain(realFeatureSize)
 						 .range(colorbrewer.Reds[9]);
 
-	var graticule = d3.geoGraticule();
-
 	// zoom AND rotate
 	var mapZoom = d3.zoom().on('zoom', zoomed)
 
@@ -180,9 +192,11 @@ function createMap(svg) {
 	function zoomed(){
 		var transform = d3.event.transform;
 		var r = {x: λ(transform.x), y: φ(transform.y)};
+		var k = Math.sqrt(300/projection.scale());
 
 		console.log(transform);
-		projection.scale(scale*transform.k).rotate([origin.x + r.x, origin.y + r.y]);
+		projection.scale(scale*transform.k)
+				  .rotate([origin.x + r.x * k, origin.y + r.y]);
 
 		d3.selectAll('path.graticule').datum(graticule).attr('d', geoPath);
 		d3.selectAll('path').filter('.countries, .citynode, .arc').attr('d', geoPath);
@@ -278,7 +292,13 @@ function updateMap(svg, cities, dfnet) {
 		  .style('opacity', 0)
 	};
 
-	d3.selectAll('path.citynode').attr('d', geoPath);
-	d3.selectAll('path.arc').attr('d', geoPath);
+	d3.selectAll('path').filter('.citynode, .arc').attr('d', geoPath);
 	//d3.selectAll('path.farc').attr('d', function(d) {return(swoosh(flying_arc(d)))});
 };
+
+function updatePaths() {
+	d3.selectAll('path.graticule').datum(graticule).attr('d', geoPath);
+	d3.selectAll('path').filter('.countries, .citynode, .arc').attr('d', geoPath);
+};
+
+

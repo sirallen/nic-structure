@@ -6,7 +6,9 @@ output: html_document
 
 I made this application with R's <code>shiny</code>, <code>RMarkdown</code>, and <code>networkD3</code> packages and the <code>D3.js</code> JavaScript library; the source files are available on <a href='https://github.com/sirallen/nic-structure' target='_blank'>my Github page</a>. It's a work in progress, so don't mind the bugs!
 
-For now, I've only included data for a single quarter for all holding companies except the unimpeachable Goldman Sachs Group, for which the Date selection extends back to 2008 Q3.
+<hr>
+
+**Note:** For now, I've only included data for a single quarter for all holding companies except the unimpeachable Goldman Sachs Group, for which the Date selection extends back to 2008 Q3. The available holding companies are those with at least $100 billion in assets, though I plan to make more available soon. The nodes in the "map" view are limited to those within network distance 4 from the center.
 
 <hr>
 

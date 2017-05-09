@@ -92,10 +92,232 @@ Id_Rssd,Region,N,asOfDate
 1378434,Southeast Asia and Oceania,1,2016-12-28
 1447376,Northern America,664,2016-12-28
 1447376,Europe,18,2016-12-28
+1562859,Northern America,155,2008-12-31
+1562859,Middle East,2,2008-12-31
+1562859,Europe,88,2008-12-31
+1562859,Central and South America,21,2008-12-31
+1562859,Southeast Asia and Oceania,10,2008-12-31
+1562859,Caribbean,10,2008-12-31
+1562859,South Asia,1,2008-12-31
+1562859,East Asia,2,2008-12-31
+1562859,Northern America,155,2009-03-31
+1562859,Middle East,2,2009-03-31
+1562859,Europe,88,2009-03-31
+1562859,Central and South America,21,2009-03-31
+1562859,Southeast Asia and Oceania,10,2009-03-31
+1562859,Caribbean,10,2009-03-31
+1562859,South Asia,1,2009-03-31
+1562859,East Asia,2,2009-03-31
+1562859,Northern America,156,2009-06-30
+1562859,Middle East,2,2009-06-30
+1562859,Central and South America,21,2009-06-30
+1562859,Europe,92,2009-06-30
+1562859,Southeast Asia and Oceania,10,2009-06-30
+1562859,Caribbean,10,2009-06-30
+1562859,South Asia,1,2009-06-30
+1562859,East Asia,2,2009-06-30
+1562859,Northern America,154,2009-09-30
+1562859,Middle East,2,2009-09-30
+1562859,Central and South America,21,2009-09-30
+1562859,Europe,91,2009-09-30
+1562859,Southeast Asia and Oceania,10,2009-09-30
+1562859,Caribbean,10,2009-09-30
+1562859,South Asia,1,2009-09-30
+1562859,East Asia,2,2009-09-30
+1562859,Northern America,152,2009-12-31
+1562859,Middle East,2,2009-12-31
+1562859,Central and South America,20,2009-12-31
+1562859,Europe,89,2009-12-31
+1562859,Southeast Asia and Oceania,10,2009-12-31
+1562859,Caribbean,9,2009-12-31
+1562859,South Asia,1,2009-12-31
+1562859,East Asia,2,2009-12-31
+1562859,Northern America,138,2010-03-31
+1562859,Middle East,2,2010-03-31
+1562859,Europe,84,2010-03-31
+1562859,Southeast Asia and Oceania,10,2010-03-31
+1562859,Caribbean,9,2010-03-31
+1562859,South Asia,1,2010-03-31
+1562859,Central and South America,20,2010-03-31
+1562859,East Asia,2,2010-03-31
+1562859,Northern America,146,2010-06-30
+1562859,Middle East,2,2010-06-30
+1562859,Europe,80,2010-06-30
+1562859,Southeast Asia and Oceania,7,2010-06-30
+1562859,Caribbean,9,2010-06-30
+1562859,South Asia,1,2010-06-30
+1562859,Central and South America,20,2010-06-30
+1562859,East Asia,2,2010-06-30
+1562859,Northern America,145,2010-09-30
+1562859,Middle East,2,2010-09-30
+1562859,Europe,79,2010-09-30
+1562859,Southeast Asia and Oceania,7,2010-09-30
+1562859,Caribbean,9,2010-09-30
+1562859,South Asia,1,2010-09-30
+1562859,Central and South America,19,2010-09-30
+1562859,East Asia,2,2010-09-30
+1562859,Northern America,145,2010-12-31
+1562859,Middle East,2,2010-12-31
+1562859,Europe,66,2010-12-31
+1562859,Southeast Asia and Oceania,6,2010-12-31
+1562859,Caribbean,9,2010-12-31
+1562859,South Asia,1,2010-12-31
+1562859,Central and South America,19,2010-12-31
+1562859,East Asia,2,2010-12-31
+1562859,Northern America,149,2011-03-31
+1562859,Middle East,2,2011-03-31
+1562859,Europe,65,2011-03-31
+1562859,Southeast Asia and Oceania,6,2011-03-31
+1562859,Caribbean,9,2011-03-31
+1562859,South Asia,1,2011-03-31
+1562859,Central and South America,19,2011-03-31
+1562859,East Asia,2,2011-03-31
+1562859,Northern America,150,2011-06-30
+1562859,Middle East,2,2011-06-30
+1562859,Europe,61,2011-06-30
+1562859,Southeast Asia and Oceania,6,2011-06-30
+1562859,Caribbean,9,2011-06-30
+1562859,South Asia,1,2011-06-30
+1562859,Central and South America,19,2011-06-30
+1562859,East Asia,2,2011-06-30
+1562859,Northern America,152,2011-09-30
+1562859,Middle East,2,2011-09-30
+1562859,Europe,59,2011-09-30
+1562859,Southeast Asia and Oceania,5,2011-09-30
+1562859,Caribbean,9,2011-09-30
+1562859,South Asia,1,2011-09-30
+1562859,Central and South America,18,2011-09-30
+1562859,East Asia,2,2011-09-30
+1562859,Northern America,151,2011-12-31
+1562859,Middle East,2,2011-12-31
+1562859,Europe,57,2011-12-31
+1562859,Southeast Asia and Oceania,5,2011-12-31
+1562859,Caribbean,9,2011-12-31
+1562859,South Asia,1,2011-12-31
+1562859,Central and South America,18,2011-12-31
+1562859,East Asia,2,2011-12-31
+1562859,Northern America,148,2012-03-31
+1562859,Middle East,2,2012-03-31
+1562859,Europe,55,2012-03-31
+1562859,Southeast Asia and Oceania,5,2012-03-31
+1562859,Caribbean,9,2012-03-31
+1562859,South Asia,1,2012-03-31
+1562859,Central and South America,16,2012-03-31
+1562859,East Asia,2,2012-03-31
+1562859,Northern America,149,2012-06-30
+1562859,Middle East,2,2012-06-30
+1562859,Europe,53,2012-06-30
+1562859,Southeast Asia and Oceania,3,2012-06-30
+1562859,Caribbean,9,2012-06-30
+1562859,South Asia,1,2012-06-30
+1562859,Central and South America,16,2012-06-30
+1562859,East Asia,2,2012-06-30
+1562859,Northern America,155,2012-09-30
+1562859,Middle East,2,2012-09-30
+1562859,Europe,54,2012-09-30
+1562859,South Asia,1,2012-09-30
+1562859,Central and South America,16,2012-09-30
+1562859,East Asia,2,2012-09-30
+1562859,Caribbean,9,2012-09-30
+1562859,Northern America,156,2012-12-31
+1562859,Middle East,2,2012-12-31
+1562859,Europe,53,2012-12-31
+1562859,South Asia,1,2012-12-31
+1562859,Central and South America,16,2012-12-31
+1562859,East Asia,2,2012-12-31
+1562859,Caribbean,9,2012-12-31
+1562859,Northern America,147,2013-03-31
+1562859,Middle East,2,2013-03-31
+1562859,Europe,47,2013-03-31
+1562859,South Asia,1,2013-03-31
+1562859,Central and South America,15,2013-03-31
+1562859,East Asia,1,2013-03-31
+1562859,Caribbean,9,2013-03-31
+1562859,Northern America,141,2013-06-30
+1562859,Middle East,2,2013-06-30
+1562859,Europe,24,2013-06-30
+1562859,South Asia,1,2013-06-30
+1562859,Central and South America,7,2013-06-30
+1562859,East Asia,1,2013-06-30
+1562859,Caribbean,9,2013-06-30
+1562859,Northern America,126,2013-09-30
+1562859,Middle East,2,2013-09-30
+1562859,Europe,24,2013-09-30
+1562859,South Asia,1,2013-09-30
+1562859,Central and South America,7,2013-09-30
+1562859,East Asia,1,2013-09-30
+1562859,Caribbean,9,2013-09-30
+1562859,Northern America,75,2013-12-31
+1562859,Middle East,2,2013-12-31
+1562859,South Asia,1,2013-12-31
+1562859,Central and South America,2,2013-12-31
+1562859,East Asia,1,2013-12-31
+1562859,Europe,19,2013-12-31
+1562859,Caribbean,1,2013-12-31
+1562859,Northern America,74,2014-03-31
+1562859,Central and South America,2,2014-03-31
+1562859,East Asia,1,2014-03-31
+1562859,Europe,17,2014-03-31
+1562859,Middle East,1,2014-03-31
+1562859,Caribbean,1,2014-03-31
+1562859,South Asia,1,2014-03-31
+1562859,Northern America,71,2014-06-30
+1562859,Central and South America,2,2014-06-30
+1562859,East Asia,1,2014-06-30
+1562859,Europe,16,2014-06-30
+1562859,Middle East,1,2014-06-30
+1562859,Caribbean,1,2014-06-30
+1562859,South Asia,1,2014-06-30
+1562859,Northern America,71,2014-09-30
+1562859,Central and South America,2,2014-09-30
+1562859,East Asia,1,2014-09-30
+1562859,Europe,16,2014-09-30
+1562859,Middle East,1,2014-09-30
+1562859,Caribbean,1,2014-09-30
+1562859,South Asia,1,2014-09-30
+1562859,Northern America,67,2014-12-31
+1562859,Central and South America,2,2014-12-31
+1562859,East Asia,1,2014-12-31
+1562859,Europe,13,2014-12-31
+1562859,Middle East,1,2014-12-31
+1562859,Caribbean,1,2014-12-31
+1562859,South Asia,1,2014-12-31
+1562859,Northern America,67,2015-03-31
+1562859,Central and South America,2,2015-03-31
+1562859,Europe,13,2015-03-31
+1562859,South Asia,1,2015-03-31
+1562859,Northern America,60,2015-06-30
+1562859,Central and South America,2,2015-06-30
+1562859,Europe,12,2015-06-30
+1562859,South Asia,1,2015-06-30
+1562859,Northern America,58,2015-09-30
+1562859,Central and South America,2,2015-09-30
+1562859,Europe,11,2015-09-30
+1562859,South Asia,1,2015-09-30
+1562859,Northern America,57,2015-12-31
+1562859,Central and South America,2,2015-12-31
+1562859,Europe,10,2015-12-31
+1562859,South Asia,1,2015-12-31
+1562859,Northern America,61,2016-03-31
+1562859,Central and South America,2,2016-03-31
+1562859,Europe,10,2016-03-31
+1562859,South Asia,1,2016-03-31
+1562859,Northern America,66,2016-06-30
+1562859,Central and South America,2,2016-06-30
+1562859,Europe,10,2016-06-30
+1562859,South Asia,1,2016-06-30
+1562859,Northern America,66,2016-09-30
+1562859,Central and South America,2,2016-09-30
+1562859,Europe,10,2016-09-30
+1562859,South Asia,1,2016-09-30
 1562859,Northern America,66,2016-12-28
 1562859,Europe,7,2016-12-28
 1562859,Central and South America,2,2016-12-28
 1562859,South Asia,1,2016-12-28
+1562859,Northern America,66,2016-12-31
+1562859,Europe,6,2016-12-31
+1562859,Central and South America,2,2016-12-31
+1562859,South Asia,1,2016-12-31
 1574834,Northern America,515,2016-12-28
 1574834,Caribbean,8,2016-12-28
 1574834,Africa,1,2016-12-28

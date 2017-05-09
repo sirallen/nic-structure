@@ -88,7 +88,7 @@ txt2clean = function(f, save_name) {
 }
 
 
-getReport = function(rssd, dt_end, as_of_date) {
+getReport = function(rssd, dt_end=99991231, as_of_date) {
   # as_of_date: yyyy-mm-dd
   file_name = paste0('pdf/', rssd, '-', gsub('-','',as_of_date), '.pdf')
   
@@ -111,13 +111,52 @@ getReport = function(rssd, dt_end, as_of_date) {
   txt2clean( pdf2txt(file_name), paste0('app/',gsub('pdf','txt', file_name)) )
 }
 
+
+getInstHistory = function(rssd, dt_end=99991231) {
+  url = paste0(
+    'https://www.ffiec.gov/nicpubweb/nicweb/InstitutionHistory.aspx',
+    '?parID_RSSD=', rssd, '&parDT_END=', dt_end )
+  
+  html = read_html(url)
+  nodes = html_nodes(html, xpath='//table[@class="datagrid"]')
+  table = html_table(nodes[[1]], header=T)
+  table$Id_Rssd = rssd
+  table
+}
+
+
+getActiveBhcInstHistories = function() {
+  bhcNameList = fread('hc-name-list.txt')
+  rssdsActive = bhcNameList[is.na(NAME_END_DATE), ID_RSSD]
+  # Include large IHCs -- Credit Suisse USA, UBS Americas
+  hc10bnRssds = fread('app/data/HC10bn.csv')$`RSSD ID`
+  rssdsActive = union(rssdsActive, hc10bnRssds)
+  bhcHistories = list()
+  
+  i = 0
+  for (rssd in rssdsActive) {
+    i = i + 1
+    if (i%%50 == 0) {
+      cat(i, ' of ', length(rssdsActive), '\n') }
+    j = as.character(rssd)
+    
+    # Will miss those that became inactive since hc-name-list updated
+    tryCatch({
+      bhcHistories[[j]] = getInstHistory(rssd)},
+      error = function(e) message(e) )
+  }
+  
+  bhcHistories = rbindlist(bhcHistories)
+  setcolorder(bhcHistories, c('Id_Rssd','Event Date','Historical Event'))
+  
+  fwrite(bhcHistories, 'active-bhc-institution-histories.txt', quote=T)
+  
+}
+
 # http://r.789695.n4.nabble.com/writing-binary-data-from-RCurl-and-postForm-td4710802.html
 # http://stackoverflow.com/questions/41357811/passing-correct-params-to-rcurl-postform
 
 # last day of quarter
-#as_of_dates = seq.Date(as.Date('2009-04-01'), as.Date('2016-10-01'), by='3 months') - 1
-#mapply(getReport, rssd=2380443, dt_end=99991231, as_of_date=as_of_dates)
-
-
+#mapply(getReport, rssd=2380443, as_of_date=getBhcSpan(rssd))
 
 

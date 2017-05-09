@@ -1,4 +1,3 @@
-setwd('C:/Users/sirallen/Dropbox/FRBR/NIC-structure')
 library(data.table)
 library(stringr)
 
@@ -7,6 +6,7 @@ states.rx = paste0('(',paste(state.abb, collapse='|'),'|DC)$')
 
 files = dir('app/txt/', full.names=T)
 
+# By world region
 dt = rbindlist( lapply( files, function(z) {
   rssd = as.numeric(str_extract(z, '\\d+'))
   dat = fread(z)
@@ -22,7 +22,23 @@ dt = rbindlist( lapply( files, function(z) {
   
   dat = dat[, .N, by=.(Id_Rssd, Region)]
   dat[, asOfDate:= as.Date( str_extract(z, '(?<=-)\\d+'), '%Y%m%d')]
-} ) ); rm(files)
+} ) )
 
 fwrite(dt, 'app/data/EntitiesByRegion.csv')
+
+
+# By entity type
+dt = rbindlist( lapply( files, function(z) {
+  rssd = as.numeric(str_extract(z, '\\d+'))
+  dat = fread(z)
+  
+  # Unique entities
+  dat = dat[!duplicated(Id_Rssd)]
+  dat[, Id_Rssd:= rssd]
+  
+  dat = dat[, .N, by=.(Id_Rssd,Type)]
+  dat[, asOfDate:= as.Date( str_extract(z, '(?<=-)\\d+'), '%Y%m%d')]
+} ) ); rm(files)
+
+fwrite(dt, 'app/data/EntitiesByType.csv')
 
