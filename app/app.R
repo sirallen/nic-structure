@@ -10,11 +10,13 @@ library(ggplot2)
 source('_functions.R')
 
 load('bhcList.RData')
+# updated in observeEvent()
+bhcMaxTier = NULL
 
 knit('About.Rmd', quiet=TRUE)
 
 legend.key = list(
-  'Bank Holding Company'  = 'red',
+  'Holding Company'       = 'red',
   'Domestic Bank'         = 'darkorange3',
   'Domestic Nonbank'      = '#3182bd',
   'International Bank'    = 'black',
@@ -35,7 +37,6 @@ ui = fluidPage(
   
   tags$head(
     tags$link(rel='shortcut icon', href=''),
-    includeScript('www/math.min.js'),
     includeScript('colorbrewer.js'),
     # var countries
     includeScript('ne_50m_admin.json'),
@@ -67,6 +68,9 @@ ui = fluidPage(
       radioButtons(inputId='dispType', label='Select display type:',
                    choices=c('Network','Map')),
       
+      selectInput(inputId='maxDist', label='Max node distance (map only)',
+                  choices=''),
+      
       checkboxInput(inputId='legend', label='Show legend', value=TRUE),
       width = 3),
     
@@ -77,11 +81,11 @@ ui = fluidPage(
           conditionalPanel(
             "input.dispType == 'Network'",
             forceNetworkOutput('network', height='670px')),
-          
+
           conditionalPanel(
             "input.dispType == 'Map'",
             includeScript('_bhcMap.js'),
-            d3IO('d3io') )),
+            div(id='d3io', class='d3io') )),
         
         tabPanel(
           title='Table',
@@ -89,11 +93,11 @@ ui = fluidPage(
         
         tabPanel(
           title='Plots',
-          plotOutput('plot1', width='80%', height='600px')),
+          plotOutput('plot1', width='80%', height='600px'),
+          plotOutput('plot2', width='80%', height='600px')),
         
         tabPanel(
           title='About',
-          #includeHTML('About.html'),
           withMathJax(includeMarkdown('About.md')))
       ),
       
@@ -103,21 +107,42 @@ ui = fluidPage(
 
 server = function(input,output,session) {
   
-  observeEvent(input$bhc, updateSelectInput(
-    session, 'asOfDate', choices=rev(as.character(as.Date(
-      str_sub( dir('txt/', paste0(input$bhc,'-.*.txt')), -12, -5 ),
-      format='%Y%m%d')))))
+  observeEvent(input$bhc, {
+    new_choices = rev(gsub(
+      '.*-(\\d{4})(\\d{2})(\\d{2}).RData', '\\1-\\2-\\3',
+      dir('rdata/', paste0(isolate(input$bhc),'-.*.RData'))))
+    
+    x = intersect(isolate(input$asOfDate), new_choices)
+    
+    updateSelectInput(
+      session, 'asOfDate', choices = new_choices,
+      selected = if (length(x) > 0) x else new_choices[1] )
+  })
   
   data = reactive({
     if (input$bhc != '' && input$asOfDate != '') {
       
       load_data(input$bhc, input$asOfDate)
-
+      
     } else NULL })
   
+  observeEvent(data(), {
+    bhcMaxTier <<- data()[[1]][, max(Tier)]
+  }, priority=1)
+
+  observeEvent(data(), {
+    bhcMaxDist = bhcMaxTier - 1
+
+    updateSelectInput(
+      session, 'maxDist', choices = 1:bhcMaxDist,
+      selected = min(4, bhcMaxDist))
+  })
+
   json_data = reactive({
     if (!is.null(data())) {
-      nodes = data()[[3]]
+      # Important!! Need to use copy(); otherwise will also modify
+      # Tier in data()[[3]] -- see http://stackoverflow.com/questions/10225098
+      nodes = copy(data()[[3]])
       nodes[, Tier:= min(Tier), by='label']
       nodes = unique(nodes[, .(Tier, lat, lng, label)])
       nodes = unname(split(nodes, 1:nrow(nodes)))
@@ -129,7 +154,7 @@ server = function(input,output,session) {
       fromJSON(toJSON(list(nodes, links)))
 
     } else NULL })
-  
+
   output$network = renderForceNetwork({
     if (!is.null(data())) {
 
@@ -154,7 +179,20 @@ server = function(input,output,session) {
                   size=.2, alpha=.9) +
         labs(x='', y='Number of entities')
 
-    } else NULL })
+    } })
+  
+  output$plot2 = renderPlot({
+    if (!is.null(data())) {
+      dat = data()[[3]][-1, .(Id_Rssd, Tier)]
+      
+      dat[, linkDist:= min(Tier) - 1, by='Id_Rssd']
+      dat = dat[!duplicated(Id_Rssd)]
+      
+      ggplot(dat, aes(x = as.factor(linkDist))) +
+        geom_bar(fill='royalblue') +
+        labs(x='Distance from center', y='Number of entities')
+      
+    } })
   
   output$bhcTable = renderDataTable({
     if (!is.null(data())) {
@@ -163,13 +201,17 @@ server = function(input,output,session) {
 
     }} )
 
+  ### Observers send messages to _bhcMap.js
+
   observe({session$sendCustomMessage(type='jsondata', json_data())})
-  
+
   observe({session$sendCustomMessage(type='windowResize', list(input$innerWidth))})
+
+  observe({session$sendCustomMessage(type='maxDist', if (input$maxDist != '') {
+    list(input$maxDist) } else NULL )})
   
 }
 
-#runApp( shinyApp(ui=ui, server=server), port=8080, host='192.168.1.124')
 shinyApp(ui=ui, server=server)
 
 

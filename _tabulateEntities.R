@@ -3,8 +3,9 @@ library(stringr)
 
 regions = fread('app/Country-regions.csv')
 states.rx = paste0('(',paste(state.abb, collapse='|'),'|DC)$')
+cc = fread('app/entityTypeGrouping.csv')
 
-files = dir('app/txt/', full.names=T)
+files = dir('txt/', full.names=T)
 
 # By world region
 dt = rbindlist( lapply( files, function(z) {
@@ -36,9 +37,12 @@ dt = rbindlist( lapply( files, function(z) {
   dat = dat[!duplicated(Id_Rssd)]
   dat[, Id_Rssd:= rssd]
   
-  dat = dat[, .N, by=.(Id_Rssd,Type)]
+  dat = dat[, .N, by=.(Id_Rssd,Type.code)]
+  dat[, Type.code:= cc$domain[match(Type.code, cc$Type.code)]]
   dat[, asOfDate:= as.Date( str_extract(z, '(?<=-)\\d+'), '%Y%m%d')]
 } ) ); rm(files)
+
+setnames(dt, 'Type.code', 'Type')
 
 fwrite(dt, 'app/data/EntitiesByType.csv')
 

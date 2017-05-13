@@ -8,15 +8,17 @@ I made this application with R's <code>shiny</code>, <code>RMarkdown</code>, and
 
 <hr>
 
-**Note:** For now, I've only included data for a single quarter for all holding companies except the unimpeachable Goldman Sachs Group, for which the Date selection extends back to 2008 Q3. The available holding companies are those with at least $100 billion in assets, though I plan to make more available soon. The nodes in the "map" view are limited to those within network distance 4 from the center.
+**Note:** For now, the available holding companies are those currently active with at least $100 billion in assets, though I plan to make more available soon.
 
 <hr>
 
 ## Background
 
-A _bank holding company_ (BHC) is simply a firm that controls one or more banks. I've made an attempt here to visualize the structures of such firms, with an eye toward portraying the scale and complexity of organization. (No analysis yet!) The underlying data come from the <a href='https://www.ffiec.gov/nicpubweb/nicweb/nichome.aspx' target='_blank'>National Information Center</a> (NIC) website, where holding company data can be queried via the Institution Search form. While the NIC reports data for U.S. companies only, some of them control a large number of international subsidiaries based in Europe, Asia, and elsewhere (think Bermuda, Nassau, the Caymans, and other idyllic vacation destinations). Together, these BHCs control over $15 trillion in assets.
+A _bank holding company_ (BHC) is simply a firm that controls one or more banks. I've made an attempt here to visualize the structures of such firms, with an eye toward portraying the scale and complexity of organization. (Actually, I include not only BHCs but also Financial Holding Companies, Savings & Loan Holding Companies, and Intermediate Holding Companies. These are all monitored by the Federal Reserve and are required to provide the structural data discussed below. See <a href='https://www.ffiec.gov/nicpubweb/content/help/institution%20type%20description.htm' target='_blank'>here</a> for definitions of these types.)
 
-The figure below shows the size (measured by total assets) of the 20 largest BHCs as of the end of 2016, along with their share of assets among the 115 BHCs with at least $10 billion in assets:
+The underlying data come from the <a href='https://www.ffiec.gov/nicpubweb/nicweb/nichome.aspx' target='_blank'>National Information Center</a> (NIC) website, where holding company data can be queried via the Institution Search form. While the NIC reports data for U.S. companies only, some of them control a large number of international subsidiaries based in Europe, Asia, and elsewhere (think Bermuda, Nassau, the Caymans, and other idyllic vacation destinations). Together, these companies control over $15 trillion in assets.
+
+The figure below shows the size (measured by total assets) of the 20 largest HCs as of the end of 2016, along with their share of assets among the 115 HCs with at least $10 billion in assets:
 
 ```{r, echo=FALSE, fig.align='center', fig.width=9, fig.height=7.5}
 hc10bn = fread('data/HC10bn.csv')
@@ -42,7 +44,7 @@ ggplot(hc10bn[1:20], aes(y=asset, x=name)) +
 
 <hr>
 
-**Note:** The structure data is not easy to access. For large institutions (i.e., the most interesting ones) the NIC search form returns only pdf documents, which must be processed to obtain usable data structures. (If the data were available in a user-friendly form in the past, as this 2012 New York Fed <a href='https://www.newyorkfed.org/medialibrary/media/research/epr/12v18n2/1207avra.pdf' target='_blank'>research article</a> suggests, this appears to be no longer the case.) Regional Federal Reserve banks publish <a href='https://www.richmondfed.org/banking/supervision_and_regulation/fry6_reports' target='_blank'>FR Y-6 filings</a> with more detailed information about BHC structures, but as unusable pdf scans.
+**Note:** The structure data is not easy to access. For large institutions (i.e., the most interesting ones) the NIC search form returns only pdf documents, which must be processed to obtain usable data structures. (If the data were available in a user-friendly form in the past, as this 2012 New York Fed <a href='https://www.newyorkfed.org/medialibrary/media/research/epr/12v18n2/1207avra.pdf' target='_blank'>research article</a> suggests, this appears to be no longer the case.) Regional Federal Reserve banks publish <a href='https://www.richmondfed.org/banking/supervision_and_regulation/fry6_reports' target='_blank'>FR Y-6 filings</a> with more detailed information about holding company structures, but as unusable pdf scans.
 
 <hr>
 
@@ -56,18 +58,20 @@ The company structures are not strict hierarchies, in the sense that subsidiarie
 
 * ...
 	
-The forms also provide information on entity types and locations. Most entities are given nondescript labels of either "Domestic Entity Other" or "International Nonbank Sub of Domestic Entities"; others have more precise labels such as "Data Processing Servicer", "Securities Broker/Dealer", "Federal Savings Bank" and "Edge Corporation." (A glossary describing each of these types is available <a href='https://www.ffiec.gov/nicpubweb/content/help/institution%20type%20description.htm' target='_blank'>here</a>.) To simplify visualization, I've aggregated the types into eight categories as shown in the network legend. (A "nonbank", while classified as such, may engage in banking-related activities.) An entity's "location" refers to its physical location as reported in the FR Y-10.
+The forms also provide information on entity types and locations. Most entities are given nondescript labels of either "Domestic Entity Other" or "International Nonbank Subsidiary of Domestic Entities"; others have more precise labels such as "Data Processing Servicer", "Securities Broker/Dealer", "Federal Savings Bank" and "Edge Corporation." (A glossary describing each of these types is available <a href='https://www.ffiec.gov/nicpubweb/content/help/institution%20type%20description.htm' target='_blank'>here</a>.) To simplify visualization, I've aggregated the types into eight categories as shown in the network legend. (A "nonbank", while classified as such, may engage in banking-related activities.) An entity's "location" refers to its physical location as reported in the FR Y-10.
 
 ### Research Questions
 * How can this data be used to characterize the complexity of financial instutitions? (Is there a better measure than simply counting the number of controlled entities?)
 
-* Besides simply being larger, how are the largest BHCs structurally different from medium- and small-sized ones?
+* Besides simply being larger, how are the largest HCs structurally different from medium- and small-sized ones?
 
 * What are the (regulatory) incentives for structuring these institutions a certain way?
 
 * How has the structure of these institutions changed over time? (More complex?)
 
 * What activities do non-banks engage in?
+
+* How are offshore financial centers (OFCs) incorporated into the structures?
 
 * ...
 

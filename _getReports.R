@@ -1,6 +1,8 @@
 library(httr)
 library(data.table)
 library(stringr)
+library(rvest)
+cc = fread('app/entityTypeGrouping.csv')
 
 params = list(
   rbRptFormatPDF = 'rbRptFormatPDF',
@@ -58,7 +60,7 @@ txt2clean = function(f, save_name) {
   txt = txt[!duplicated(V1)][!grepl('Repeat', V1)]
   
   # manual fix (affects Goldman, Citigroup)
-  txt[, V1:= sub('(SALVADOR)(International)', '\\1 \\2', V1)]
+  txt[, V1:= sub('(SALVADOR)(Foreign|International)', '\\1 \\2', V1)]
   
   # Insert "~" delimiters, split
   txt[, V1:= sub('(\\d+) ', '\\1~', V1)]
@@ -76,6 +78,8 @@ txt2clean = function(f, save_name) {
   dt[, Loc:= gsub(' *\\(OTHER\\)', '', Loc)]
   dt[, Tier:= str_count(Level, '-') + 1]
   dt[Note=='', Note:= NA_character_]
+  dt[, Type:= cc$Type.code[match(Type, cc$domain)]]
+  setnames(dt, 'Type', 'Type.code')
   
   stopifnot( all(dt$Parent < dt$Idx, na.rm=T) )
   
@@ -106,10 +110,14 @@ getReport = function(rssd, dt_end=99991231, as_of_date) {
     params[['txtAsOfDate']] = format.Date(as_of_date, '%m/%d/%Y')
     
     POST(url, body=params, write_disk(file_name, overwrite=T))
+    
+    txt2clean( pdf2txt(file_name), save_name=gsub('pdf','txt', file_name) )
   }
   
-  txt2clean( pdf2txt(file_name), paste0('app/',gsub('pdf','txt', file_name)) )
 }
+
+# http://r.789695.n4.nabble.com/writing-binary-data-from-RCurl-and-postForm-td4710802.html
+# http://stackoverflow.com/questions/41357811/passing-correct-params-to-rcurl-postform
 
 
 getInstHistory = function(rssd, dt_end=99991231) {
@@ -125,10 +133,24 @@ getInstHistory = function(rssd, dt_end=99991231) {
 }
 
 
+getInstPrimaryActivity = function(rssd, dt_end=99991231) {
+  url = paste0(
+    'https://www.ffiec.gov/nicpubweb/nicweb/InstitutionProfile.aspx',
+    '?parID_RSSD=', rssd, '&parDT_END=', dt_end )
+  
+  html = read_html(url)
+  nodes = html_nodes(html, xpath='//table[@id="Table2"]')
+  table = html_table(nodes[[1]], fill=TRUE)
+  activity = table$X1[grepl('Activity:', table$X1)]
+  
+  data.table(Id_Rssd=rssd, Activity=gsub('Activity:\\s', '', activity))
+}
+
+
 getActiveBhcInstHistories = function() {
   bhcNameList = fread('hc-name-list.txt')
   rssdsActive = bhcNameList[is.na(NAME_END_DATE), ID_RSSD]
-  # Include large IHCs -- Credit Suisse USA, UBS Americas
+  # Include large IHCs -- Credit Suisse USA, UBS Americas, BNP Paribas
   hc10bnRssds = fread('app/data/HC10bn.csv')$`RSSD ID`
   rssdsActive = union(rssdsActive, hc10bnRssds)
   bhcHistories = list()
@@ -153,10 +175,49 @@ getActiveBhcInstHistories = function() {
   
 }
 
-# http://r.789695.n4.nabble.com/writing-binary-data-from-RCurl-and-postForm-td4710802.html
-# http://stackoverflow.com/questions/41357811/passing-correct-params-to-rcurl-postform
 
-# last day of quarter
-#mapply(getReport, rssd=2380443, as_of_date=getBhcSpan(rssd))
+getRssdPrimaryActivities = function(rssdsList) {
+  rssdActivities = list()
+  
+  i = 0
+  for (rssd in rssdsList) {
+    i = i + 1
+    if (i%%100 == 0) {
+      cat(i, ' of ', length(rssdsList), '\n') }
+    j = as.character(rssd)
+    
+    tryCatch({
+      rssdActivities[[j]] = getInstPrimaryActivity(rssd)},
+      error = function(e) NULL,
+      warning = function(w) NULL)
+  }
+  
+  rssdActivities = rbindlist(rssdActivities)
+  
+  fwrite(rssdActivities, 'rssd-primary-activities.txt', quote=T)
+  
+}
+
+
+
+# Get data
+# load('app/bhcList.R')
+# source('_getBhcSpan.R')
+# as_of_dates = lapply(bhcList, getBhcSpan, start_date='2010-04-01')
+# # ignore 2016-12-31
+# as_of_dates = lapply(as_of_dates, head, -1)
+# for (j in 1:length(bhcList)) {
+#   if (length(as_of_dates[]) > 0) {
+#     mapply(getReport, rssd=bhcList[j], as_of_date=as_of_dates[[j]])
+#   } }
+
+# rssds = rbindlist(lapply(
+#   dir('txt/', '20161228', full.names=T), function(z) {
+#   dat = fread(z, select='Id_Rssd')
+#   dat[!duplicated(Id_Rssd)]
+# }))
+# rssds = rssds[!duplicated(Id_Rssd)]
+# getRssdPrimaryActivities(unlist(rssds))
+
 
 

@@ -15,7 +15,7 @@ if os.path.isfile('app/LocationMaster'):
 else:
 	master = dict()
 
-readfiles = [os.path.join('app/txt',f) for f in os.listdir('app/txt')]
+readfiles = [os.path.join('txt',f) for f in os.listdir('txt')]
 
 for readfile in readfiles:
   print('Reading  ', readfile)

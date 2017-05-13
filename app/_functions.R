@@ -5,12 +5,10 @@ entity.region[, asOfDate:= as.Date(asOfDate)]
 
 quoteStr = function(v) paste(paste0('\"', v, '\"'), collapse=',')
 
-d3IO    = function(id) div(id=id, class=id)
-
 load_data = function(bhc, asOfDate) {
   dateStr = format.Date(asOfDate, '%Y%m%d')
   
-  file = paste0('txt/', bhc,'-',dateStr,'.txt')
+  file = paste0('rdata/', bhc,'-',dateStr,'.RData')
   
   if (!file.exists(file)) {
     message = paste('File', file, 'not found.')
@@ -19,7 +17,9 @@ load_data = function(bhc, asOfDate) {
       error = function(e) NULL )
     return(NULL) }
   
-  df = fread(file)
+  load(file)
+  df[, Type.code:= cc$domain[match(Type.code, cc$Type.code)]]
+  setnames(df, 'Type.code', 'Type')
   df = df[cc[, .(domain, group)], on=.(Type==domain), Group:= group]
   
   dfnet = df[, .(
@@ -43,7 +43,7 @@ load_data = function(bhc, asOfDate) {
 
 updateBhcList = function() {
   bhcList = unique(rbindlist(lapply(
-        dir('txt/', '.txt', full.names=T),
+        dir('../txt/', '.txt', full.names=T),
         fread, nrows=1, select=c('Name','Id_Rssd') ) ))
   
   setkey(bhcList, Name)
