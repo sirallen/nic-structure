@@ -7,6 +7,7 @@ library(stringr)
 library(rjson)
 library(gplots)
 library(ggplot2)
+library(gridExtra)
 source('_functions.R')
 
 load('bhcList.RData')
@@ -37,7 +38,6 @@ ui = fluidPage(
   
   tags$head(
     tags$link(rel='shortcut icon', href=''),
-    includeScript('colorbrewer.js'),
     # var countries
     includeScript('ne_50m_admin.json'),
 
@@ -60,6 +60,7 @@ ui = fluidPage(
   sidebarLayout(
     
     sidebarPanel(
+      style = 'position:fixed;width:23%;',
       selectInput(inputId='bhc', label='Select holding company:',
                   choices=bhcList),
       
@@ -93,8 +94,14 @@ ui = fluidPage(
         
         tabPanel(
           title='Plots',
+          tags$h2('Some Plots'),
+          paste0('The following plots are updated in response to changes in ',
+                 'user-selected input. Not all holding companies have enough ',
+                 'data with which to generate plots, so for some selections ',
+                 'the plot areas may appear blank.'),
           plotOutput('plot1', width='80%', height='600px'),
-          plotOutput('plot2', width='80%', height='600px')),
+          plotOutput('plot2', width='80%', height='600px'),
+          plotOutput('plot3', width='80%', height='600px')),
         
         tabPanel(
           title='About',
@@ -177,7 +184,14 @@ server = function(input,output,session) {
       ggplot(dat, aes(x=asOfDate, y=N)) +
         geom_area(aes(fill=Region), color='lightgray', position='stack',
                   size=.2, alpha=.9) +
-        labs(x='', y='Number of entities')
+        geom_line(data=entity.ofc[Id_Rssd==rssd],
+                  aes(x=asOfDate, y=N, color=factor('OFC', labels= str_wrap(
+                    'Offshore Financial Centers (IMF Classification)', 30))),
+                  lwd=1.3, lty=2) +
+        scale_color_manual(values='black') +
+        labs(x='', y='Number of entities', color='') +
+        guides(fill = guide_legend(order=1),
+               color = guide_legend(order=2))
 
     } })
   
@@ -186,13 +200,49 @@ server = function(input,output,session) {
       dat = data()[[3]][-1, .(Id_Rssd, Tier)]
       
       dat[, linkDist:= min(Tier) - 1, by='Id_Rssd']
-      dat = dat[!duplicated(Id_Rssd)]
+      dat = dat[!duplicated(Id_Rssd)][order(linkDist)][, .N, by='linkDist']
+      dat[, cumShare:= cumsum(N)/sum(N)]
       
-      ggplot(dat, aes(x = as.factor(linkDist))) +
-        geom_bar(fill='royalblue') +
+      p = ggplot(dat, aes(x = as.factor(linkDist), y = N)) +
+        geom_bar(stat='identity', fill='royalblue') +
         labs(x='Distance from center', y='Number of entities')
       
+      p + geom_line(aes(x = linkDist, y = cumShare*get_ymax(p)),
+                    lty=2, lwd=1.3, col='red') +
+        scale_y_continuous(sec.axis = sec_axis(
+          ~./get_ymax(p), 'Cum. fraction of entities',
+          breaks = seq(0,1,.25)))
+      
     } })
+  
+  output$plot3 = renderPlot({
+    # Most common states / countries
+    if (!is.null(data())) {
+      dat = data()[[3]][, .(Id_Rssd, label)]
+      dat = dat[!duplicated(Id_Rssd)]
+      dat[, label:= gsub('.*, *(.*)', '\\1', label)]
+      
+      dat = dat[, .N, by='label'][order(N)]
+      dat[, unit:= ifelse(label %in% c(state.abb,'DC'), 'States', 'Countries')]
+      dat = dat[dat[, tail(.I, 10), by='unit']$V1]
+      dat[unit=='States', label:= c(state.name, 'District of Columbia')[
+        match(label, c(state.abb,'DC'))]]
+      
+      p1 = ggplot(dat[unit=='States'], aes(x=factor(label, levels=label), y=N)) +
+        geom_bar(stat='identity', fill='coral') +
+        coord_flip() +
+        labs(x='', y='Number of entities') +
+        ggtitle('Top 10 States')
+      
+      p2 = ggplot(dat[unit=='Countries'], aes(x=factor(label, levels=label), y=N)) +
+        geom_bar(stat='identity', fill='coral') +
+        coord_flip() +
+        labs(x='', y='Number of entities') +
+        ggtitle('Top 10 Countries/Territories (outside U.S.)')
+      
+      grid.arrange(p1, p2, ncol=2)
+    }
+  })
   
   output$bhcTable = renderDataTable({
     if (!is.null(data())) {

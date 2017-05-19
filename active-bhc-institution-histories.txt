@@ -10713,3 +10713,4 @@
 1574834,"2016-07-01","CREDIT SUISSE HOLDINGS (USA), INC. changed from Domestic Entity Other to Intermediate Holding Companies."
 4846998,"2015-03-13","UBS AMERICAS HOLDING LLC located at NEW YORK, NY was established as a Domestic Entity Other."
 4846998,"2016-07-01","UBS AMERICAS HOLDING LLC changed from Domestic Entity Other to Intermediate Holding Companies."
+3833526,"2008-12-01","UK FINANCIAL INVESTMENTS LIMITED located at LONDON, 0, ENGLAND was established as a Financial Holding Company - Foreign"

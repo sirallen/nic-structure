@@ -111,8 +111,9 @@ getReport = function(rssd, dt_end=99991231, as_of_date) {
     
     POST(url, body=params, write_disk(file_name, overwrite=T))
     
-    txt2clean( pdf2txt(file_name), save_name=gsub('pdf','txt', file_name) )
   }
+  
+  txt2clean( pdf2txt(file_name), save_name=gsub('pdf','txt', file_name) )
   
 }
 

@@ -2,6 +2,8 @@
 cc = fread('entityTypeGrouping.csv')
 entity.region = fread('data/EntitiesByRegion.csv')
 entity.region[, asOfDate:= as.Date(asOfDate)]
+entity.ofc = fread('data/EntitiesByOFC.csv')
+entity.ofc[, asOfDate:= as.Date(asOfDate)]
 
 quoteStr = function(v) paste(paste0('\"', v, '\"'), collapse=',')
 
@@ -42,8 +44,14 @@ load_data = function(bhc, asOfDate) {
 }
 
 updateBhcList = function() {
+  mostRecentTxt = dir('../txt/', '.txt', full.names=T)
+  # Index of last file for each rssd
+  lastIdxByRssd = by(mostRecentTxt, str_extract(mostRecentTxt, '\\d+'),
+                     FUN=function(x) tail(x, 1))
+  mostRecentTxt = mostRecentTxt[lastIdxByRssd]
+  
   bhcList = unique(rbindlist(lapply(
-        dir('../txt/', '.txt', full.names=T),
+        mostRecentTxt,
         fread, nrows=1, select=c('Name','Id_Rssd') ) ))
   
   setkey(bhcList, Name)
@@ -52,5 +60,11 @@ updateBhcList = function() {
   
   save(bhcList, file = 'bhcList.RData')
 }
+
+get_ymax = function(ggplot_object) {
+  # return y-value of highest minor gridline
+  tail(ggplot_build(ggplot_object)$layout$panel_ranges[[1]]$y.minor_source, 1)
+}
+
 
 
