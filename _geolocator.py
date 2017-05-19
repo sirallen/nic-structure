@@ -1,6 +1,11 @@
 import pandas as pd
 import numpy as np
 import os, googlemaps, pickle, re
+import argparse
+
+argparser = argparse.ArgumentParser(description='Geolocate entities in NIC Organization Hierarchies.')
+argparser.add_argument('-r', '--rssd', nargs='+', help='list of rssds to geolocate')
+args = argparser.parse_args()
 
 abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
@@ -10,12 +15,18 @@ api_key = open('GOOGLEMAPS_API_KEY').read()
 
 gmaps = googlemaps.Client(key=api_key)
 
+# LocationMaster -- dictionary used to store geodata; if an entity's location has
+# already been geolocated, just pull the information from here; if it hasn't,
+# then add the geodata retrieved from Google Maps
 if os.path.isfile('app/LocationMaster'):
 	master = pickle.load(open('app/LocationMaster', 'rb+'))
 else:
 	master = dict()
 
 readfiles = [os.path.join('txt',f) for f in os.listdir('txt')]
+if args.rssd:
+  readfiles = filter(lambda x: re.search('\\d+', x).group() in args.rssd, readfiles)
+
 
 for readfile in readfiles:
   print('Reading  ', readfile)
