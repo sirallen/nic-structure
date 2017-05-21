@@ -8,13 +8,13 @@ library(rjson)
 library(gplots)
 library(ggplot2)
 library(gridExtra)
-source('_functions.R')
+source('_functions.R') # also loads some data
 
 load('bhcList.RData')
 # updated in observeEvent()
 bhcMaxTier = NULL
 
-knit('About.Rmd', quiet=TRUE)
+suppressWarnings(knit('About.Rmd', quiet=TRUE))
 
 legend.key = list(
   'Holding Company'       = 'red',
@@ -222,19 +222,24 @@ server = function(input,output,session) {
       dat = dat[!duplicated(Id_Rssd)]
       dat[, label:= gsub('.*, *(.*)', '\\1', label)]
       
-      dat = dat[, .N, by='label'][order(N)]
+      dat = dat[, .N, by='label']
       dat[, unit:= ifelse(label %in% c(state.abb,'DC'), 'States', 'Countries')]
-      dat = dat[dat[, tail(.I, 10), by='unit']$V1]
+      # full names for states
       dat[unit=='States', label:= c(state.name, 'District of Columbia')[
         match(label, c(state.abb,'DC'))]]
+      # pad with 'NULL' labels (N=0) if number of states or countries < 10
+      dat = null_pad_plot3(dat)
       
-      p1 = ggplot(dat[unit=='States'], aes(x=factor(label, levels=label), y=N)) +
+      dat = dat[order(unit, N)]
+      dat = dat[dat[, tail(.I, 10), by='unit']$V1]
+      
+      p1 = ggplot(dat[unit=='States'], aes(x=factor(label, label), y=N)) +
         geom_bar(stat='identity', fill='coral') +
         coord_flip() +
         labs(x='', y='Number of entities') +
         ggtitle('Top 10 States')
       
-      p2 = ggplot(dat[unit=='Countries'], aes(x=factor(label, levels=label), y=N)) +
+      p2 = ggplot(dat[unit=='Countries'], aes(x=factor(label, label), y=N)) +
         geom_bar(stat='identity', fill='coral') +
         coord_flip() +
         labs(x='', y='Number of entities') +

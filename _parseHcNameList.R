@@ -5,6 +5,8 @@ setwd('C:/Users/sirallen/FRBR/NIC-structure')
 library(data.table)
 library(stringr)
 
+# Install xpdf from http://www.foolabs.com/xpdf/download.html
+# and add to system PATH
 hcs = data.table(V1 = system2('pdftotext', args=c(
   '-layout','-nopgbrk','hc-name-list-pdf.pdf','-'), stdout=T))
 

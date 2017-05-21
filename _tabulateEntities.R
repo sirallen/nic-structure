@@ -66,9 +66,24 @@ dt = rbindlist( lapply( files, function(z) {
   dat = dat[, .N, by=.(Id_Rssd,Type.code)]
   dat[, Type.code:= cc$domain[match(Type.code, cc$Type.code)]]
   dat[, asOfDate:= as.Date( str_extract(z, '(?<=-)\\d+'), '%Y%m%d')]
-} ) ); rm(files)
+} ) )
 
 setnames(dt, 'Type.code', 'Type')
 
 fwrite(dt, 'app/data/EntitiesByType.csv')
+
+
+# Link-node ratio
+cat('Tabulating link-node ratios...\n')
+dt = rbindlist(lapply( files, function(z) {
+  rssd = as.numeric(str_extract(z, '\\d+'))
+  dat = fread(z, select='Id_Rssd')
+  
+  dat[, .(Id_Rssd = rssd,
+          asOfDate = as.Date( str_extract(z, '(?<=-)\\d+'), '%Y%m%d'),
+          link.node.ratio = .N / uniqueN(Id_Rssd))]
+})); rm(files)
+
+fwrite(dt, 'app/data/linkNodeRatio.csv')
+
 

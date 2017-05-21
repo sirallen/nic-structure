@@ -66,5 +66,21 @@ get_ymax = function(ggplot_object) {
   tail(ggplot_build(ggplot_object)$layout$panel_ranges[[1]]$y.minor_source, 1)
 }
 
-
+null_pad_plot3 = function(dat) {
+  # input is a data.table with country counts and labels and "unit"
+  # pad with 'NULL' labels (N=0) if number of states or countries < 10
+  n.states.missing = dat[unit=='States', 10 - .N]
+  n.countries.missing = dat[unit=='Countries', 10 - .N]
+  dat = rbind(
+    dat,
+    if (n.states.missing > 0) data.table(
+      label=paste0(mapply(strrep, ' ', 0:(n.states.missing-1)), 'NULL'),
+      N=0,
+      unit=rep('States', n.states.missing)),
+    if (n.countries.missing > 0) data.table(
+      label=paste0(mapply(strrep, ' ', 0:(n.countries.missing-1)), 'NULL'),
+      N=0,
+      unit=rep('Countries', n.countries.missing)))
+  dat
+}
 

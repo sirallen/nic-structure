@@ -25,3 +25,5 @@ W,State Savings Bank,1,Domestic Bank
 X,Article XII New York Investment Company,1,Domestic Nonbank
 Y,Foreign Bank,1,International Bank
 Z,Financial Holding Company - Foreign,,Holding Company
+AA,Foreign Bank,,Domestic Bank
+AB,Foreign Banking Organization as a BHC,,Holding Company

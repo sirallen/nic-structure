@@ -2,13 +2,15 @@
 output: html_document
 ---
 
+
+
 ## About
 
 I made this application with R's <code>shiny</code>, <code>RMarkdown</code>, and <code>networkD3</code> packages and the <code>D3.js</code> JavaScript library; the source files are available on <a href='https://github.com/sirallen/nic-structure' target='_blank'>my Github page</a>. It's a work in progress, so don't mind the bugs!
 
 <hr>
 
-**Note:** For now, the available holding companies are those currently active with at least $100 billion in assets, though I plan to make more available soon.
+**Note:** For now, the available holding companies are those currently active with at least $100 billion in assets, plus several others included for no particular reason. I do plan to make more available soon.
 
 <hr>
 
@@ -16,11 +18,21 @@ I made this application with R's <code>shiny</code>, <code>RMarkdown</code>, and
 
 A _bank holding company_ (BHC) is simply a firm that controls one or more banks. I've made an attempt here to visualize the structures of such firms, with an eye toward portraying the scale and complexity of organization. (Actually, I include not only BHCs but also Financial Holding Companies, Savings & Loan Holding Companies, and Intermediate Holding Companies. These are all monitored by the Federal Reserve and are required to provide the structural data discussed below. See <a href='https://www.ffiec.gov/nicpubweb/content/help/institution%20type%20description.htm' target='_blank'>here</a> for definitions of these types.)
 
-The underlying data come from the <a href='https://www.ffiec.gov/nicpubweb/nicweb/nichome.aspx' target='_blank'>National Information Center</a> (NIC) website, where holding company data can be queried via the Institution Search form. While the NIC reports data for U.S. companies only, some of them control a large number of international subsidiaries based in Europe, Asia, and elsewhere (think Bermuda, Nassau, the Caymans, and other idyllic vacation destinations). Some holding companies are themselves U.S. subsidiaries of foreign banking and financial organizations such as UBS, Barclays, and Credit Suisse. Together, these companies control over $15 trillion in assets.
+The underlying data come from the <a href='https://www.ffiec.gov/nicpubweb/nicweb/nichome.aspx' target='_blank'>National Information Center</a> (NIC) website, where holding company data can be queried via the Institution Search form. While the NIC reports complete data for U.S. companies only, some of them control a large number of international subsidiaries based in Europe, Asia, and elsewhere (think Bermuda, Nassau, the Caymans, and other idyllic vacation destinations). Some holding companies are themselves U.S. subsidiaries of foreign banking and financial organizations such as UBS, Barclays, and Credit Suisse. Together, these companies control over $15 trillion in assets.
 
 The figure below shows the size (measured by total assets) of the 20 largest HCs as of the end of 2016, along with their share of assets among the 115 HCs with at least $10 billion in assets:
 
-<img src="figure/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" />
+<img src="figure/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="800px" height="700px" style="display: block; margin: auto;" />
+
+There are a large number of medium- and small-sized holding companies that control less than $10 billion in assets. The figure below shows the total number of registered holding companies by type, with annotations of significant legislation. (More about this...). The data comes from scraping <a href='https://www.ffiec.gov/nicpubweb/nicweb/InstitutionHistory.aspx?parID_RSSD=1021628&parDT_END=99991231' target='_blank'>Institution Histories</a> on the NIC website, which can be used to identify when a firm was organized as a holding company. (A master list of firms, domestic and foreign, that were ever holding companies is available <a href='https://www.chicagofed.org/banking/financial-institution-reports/bhc-name-list' target='_blank'>here</a>.)
+
+<img src="figure/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="800px" height="600px" style="display: block; margin: auto;" />
+
+The plot below decomposes the quarterly churn into different event types described in the Institution Histories: establishments, acquisitions, closures, and changes in organization type. I've removed the large "jump" following the passage of the 1970 BHCA amendments, when over 900 companies registered as BHCs:
+
+<img src="figure/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="800px" height="600px" style="display: block; margin: auto;" />
+
+Now on to the structure data, which is the primary focus of this application;
 
 <hr>
 
@@ -40,6 +52,7 @@ The company structures are not strict hierarchies, in the sense that subsidiarie
 	
 The forms also provide information on entity types and locations. Most entities are given nondescript labels of either "Domestic Entity Other" or "International Nonbank Subsidiary of Domestic Entities"; others have more precise labels such as "Data Processing Servicer", "Securities Broker/Dealer", "Federal Savings Bank" and "Edge Corporation." (A glossary describing each of these types is available <a href='https://www.ffiec.gov/nicpubweb/content/help/institution%20type%20description.htm' target='_blank'>here</a>.) To simplify visualization, I've aggregated the types into eight categories as shown in the network legend. (A "nonbank", while classified as such, may engage in banking-related activities.) An entity's "location" refers to its physical location as reported in the FR Y-10.
 
+
 ### Research Questions
 * How can this data be used to characterize the complexity of financial instutitions? (Is there a better measure than simply counting the number of controlled entities?)
 
@@ -49,7 +62,7 @@ The forms also provide information on entity types and locations. Most entities 
 
 * How has the structure of these institutions changed over time? (More complex?)
 
-* What activities do non-banks engage in?
+* What activities do non-banks engage in? (If this info is not available directly, then maybe can discern from the names of entities.)
 
 * How are offshore financial centers (OFCs) incorporated into the structures?
 

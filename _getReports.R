@@ -13,7 +13,8 @@ params = list(
 )
 
 pdf2txt = function(file_name) {
-  
+  # Install xpdf from http://www.foolabs.com/xpdf/download.html
+  # and add to system PATH
   system2('pdftotext', args=c('-raw','-nopgbrk',file_name,'-'), stdout=T)
 
 }
@@ -111,9 +112,8 @@ getReport = function(rssd, dt_end=99991231, as_of_date) {
     
     POST(url, body=params, write_disk(file_name, overwrite=T))
     
+    txt2clean( pdf2txt(file_name), save_name=gsub('pdf','txt', file_name) )
   }
-  
-  txt2clean( pdf2txt(file_name), save_name=gsub('pdf','txt', file_name) )
   
 }
 
@@ -148,31 +148,54 @@ getInstPrimaryActivity = function(rssd, dt_end=99991231) {
 }
 
 
-getActiveBhcInstHistories = function() {
-  bhcNameList = fread('hc-name-list.txt')
-  rssdsActive = bhcNameList[is.na(NAME_END_DATE), ID_RSSD]
+getBhcParent = function(rssd, dtend=99991231) {
+  url = paste0(
+    'https://www.ffiec.gov/nicpubweb/nicweb/OrgHierarchySearchForm.aspx',
+    '?parID_RSSD=', rssd, '&parDT_END=', dt_end )
+  
+  html = read_html(url)
+  nodes = html_nodes(html, xpath='//select[@id="lbTopHolders"]/option')
+  if (length(nodes) > 0) {
+    parents = sapply(nodes, html_attr, 'value')
+  }
+}
+
+
+getBhcInstHistories = function() {
+  bhcNameList = fread('hc-name-list.txt', key='ID_RSSD')
+  bhcHistories_file = 'bhc-institution-histories.txt'
+  bhcHistories_done = if (file.exists(bhcHistories_file)) {
+    fread('bhc-institution-histories.txt') } else NULL
+  
   # Include large IHCs -- Credit Suisse USA, UBS Americas, BNP Paribas
   hc10bnRssds = fread('app/data/HC10bn.csv')$`RSSD ID`
-  rssdsActive = union(rssdsActive, hc10bnRssds)
+  rssdList = union(bhcNameList$ID_RSSD, hc10bnRssds)
+  rssdList = setdiff(rssdList, bhcHistories_done$Id_Rssd)
+  
   bhcHistories = list()
   
   i = 0
-  for (rssd in rssdsActive) {
+  for (rssd in rssdList) {
     i = i + 1
     if (i%%50 == 0) {
-      cat(i, ' of ', length(rssdsActive), '\n') }
+      cat(i, ' of ', length(rssdList), '\n') }
     j = as.character(rssd)
     
     # Will miss those that became inactive since hc-name-list updated
     tryCatch({
-      bhcHistories[[j]] = getInstHistory(rssd)},
+      dt_end = bhcNameList[J(rssd), NAME_END_DATE[.N]]
+      bhcHistories[[j]] = getInstHistory(
+        rssd, dt_end = if (!is.na(dt_end)) dt_end else 99991231) },
       error = function(e) message(e) )
   }
   
   bhcHistories = rbindlist(bhcHistories)
   setcolorder(bhcHistories, c('Id_Rssd','Event Date','Historical Event'))
   
-  fwrite(bhcHistories, 'active-bhc-institution-histories.txt', quote=T)
+  bhcHistories_done = rbind(bhcHistories_done, bhcHistories)
+  
+  setkey(bhcHistories_done, Id_Rssd, `Event Date`)
+  fwrite(bhcHistories_done, bhcHistories_file, quote=T)
   
 }
 
