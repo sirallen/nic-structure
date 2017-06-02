@@ -5,6 +5,7 @@ Shiny.addCustomMessageHandler('jsondata', function(message) {
 	dfnet  = message[1];
 
 	width = d3.select('.tab-pane.active').node().getBoundingClientRect().width;
+	height = window.innerHeight - 102;
 
 	var d3io = d3.select('#d3io');
 
@@ -12,23 +13,27 @@ Shiny.addCustomMessageHandler('jsondata', function(message) {
 		// create svg, map
 		var svg = d3io.append('svg')
 					  .attr('width', width)
-					  .attr('height', 670);
+					  .attr('height', height);
 
 		createMap(svg);
 	}
 
 	var svg = d3io.select('svg');
 
-	updateMap(svg, cities, dfnet, 5);
+	updateMap(svg, cities, dfnet, 20);
 
 });
 
 Shiny.addCustomMessageHandler('windowResize', function(message) {
 	// when change in window size detected, update svg width & projection
 	width = d3.select('.tab-pane.active').node().getBoundingClientRect().width;
-	projection.translate([7*width/15, height/2]);
+	// don't use getBoundingClientRect().height -- it is constant (cannot specify height='100%')
+	// but how do get this number 102 without hard-coding...?
+	height = window.innerHeight - 102;
+	//console.log('height:', height);
+	projection.translate([3*width/7, height/2]);
 
-	var svg = d3.select('#d3io svg').attr('width', width);
+	var svg = d3.select('#d3io svg').attr('width', width).attr('height', height);
 	
 	updatePaths(svg);
 });
@@ -53,7 +58,7 @@ var nodes;
 
 var projection = d3.geoOrthographic()
 	.scale(scale)
-	.translate([2*width/5, height/2])
+	.translate([3*width/7, height/2])
 	.rotate([origin.x, origin.y])
 	.center([0,0])
 	.clipAngle(90);
@@ -89,9 +94,7 @@ function createMap(svg) {
 	  .append('path')
 	  .attr('d', geoPath)
 	  .attr('class', 'countries')
-	  .style('fill', function(d) {
-	  	return "#FF9186"
-	  });
+	  .style('fill', '#FF9186');
 
 	 //https://bl.ocks.org/emeeks/af3c0114adfd9ead565e6c0f4a9c494e
 	function zoomed(){
@@ -103,12 +106,39 @@ function createMap(svg) {
 		projection.scale(scale*transform.k)
 				  .rotate([origin.x + r.x * k, origin.y + r.y]);
 
-		d3.selectAll('path.graticule').datum(graticule).attr('d', geoPath);
-		d3.selectAll('path').filter('.countries, .citynode, .arc').attr('d', geoPath);
-		d3.selectAll('text.citylabel').data(nodes)
-		  .attr('x', function(d) {return projection(d.coordinates)[0]})
-		  .attr('y', function(d) {return projection(d.coordinates)[1]});
+		updatePaths(svg);
 	};
+
+	// Add legend
+/*	var color = d3.scaleOrdinal()
+				  .domain(["Holding Company","Domestic Bank","Domestic Nonbank","International Bank","International Nonbank",
+				  	"Finance Company","Data Processing Servicer","Securities Broker/Dealer"])
+				  .range(["#FF0000","#CD6600","#3182BD","#000000","#8B008B","#32CD32","#116043","#FF7373"]);
+	var legendRectSize = 18;
+	var legendSpacing = 4;
+	var legend = svg.selectAll('.legend')
+					.data(color.domain())
+					.enter()
+					.append('g')
+					.attr('class', 'legend')
+					.attr('transform', function(d, i) {
+						var height = legendRectSize + legendSpacing;
+						var offset =  height * color.domain().length / 2;
+						var horz = legendRectSize;
+						var vert = i * height+4;
+						return 'translate(' + horz + ',' + vert + ')';
+					});
+
+	legend.append('rect')
+		  .attr('width', legendRectSize)
+		  .attr('height', legendRectSize)
+		  .style('fill', color)
+		  .style('stroke', color);
+
+	legend.append('text')
+		  .attr('x', legendRectSize + legendSpacing)
+		  .attr('y', legendRectSize - legendSpacing)
+		  .text(function(d) { return d; });*/
 
 };
 
@@ -196,6 +226,9 @@ function updateMap(svg, cities, dfnet, maxTier) {
 function updatePaths(svg) {
 	svg.selectAll('path.graticule').datum(graticule).attr('d', geoPath);
 	svg.selectAll('path').filter('.countries, .citynode, .arc').attr('d', geoPath);
+	d3.selectAll('text.citylabel').data(nodes)
+	  .attr('x', function(d) {return projection(d.coordinates)[0]})
+	  .attr('y', function(d) {return projection(d.coordinates)[1]});
 };
 
 

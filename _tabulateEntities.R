@@ -4,6 +4,7 @@ library(stringr)
 regions = fread('app/Country-regions_OFC.csv')
 states.rx = paste0('(',paste(state.abb, collapse='|'),'|DC)$')
 cc = fread('app/entityTypeGrouping.csv')
+hc.types = cc[group=='Holding Company', Type.code]
 
 files = dir('txt/', full.names=T)
 
@@ -11,7 +12,9 @@ files = dir('txt/', full.names=T)
 cat('Tabulating world regions...\n')
 dt = rbindlist( lapply( files, function(z) {
   rssd = as.numeric(str_extract(z, '\\d+'))
-  dat = fread(z, select=c('Id_Rssd','label'))
+  dat = fread(z, select=c('Id_Rssd','Type.code','label'))
+  
+  if (dat[, !Type.code[1] %in% hc.types] | !nrow(dat) > 1) return(NULL)
   
   # Unique entities
   dat = dat[!duplicated(Id_Rssd)]
@@ -33,7 +36,9 @@ fwrite(dt, 'app/data/EntitiesByRegion.csv')
 cat('Tabulating Offshore status...\n')
 dt = rbindlist( lapply( files, function(z) {
   rssd = as.numeric(str_extract(z, '\\d+'))
-  dat = fread(z, select=c('Id_Rssd','label'))
+  dat = fread(z, select=c('Id_Rssd','Type.code','label'))
+  
+  if (dat[, !Type.code[1] %in% hc.types] | !nrow(dat) > 1) return(NULL)
   
   # Unique entities
   dat = dat[!duplicated(Id_Rssd)]
@@ -59,6 +64,8 @@ dt = rbindlist( lapply( files, function(z) {
   rssd = as.numeric(str_extract(z, '\\d+'))
   dat = fread(z, select=c('Id_Rssd','Type.code'))
   
+  if (dat[, !Type.code[1] %in% hc.types] | !nrow(dat) > 1) return(NULL)
+  
   # Unique entities
   dat = dat[!duplicated(Id_Rssd)]
   dat[, Id_Rssd:= rssd]
@@ -77,11 +84,13 @@ fwrite(dt, 'app/data/EntitiesByType.csv')
 cat('Tabulating link-node ratios...\n')
 dt = rbindlist(lapply( files, function(z) {
   rssd = as.numeric(str_extract(z, '\\d+'))
-  dat = fread(z, select='Id_Rssd')
+  dat = fread(z, select=c('Id_Rssd','Type.code'))
+  
+  if (dat[, !Type.code[1] %in% hc.types] | !nrow(dat) > 1) return(NULL)
   
   dat[, .(Id_Rssd = rssd,
           asOfDate = as.Date( str_extract(z, '(?<=-)\\d+'), '%Y%m%d'),
-          link.node.ratio = .N / uniqueN(Id_Rssd))]
+          link.node.ratio = .N / (uniqueN(Id_Rssd)-1))]
 })); rm(files)
 
 fwrite(dt, 'app/data/linkNodeRatio.csv')

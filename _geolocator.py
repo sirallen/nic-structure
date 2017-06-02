@@ -5,6 +5,8 @@ import argparse
 
 argparser = argparse.ArgumentParser(description='Geolocate entities in NIC Organization Hierarchies.')
 argparser.add_argument('-r', '--rssd', nargs='+', help='list of rssds to geolocate')
+argparser.add_argument('-a', '--after', help='select files after a date yyyymmdd (inclusive)')
+argparser.add_argument('-b', '--before', help='select files before a date yyyymmdd (exclusive)')
 args = argparser.parse_args()
 
 abspath = os.path.abspath(__file__)
@@ -19,13 +21,17 @@ gmaps = googlemaps.Client(key=api_key)
 # already been geolocated, just pull the information from here; if it hasn't,
 # then add the geodata retrieved from Google Maps
 if os.path.isfile('app/LocationMaster'):
-	master = pickle.load(open('app/LocationMaster', 'rb+'))
+  master = pickle.load(open('app/LocationMaster', 'rb+'))
 else:
-	master = dict()
+  master = dict()
 
 readfiles = [os.path.join('txt',f) for f in os.listdir('txt')]
 if args.rssd:
   readfiles = filter(lambda x: re.search('\\d+', x).group() in args.rssd, readfiles)
+if args.before:
+  readfiles = filter(lambda x: re.search('(?<=-)\\d+', x).group() < args.before, readfiles)
+if args.after:
+  readfiles = filter(lambda x: re.search('(?<=-)\\d+', x).group() >= args.after, readfiles)
 
 
 for readfile in readfiles:
@@ -72,4 +78,5 @@ for readfile in readfiles:
 
 pickle.dump(master, open('app/LocationMaster', 'wb+'))
 
+pd.DataFrame.from_dict(master, orient='index').to_csv('LocationMaster.csv')
 

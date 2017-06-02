@@ -1,10 +1,59 @@
 Id_Rssd,Region,N,asOfDate
-1026632,Northern America,1,2010-03-31
-1026632,Northern America,1,2010-06-30
-1026632,Northern America,1,2010-09-30
-1026632,Northern America,1,2010-12-31
-1026632,Northern America,1,2011-03-31
-1026632,Northern America,1,2011-06-30
+1026632,Northern America,50,2004-03-31
+1026632,East Asia,2,2004-03-31
+1026632,Europe,6,2004-03-31
+1026632,Southeast Asia and Oceania,2,2004-03-31
+1026632,Northern America,51,2004-06-30
+1026632,East Asia,2,2004-06-30
+1026632,Europe,6,2004-06-30
+1026632,Southeast Asia and Oceania,2,2004-06-30
+1026632,Northern America,50,2004-09-30
+1026632,East Asia,2,2004-09-30
+1026632,Europe,6,2004-09-30
+1026632,Southeast Asia and Oceania,2,2004-09-30
+1026632,Northern America,38,2004-12-31
+1026632,East Asia,2,2004-12-31
+1026632,Europe,5,2004-12-31
+1026632,Southeast Asia and Oceania,2,2004-12-31
+1026632,Northern America,39,2005-03-31
+1026632,East Asia,2,2005-03-31
+1026632,Europe,5,2005-03-31
+1026632,Southeast Asia and Oceania,2,2005-03-31
+1026632,Northern America,39,2005-06-30
+1026632,East Asia,2,2005-06-30
+1026632,Europe,5,2005-06-30
+1026632,Southeast Asia and Oceania,2,2005-06-30
+1026632,Northern America,39,2005-09-30
+1026632,East Asia,2,2005-09-30
+1026632,Europe,5,2005-09-30
+1026632,Southeast Asia and Oceania,2,2005-09-30
+1026632,Northern America,39,2005-12-31
+1026632,East Asia,2,2005-12-31
+1026632,Europe,5,2005-12-31
+1026632,Southeast Asia and Oceania,2,2005-12-31
+1026632,Northern America,39,2006-03-31
+1026632,East Asia,2,2006-03-31
+1026632,Europe,5,2006-03-31
+1026632,Southeast Asia and Oceania,2,2006-03-31
+1026632,Northern America,40,2006-06-30
+1026632,East Asia,2,2006-06-30
+1026632,Europe,5,2006-06-30
+1026632,Southeast Asia and Oceania,2,2006-06-30
+1026632,Northern America,40,2006-09-30
+1026632,East Asia,2,2006-09-30
+1026632,Europe,5,2006-09-30
+1026632,Northern America,40,2006-12-31
+1026632,East Asia,2,2006-12-31
+1026632,Europe,5,2006-12-31
+1026632,Northern America,44,2007-03-31
+1026632,East Asia,2,2007-03-31
+1026632,Europe,5,2007-03-31
+1026632,Northern America,44,2007-06-30
+1026632,East Asia,2,2007-06-30
+1026632,Europe,5,2007-06-30
+1026632,Northern America,23,2007-09-30
+1026632,East Asia,2,2007-09-30
+1026632,Europe,5,2007-09-30
 1026632,Northern America,22,2011-09-30
 1026632,Europe,2,2011-09-30
 1026632,East Asia,1,2011-09-30
@@ -84,10 +133,43 @@ Id_Rssd,Region,N,asOfDate
 1026632,Europe,2,2016-09-30
 1026632,Southeast Asia and Oceania,8,2016-09-30
 1026632,East Asia,1,2016-09-30
-1026632,Northern America,35,2016-12-28
-1026632,Europe,2,2016-12-28
-1026632,Southeast Asia and Oceania,8,2016-12-28
-1026632,East Asia,1,2016-12-28
+1026632,Northern America,36,2016-12-31
+1026632,Europe,2,2016-12-31
+1026632,Southeast Asia and Oceania,8,2016-12-31
+1026632,East Asia,1,2016-12-31
+1026632,Northern America,36,2017-03-31
+1026632,Europe,2,2017-03-31
+1026632,Southeast Asia and Oceania,8,2017-03-31
+1026632,East Asia,1,2017-03-31
+1037003,Northern America,49,2004-03-31
+1037003,Caribbean,1,2004-03-31
+1037003,Northern America,49,2004-06-30
+1037003,Caribbean,1,2004-06-30
+1037003,Northern America,49,2004-09-30
+1037003,Caribbean,1,2004-09-30
+1037003,Northern America,50,2004-12-31
+1037003,Caribbean,1,2004-12-31
+1037003,Northern America,50,2005-03-31
+1037003,Caribbean,1,2005-03-31
+1037003,Northern America,50,2005-06-30
+1037003,Northern America,50,2005-09-30
+1037003,Northern America,47,2005-12-31
+1037003,Northern America,49,2006-03-31
+1037003,Northern America,49,2006-06-30
+1037003,Northern America,44,2006-09-30
+1037003,Northern America,40,2006-12-31
+1037003,Northern America,38,2007-03-31
+1037003,Northern America,37,2007-06-30
+1037003,Northern America,37,2007-09-30
+1037003,Northern America,39,2007-12-31
+1037003,Northern America,40,2008-03-31
+1037003,Northern America,40,2008-06-30
+1037003,Northern America,40,2008-09-30
+1037003,Northern America,39,2008-12-31
+1037003,Northern America,38,2009-03-31
+1037003,Northern America,41,2009-06-30
+1037003,Northern America,41,2009-09-30
+1037003,Northern America,40,2009-12-31
 1037003,Northern America,40,2010-03-31
 1037003,Northern America,40,2010-06-30
 1037003,Northern America,40,2010-09-30
@@ -156,9 +238,209 @@ Id_Rssd,Region,N,asOfDate
 1037003,Europe,10,2016-06-30
 1037003,Northern America,36,2016-09-30
 1037003,Europe,10,2016-09-30
-1037003,Northern America,37,2016-12-28
-1037003,Europe,10,2016-12-28
-1039502,Northern America,3709,2010-03-31
+1037003,Northern America,36,2016-12-31
+1037003,Europe,10,2016-12-31
+1037003,Northern America,34,2017-03-31
+1037003,Europe,7,2017-03-31
+1039502,Northern America,899,2004-03-31
+1039502,Caribbean,52,2004-03-31
+1039502,Southeast Asia and Oceania,63,2004-03-31
+1039502,Europe,188,2004-03-31
+1039502,Central and South America,23,2004-03-31
+1039502,East Asia,37,2004-03-31
+1039502,Africa,8,2004-03-31
+1039502,South Asia,7,2004-03-31
+1039502,Northern America,901,2004-06-30
+1039502,Caribbean,53,2004-06-30
+1039502,Southeast Asia and Oceania,63,2004-06-30
+1039502,Europe,175,2004-06-30
+1039502,Central and South America,22,2004-06-30
+1039502,East Asia,39,2004-06-30
+1039502,Africa,8,2004-06-30
+1039502,South Asia,7,2004-06-30
+1039502,Northern America,2567,2004-09-30
+1039502,Europe,174,2004-09-30
+1039502,East Asia,40,2004-09-30
+1039502,Southeast Asia and Oceania,64,2004-09-30
+1039502,Central and South America,22,2004-09-30
+1039502,Caribbean,69,2004-09-30
+1039502,Africa,7,2004-09-30
+1039502,South Asia,7,2004-09-30
+1039502,Northern America,2558,2004-12-31
+1039502,Europe,173,2004-12-31
+1039502,Caribbean,68,2004-12-31
+1039502,Southeast Asia and Oceania,63,2004-12-31
+1039502,Africa,7,2004-12-31
+1039502,East Asia,35,2004-12-31
+1039502,Central and South America,20,2004-12-31
+1039502,South Asia,6,2004-12-31
+1039502,Northern America,2546,2005-03-31
+1039502,Europe,216,2005-03-31
+1039502,Africa,9,2005-03-31
+1039502,East Asia,34,2005-03-31
+1039502,Caribbean,64,2005-03-31
+1039502,Southeast Asia and Oceania,62,2005-03-31
+1039502,Central and South America,20,2005-03-31
+1039502,South Asia,6,2005-03-31
+1039502,Northern America,2558,2005-06-30
+1039502,Europe,219,2005-06-30
+1039502,Africa,10,2005-06-30
+1039502,East Asia,35,2005-06-30
+1039502,Caribbean,64,2005-06-30
+1039502,Southeast Asia and Oceania,60,2005-06-30
+1039502,Central and South America,23,2005-06-30
+1039502,South Asia,6,2005-06-30
+1039502,Northern America,2583,2005-09-30
+1039502,Europe,218,2005-09-30
+1039502,Africa,10,2005-09-30
+1039502,East Asia,35,2005-09-30
+1039502,Caribbean,62,2005-09-30
+1039502,Southeast Asia and Oceania,61,2005-09-30
+1039502,Central and South America,23,2005-09-30
+1039502,South Asia,5,2005-09-30
+1039502,Northern America,2588,2005-12-31
+1039502,Europe,219,2005-12-31
+1039502,Africa,10,2005-12-31
+1039502,East Asia,30,2005-12-31
+1039502,Caribbean,58,2005-12-31
+1039502,Southeast Asia and Oceania,56,2005-12-31
+1039502,Central and South America,24,2005-12-31
+1039502,South Asia,5,2005-12-31
+1039502,Northern America,2619,2006-03-31
+1039502,Europe,221,2006-03-31
+1039502,Africa,10,2006-03-31
+1039502,East Asia,30,2006-03-31
+1039502,Caribbean,58,2006-03-31
+1039502,Southeast Asia and Oceania,56,2006-03-31
+1039502,Central and South America,24,2006-03-31
+1039502,South Asia,5,2006-03-31
+1039502,Northern America,2601,2006-06-30
+1039502,Europe,223,2006-06-30
+1039502,Africa,10,2006-06-30
+1039502,East Asia,30,2006-06-30
+1039502,Caribbean,58,2006-06-30
+1039502,Southeast Asia and Oceania,56,2006-06-30
+1039502,Central and South America,24,2006-06-30
+1039502,South Asia,5,2006-06-30
+1039502,Northern America,2603,2006-09-30
+1039502,Europe,222,2006-09-30
+1039502,Africa,12,2006-09-30
+1039502,Caribbean,57,2006-09-30
+1039502,East Asia,30,2006-09-30
+1039502,Southeast Asia and Oceania,56,2006-09-30
+1039502,Central and South America,25,2006-09-30
+1039502,South Asia,6,2006-09-30
+1039502,Northern America,2586,2006-12-31
+1039502,Europe,225,2006-12-31
+1039502,Africa,14,2006-12-31
+1039502,Caribbean,54,2006-12-31
+1039502,East Asia,30,2006-12-31
+1039502,Central and South America,27,2006-12-31
+1039502,Southeast Asia and Oceania,53,2006-12-31
+1039502,South Asia,8,2006-12-31
+1039502,Northern America,2534,2007-03-31
+1039502,Europe,221,2007-03-31
+1039502,Africa,18,2007-03-31
+1039502,Southeast Asia and Oceania,52,2007-03-31
+1039502,Central and South America,27,2007-03-31
+1039502,East Asia,31,2007-03-31
+1039502,South Asia,8,2007-03-31
+1039502,Caribbean,53,2007-03-31
+1039502,Northern America,2491,2007-06-30
+1039502,Europe,227,2007-06-30
+1039502,Africa,20,2007-06-30
+1039502,Southeast Asia and Oceania,51,2007-06-30
+1039502,Central and South America,27,2007-06-30
+1039502,East Asia,34,2007-06-30
+1039502,South Asia,8,2007-06-30
+1039502,Caribbean,52,2007-06-30
+1039502,Northern America,2502,2007-09-30
+1039502,Europe,222,2007-09-30
+1039502,Africa,20,2007-09-30
+1039502,Caribbean,50,2007-09-30
+1039502,Central and South America,39,2007-09-30
+1039502,Southeast Asia and Oceania,50,2007-09-30
+1039502,East Asia,34,2007-09-30
+1039502,South Asia,8,2007-09-30
+1039502,Northern America,2510,2007-12-31
+1039502,Europe,224,2007-12-31
+1039502,Africa,23,2007-12-31
+1039502,Caribbean,51,2007-12-31
+1039502,Central and South America,42,2007-12-31
+1039502,Southeast Asia and Oceania,51,2007-12-31
+1039502,East Asia,35,2007-12-31
+1039502,South Asia,8,2007-12-31
+1039502,Northern America,2512,2008-03-31
+1039502,Europe,222,2008-03-31
+1039502,Africa,25,2008-03-31
+1039502,Caribbean,54,2008-03-31
+1039502,Central and South America,42,2008-03-31
+1039502,South Asia,8,2008-03-31
+1039502,Southeast Asia and Oceania,49,2008-03-31
+1039502,East Asia,36,2008-03-31
+1039502,Northern America,3923,2008-06-30
+1039502,Africa,30,2008-06-30
+1039502,Caribbean,95,2008-06-30
+1039502,Central and South America,45,2008-06-30
+1039502,South Asia,10,2008-06-30
+1039502,East Asia,56,2008-06-30
+1039502,Europe,281,2008-06-30
+1039502,Southeast Asia and Oceania,55,2008-06-30
+1039502,Middle East,1,2008-06-30
+1039502,Northern America,4028,2008-09-30
+1039502,Europe,280,2008-09-30
+1039502,Africa,32,2008-09-30
+1039502,Caribbean,89,2008-09-30
+1039502,Central and South America,46,2008-09-30
+1039502,South Asia,10,2008-09-30
+1039502,East Asia,50,2008-09-30
+1039502,Southeast Asia and Oceania,55,2008-09-30
+1039502,Middle East,1,2008-09-30
+1039502,Northern America,3968,2008-12-31
+1039502,Africa,32,2008-12-31
+1039502,Caribbean,88,2008-12-31
+1039502,Central and South America,46,2008-12-31
+1039502,South Asia,11,2008-12-31
+1039502,East Asia,48,2008-12-31
+1039502,Europe,281,2008-12-31
+1039502,Southeast Asia and Oceania,53,2008-12-31
+1039502,Northern America,3920,2009-03-31
+1039502,Africa,33,2009-03-31
+1039502,Caribbean,83,2009-03-31
+1039502,Central and South America,46,2009-03-31
+1039502,South Asia,11,2009-03-31
+1039502,Europe,281,2009-03-31
+1039502,East Asia,45,2009-03-31
+1039502,Southeast Asia and Oceania,51,2009-03-31
+1039502,Middle East,1,2009-03-31
+1039502,Northern America,3841,2009-06-30
+1039502,Africa,34,2009-06-30
+1039502,Caribbean,77,2009-06-30
+1039502,Central and South America,40,2009-06-30
+1039502,South Asia,11,2009-06-30
+1039502,Europe,280,2009-06-30
+1039502,East Asia,45,2009-06-30
+1039502,Southeast Asia and Oceania,49,2009-06-30
+1039502,Middle East,1,2009-06-30
+1039502,Northern America,3805,2009-09-30
+1039502,Africa,34,2009-09-30
+1039502,Caribbean,76,2009-09-30
+1039502,Central and South America,41,2009-09-30
+1039502,South Asia,11,2009-09-30
+1039502,Europe,276,2009-09-30
+1039502,East Asia,43,2009-09-30
+1039502,Southeast Asia and Oceania,47,2009-09-30
+1039502,Middle East,1,2009-09-30
+1039502,Northern America,3779,2009-12-31
+1039502,Africa,33,2009-12-31
+1039502,Caribbean,77,2009-12-31
+1039502,Central and South America,45,2009-12-31
+1039502,South Asia,12,2009-12-31
+1039502,Europe,290,2009-12-31
+1039502,Southeast Asia and Oceania,54,2009-12-31
+1039502,East Asia,43,2009-12-31
+1039502,Middle East,2,2009-12-31
+1039502,Northern America,3711,2010-03-31
 1039502,Africa,32,2010-03-31
 1039502,South Asia,10,2010-03-31
 1039502,Europe,286,2010-03-31
@@ -167,7 +449,7 @@ Id_Rssd,Region,N,asOfDate
 1039502,East Asia,45,2010-03-31
 1039502,Central and South America,40,2010-03-31
 1039502,Middle East,2,2010-03-31
-1039502,Northern America,3682,2010-06-30
+1039502,Northern America,3684,2010-06-30
 1039502,Africa,32,2010-06-30
 1039502,South Asia,10,2010-06-30
 1039502,Europe,287,2010-06-30
@@ -176,7 +458,7 @@ Id_Rssd,Region,N,asOfDate
 1039502,East Asia,44,2010-06-30
 1039502,Central and South America,41,2010-06-30
 1039502,Middle East,3,2010-06-30
-1039502,Northern America,4212,2010-09-30
+1039502,Northern America,4214,2010-09-30
 1039502,Africa,33,2010-09-30
 1039502,South Asia,10,2010-09-30
 1039502,Europe,302,2010-09-30
@@ -185,7 +467,7 @@ Id_Rssd,Region,N,asOfDate
 1039502,East Asia,42,2010-09-30
 1039502,Central and South America,40,2010-09-30
 1039502,Middle East,3,2010-09-30
-1039502,Northern America,4169,2010-12-31
+1039502,Northern America,4171,2010-12-31
 1039502,Africa,33,2010-12-31
 1039502,South Asia,11,2010-12-31
 1039502,Europe,299,2010-12-31
@@ -194,7 +476,7 @@ Id_Rssd,Region,N,asOfDate
 1039502,East Asia,42,2010-12-31
 1039502,Central and South America,50,2010-12-31
 1039502,Middle East,4,2010-12-31
-1039502,Northern America,4079,2011-03-31
+1039502,Northern America,4081,2011-03-31
 1039502,Europe,295,2011-03-31
 1039502,Southeast Asia and Oceania,50,2011-03-31
 1039502,East Asia,42,2011-03-31
@@ -203,7 +485,7 @@ Id_Rssd,Region,N,asOfDate
 1039502,Central and South America,53,2011-03-31
 1039502,South Asia,11,2011-03-31
 1039502,Middle East,5,2011-03-31
-1039502,Northern America,4093,2011-06-30
+1039502,Northern America,4095,2011-06-30
 1039502,East Asia,44,2011-06-30
 1039502,Caribbean,77,2011-06-30
 1039502,Africa,34,2011-06-30
@@ -212,7 +494,7 @@ Id_Rssd,Region,N,asOfDate
 1039502,Central and South America,41,2011-06-30
 1039502,South Asia,11,2011-06-30
 1039502,Middle East,5,2011-06-30
-1039502,Northern America,4117,2011-09-30
+1039502,Northern America,4119,2011-09-30
 1039502,East Asia,53,2011-09-30
 1039502,Caribbean,84,2011-09-30
 1039502,Africa,41,2011-09-30
@@ -221,7 +503,7 @@ Id_Rssd,Region,N,asOfDate
 1039502,Central and South America,41,2011-09-30
 1039502,South Asia,13,2011-09-30
 1039502,Middle East,5,2011-09-30
-1039502,Northern America,3195,2011-12-31
+1039502,Northern America,3196,2011-12-31
 1039502,East Asia,53,2011-12-31
 1039502,Caribbean,85,2011-12-31
 1039502,Africa,43,2011-12-31
@@ -230,7 +512,7 @@ Id_Rssd,Region,N,asOfDate
 1039502,Central and South America,40,2011-12-31
 1039502,Middle East,5,2011-12-31
 1039502,South Asia,13,2011-12-31
-1039502,Northern America,3142,2012-03-31
+1039502,Northern America,3143,2012-03-31
 1039502,East Asia,53,2012-03-31
 1039502,Caribbean,97,2012-03-31
 1039502,Africa,44,2012-03-31
@@ -239,7 +521,7 @@ Id_Rssd,Region,N,asOfDate
 1039502,Southeast Asia and Oceania,51,2012-03-31
 1039502,Middle East,5,2012-03-31
 1039502,South Asia,13,2012-03-31
-1039502,Northern America,3140,2012-06-30
+1039502,Northern America,3141,2012-06-30
 1039502,East Asia,51,2012-06-30
 1039502,Caribbean,98,2012-06-30
 1039502,Africa,44,2012-06-30
@@ -248,7 +530,7 @@ Id_Rssd,Region,N,asOfDate
 1039502,Southeast Asia and Oceania,51,2012-06-30
 1039502,Middle East,5,2012-06-30
 1039502,South Asia,13,2012-06-30
-1039502,Northern America,3162,2012-09-30
+1039502,Northern America,3163,2012-09-30
 1039502,East Asia,53,2012-09-30
 1039502,Caribbean,105,2012-09-30
 1039502,Africa,44,2012-09-30
@@ -257,7 +539,7 @@ Id_Rssd,Region,N,asOfDate
 1039502,Southeast Asia and Oceania,52,2012-09-30
 1039502,Middle East,5,2012-09-30
 1039502,South Asia,13,2012-09-30
-1039502,Northern America,3229,2012-12-31
+1039502,Northern America,3230,2012-12-31
 1039502,East Asia,53,2012-12-31
 1039502,Caribbean,101,2012-12-31
 1039502,Africa,44,2012-12-31
@@ -266,7 +548,7 @@ Id_Rssd,Region,N,asOfDate
 1039502,Southeast Asia and Oceania,52,2012-12-31
 1039502,Middle East,5,2012-12-31
 1039502,South Asia,13,2012-12-31
-1039502,Northern America,3229,2013-03-31
+1039502,Northern America,3230,2013-03-31
 1039502,East Asia,53,2013-03-31
 1039502,Caribbean,101,2013-03-31
 1039502,Africa,44,2013-03-31
@@ -401,15 +683,155 @@ Id_Rssd,Region,N,asOfDate
 1039502,South Asia,11,2016-09-30
 1039502,Africa,30,2016-09-30
 1039502,Middle East,3,2016-09-30
-1039502,Northern America,1352,2016-12-28
-1039502,East Asia,35,2016-12-28
-1039502,Europe,269,2016-12-28
-1039502,Southeast Asia and Oceania,53,2016-12-28
-1039502,Central and South America,30,2016-12-28
-1039502,South Asia,11,2016-12-28
-1039502,Africa,36,2016-12-28
-1039502,Caribbean,104,2016-12-28
-1039502,Middle East,3,2016-12-28
+1039502,Northern America,1121,2016-12-31
+1039502,East Asia,34,2016-12-31
+1039502,Europe,279,2016-12-31
+1039502,Southeast Asia and Oceania,54,2016-12-31
+1039502,Central and South America,30,2016-12-31
+1039502,South Asia,11,2016-12-31
+1039502,Africa,30,2016-12-31
+1039502,Caribbean,93,2016-12-31
+1039502,Middle East,3,2016-12-31
+1039502,Northern America,1047,2017-03-31
+1039502,Europe,281,2017-03-31
+1039502,Southeast Asia and Oceania,54,2017-03-31
+1039502,Central and South America,30,2017-03-31
+1039502,East Asia,33,2017-03-31
+1039502,South Asia,11,2017-03-31
+1039502,Africa,28,2017-03-31
+1039502,Caribbean,90,2017-03-31
+1039502,Middle East,3,2017-03-31
+1068025,Northern America,800,2004-03-31
+1068025,East Asia,6,2004-03-31
+1068025,Caribbean,1,2004-03-31
+1068025,Southeast Asia and Oceania,13,2004-03-31
+1068025,Europe,16,2004-03-31
+1068025,Central and South America,2,2004-03-31
+1068025,Northern America,772,2004-06-30
+1068025,East Asia,6,2004-06-30
+1068025,Caribbean,1,2004-06-30
+1068025,Southeast Asia and Oceania,12,2004-06-30
+1068025,Europe,16,2004-06-30
+1068025,Central and South America,2,2004-06-30
+1068025,Northern America,772,2004-09-30
+1068025,East Asia,6,2004-09-30
+1068025,Caribbean,1,2004-09-30
+1068025,Southeast Asia and Oceania,12,2004-09-30
+1068025,Europe,16,2004-09-30
+1068025,Central and South America,2,2004-09-30
+1068025,Northern America,784,2004-12-31
+1068025,East Asia,6,2004-12-31
+1068025,Caribbean,1,2004-12-31
+1068025,Southeast Asia and Oceania,12,2004-12-31
+1068025,Europe,17,2004-12-31
+1068025,Central and South America,2,2004-12-31
+1068025,Northern America,780,2005-03-31
+1068025,East Asia,5,2005-03-31
+1068025,Caribbean,1,2005-03-31
+1068025,Southeast Asia and Oceania,12,2005-03-31
+1068025,Europe,17,2005-03-31
+1068025,Central and South America,2,2005-03-31
+1068025,Northern America,780,2005-06-30
+1068025,East Asia,5,2005-06-30
+1068025,Caribbean,1,2005-06-30
+1068025,Southeast Asia and Oceania,12,2005-06-30
+1068025,Europe,15,2005-06-30
+1068025,Central and South America,2,2005-06-30
+1068025,Northern America,754,2005-09-30
+1068025,East Asia,5,2005-09-30
+1068025,Caribbean,1,2005-09-30
+1068025,Southeast Asia and Oceania,12,2005-09-30
+1068025,Europe,15,2005-09-30
+1068025,Central and South America,2,2005-09-30
+1068025,Northern America,739,2005-12-31
+1068025,East Asia,6,2005-12-31
+1068025,Caribbean,1,2005-12-31
+1068025,Southeast Asia and Oceania,12,2005-12-31
+1068025,Europe,14,2005-12-31
+1068025,Central and South America,2,2005-12-31
+1068025,Northern America,733,2006-03-31
+1068025,East Asia,6,2006-03-31
+1068025,Caribbean,1,2006-03-31
+1068025,Southeast Asia and Oceania,12,2006-03-31
+1068025,Europe,14,2006-03-31
+1068025,Central and South America,2,2006-03-31
+1068025,Northern America,743,2006-06-30
+1068025,East Asia,6,2006-06-30
+1068025,Caribbean,1,2006-06-30
+1068025,Southeast Asia and Oceania,12,2006-06-30
+1068025,Europe,14,2006-06-30
+1068025,Central and South America,2,2006-06-30
+1068025,Northern America,739,2006-09-30
+1068025,East Asia,6,2006-09-30
+1068025,Caribbean,1,2006-09-30
+1068025,Southeast Asia and Oceania,12,2006-09-30
+1068025,Europe,14,2006-09-30
+1068025,Central and South America,2,2006-09-30
+1068025,Northern America,734,2006-12-31
+1068025,East Asia,6,2006-12-31
+1068025,Southeast Asia and Oceania,12,2006-12-31
+1068025,Europe,14,2006-12-31
+1068025,Central and South America,2,2006-12-31
+1068025,Northern America,739,2007-03-31
+1068025,East Asia,6,2007-03-31
+1068025,Southeast Asia and Oceania,12,2007-03-31
+1068025,Europe,14,2007-03-31
+1068025,Central and South America,2,2007-03-31
+1068025,Northern America,240,2007-06-30
+1068025,East Asia,6,2007-06-30
+1068025,Southeast Asia and Oceania,12,2007-06-30
+1068025,Europe,14,2007-06-30
+1068025,Central and South America,2,2007-06-30
+1068025,Northern America,205,2007-09-30
+1068025,East Asia,6,2007-09-30
+1068025,Southeast Asia and Oceania,12,2007-09-30
+1068025,Europe,13,2007-09-30
+1068025,Central and South America,2,2007-09-30
+1068025,Northern America,185,2007-12-31
+1068025,East Asia,6,2007-12-31
+1068025,Southeast Asia and Oceania,12,2007-12-31
+1068025,Europe,13,2007-12-31
+1068025,Central and South America,2,2007-12-31
+1068025,Northern America,192,2008-03-31
+1068025,Europe,15,2008-03-31
+1068025,East Asia,6,2008-03-31
+1068025,Southeast Asia and Oceania,12,2008-03-31
+1068025,Central and South America,2,2008-03-31
+1068025,Northern America,192,2008-06-30
+1068025,Europe,15,2008-06-30
+1068025,East Asia,6,2008-06-30
+1068025,Southeast Asia and Oceania,12,2008-06-30
+1068025,Central and South America,1,2008-06-30
+1068025,Northern America,192,2008-09-30
+1068025,Europe,15,2008-09-30
+1068025,East Asia,6,2008-09-30
+1068025,Southeast Asia and Oceania,12,2008-09-30
+1068025,Central and South America,1,2008-09-30
+1068025,Northern America,198,2008-12-31
+1068025,Europe,15,2008-12-31
+1068025,East Asia,6,2008-12-31
+1068025,Southeast Asia and Oceania,12,2008-12-31
+1068025,Central and South America,1,2008-12-31
+1068025,Northern America,195,2009-03-31
+1068025,Europe,16,2009-03-31
+1068025,East Asia,6,2009-03-31
+1068025,Southeast Asia and Oceania,12,2009-03-31
+1068025,Central and South America,1,2009-03-31
+1068025,Northern America,192,2009-06-30
+1068025,East Asia,6,2009-06-30
+1068025,Southeast Asia and Oceania,12,2009-06-30
+1068025,Europe,15,2009-06-30
+1068025,Central and South America,1,2009-06-30
+1068025,Northern America,192,2009-09-30
+1068025,East Asia,6,2009-09-30
+1068025,Southeast Asia and Oceania,12,2009-09-30
+1068025,Europe,15,2009-09-30
+1068025,Central and South America,1,2009-09-30
+1068025,Northern America,182,2009-12-31
+1068025,Southeast Asia and Oceania,12,2009-12-31
+1068025,East Asia,5,2009-12-31
+1068025,Europe,15,2009-12-31
+1068025,Central and South America,1,2009-12-31
 1068025,Northern America,178,2010-03-31
 1068025,Southeast Asia and Oceania,12,2010-03-31
 1068025,East Asia,5,2010-03-31
@@ -530,9 +952,105 @@ Id_Rssd,Region,N,asOfDate
 1068025,Northern America,100,2016-09-30
 1068025,Southeast Asia and Oceania,1,2016-09-30
 1068025,Europe,11,2016-09-30
-1068025,Northern America,89,2016-12-28
-1068025,Southeast Asia and Oceania,1,2016-12-28
-1068025,Europe,11,2016-12-28
+1068025,Northern America,85,2016-12-31
+1068025,Southeast Asia and Oceania,1,2016-12-31
+1068025,Europe,11,2016-12-31
+1068025,Northern America,82,2017-03-31
+1068025,Southeast Asia and Oceania,1,2017-03-31
+1068025,Europe,11,2017-03-31
+1068191,Northern America,68,2004-03-31
+1068191,East Asia,1,2004-03-31
+1068191,Caribbean,1,2004-03-31
+1068191,Europe,1,2004-03-31
+1068191,Northern America,67,2004-06-30
+1068191,East Asia,1,2004-06-30
+1068191,Caribbean,1,2004-06-30
+1068191,Europe,1,2004-06-30
+1068191,Northern America,69,2004-09-30
+1068191,East Asia,1,2004-09-30
+1068191,Caribbean,1,2004-09-30
+1068191,Europe,1,2004-09-30
+1068191,Northern America,77,2004-12-31
+1068191,East Asia,1,2004-12-31
+1068191,Caribbean,1,2004-12-31
+1068191,Europe,1,2004-12-31
+1068191,Northern America,76,2005-03-31
+1068191,East Asia,1,2005-03-31
+1068191,Caribbean,1,2005-03-31
+1068191,Europe,1,2005-03-31
+1068191,Northern America,71,2005-06-30
+1068191,East Asia,1,2005-06-30
+1068191,Caribbean,1,2005-06-30
+1068191,Europe,1,2005-06-30
+1068191,Northern America,71,2005-09-30
+1068191,East Asia,1,2005-09-30
+1068191,Caribbean,1,2005-09-30
+1068191,Northern America,70,2005-12-31
+1068191,East Asia,1,2005-12-31
+1068191,Caribbean,1,2005-12-31
+1068191,Northern America,77,2006-03-31
+1068191,East Asia,1,2006-03-31
+1068191,Caribbean,1,2006-03-31
+1068191,Northern America,69,2006-06-30
+1068191,East Asia,1,2006-06-30
+1068191,Caribbean,2,2006-06-30
+1068191,Europe,1,2006-06-30
+1068191,Northern America,71,2006-09-30
+1068191,East Asia,1,2006-09-30
+1068191,Caribbean,2,2006-09-30
+1068191,Europe,1,2006-09-30
+1068191,Northern America,73,2006-12-31
+1068191,East Asia,1,2006-12-31
+1068191,Caribbean,2,2006-12-31
+1068191,Europe,1,2006-12-31
+1068191,Northern America,72,2007-03-31
+1068191,East Asia,1,2007-03-31
+1068191,Caribbean,2,2007-03-31
+1068191,Europe,1,2007-03-31
+1068191,Northern America,73,2007-06-30
+1068191,East Asia,1,2007-06-30
+1068191,Caribbean,2,2007-06-30
+1068191,Europe,1,2007-06-30
+1068191,Northern America,88,2007-09-30
+1068191,East Asia,1,2007-09-30
+1068191,Caribbean,2,2007-09-30
+1068191,Europe,1,2007-09-30
+1068191,Northern America,87,2007-12-31
+1068191,East Asia,1,2007-12-31
+1068191,Caribbean,2,2007-12-31
+1068191,Europe,1,2007-12-31
+1068191,Northern America,88,2008-03-31
+1068191,East Asia,1,2008-03-31
+1068191,Caribbean,2,2008-03-31
+1068191,Europe,1,2008-03-31
+1068191,Northern America,89,2008-06-30
+1068191,East Asia,1,2008-06-30
+1068191,Caribbean,2,2008-06-30
+1068191,Europe,1,2008-06-30
+1068191,Northern America,89,2008-09-30
+1068191,East Asia,1,2008-09-30
+1068191,Caribbean,2,2008-09-30
+1068191,Europe,1,2008-09-30
+1068191,Northern America,87,2008-12-31
+1068191,East Asia,1,2008-12-31
+1068191,Caribbean,2,2008-12-31
+1068191,Europe,1,2008-12-31
+1068191,Northern America,92,2009-03-31
+1068191,East Asia,1,2009-03-31
+1068191,Caribbean,2,2009-03-31
+1068191,Europe,1,2009-03-31
+1068191,Northern America,92,2009-06-30
+1068191,East Asia,1,2009-06-30
+1068191,Caribbean,2,2009-06-30
+1068191,Europe,1,2009-06-30
+1068191,Northern America,89,2009-09-30
+1068191,East Asia,1,2009-09-30
+1068191,Caribbean,2,2009-09-30
+1068191,Europe,1,2009-09-30
+1068191,Northern America,86,2009-12-31
+1068191,East Asia,1,2009-12-31
+1068191,Caribbean,2,2009-12-31
+1068191,Europe,1,2009-12-31
 1068191,Northern America,86,2010-03-31
 1068191,East Asia,1,2010-03-31
 1068191,Caribbean,2,2010-03-31
@@ -606,7 +1124,163 @@ Id_Rssd,Region,N,asOfDate
 1068191,East Asia,1,2016-06-30
 1068191,Northern America,102,2016-09-30
 1068191,East Asia,1,2016-09-30
-1068191,Northern America,102,2016-12-28
+1068191,Northern America,103,2016-12-31
+1068191,Northern America,102,2017-03-31
+1069778,Northern America,1091,2004-03-31
+1069778,Central and South America,2,2004-03-31
+1069778,Europe,3,2004-03-31
+1069778,East Asia,3,2004-03-31
+1069778,Caribbean,2,2004-03-31
+1069778,Northern America,1092,2004-06-30
+1069778,Central and South America,2,2004-06-30
+1069778,Europe,3,2004-06-30
+1069778,East Asia,3,2004-06-30
+1069778,Caribbean,3,2004-06-30
+1069778,Northern America,1104,2004-09-30
+1069778,Central and South America,2,2004-09-30
+1069778,Europe,3,2004-09-30
+1069778,East Asia,3,2004-09-30
+1069778,Caribbean,3,2004-09-30
+1069778,Northern America,1128,2004-12-31
+1069778,Central and South America,2,2004-12-31
+1069778,Europe,3,2004-12-31
+1069778,East Asia,3,2004-12-31
+1069778,Southeast Asia and Oceania,1,2004-12-31
+1069778,Caribbean,3,2004-12-31
+1069778,Northern America,1152,2005-03-31
+1069778,Central and South America,2,2005-03-31
+1069778,Europe,3,2005-03-31
+1069778,East Asia,3,2005-03-31
+1069778,Southeast Asia and Oceania,1,2005-03-31
+1069778,Caribbean,3,2005-03-31
+1069778,Northern America,1174,2005-06-30
+1069778,Central and South America,2,2005-06-30
+1069778,Europe,3,2005-06-30
+1069778,East Asia,3,2005-06-30
+1069778,Southeast Asia and Oceania,1,2005-06-30
+1069778,Caribbean,3,2005-06-30
+1069778,Northern America,1195,2005-09-30
+1069778,Central and South America,2,2005-09-30
+1069778,Europe,3,2005-09-30
+1069778,East Asia,3,2005-09-30
+1069778,Southeast Asia and Oceania,1,2005-09-30
+1069778,Caribbean,4,2005-09-30
+1069778,Northern America,1223,2005-12-31
+1069778,Central and South America,2,2005-12-31
+1069778,Europe,3,2005-12-31
+1069778,East Asia,3,2005-12-31
+1069778,Southeast Asia and Oceania,1,2005-12-31
+1069778,Caribbean,4,2005-12-31
+1069778,Northern America,1233,2006-03-31
+1069778,Central and South America,2,2006-03-31
+1069778,Europe,3,2006-03-31
+1069778,East Asia,3,2006-03-31
+1069778,Southeast Asia and Oceania,1,2006-03-31
+1069778,Caribbean,4,2006-03-31
+1069778,Northern America,1249,2006-06-30
+1069778,Central and South America,2,2006-06-30
+1069778,Europe,3,2006-06-30
+1069778,East Asia,3,2006-06-30
+1069778,Southeast Asia and Oceania,1,2006-06-30
+1069778,Caribbean,4,2006-06-30
+1069778,Northern America,1349,2006-09-30
+1069778,Central and South America,2,2006-09-30
+1069778,Southeast Asia and Oceania,3,2006-09-30
+1069778,South Asia,1,2006-09-30
+1069778,Europe,47,2006-09-30
+1069778,East Asia,6,2006-09-30
+1069778,Caribbean,9,2006-09-30
+1069778,Northern America,1371,2006-12-31
+1069778,Central and South America,2,2006-12-31
+1069778,Southeast Asia and Oceania,3,2006-12-31
+1069778,South Asia,1,2006-12-31
+1069778,Europe,47,2006-12-31
+1069778,East Asia,6,2006-12-31
+1069778,Caribbean,9,2006-12-31
+1069778,Northern America,1441,2007-03-31
+1069778,Central and South America,1,2007-03-31
+1069778,Southeast Asia and Oceania,4,2007-03-31
+1069778,South Asia,1,2007-03-31
+1069778,Europe,43,2007-03-31
+1069778,East Asia,6,2007-03-31
+1069778,Caribbean,10,2007-03-31
+1069778,Northern America,439,2007-06-30
+1069778,Central and South America,1,2007-06-30
+1069778,Southeast Asia and Oceania,4,2007-06-30
+1069778,South Asia,1,2007-06-30
+1069778,Europe,44,2007-06-30
+1069778,East Asia,6,2007-06-30
+1069778,Caribbean,10,2007-06-30
+1069778,Northern America,316,2007-09-30
+1069778,Southeast Asia and Oceania,4,2007-09-30
+1069778,South Asia,1,2007-09-30
+1069778,Europe,45,2007-09-30
+1069778,East Asia,6,2007-09-30
+1069778,Caribbean,10,2007-09-30
+1069778,Central and South America,1,2007-09-30
+1069778,Northern America,325,2007-12-31
+1069778,Central and South America,2,2007-12-31
+1069778,Southeast Asia and Oceania,4,2007-12-31
+1069778,South Asia,1,2007-12-31
+1069778,Europe,45,2007-12-31
+1069778,East Asia,6,2007-12-31
+1069778,Caribbean,10,2007-12-31
+1069778,Northern America,336,2008-03-31
+1069778,Central and South America,2,2008-03-31
+1069778,Southeast Asia and Oceania,4,2008-03-31
+1069778,South Asia,1,2008-03-31
+1069778,Europe,47,2008-03-31
+1069778,East Asia,7,2008-03-31
+1069778,Caribbean,10,2008-03-31
+1069778,Northern America,354,2008-06-30
+1069778,Caribbean,15,2008-06-30
+1069778,Central and South America,2,2008-06-30
+1069778,Southeast Asia and Oceania,4,2008-06-30
+1069778,South Asia,1,2008-06-30
+1069778,Europe,47,2008-06-30
+1069778,East Asia,8,2008-06-30
+1069778,Northern America,352,2008-09-30
+1069778,Central and South America,2,2008-09-30
+1069778,Southeast Asia and Oceania,6,2008-09-30
+1069778,South Asia,1,2008-09-30
+1069778,Europe,48,2008-09-30
+1069778,East Asia,8,2008-09-30
+1069778,Caribbean,15,2008-09-30
+1069778,Northern America,539,2008-12-31
+1069778,East Asia,9,2008-12-31
+1069778,Caribbean,15,2008-12-31
+1069778,Central and South America,2,2008-12-31
+1069778,Southeast Asia and Oceania,6,2008-12-31
+1069778,South Asia,3,2008-12-31
+1069778,Europe,47,2008-12-31
+1069778,Northern America,540,2009-03-31
+1069778,East Asia,9,2009-03-31
+1069778,Caribbean,15,2009-03-31
+1069778,Central and South America,2,2009-03-31
+1069778,Southeast Asia and Oceania,6,2009-03-31
+1069778,South Asia,3,2009-03-31
+1069778,Europe,46,2009-03-31
+1069778,Northern America,546,2009-06-30
+1069778,East Asia,9,2009-06-30
+1069778,Caribbean,15,2009-06-30
+1069778,Central and South America,2,2009-06-30
+1069778,Southeast Asia and Oceania,6,2009-06-30
+1069778,South Asia,3,2009-06-30
+1069778,Europe,46,2009-06-30
+1069778,Northern America,526,2009-09-30
+1069778,East Asia,9,2009-09-30
+1069778,Caribbean,15,2009-09-30
+1069778,Central and South America,2,2009-09-30
+1069778,Southeast Asia and Oceania,8,2009-09-30
+1069778,South Asia,3,2009-09-30
+1069778,Europe,49,2009-09-30
+1069778,Northern America,539,2009-12-31
+1069778,Caribbean,15,2009-12-31
+1069778,Central and South America,8,2009-12-31
+1069778,East Asia,9,2009-12-31
+1069778,Europe,65,2009-12-31
+1069778,Southeast Asia and Oceania,12,2009-12-31
+1069778,South Asia,4,2009-12-31
 1069778,Northern America,512,2010-03-31
 1069778,Caribbean,13,2010-03-31
 1069778,Central and South America,7,2010-03-31
@@ -690,33 +1364,33 @@ Id_Rssd,Region,N,asOfDate
 1069778,Europe,58,2012-12-31
 1069778,Southeast Asia and Oceania,8,2012-12-31
 1069778,South Asia,4,2012-12-31
-1069778,Caribbean,37,2012-12-31
+1069778,Caribbean,38,2012-12-31
 1069778,Northern America,513,2013-03-31
 1069778,Central and South America,8,2013-03-31
 1069778,East Asia,8,2013-03-31
 1069778,Europe,59,2013-03-31
 1069778,Southeast Asia and Oceania,6,2013-03-31
 1069778,South Asia,4,2013-03-31
-1069778,Caribbean,37,2013-03-31
+1069778,Caribbean,38,2013-03-31
 1069778,Northern America,515,2013-06-30
 1069778,Central and South America,8,2013-06-30
 1069778,East Asia,8,2013-06-30
 1069778,Europe,58,2013-06-30
 1069778,Southeast Asia and Oceania,6,2013-06-30
 1069778,South Asia,4,2013-06-30
-1069778,Caribbean,37,2013-06-30
+1069778,Caribbean,38,2013-06-30
 1069778,Northern America,533,2013-09-30
 1069778,Central and South America,8,2013-09-30
 1069778,East Asia,8,2013-09-30
 1069778,Europe,62,2013-09-30
 1069778,Southeast Asia and Oceania,6,2013-09-30
 1069778,South Asia,4,2013-09-30
-1069778,Caribbean,39,2013-09-30
+1069778,Caribbean,40,2013-09-30
 1069778,Northern America,542,2013-12-31
 1069778,Southeast Asia and Oceania,11,2013-12-31
 1069778,South Asia,4,2013-12-31
 1069778,East Asia,11,2013-12-31
-1069778,Caribbean,39,2013-12-31
+1069778,Caribbean,40,2013-12-31
 1069778,Europe,68,2013-12-31
 1069778,Middle East,1,2013-12-31
 1069778,Central and South America,8,2013-12-31
@@ -724,7 +1398,7 @@ Id_Rssd,Region,N,asOfDate
 1069778,Southeast Asia and Oceania,11,2014-03-31
 1069778,South Asia,4,2014-03-31
 1069778,East Asia,11,2014-03-31
-1069778,Caribbean,39,2014-03-31
+1069778,Caribbean,40,2014-03-31
 1069778,Europe,67,2014-03-31
 1069778,Middle East,1,2014-03-31
 1069778,Central and South America,8,2014-03-31
@@ -732,7 +1406,7 @@ Id_Rssd,Region,N,asOfDate
 1069778,Southeast Asia and Oceania,11,2014-06-30
 1069778,South Asia,4,2014-06-30
 1069778,East Asia,11,2014-06-30
-1069778,Caribbean,39,2014-06-30
+1069778,Caribbean,40,2014-06-30
 1069778,Europe,67,2014-06-30
 1069778,Middle East,1,2014-06-30
 1069778,Central and South America,8,2014-06-30
@@ -740,7 +1414,7 @@ Id_Rssd,Region,N,asOfDate
 1069778,Southeast Asia and Oceania,11,2014-09-30
 1069778,South Asia,4,2014-09-30
 1069778,East Asia,11,2014-09-30
-1069778,Caribbean,39,2014-09-30
+1069778,Caribbean,40,2014-09-30
 1069778,Europe,67,2014-09-30
 1069778,Middle East,1,2014-09-30
 1069778,Central and South America,8,2014-09-30
@@ -748,7 +1422,7 @@ Id_Rssd,Region,N,asOfDate
 1069778,Southeast Asia and Oceania,10,2014-12-31
 1069778,South Asia,4,2014-12-31
 1069778,East Asia,11,2014-12-31
-1069778,Caribbean,39,2014-12-31
+1069778,Caribbean,40,2014-12-31
 1069778,Europe,68,2014-12-31
 1069778,Middle East,1,2014-12-31
 1069778,Central and South America,8,2014-12-31
@@ -756,7 +1430,7 @@ Id_Rssd,Region,N,asOfDate
 1069778,Southeast Asia and Oceania,9,2015-03-31
 1069778,South Asia,4,2015-03-31
 1069778,East Asia,11,2015-03-31
-1069778,Caribbean,39,2015-03-31
+1069778,Caribbean,40,2015-03-31
 1069778,Europe,68,2015-03-31
 1069778,Middle East,1,2015-03-31
 1069778,Central and South America,8,2015-03-31
@@ -766,7 +1440,7 @@ Id_Rssd,Region,N,asOfDate
 1069778,Europe,68,2015-06-30
 1069778,Southeast Asia and Oceania,9,2015-06-30
 1069778,South Asia,4,2015-06-30
-1069778,Caribbean,36,2015-06-30
+1069778,Caribbean,37,2015-06-30
 1069778,Middle East,1,2015-06-30
 1069778,Northern America,629,2015-09-30
 1069778,Central and South America,11,2015-09-30
@@ -774,7 +1448,7 @@ Id_Rssd,Region,N,asOfDate
 1069778,Europe,72,2015-09-30
 1069778,Southeast Asia and Oceania,8,2015-09-30
 1069778,South Asia,4,2015-09-30
-1069778,Caribbean,36,2015-09-30
+1069778,Caribbean,37,2015-09-30
 1069778,Middle East,1,2015-09-30
 1069778,Northern America,646,2015-12-31
 1069778,Central and South America,11,2015-12-31
@@ -782,7 +1456,7 @@ Id_Rssd,Region,N,asOfDate
 1069778,Europe,71,2015-12-31
 1069778,Southeast Asia and Oceania,8,2015-12-31
 1069778,South Asia,3,2015-12-31
-1069778,Caribbean,36,2015-12-31
+1069778,Caribbean,37,2015-12-31
 1069778,Middle East,1,2015-12-31
 1069778,Northern America,675,2016-03-31
 1069778,Central and South America,11,2016-03-31
@@ -790,7 +1464,7 @@ Id_Rssd,Region,N,asOfDate
 1069778,Europe,70,2016-03-31
 1069778,Southeast Asia and Oceania,7,2016-03-31
 1069778,South Asia,3,2016-03-31
-1069778,Caribbean,36,2016-03-31
+1069778,Caribbean,37,2016-03-31
 1069778,Middle East,1,2016-03-31
 1069778,Northern America,706,2016-06-30
 1069778,Central and South America,11,2016-06-30
@@ -798,7 +1472,7 @@ Id_Rssd,Region,N,asOfDate
 1069778,Europe,70,2016-06-30
 1069778,Southeast Asia and Oceania,7,2016-06-30
 1069778,South Asia,3,2016-06-30
-1069778,Caribbean,36,2016-06-30
+1069778,Caribbean,37,2016-06-30
 1069778,Middle East,1,2016-06-30
 1069778,Northern America,706,2016-09-30
 1069778,Europe,70,2016-09-30
@@ -806,16 +1480,124 @@ Id_Rssd,Region,N,asOfDate
 1069778,East Asia,12,2016-09-30
 1069778,Southeast Asia and Oceania,6,2016-09-30
 1069778,South Asia,3,2016-09-30
-1069778,Caribbean,36,2016-09-30
+1069778,Caribbean,37,2016-09-30
 1069778,Middle East,1,2016-09-30
-1069778,Northern America,687,2016-12-28
-1069778,Central and South America,12,2016-12-28
-1069778,East Asia,12,2016-12-28
-1069778,Europe,70,2016-12-28
-1069778,Southeast Asia and Oceania,6,2016-12-28
-1069778,South Asia,3,2016-12-28
-1069778,Caribbean,36,2016-12-28
-1069778,Middle East,1,2016-12-28
+1069778,Northern America,717,2016-12-31
+1069778,Central and South America,11,2016-12-31
+1069778,East Asia,12,2016-12-31
+1069778,Europe,70,2016-12-31
+1069778,Southeast Asia and Oceania,6,2016-12-31
+1069778,South Asia,3,2016-12-31
+1069778,Caribbean,37,2016-12-31
+1069778,Middle East,1,2016-12-31
+1069778,Northern America,722,2017-03-31
+1069778,Europe,75,2017-03-31
+1069778,Central and South America,11,2017-03-31
+1069778,East Asia,11,2017-03-31
+1069778,Southeast Asia and Oceania,6,2017-03-31
+1069778,South Asia,3,2017-03-31
+1069778,Caribbean,38,2017-03-31
+1069778,Middle East,1,2017-03-31
+1070345,Northern America,356,2004-03-31
+1070345,Caribbean,2,2004-03-31
+1070345,East Asia,1,2004-03-31
+1070345,Northern America,368,2004-06-30
+1070345,Caribbean,2,2004-06-30
+1070345,East Asia,1,2004-06-30
+1070345,Northern America,379,2004-09-30
+1070345,Caribbean,2,2004-09-30
+1070345,East Asia,1,2004-09-30
+1070345,Northern America,395,2004-12-31
+1070345,Caribbean,2,2004-12-31
+1070345,East Asia,1,2004-12-31
+1070345,Northern America,391,2005-03-31
+1070345,Caribbean,2,2005-03-31
+1070345,East Asia,1,2005-03-31
+1070345,Northern America,401,2005-06-30
+1070345,Caribbean,2,2005-06-30
+1070345,East Asia,1,2005-06-30
+1070345,Northern America,412,2005-09-30
+1070345,Caribbean,2,2005-09-30
+1070345,East Asia,1,2005-09-30
+1070345,Northern America,517,2005-12-31
+1070345,Caribbean,2,2005-12-31
+1070345,East Asia,1,2005-12-31
+1070345,Northern America,506,2006-03-31
+1070345,Caribbean,2,2006-03-31
+1070345,East Asia,1,2006-03-31
+1070345,Northern America,338,2006-06-30
+1070345,Caribbean,2,2006-06-30
+1070345,East Asia,1,2006-06-30
+1070345,Northern America,347,2006-09-30
+1070345,Caribbean,2,2006-09-30
+1070345,East Asia,1,2006-09-30
+1070345,Africa,1,2006-09-30
+1070345,South Asia,1,2006-09-30
+1070345,Northern America,347,2006-12-31
+1070345,Caribbean,2,2006-12-31
+1070345,East Asia,1,2006-12-31
+1070345,Africa,1,2006-12-31
+1070345,South Asia,1,2006-12-31
+1070345,Northern America,357,2007-03-31
+1070345,Caribbean,2,2007-03-31
+1070345,East Asia,1,2007-03-31
+1070345,Africa,1,2007-03-31
+1070345,South Asia,1,2007-03-31
+1070345,Northern America,379,2007-06-30
+1070345,Caribbean,2,2007-06-30
+1070345,East Asia,1,2007-06-30
+1070345,Africa,1,2007-06-30
+1070345,South Asia,1,2007-06-30
+1070345,Northern America,395,2007-09-30
+1070345,Caribbean,2,2007-09-30
+1070345,East Asia,1,2007-09-30
+1070345,Africa,1,2007-09-30
+1070345,South Asia,1,2007-09-30
+1070345,Northern America,409,2007-12-31
+1070345,Caribbean,2,2007-12-31
+1070345,East Asia,1,2007-12-31
+1070345,Africa,1,2007-12-31
+1070345,South Asia,1,2007-12-31
+1070345,Northern America,423,2008-03-31
+1070345,East Asia,1,2008-03-31
+1070345,Africa,1,2008-03-31
+1070345,South Asia,1,2008-03-31
+1070345,Caribbean,2,2008-03-31
+1070345,Northern America,446,2008-06-30
+1070345,East Asia,1,2008-06-30
+1070345,Africa,1,2008-06-30
+1070345,South Asia,1,2008-06-30
+1070345,Caribbean,2,2008-06-30
+1070345,Northern America,454,2008-09-30
+1070345,East Asia,1,2008-09-30
+1070345,Africa,1,2008-09-30
+1070345,South Asia,1,2008-09-30
+1070345,Caribbean,2,2008-09-30
+1070345,Northern America,461,2008-12-31
+1070345,East Asia,1,2008-12-31
+1070345,Africa,1,2008-12-31
+1070345,South Asia,1,2008-12-31
+1070345,Caribbean,2,2008-12-31
+1070345,Northern America,466,2009-03-31
+1070345,East Asia,1,2009-03-31
+1070345,Africa,1,2009-03-31
+1070345,South Asia,1,2009-03-31
+1070345,Caribbean,2,2009-03-31
+1070345,Northern America,470,2009-06-30
+1070345,East Asia,1,2009-06-30
+1070345,Africa,1,2009-06-30
+1070345,South Asia,1,2009-06-30
+1070345,Caribbean,2,2009-06-30
+1070345,Northern America,476,2009-09-30
+1070345,Caribbean,2,2009-09-30
+1070345,East Asia,1,2009-09-30
+1070345,Africa,1,2009-09-30
+1070345,South Asia,1,2009-09-30
+1070345,Northern America,493,2009-12-31
+1070345,Caribbean,2,2009-12-31
+1070345,East Asia,1,2009-12-31
+1070345,Africa,1,2009-12-31
+1070345,South Asia,1,2009-12-31
 1070345,Northern America,497,2010-03-31
 1070345,Caribbean,2,2010-03-31
 1070345,East Asia,1,2010-03-31
@@ -939,14 +1721,232 @@ Id_Rssd,Region,N,asOfDate
 1070345,Africa,1,2016-09-30
 1070345,South Asia,1,2016-09-30
 1070345,Southeast Asia and Oceania,1,2016-09-30
-1070345,Northern America,936,2016-12-28
-1070345,East Asia,1,2016-12-28
-1070345,Africa,1,2016-12-28
-1070345,South Asia,1,2016-12-28
-1070345,Southeast Asia and Oceania,1,2016-12-28
+1070345,Northern America,926,2016-12-31
+1070345,Africa,1,2016-12-31
+1070345,South Asia,1,2016-12-31
+1070345,Southeast Asia and Oceania,1,2016-12-31
+1070345,Northern America,927,2017-03-31
+1070345,Africa,1,2017-03-31
+1070345,South Asia,1,2017-03-31
+1070345,Southeast Asia and Oceania,1,2017-03-31
+1073757,Northern America,892,2004-03-31
+1073757,Caribbean,65,2004-03-31
+1073757,Europe,54,2004-03-31
+1073757,South Asia,2,2004-03-31
+1073757,Africa,3,2004-03-31
+1073757,Central and South America,25,2004-03-31
+1073757,East Asia,14,2004-03-31
+1073757,Southeast Asia and Oceania,6,2004-03-31
+1073757,Northern America,1332,2004-06-30
+1073757,Central and South America,72,2004-06-30
+1073757,Caribbean,84,2004-06-30
+1073757,Europe,68,2004-06-30
+1073757,East Asia,16,2004-06-30
+1073757,Middle East,3,2004-06-30
+1073757,Africa,3,2004-06-30
+1073757,Southeast Asia and Oceania,6,2004-06-30
+1073757,South Asia,2,2004-06-30
+1073757,Northern America,1338,2004-09-30
+1073757,Central and South America,71,2004-09-30
+1073757,Caribbean,81,2004-09-30
+1073757,Europe,66,2004-09-30
+1073757,East Asia,16,2004-09-30
+1073757,Middle East,3,2004-09-30
+1073757,Africa,3,2004-09-30
+1073757,Southeast Asia and Oceania,6,2004-09-30
+1073757,South Asia,2,2004-09-30
+1073757,Northern America,1350,2004-12-31
+1073757,Central and South America,70,2004-12-31
+1073757,Caribbean,83,2004-12-31
+1073757,Europe,68,2004-12-31
+1073757,East Asia,16,2004-12-31
+1073757,Middle East,3,2004-12-31
+1073757,Africa,3,2004-12-31
+1073757,Southeast Asia and Oceania,6,2004-12-31
+1073757,South Asia,2,2004-12-31
+1073757,Northern America,1345,2005-03-31
+1073757,Caribbean,84,2005-03-31
+1073757,Europe,73,2005-03-31
+1073757,Middle East,3,2005-03-31
+1073757,Central and South America,69,2005-03-31
+1073757,East Asia,16,2005-03-31
+1073757,Africa,3,2005-03-31
+1073757,Southeast Asia and Oceania,6,2005-03-31
+1073757,South Asia,2,2005-03-31
+1073757,Northern America,1350,2005-06-30
+1073757,Caribbean,87,2005-06-30
+1073757,Europe,83,2005-06-30
+1073757,Middle East,3,2005-06-30
+1073757,Africa,3,2005-06-30
+1073757,Central and South America,66,2005-06-30
+1073757,East Asia,16,2005-06-30
+1073757,Southeast Asia and Oceania,6,2005-06-30
+1073757,South Asia,2,2005-06-30
+1073757,Northern America,1336,2005-09-30
+1073757,Caribbean,77,2005-09-30
+1073757,Europe,86,2005-09-30
+1073757,Southeast Asia and Oceania,7,2005-09-30
+1073757,Middle East,3,2005-09-30
+1073757,Africa,3,2005-09-30
+1073757,Central and South America,63,2005-09-30
+1073757,East Asia,16,2005-09-30
+1073757,South Asia,2,2005-09-30
+1073757,Northern America,1293,2005-12-31
+1073757,Caribbean,74,2005-12-31
+1073757,Europe,88,2005-12-31
+1073757,Southeast Asia and Oceania,7,2005-12-31
+1073757,Middle East,3,2005-12-31
+1073757,Africa,3,2005-12-31
+1073757,Central and South America,63,2005-12-31
+1073757,East Asia,16,2005-12-31
+1073757,South Asia,2,2005-12-31
+1073757,Northern America,1321,2006-03-31
+1073757,Central and South America,61,2006-03-31
+1073757,Caribbean,74,2006-03-31
+1073757,Europe,128,2006-03-31
+1073757,Southeast Asia and Oceania,7,2006-03-31
+1073757,Middle East,3,2006-03-31
+1073757,South Asia,3,2006-03-31
+1073757,Africa,3,2006-03-31
+1073757,East Asia,15,2006-03-31
+1073757,Northern America,1367,2006-06-30
+1073757,Central and South America,61,2006-06-30
+1073757,Caribbean,74,2006-06-30
+1073757,Europe,134,2006-06-30
+1073757,Southeast Asia and Oceania,7,2006-06-30
+1073757,Middle East,3,2006-06-30
+1073757,South Asia,3,2006-06-30
+1073757,Africa,3,2006-06-30
+1073757,East Asia,14,2006-06-30
+1073757,Northern America,1392,2006-09-30
+1073757,Central and South America,53,2006-09-30
+1073757,Caribbean,74,2006-09-30
+1073757,Europe,140,2006-09-30
+1073757,Southeast Asia and Oceania,7,2006-09-30
+1073757,Middle East,3,2006-09-30
+1073757,South Asia,3,2006-09-30
+1073757,Africa,3,2006-09-30
+1073757,East Asia,16,2006-09-30
+1073757,Northern America,1392,2006-12-31
+1073757,Caribbean,78,2006-12-31
+1073757,Europe,141,2006-12-31
+1073757,Central and South America,52,2006-12-31
+1073757,Southeast Asia and Oceania,7,2006-12-31
+1073757,Middle East,3,2006-12-31
+1073757,Africa,3,2006-12-31
+1073757,East Asia,11,2006-12-31
+1073757,South Asia,3,2006-12-31
+1073757,Northern America,1395,2007-03-31
+1073757,Caribbean,76,2007-03-31
+1073757,Europe,147,2007-03-31
+1073757,Central and South America,40,2007-03-31
+1073757,Southeast Asia and Oceania,7,2007-03-31
+1073757,Middle East,3,2007-03-31
+1073757,Africa,3,2007-03-31
+1073757,East Asia,10,2007-03-31
+1073757,South Asia,3,2007-03-31
+1073757,Northern America,1054,2007-06-30
+1073757,Caribbean,69,2007-06-30
+1073757,Europe,152,2007-06-30
+1073757,Central and South America,36,2007-06-30
+1073757,Southeast Asia and Oceania,8,2007-06-30
+1073757,Middle East,3,2007-06-30
+1073757,Africa,3,2007-06-30
+1073757,East Asia,11,2007-06-30
+1073757,South Asia,3,2007-06-30
+1073757,Northern America,1069,2007-09-30
+1073757,Europe,153,2007-09-30
+1073757,Southeast Asia and Oceania,8,2007-09-30
+1073757,Caribbean,68,2007-09-30
+1073757,Middle East,3,2007-09-30
+1073757,Africa,3,2007-09-30
+1073757,East Asia,11,2007-09-30
+1073757,Central and South America,35,2007-09-30
+1073757,South Asia,3,2007-09-30
+1073757,Northern America,1117,2007-12-31
+1073757,Caribbean,68,2007-12-31
+1073757,Europe,156,2007-12-31
+1073757,Middle East,3,2007-12-31
+1073757,Central and South America,34,2007-12-31
+1073757,East Asia,12,2007-12-31
+1073757,Africa,3,2007-12-31
+1073757,Southeast Asia and Oceania,9,2007-12-31
+1073757,South Asia,3,2007-12-31
+1073757,Northern America,1122,2008-03-31
+1073757,Europe,172,2008-03-31
+1073757,Middle East,3,2008-03-31
+1073757,Caribbean,72,2008-03-31
+1073757,Central and South America,34,2008-03-31
+1073757,East Asia,11,2008-03-31
+1073757,Africa,3,2008-03-31
+1073757,Southeast Asia and Oceania,9,2008-03-31
+1073757,South Asia,3,2008-03-31
+1073757,Northern America,1131,2008-06-30
+1073757,Europe,172,2008-06-30
+1073757,Middle East,3,2008-06-30
+1073757,Caribbean,64,2008-06-30
+1073757,Central and South America,34,2008-06-30
+1073757,East Asia,11,2008-06-30
+1073757,Southeast Asia and Oceania,8,2008-06-30
+1073757,South Asia,3,2008-06-30
+1073757,Africa,2,2008-06-30
+1073757,Northern America,1266,2008-09-30
+1073757,Middle East,3,2008-09-30
+1073757,Europe,186,2008-09-30
+1073757,Caribbean,64,2008-09-30
+1073757,Central and South America,34,2008-09-30
+1073757,East Asia,12,2008-09-30
+1073757,Southeast Asia and Oceania,9,2008-09-30
+1073757,South Asia,4,2008-09-30
+1073757,Africa,3,2008-09-30
+1073757,Northern America,1263,2008-12-31
+1073757,Middle East,3,2008-12-31
+1073757,Europe,186,2008-12-31
+1073757,Caribbean,47,2008-12-31
+1073757,Central and South America,35,2008-12-31
+1073757,East Asia,11,2008-12-31
+1073757,Southeast Asia and Oceania,8,2008-12-31
+1073757,South Asia,4,2008-12-31
+1073757,Africa,2,2008-12-31
+1073757,Northern America,2065,2009-03-31
+1073757,Europe,418,2009-03-31
+1073757,Caribbean,98,2009-03-31
+1073757,Central and South America,64,2009-03-31
+1073757,Southeast Asia and Oceania,53,2009-03-31
+1073757,South Asia,13,2009-03-31
+1073757,East Asia,66,2009-03-31
+1073757,Africa,11,2009-03-31
+1073757,Middle East,7,2009-03-31
+1073757,Northern America,2068,2009-06-30
+1073757,Europe,405,2009-06-30
+1073757,Caribbean,95,2009-06-30
+1073757,Southeast Asia and Oceania,53,2009-06-30
+1073757,South Asia,13,2009-06-30
+1073757,East Asia,59,2009-06-30
+1073757,Central and South America,63,2009-06-30
+1073757,Africa,11,2009-06-30
+1073757,Middle East,7,2009-06-30
+1073757,Northern America,2059,2009-09-30
+1073757,Europe,399,2009-09-30
+1073757,Caribbean,95,2009-09-30
+1073757,Southeast Asia and Oceania,58,2009-09-30
+1073757,South Asia,13,2009-09-30
+1073757,East Asia,57,2009-09-30
+1073757,Central and South America,64,2009-09-30
+1073757,Africa,11,2009-09-30
+1073757,Middle East,7,2009-09-30
+1073757,Northern America,2062,2009-12-31
+1073757,Europe,404,2009-12-31
+1073757,Caribbean,94,2009-12-31
+1073757,Southeast Asia and Oceania,61,2009-12-31
+1073757,South Asia,14,2009-12-31
+1073757,East Asia,57,2009-12-31
+1073757,Central and South America,70,2009-12-31
+1073757,Middle East,7,2009-12-31
+1073757,Africa,11,2009-12-31
 1073757,Northern America,2038,2010-03-31
 1073757,Europe,399,2010-03-31
-1073757,Caribbean,91,2010-03-31
+1073757,Caribbean,92,2010-03-31
 1073757,Southeast Asia and Oceania,61,2010-03-31
 1073757,South Asia,13,2010-03-31
 1073757,East Asia,55,2010-03-31
@@ -1187,15 +2187,101 @@ Id_Rssd,Region,N,asOfDate
 1073757,South Asia,4,2016-09-30
 1073757,Africa,6,2016-09-30
 1073757,Middle East,4,2016-09-30
-1073757,Northern America,1188,2016-12-28
-1073757,Europe,148,2016-12-28
-1073757,Central and South America,24,2016-12-28
-1073757,East Asia,18,2016-12-28
-1073757,Southeast Asia and Oceania,27,2016-12-28
-1073757,Caribbean,20,2016-12-28
-1073757,South Asia,4,2016-12-28
-1073757,Africa,6,2016-12-28
-1073757,Middle East,4,2016-12-28
+1073757,Northern America,1180,2016-12-31
+1073757,Europe,143,2016-12-31
+1073757,Central and South America,25,2016-12-31
+1073757,East Asia,18,2016-12-31
+1073757,Southeast Asia and Oceania,27,2016-12-31
+1073757,Caribbean,19,2016-12-31
+1073757,South Asia,4,2016-12-31
+1073757,Africa,6,2016-12-31
+1073757,Middle East,4,2016-12-31
+1073757,Northern America,1171,2017-03-31
+1073757,Europe,142,2017-03-31
+1073757,Central and South America,25,2017-03-31
+1073757,East Asia,18,2017-03-31
+1073757,Southeast Asia and Oceania,26,2017-03-31
+1073757,Caribbean,19,2017-03-31
+1073757,South Asia,4,2017-03-31
+1073757,Africa,6,2017-03-31
+1073757,Middle East,4,2017-03-31
+1074156,Northern America,206,2004-03-31
+1074156,Europe,1,2004-03-31
+1074156,Central and South America,1,2004-03-31
+1074156,Northern America,212,2004-06-30
+1074156,Europe,1,2004-06-30
+1074156,Central and South America,1,2004-06-30
+1074156,Northern America,214,2004-09-30
+1074156,Europe,1,2004-09-30
+1074156,Central and South America,1,2004-09-30
+1074156,Northern America,217,2004-12-31
+1074156,Europe,1,2004-12-31
+1074156,Central and South America,1,2004-12-31
+1074156,Northern America,218,2005-03-31
+1074156,Europe,1,2005-03-31
+1074156,Central and South America,1,2005-03-31
+1074156,Northern America,226,2005-06-30
+1074156,Europe,1,2005-06-30
+1074156,Central and South America,1,2005-06-30
+1074156,Northern America,231,2005-09-30
+1074156,Europe,1,2005-09-30
+1074156,Central and South America,1,2005-09-30
+1074156,Northern America,233,2005-12-31
+1074156,Europe,1,2005-12-31
+1074156,Central and South America,1,2005-12-31
+1074156,Northern America,240,2006-03-31
+1074156,Europe,1,2006-03-31
+1074156,Central and South America,1,2006-03-31
+1074156,Northern America,250,2006-06-30
+1074156,Europe,1,2006-06-30
+1074156,Central and South America,1,2006-06-30
+1074156,Northern America,254,2006-09-30
+1074156,Europe,1,2006-09-30
+1074156,Central and South America,1,2006-09-30
+1074156,Northern America,258,2006-12-31
+1074156,Europe,1,2006-12-31
+1074156,Central and South America,1,2006-12-31
+1074156,Northern America,288,2007-03-31
+1074156,Europe,1,2007-03-31
+1074156,Central and South America,1,2007-03-31
+1074156,Northern America,306,2007-06-30
+1074156,Europe,1,2007-06-30
+1074156,Central and South America,1,2007-06-30
+1074156,Northern America,303,2007-09-30
+1074156,Europe,1,2007-09-30
+1074156,Central and South America,1,2007-09-30
+1074156,Northern America,372,2007-12-31
+1074156,Europe,1,2007-12-31
+1074156,Central and South America,1,2007-12-31
+1074156,Northern America,377,2008-03-31
+1074156,Europe,1,2008-03-31
+1074156,Central and South America,1,2008-03-31
+1074156,Northern America,394,2008-06-30
+1074156,Europe,1,2008-06-30
+1074156,Central and South America,1,2008-06-30
+1074156,Caribbean,1,2008-06-30
+1074156,Northern America,403,2008-09-30
+1074156,Europe,1,2008-09-30
+1074156,Central and South America,1,2008-09-30
+1074156,Caribbean,1,2008-09-30
+1074156,Northern America,422,2008-12-31
+1074156,Europe,1,2008-12-31
+1074156,Central and South America,1,2008-12-31
+1074156,Caribbean,1,2008-12-31
+1074156,Northern America,445,2009-03-31
+1074156,Central and South America,1,2009-03-31
+1074156,Europe,1,2009-03-31
+1074156,Caribbean,1,2009-03-31
+1074156,Northern America,458,2009-06-30
+1074156,Central and South America,1,2009-06-30
+1074156,Europe,1,2009-06-30
+1074156,Caribbean,1,2009-06-30
+1074156,Northern America,489,2009-09-30
+1074156,Central and South America,1,2009-09-30
+1074156,Caribbean,1,2009-09-30
+1074156,Northern America,518,2009-12-31
+1074156,Central and South America,1,2009-12-31
+1074156,Caribbean,1,2009-12-31
 1074156,Northern America,521,2010-03-31
 1074156,Central and South America,1,2010-03-31
 1074156,Caribbean,1,2010-03-31
@@ -1284,10 +2370,183 @@ Id_Rssd,Region,N,asOfDate
 1074156,Central and South America,1,2016-09-30
 1074156,Southeast Asia and Oceania,1,2016-09-30
 1074156,Caribbean,1,2016-09-30
-1074156,Northern America,894,2016-12-28
-1074156,Central and South America,1,2016-12-28
-1074156,Southeast Asia and Oceania,1,2016-12-28
-1074156,Caribbean,1,2016-12-28
+1074156,Northern America,922,2016-12-31
+1074156,Central and South America,1,2016-12-31
+1074156,Southeast Asia and Oceania,1,2016-12-31
+1074156,Caribbean,1,2016-12-31
+1074156,Northern America,956,2017-03-31
+1074156,Central and South America,1,2017-03-31
+1074156,Southeast Asia and Oceania,1,2017-03-31
+1074156,Caribbean,1,2017-03-31
+1111435,Northern America,135,2004-03-31
+1111435,Europe,43,2004-03-31
+1111435,East Asia,9,2004-03-31
+1111435,Caribbean,6,2004-03-31
+1111435,Southeast Asia and Oceania,9,2004-03-31
+1111435,Africa,2,2004-03-31
+1111435,Northern America,141,2004-06-30
+1111435,Europe,43,2004-06-30
+1111435,East Asia,9,2004-06-30
+1111435,Caribbean,6,2004-06-30
+1111435,Southeast Asia and Oceania,10,2004-06-30
+1111435,Africa,3,2004-06-30
+1111435,Northern America,142,2004-09-30
+1111435,Europe,42,2004-09-30
+1111435,East Asia,9,2004-09-30
+1111435,Caribbean,6,2004-09-30
+1111435,Southeast Asia and Oceania,10,2004-09-30
+1111435,Africa,3,2004-09-30
+1111435,Northern America,144,2004-12-31
+1111435,Europe,42,2004-12-31
+1111435,East Asia,9,2004-12-31
+1111435,Caribbean,6,2004-12-31
+1111435,Southeast Asia and Oceania,10,2004-12-31
+1111435,Africa,3,2004-12-31
+1111435,Northern America,153,2005-03-31
+1111435,Europe,40,2005-03-31
+1111435,East Asia,9,2005-03-31
+1111435,Caribbean,6,2005-03-31
+1111435,Southeast Asia and Oceania,9,2005-03-31
+1111435,Africa,4,2005-03-31
+1111435,South Asia,1,2005-03-31
+1111435,Northern America,159,2005-06-30
+1111435,Europe,40,2005-06-30
+1111435,East Asia,9,2005-06-30
+1111435,Caribbean,5,2005-06-30
+1111435,Southeast Asia and Oceania,9,2005-06-30
+1111435,Africa,4,2005-06-30
+1111435,South Asia,1,2005-06-30
+1111435,Northern America,149,2005-09-30
+1111435,Europe,38,2005-09-30
+1111435,East Asia,9,2005-09-30
+1111435,Caribbean,6,2005-09-30
+1111435,Southeast Asia and Oceania,9,2005-09-30
+1111435,Africa,4,2005-09-30
+1111435,South Asia,1,2005-09-30
+1111435,Northern America,160,2005-12-31
+1111435,Europe,37,2005-12-31
+1111435,East Asia,10,2005-12-31
+1111435,Caribbean,6,2005-12-31
+1111435,Southeast Asia and Oceania,9,2005-12-31
+1111435,Africa,4,2005-12-31
+1111435,South Asia,1,2005-12-31
+1111435,Northern America,154,2006-03-31
+1111435,Europe,37,2006-03-31
+1111435,East Asia,10,2006-03-31
+1111435,Caribbean,6,2006-03-31
+1111435,Southeast Asia and Oceania,9,2006-03-31
+1111435,Africa,4,2006-03-31
+1111435,South Asia,1,2006-03-31
+1111435,Northern America,143,2006-06-30
+1111435,Europe,38,2006-06-30
+1111435,East Asia,10,2006-06-30
+1111435,Caribbean,6,2006-06-30
+1111435,Southeast Asia and Oceania,9,2006-06-30
+1111435,Africa,4,2006-06-30
+1111435,South Asia,1,2006-06-30
+1111435,Northern America,143,2006-09-30
+1111435,Europe,38,2006-09-30
+1111435,East Asia,10,2006-09-30
+1111435,Caribbean,6,2006-09-30
+1111435,Southeast Asia and Oceania,9,2006-09-30
+1111435,Africa,4,2006-09-30
+1111435,South Asia,1,2006-09-30
+1111435,Northern America,147,2006-12-31
+1111435,Europe,38,2006-12-31
+1111435,East Asia,10,2006-12-31
+1111435,Caribbean,6,2006-12-31
+1111435,Southeast Asia and Oceania,9,2006-12-31
+1111435,Africa,4,2006-12-31
+1111435,South Asia,1,2006-12-31
+1111435,Northern America,157,2007-03-31
+1111435,Europe,38,2007-03-31
+1111435,East Asia,10,2007-03-31
+1111435,Caribbean,6,2007-03-31
+1111435,Southeast Asia and Oceania,9,2007-03-31
+1111435,Africa,4,2007-03-31
+1111435,South Asia,1,2007-03-31
+1111435,Northern America,171,2007-06-30
+1111435,Europe,38,2007-06-30
+1111435,East Asia,10,2007-06-30
+1111435,Caribbean,6,2007-06-30
+1111435,Southeast Asia and Oceania,9,2007-06-30
+1111435,Africa,4,2007-06-30
+1111435,South Asia,1,2007-06-30
+1111435,Northern America,202,2007-09-30
+1111435,Europe,45,2007-09-30
+1111435,East Asia,10,2007-09-30
+1111435,Caribbean,7,2007-09-30
+1111435,Southeast Asia and Oceania,9,2007-09-30
+1111435,Africa,4,2007-09-30
+1111435,South Asia,2,2007-09-30
+1111435,Northern America,202,2007-12-31
+1111435,Europe,46,2007-12-31
+1111435,East Asia,12,2007-12-31
+1111435,Caribbean,7,2007-12-31
+1111435,Southeast Asia and Oceania,9,2007-12-31
+1111435,Africa,5,2007-12-31
+1111435,South Asia,2,2007-12-31
+1111435,Northern America,196,2008-03-31
+1111435,Europe,45,2008-03-31
+1111435,East Asia,12,2008-03-31
+1111435,Caribbean,7,2008-03-31
+1111435,Southeast Asia and Oceania,9,2008-03-31
+1111435,Africa,5,2008-03-31
+1111435,South Asia,2,2008-03-31
+1111435,Northern America,193,2008-06-30
+1111435,Europe,45,2008-06-30
+1111435,East Asia,12,2008-06-30
+1111435,Caribbean,7,2008-06-30
+1111435,Southeast Asia and Oceania,9,2008-06-30
+1111435,Africa,5,2008-06-30
+1111435,South Asia,2,2008-06-30
+1111435,Northern America,193,2008-09-30
+1111435,Europe,53,2008-09-30
+1111435,East Asia,11,2008-09-30
+1111435,Caribbean,6,2008-09-30
+1111435,Southeast Asia and Oceania,8,2008-09-30
+1111435,Africa,5,2008-09-30
+1111435,South Asia,2,2008-09-30
+1111435,Northern America,191,2008-12-31
+1111435,Europe,64,2008-12-31
+1111435,East Asia,10,2008-12-31
+1111435,Caribbean,6,2008-12-31
+1111435,Southeast Asia and Oceania,8,2008-12-31
+1111435,Africa,5,2008-12-31
+1111435,South Asia,2,2008-12-31
+1111435,Middle East,1,2008-12-31
+1111435,Northern America,195,2009-03-31
+1111435,East Asia,10,2009-03-31
+1111435,Caribbean,6,2009-03-31
+1111435,Europe,62,2009-03-31
+1111435,Southeast Asia and Oceania,8,2009-03-31
+1111435,Africa,5,2009-03-31
+1111435,South Asia,2,2009-03-31
+1111435,Middle East,1,2009-03-31
+1111435,Northern America,121,2009-06-30
+1111435,East Asia,10,2009-06-30
+1111435,Caribbean,6,2009-06-30
+1111435,Europe,62,2009-06-30
+1111435,Southeast Asia and Oceania,8,2009-06-30
+1111435,Africa,5,2009-06-30
+1111435,South Asia,2,2009-06-30
+1111435,Middle East,1,2009-06-30
+1111435,Northern America,122,2009-09-30
+1111435,East Asia,10,2009-09-30
+1111435,Caribbean,6,2009-09-30
+1111435,Europe,62,2009-09-30
+1111435,Southeast Asia and Oceania,8,2009-09-30
+1111435,Africa,5,2009-09-30
+1111435,South Asia,2,2009-09-30
+1111435,Middle East,1,2009-09-30
+1111435,Northern America,122,2009-12-31
+1111435,East Asia,10,2009-12-31
+1111435,Caribbean,6,2009-12-31
+1111435,Europe,61,2009-12-31
+1111435,Southeast Asia and Oceania,8,2009-12-31
+1111435,Africa,5,2009-12-31
+1111435,South Asia,2,2009-12-31
+1111435,Middle East,1,2009-12-31
 1111435,Northern America,119,2010-03-31
 1111435,East Asia,9,2010-03-31
 1111435,Europe,62,2010-03-31
@@ -1492,15 +2751,124 @@ Id_Rssd,Region,N,asOfDate
 1111435,Caribbean,9,2016-09-30
 1111435,Africa,3,2016-09-30
 1111435,South Asia,5,2016-09-30
-1111435,Northern America,81,2016-12-28
-1111435,Europe,76,2016-12-28
-1111435,Southeast Asia and Oceania,14,2016-12-28
-1111435,East Asia,13,2016-12-28
-1111435,Caribbean,9,2016-12-28
-1111435,Africa,3,2016-12-28
-1111435,South Asia,5,2016-12-28
+1111435,Northern America,78,2016-12-31
+1111435,Southeast Asia and Oceania,14,2016-12-31
+1111435,East Asia,13,2016-12-31
+1111435,Europe,74,2016-12-31
+1111435,Caribbean,9,2016-12-31
+1111435,Africa,3,2016-12-31
+1111435,South Asia,5,2016-12-31
+1111435,Northern America,73,2017-03-31
+1111435,Europe,68,2017-03-31
+1111435,Caribbean,9,2017-03-31
+1111435,Africa,3,2017-03-31
+1111435,South Asia,5,2017-03-31
+1111435,East Asia,13,2017-03-31
+1111435,Southeast Asia and Oceania,14,2017-03-31
 1113514,Northern America,206,1998-12-31
 1113514,Europe,1,1998-12-31
+1113514,Northern America,303,2004-03-31
+1113514,Europe,61,2004-03-31
+1113514,Central and South America,48,2004-03-31
+1113514,Caribbean,16,2004-03-31
+1113514,East Asia,7,2004-03-31
+1113514,Southeast Asia and Oceania,5,2004-03-31
+1113514,Middle East,4,2004-03-31
+1119794,Northern America,114,2004-03-31
+1119794,East Asia,1,2004-03-31
+1119794,Europe,2,2004-03-31
+1119794,Northern America,111,2004-06-30
+1119794,East Asia,1,2004-06-30
+1119794,Europe,6,2004-06-30
+1119794,Northern America,112,2004-09-30
+1119794,East Asia,1,2004-09-30
+1119794,Europe,6,2004-09-30
+1119794,Northern America,111,2004-12-31
+1119794,East Asia,1,2004-12-31
+1119794,Europe,7,2004-12-31
+1119794,Northern America,115,2005-03-31
+1119794,East Asia,1,2005-03-31
+1119794,Europe,7,2005-03-31
+1119794,Northern America,121,2005-06-30
+1119794,East Asia,1,2005-06-30
+1119794,Europe,7,2005-06-30
+1119794,Northern America,120,2005-09-30
+1119794,East Asia,1,2005-09-30
+1119794,Europe,7,2005-09-30
+1119794,Northern America,119,2005-12-31
+1119794,East Asia,1,2005-12-31
+1119794,Europe,12,2005-12-31
+1119794,Northern America,115,2006-03-31
+1119794,East Asia,1,2006-03-31
+1119794,Europe,13,2006-03-31
+1119794,Northern America,116,2006-06-30
+1119794,East Asia,1,2006-06-30
+1119794,Europe,13,2006-06-30
+1119794,Northern America,122,2006-09-30
+1119794,East Asia,1,2006-09-30
+1119794,Europe,13,2006-09-30
+1119794,Northern America,112,2006-12-31
+1119794,East Asia,1,2006-12-31
+1119794,Europe,14,2006-12-31
+1119794,Northern America,108,2007-03-31
+1119794,East Asia,1,2007-03-31
+1119794,Europe,14,2007-03-31
+1119794,Northern America,110,2007-06-30
+1119794,East Asia,1,2007-06-30
+1119794,Europe,13,2007-06-30
+1119794,Caribbean,1,2007-06-30
+1119794,Northern America,109,2007-09-30
+1119794,East Asia,1,2007-09-30
+1119794,Europe,10,2007-09-30
+1119794,Caribbean,1,2007-09-30
+1119794,Northern America,107,2007-12-31
+1119794,East Asia,1,2007-12-31
+1119794,Europe,11,2007-12-31
+1119794,South Asia,1,2007-12-31
+1119794,Southeast Asia and Oceania,1,2007-12-31
+1119794,Caribbean,1,2007-12-31
+1119794,Northern America,105,2008-03-31
+1119794,East Asia,1,2008-03-31
+1119794,Europe,8,2008-03-31
+1119794,South Asia,1,2008-03-31
+1119794,Southeast Asia and Oceania,1,2008-03-31
+1119794,Caribbean,1,2008-03-31
+1119794,Northern America,106,2008-06-30
+1119794,East Asia,1,2008-06-30
+1119794,Europe,8,2008-06-30
+1119794,South Asia,1,2008-06-30
+1119794,Southeast Asia and Oceania,1,2008-06-30
+1119794,Caribbean,1,2008-06-30
+1119794,Northern America,104,2008-09-30
+1119794,East Asia,1,2008-09-30
+1119794,South Asia,1,2008-09-30
+1119794,Southeast Asia and Oceania,1,2008-09-30
+1119794,Europe,8,2008-09-30
+1119794,Caribbean,1,2008-09-30
+1119794,Northern America,101,2008-12-31
+1119794,East Asia,1,2008-12-31
+1119794,Europe,8,2008-12-31
+1119794,South Asia,1,2008-12-31
+1119794,Southeast Asia and Oceania,1,2008-12-31
+1119794,Caribbean,1,2008-12-31
+1119794,Northern America,101,2009-03-31
+1119794,East Asia,1,2009-03-31
+1119794,Europe,8,2009-03-31
+1119794,South Asia,1,2009-03-31
+1119794,Caribbean,1,2009-03-31
+1119794,Northern America,98,2009-06-30
+1119794,East Asia,1,2009-06-30
+1119794,Europe,8,2009-06-30
+1119794,South Asia,1,2009-06-30
+1119794,Caribbean,1,2009-06-30
+1119794,Northern America,100,2009-09-30
+1119794,East Asia,1,2009-09-30
+1119794,Europe,7,2009-09-30
+1119794,Caribbean,1,2009-09-30
+1119794,Northern America,105,2009-12-31
+1119794,East Asia,1,2009-12-31
+1119794,Europe,7,2009-12-31
+1119794,Caribbean,1,2009-12-31
 1119794,Northern America,108,2010-03-31
 1119794,East Asia,1,2010-03-31
 1119794,Europe,7,2010-03-31
@@ -1638,13 +3006,166 @@ Id_Rssd,Region,N,asOfDate
 1119794,Europe,9,2016-09-30
 1119794,Caribbean,2,2016-09-30
 1119794,Central and South America,4,2016-09-30
-1119794,Northern America,81,2016-12-28
-1119794,Europe,9,2016-12-28
-1119794,Caribbean,2,2016-12-28
-1119794,Central and South America,4,2016-12-28
+1119794,Northern America,81,2016-12-31
+1119794,Europe,9,2016-12-31
+1119794,Caribbean,2,2016-12-31
+1119794,Central and South America,4,2016-12-31
+1119794,Northern America,79,2017-03-31
+1119794,Europe,9,2017-03-31
+1119794,Caribbean,2,2017-03-31
+1119794,Central and South America,4,2017-03-31
+1120754,Northern America,630,2004-03-31
+1120754,Europe,6,2004-03-31
+1120754,Caribbean,16,2004-03-31
+1120754,East Asia,3,2004-03-31
+1120754,Central and South America,2,2004-03-31
+1120754,Northern America,635,2004-06-30
+1120754,Europe,6,2004-06-30
+1120754,Caribbean,16,2004-06-30
+1120754,East Asia,3,2004-06-30
+1120754,Central and South America,2,2004-06-30
+1120754,Northern America,644,2004-09-30
+1120754,Europe,6,2004-09-30
+1120754,Caribbean,16,2004-09-30
+1120754,East Asia,3,2004-09-30
+1120754,Central and South America,2,2004-09-30
+1120754,Northern America,644,2004-12-31
+1120754,Europe,6,2004-12-31
+1120754,Caribbean,16,2004-12-31
+1120754,East Asia,5,2004-12-31
+1120754,Central and South America,2,2004-12-31
+1120754,Northern America,643,2005-03-31
+1120754,Europe,6,2005-03-31
+1120754,Caribbean,16,2005-03-31
+1120754,East Asia,5,2005-03-31
+1120754,Central and South America,2,2005-03-31
+1120754,Northern America,651,2005-06-30
+1120754,Europe,6,2005-06-30
+1120754,Caribbean,15,2005-06-30
+1120754,East Asia,5,2005-06-30
+1120754,Central and South America,2,2005-06-30
+1120754,Northern America,661,2005-09-30
+1120754,Europe,6,2005-09-30
+1120754,East Asia,5,2005-09-30
+1120754,Caribbean,15,2005-09-30
+1120754,Central and South America,2,2005-09-30
+1120754,Northern America,646,2005-12-31
+1120754,Europe,6,2005-12-31
+1120754,East Asia,5,2005-12-31
+1120754,Caribbean,13,2005-12-31
+1120754,Central and South America,2,2005-12-31
+1120754,Africa,2,2005-12-31
+1120754,Northern America,605,2006-03-31
+1120754,Europe,6,2006-03-31
+1120754,East Asia,5,2006-03-31
+1120754,Caribbean,15,2006-03-31
+1120754,Central and South America,2,2006-03-31
+1120754,Africa,2,2006-03-31
+1120754,Northern America,608,2006-06-30
+1120754,Europe,6,2006-06-30
+1120754,East Asia,5,2006-06-30
+1120754,Caribbean,15,2006-06-30
+1120754,Central and South America,2,2006-06-30
+1120754,Africa,2,2006-06-30
+1120754,Northern America,596,2006-09-30
+1120754,Europe,6,2006-09-30
+1120754,East Asia,5,2006-09-30
+1120754,Caribbean,15,2006-09-30
+1120754,Africa,2,2006-09-30
+1120754,Northern America,585,2006-12-31
+1120754,Europe,6,2006-12-31
+1120754,South Asia,1,2006-12-31
+1120754,East Asia,5,2006-12-31
+1120754,Caribbean,10,2006-12-31
+1120754,Africa,2,2006-12-31
+1120754,Northern America,571,2007-03-31
+1120754,Europe,6,2007-03-31
+1120754,South Asia,1,2007-03-31
+1120754,East Asia,5,2007-03-31
+1120754,Caribbean,9,2007-03-31
+1120754,Africa,2,2007-03-31
+1120754,Northern America,577,2007-06-30
+1120754,Europe,5,2007-06-30
+1120754,South Asia,1,2007-06-30
+1120754,East Asia,5,2007-06-30
+1120754,Caribbean,9,2007-06-30
+1120754,Africa,4,2007-06-30
+1120754,Northern America,580,2007-09-30
+1120754,Europe,5,2007-09-30
+1120754,South Asia,2,2007-09-30
+1120754,East Asia,5,2007-09-30
+1120754,Caribbean,9,2007-09-30
+1120754,Africa,4,2007-09-30
+1120754,Northern America,585,2007-12-31
+1120754,Europe,5,2007-12-31
+1120754,South Asia,2,2007-12-31
+1120754,East Asia,5,2007-12-31
+1120754,Caribbean,9,2007-12-31
+1120754,Africa,4,2007-12-31
+1120754,Northern America,585,2008-03-31
+1120754,Europe,7,2008-03-31
+1120754,South Asia,2,2008-03-31
+1120754,East Asia,5,2008-03-31
+1120754,Caribbean,9,2008-03-31
+1120754,Africa,4,2008-03-31
+1120754,Northern America,577,2008-06-30
+1120754,Europe,11,2008-06-30
+1120754,South Asia,2,2008-06-30
+1120754,East Asia,5,2008-06-30
+1120754,Caribbean,9,2008-06-30
+1120754,Africa,3,2008-06-30
+1120754,Northern America,586,2008-09-30
+1120754,East Asia,5,2008-09-30
+1120754,Caribbean,9,2008-09-30
+1120754,Europe,9,2008-09-30
+1120754,South Asia,2,2008-09-30
+1120754,Africa,3,2008-09-30
+1120754,Northern America,1614,2008-12-31
+1120754,Europe,34,2008-12-31
+1120754,South Asia,6,2008-12-31
+1120754,East Asia,13,2008-12-31
+1120754,Caribbean,31,2008-12-31
+1120754,Central and South America,4,2008-12-31
+1120754,Africa,5,2008-12-31
+1120754,Southeast Asia and Oceania,2,2008-12-31
+1120754,Northern America,1577,2009-03-31
+1120754,Europe,34,2009-03-31
+1120754,South Asia,6,2009-03-31
+1120754,East Asia,13,2009-03-31
+1120754,Caribbean,32,2009-03-31
+1120754,Africa,5,2009-03-31
+1120754,Southeast Asia and Oceania,1,2009-03-31
+1120754,Central and South America,4,2009-03-31
+1120754,Northern America,1567,2009-06-30
+1120754,Europe,34,2009-06-30
+1120754,South Asia,6,2009-06-30
+1120754,East Asia,13,2009-06-30
+1120754,Caribbean,30,2009-06-30
+1120754,Africa,6,2009-06-30
+1120754,Middle East,1,2009-06-30
+1120754,Southeast Asia and Oceania,1,2009-06-30
+1120754,Central and South America,4,2009-06-30
+1120754,Northern America,1551,2009-09-30
+1120754,Europe,34,2009-09-30
+1120754,South Asia,6,2009-09-30
+1120754,East Asia,13,2009-09-30
+1120754,Caribbean,30,2009-09-30
+1120754,Africa,7,2009-09-30
+1120754,Middle East,1,2009-09-30
+1120754,Southeast Asia and Oceania,1,2009-09-30
+1120754,Central and South America,4,2009-09-30
+1120754,Northern America,1524,2009-12-31
+1120754,Europe,36,2009-12-31
+1120754,South Asia,6,2009-12-31
+1120754,East Asia,13,2009-12-31
+1120754,Caribbean,30,2009-12-31
+1120754,Central and South America,4,2009-12-31
+1120754,Africa,7,2009-12-31
+1120754,Middle East,1,2009-12-31
+1120754,Southeast Asia and Oceania,1,2009-12-31
 1120754,Northern America,1511,2010-03-31
 1120754,Europe,35,2010-03-31
-1120754,Caribbean,31,2010-03-31
+1120754,Caribbean,33,2010-03-31
 1120754,East Asia,13,2010-03-31
 1120754,South Asia,6,2010-03-31
 1120754,Central and South America,4,2010-03-31
@@ -1653,7 +3174,7 @@ Id_Rssd,Region,N,asOfDate
 1120754,Southeast Asia and Oceania,1,2010-03-31
 1120754,Northern America,1477,2010-06-30
 1120754,Europe,35,2010-06-30
-1120754,Caribbean,29,2010-06-30
+1120754,Caribbean,31,2010-06-30
 1120754,East Asia,13,2010-06-30
 1120754,South Asia,6,2010-06-30
 1120754,Africa,10,2010-06-30
@@ -1661,7 +3182,7 @@ Id_Rssd,Region,N,asOfDate
 1120754,Southeast Asia and Oceania,1,2010-06-30
 1120754,Northern America,1454,2010-09-30
 1120754,Europe,35,2010-09-30
-1120754,Caribbean,30,2010-09-30
+1120754,Caribbean,32,2010-09-30
 1120754,East Asia,12,2010-09-30
 1120754,Central and South America,1,2010-09-30
 1120754,South Asia,6,2010-09-30
@@ -1884,15 +3405,81 @@ Id_Rssd,Region,N,asOfDate
 1120754,Central and South America,2,2016-09-30
 1120754,Africa,6,2016-09-30
 1120754,Middle East,1,2016-09-30
-1120754,Northern America,648,2016-12-28
-1120754,Caribbean,52,2016-12-28
-1120754,Europe,37,2016-12-28
-1120754,East Asia,6,2016-12-28
-1120754,South Asia,4,2016-12-28
-1120754,Central and South America,2,2016-12-28
-1120754,Southeast Asia and Oceania,2,2016-12-28
-1120754,Africa,6,2016-12-28
-1120754,Middle East,1,2016-12-28
+1120754,Northern America,642,2016-12-31
+1120754,Caribbean,53,2016-12-31
+1120754,Europe,37,2016-12-31
+1120754,East Asia,6,2016-12-31
+1120754,South Asia,4,2016-12-31
+1120754,Central and South America,2,2016-12-31
+1120754,Southeast Asia and Oceania,2,2016-12-31
+1120754,Africa,6,2016-12-31
+1120754,Middle East,1,2016-12-31
+1120754,Northern America,602,2017-03-31
+1120754,Caribbean,53,2017-03-31
+1120754,Europe,37,2017-03-31
+1120754,East Asia,5,2017-03-31
+1120754,South Asia,4,2017-03-31
+1120754,Central and South America,2,2017-03-31
+1120754,Southeast Asia and Oceania,2,2017-03-31
+1120754,Africa,6,2017-03-31
+1120754,Middle East,1,2017-03-31
+1131787,Northern America,333,2004-03-31
+1131787,Caribbean,1,2004-03-31
+1131787,Northern America,342,2004-06-30
+1131787,Caribbean,1,2004-06-30
+1131787,Northern America,350,2004-09-30
+1131787,Caribbean,1,2004-09-30
+1131787,Northern America,384,2004-12-31
+1131787,Caribbean,2,2004-12-31
+1131787,Northern America,386,2005-03-31
+1131787,Caribbean,2,2005-03-31
+1131787,Northern America,387,2005-06-30
+1131787,Caribbean,2,2005-06-30
+1131787,Northern America,398,2005-09-30
+1131787,Caribbean,2,2005-09-30
+1131787,Northern America,396,2005-12-31
+1131787,Caribbean,2,2005-12-31
+1131787,Northern America,401,2006-03-31
+1131787,Caribbean,2,2006-03-31
+1131787,Northern America,405,2006-06-30
+1131787,Caribbean,1,2006-06-30
+1131787,Northern America,408,2006-09-30
+1131787,Caribbean,6,2006-09-30
+1131787,Northern America,411,2006-12-31
+1131787,Caribbean,6,2006-12-31
+1131787,Northern America,419,2007-03-31
+1131787,Caribbean,6,2007-03-31
+1131787,Northern America,127,2007-06-30
+1131787,Caribbean,5,2007-06-30
+1131787,Northern America,121,2007-09-30
+1131787,Caribbean,5,2007-09-30
+1131787,Northern America,124,2007-12-31
+1131787,Caribbean,4,2007-12-31
+1131787,South Asia,1,2007-12-31
+1131787,Northern America,131,2008-03-31
+1131787,Caribbean,4,2008-03-31
+1131787,South Asia,1,2008-03-31
+1131787,Northern America,135,2008-06-30
+1131787,Caribbean,4,2008-06-30
+1131787,South Asia,1,2008-06-30
+1131787,Northern America,122,2008-09-30
+1131787,Caribbean,3,2008-09-30
+1131787,South Asia,1,2008-09-30
+1131787,Northern America,114,2008-12-31
+1131787,Caribbean,2,2008-12-31
+1131787,South Asia,1,2008-12-31
+1131787,Northern America,114,2009-03-31
+1131787,Caribbean,1,2009-03-31
+1131787,South Asia,1,2009-03-31
+1131787,Northern America,110,2009-06-30
+1131787,Caribbean,1,2009-06-30
+1131787,South Asia,1,2009-06-30
+1131787,Northern America,109,2009-09-30
+1131787,Caribbean,1,2009-09-30
+1131787,South Asia,1,2009-09-30
+1131787,Northern America,107,2009-12-31
+1131787,Caribbean,1,2009-12-31
+1131787,South Asia,1,2009-12-31
 1131787,Northern America,106,2010-03-31
 1131787,Caribbean,2,2010-03-31
 1131787,South Asia,1,2010-03-31
@@ -1974,9 +3561,60 @@ Id_Rssd,Region,N,asOfDate
 1131787,Northern America,71,2016-09-30
 1131787,Caribbean,1,2016-09-30
 1131787,South Asia,1,2016-09-30
-1131787,Northern America,71,2016-12-28
-1131787,Caribbean,1,2016-12-28
-1131787,South Asia,1,2016-12-28
+1131787,Northern America,71,2016-12-31
+1131787,Caribbean,1,2016-12-31
+1131787,South Asia,1,2016-12-31
+1131787,Northern America,72,2017-03-31
+1131787,Caribbean,1,2017-03-31
+1131787,South Asia,1,2017-03-31
+1132449,Northern America,73,2004-03-31
+1132449,East Asia,1,2004-03-31
+1132449,Northern America,73,2004-06-30
+1132449,East Asia,1,2004-06-30
+1132449,Northern America,108,2004-09-30
+1132449,East Asia,1,2004-09-30
+1132449,Northern America,115,2004-12-31
+1132449,East Asia,1,2004-12-31
+1132449,Northern America,117,2005-03-31
+1132449,East Asia,1,2005-03-31
+1132449,Northern America,118,2005-06-30
+1132449,East Asia,1,2005-06-30
+1132449,Northern America,119,2005-09-30
+1132449,East Asia,1,2005-09-30
+1132449,Northern America,113,2005-12-31
+1132449,East Asia,1,2005-12-31
+1132449,Northern America,111,2006-03-31
+1132449,East Asia,1,2006-03-31
+1132449,Northern America,108,2006-06-30
+1132449,East Asia,1,2006-06-30
+1132449,Northern America,104,2006-09-30
+1132449,East Asia,1,2006-09-30
+1132449,Northern America,102,2006-12-31
+1132449,East Asia,1,2006-12-31
+1132449,Northern America,104,2007-03-31
+1132449,East Asia,1,2007-03-31
+1132449,Northern America,101,2007-06-30
+1132449,East Asia,1,2007-06-30
+1132449,Northern America,92,2007-09-30
+1132449,East Asia,1,2007-09-30
+1132449,Northern America,92,2007-12-31
+1132449,East Asia,1,2007-12-31
+1132449,Northern America,90,2008-03-31
+1132449,East Asia,1,2008-03-31
+1132449,Northern America,90,2008-06-30
+1132449,East Asia,1,2008-06-30
+1132449,Northern America,85,2008-09-30
+1132449,East Asia,1,2008-09-30
+1132449,Northern America,79,2008-12-31
+1132449,East Asia,1,2008-12-31
+1132449,Northern America,77,2009-03-31
+1132449,East Asia,1,2009-03-31
+1132449,Northern America,76,2009-06-30
+1132449,East Asia,1,2009-06-30
+1132449,Northern America,70,2009-09-30
+1132449,East Asia,1,2009-09-30
+1132449,Northern America,66,2009-12-31
+1132449,East Asia,1,2009-12-31
 1132449,Northern America,65,2010-03-31
 1132449,East Asia,1,2010-03-31
 1132449,Northern America,61,2010-06-30
@@ -2016,7 +3654,121 @@ Id_Rssd,Region,N,asOfDate
 1132449,Northern America,41,2016-03-31
 1132449,Northern America,41,2016-06-30
 1132449,Northern America,41,2016-09-30
-1132449,Northern America,41,2016-12-28
+1132449,Northern America,39,2016-12-31
+1132449,Northern America,39,2017-03-31
+1199611,Northern America,34,2004-03-31
+1199611,East Asia,2,2004-03-31
+1199611,Europe,19,2004-03-31
+1199611,Caribbean,1,2004-03-31
+1199611,Northern America,34,2004-06-30
+1199611,East Asia,2,2004-06-30
+1199611,Europe,19,2004-06-30
+1199611,Caribbean,1,2004-06-30
+1199611,Northern America,34,2004-09-30
+1199611,East Asia,2,2004-09-30
+1199611,Europe,19,2004-09-30
+1199611,Caribbean,1,2004-09-30
+1199611,Northern America,34,2004-12-31
+1199611,East Asia,2,2004-12-31
+1199611,Europe,20,2004-12-31
+1199611,Caribbean,1,2004-12-31
+1199611,Northern America,34,2005-03-31
+1199611,East Asia,2,2005-03-31
+1199611,Europe,49,2005-03-31
+1199611,Caribbean,1,2005-03-31
+1199611,Northern America,34,2005-06-30
+1199611,East Asia,2,2005-06-30
+1199611,Europe,49,2005-06-30
+1199611,Caribbean,1,2005-06-30
+1199611,Northern America,34,2005-09-30
+1199611,East Asia,2,2005-09-30
+1199611,Europe,49,2005-09-30
+1199611,Caribbean,1,2005-09-30
+1199611,Northern America,34,2005-12-31
+1199611,East Asia,2,2005-12-31
+1199611,Europe,49,2005-12-31
+1199611,South Asia,1,2005-12-31
+1199611,Caribbean,1,2005-12-31
+1199611,Northern America,35,2006-03-31
+1199611,East Asia,2,2006-03-31
+1199611,Europe,49,2006-03-31
+1199611,South Asia,1,2006-03-31
+1199611,Caribbean,1,2006-03-31
+1199611,Northern America,35,2006-06-30
+1199611,Caribbean,1,2006-06-30
+1199611,East Asia,2,2006-06-30
+1199611,Europe,49,2006-06-30
+1199611,South Asia,1,2006-06-30
+1199611,Northern America,30,2006-09-30
+1199611,Caribbean,1,2006-09-30
+1199611,East Asia,2,2006-09-30
+1199611,Europe,49,2006-09-30
+1199611,South Asia,1,2006-09-30
+1199611,Northern America,26,2006-12-31
+1199611,Caribbean,1,2006-12-31
+1199611,East Asia,2,2006-12-31
+1199611,Europe,47,2006-12-31
+1199611,South Asia,1,2006-12-31
+1199611,Northern America,26,2007-03-31
+1199611,Caribbean,1,2007-03-31
+1199611,East Asia,2,2007-03-31
+1199611,Europe,48,2007-03-31
+1199611,South Asia,1,2007-03-31
+1199611,Northern America,26,2007-06-30
+1199611,Caribbean,1,2007-06-30
+1199611,East Asia,2,2007-06-30
+1199611,Europe,50,2007-06-30
+1199611,South Asia,1,2007-06-30
+1199611,Northern America,26,2007-09-30
+1199611,Caribbean,1,2007-09-30
+1199611,East Asia,2,2007-09-30
+1199611,Europe,50,2007-09-30
+1199611,South Asia,1,2007-09-30
+1199611,Northern America,26,2007-12-31
+1199611,Caribbean,1,2007-12-31
+1199611,East Asia,2,2007-12-31
+1199611,Europe,50,2007-12-31
+1199611,South Asia,1,2007-12-31
+1199611,Northern America,25,2008-03-31
+1199611,Caribbean,1,2008-03-31
+1199611,East Asia,2,2008-03-31
+1199611,Europe,50,2008-03-31
+1199611,South Asia,1,2008-03-31
+1199611,Northern America,25,2008-06-30
+1199611,Caribbean,1,2008-06-30
+1199611,East Asia,2,2008-06-30
+1199611,Europe,50,2008-06-30
+1199611,South Asia,1,2008-06-30
+1199611,Northern America,25,2008-09-30
+1199611,Caribbean,1,2008-09-30
+1199611,East Asia,2,2008-09-30
+1199611,Europe,50,2008-09-30
+1199611,South Asia,1,2008-09-30
+1199611,Northern America,25,2008-12-31
+1199611,Caribbean,1,2008-12-31
+1199611,East Asia,2,2008-12-31
+1199611,Europe,49,2008-12-31
+1199611,South Asia,1,2008-12-31
+1199611,Northern America,25,2009-03-31
+1199611,Caribbean,1,2009-03-31
+1199611,East Asia,2,2009-03-31
+1199611,Europe,48,2009-03-31
+1199611,South Asia,1,2009-03-31
+1199611,Northern America,26,2009-06-30
+1199611,Caribbean,1,2009-06-30
+1199611,East Asia,2,2009-06-30
+1199611,Europe,48,2009-06-30
+1199611,South Asia,1,2009-06-30
+1199611,Northern America,26,2009-09-30
+1199611,Caribbean,1,2009-09-30
+1199611,East Asia,2,2009-09-30
+1199611,Europe,48,2009-09-30
+1199611,South Asia,1,2009-09-30
+1199611,Northern America,26,2009-12-31
+1199611,Caribbean,1,2009-12-31
+1199611,East Asia,2,2009-12-31
+1199611,Europe,44,2009-12-31
+1199611,South Asia,1,2009-12-31
 1199611,Northern America,26,2010-03-31
 1199611,Caribbean,1,2010-03-31
 1199611,East Asia,2,2010-03-31
@@ -2173,13 +3925,94 @@ Id_Rssd,Region,N,asOfDate
 1199611,Middle East,1,2016-09-30
 1199611,South Asia,1,2016-09-30
 1199611,Southeast Asia and Oceania,2,2016-09-30
-1199611,Northern America,19,2016-12-28
-1199611,Caribbean,2,2016-12-28
-1199611,East Asia,2,2016-12-28
-1199611,Europe,34,2016-12-28
-1199611,Middle East,1,2016-12-28
-1199611,South Asia,1,2016-12-28
-1199611,Southeast Asia and Oceania,2,2016-12-28
+1199611,Northern America,19,2016-12-31
+1199611,Caribbean,2,2016-12-31
+1199611,East Asia,3,2016-12-31
+1199611,Europe,34,2016-12-31
+1199611,Middle East,1,2016-12-31
+1199611,South Asia,1,2016-12-31
+1199611,Southeast Asia and Oceania,2,2016-12-31
+1199611,Northern America,19,2017-03-31
+1199611,Caribbean,2,2017-03-31
+1199611,East Asia,3,2017-03-31
+1199611,Europe,35,2017-03-31
+1199611,Middle East,1,2017-03-31
+1199611,South Asia,1,2017-03-31
+1199611,Southeast Asia and Oceania,2,2017-03-31
+1245415,Northern America,64,2004-03-31
+1245415,East Asia,1,2004-03-31
+1245415,Europe,1,2004-03-31
+1245415,Northern America,63,2004-06-30
+1245415,Europe,1,2004-06-30
+1245415,East Asia,1,2004-06-30
+1245415,Northern America,61,2004-09-30
+1245415,Europe,1,2004-09-30
+1245415,East Asia,1,2004-09-30
+1245415,Northern America,68,2004-12-31
+1245415,Europe,1,2004-12-31
+1245415,East Asia,1,2004-12-31
+1245415,Northern America,66,2005-03-31
+1245415,Europe,1,2005-03-31
+1245415,East Asia,1,2005-03-31
+1245415,Northern America,41,2005-06-30
+1245415,Europe,1,2005-06-30
+1245415,East Asia,1,2005-06-30
+1245415,Northern America,38,2005-09-30
+1245415,Europe,1,2005-09-30
+1245415,East Asia,1,2005-09-30
+1245415,Northern America,37,2005-12-31
+1245415,Europe,1,2005-12-31
+1245415,East Asia,1,2005-12-31
+1245415,Northern America,37,2006-03-31
+1245415,Europe,1,2006-03-31
+1245415,East Asia,1,2006-03-31
+1245415,Northern America,37,2006-06-30
+1245415,Europe,1,2006-06-30
+1245415,East Asia,1,2006-06-30
+1245415,Northern America,35,2006-09-30
+1245415,Europe,1,2006-09-30
+1245415,East Asia,1,2006-09-30
+1245415,Northern America,35,2006-12-31
+1245415,Europe,1,2006-12-31
+1245415,East Asia,1,2006-12-31
+1245415,Northern America,38,2007-03-31
+1245415,Europe,1,2007-03-31
+1245415,Caribbean,1,2007-03-31
+1245415,East Asia,1,2007-03-31
+1245415,Northern America,32,2007-06-30
+1245415,Europe,1,2007-06-30
+1245415,Caribbean,1,2007-06-30
+1245415,East Asia,1,2007-06-30
+1245415,Northern America,31,2007-09-30
+1245415,Europe,1,2007-09-30
+1245415,East Asia,1,2007-09-30
+1245415,Northern America,29,2007-12-31
+1245415,Europe,1,2007-12-31
+1245415,East Asia,1,2007-12-31
+1245415,Northern America,48,2008-03-31
+1245415,Europe,1,2008-03-31
+1245415,East Asia,1,2008-03-31
+1245415,Northern America,45,2008-06-30
+1245415,Europe,1,2008-06-30
+1245415,East Asia,1,2008-06-30
+1245415,Northern America,42,2008-09-30
+1245415,Europe,1,2008-09-30
+1245415,East Asia,1,2008-09-30
+1245415,Northern America,43,2008-12-31
+1245415,Europe,1,2008-12-31
+1245415,East Asia,1,2008-12-31
+1245415,Northern America,42,2009-03-31
+1245415,Europe,1,2009-03-31
+1245415,East Asia,1,2009-03-31
+1245415,Northern America,42,2009-06-30
+1245415,Europe,1,2009-06-30
+1245415,East Asia,1,2009-06-30
+1245415,Northern America,39,2009-09-30
+1245415,Europe,1,2009-09-30
+1245415,East Asia,1,2009-09-30
+1245415,Northern America,40,2009-12-31
+1245415,Europe,1,2009-12-31
+1245415,East Asia,1,2009-12-31
 1245415,Northern America,40,2010-03-31
 1245415,Europe,1,2010-03-31
 1245415,East Asia,1,2010-03-31
@@ -2244,8 +4077,55 @@ Id_Rssd,Region,N,asOfDate
 1245415,East Asia,1,2016-06-30
 1245415,Northern America,40,2016-09-30
 1245415,East Asia,1,2016-09-30
-1245415,Northern America,40,2016-12-28
-1245415,East Asia,1,2016-12-28
+1245415,Northern America,35,2016-12-31
+1245415,East Asia,1,2016-12-31
+1245415,Northern America,35,2017-03-31
+1245415,East Asia,1,2017-03-31
+1275216,Northern America,320,2008-12-31
+1275216,Europe,62,2008-12-31
+1275216,Central and South America,12,2008-12-31
+1275216,Caribbean,15,2008-12-31
+1275216,Southeast Asia and Oceania,13,2008-12-31
+1275216,East Asia,13,2008-12-31
+1275216,South Asia,5,2008-12-31
+1275216,Middle East,3,2008-12-31
+1275216,Africa,2,2008-12-31
+1275216,Northern America,322,2009-03-31
+1275216,Southeast Asia and Oceania,13,2009-03-31
+1275216,Europe,62,2009-03-31
+1275216,Central and South America,12,2009-03-31
+1275216,Caribbean,15,2009-03-31
+1275216,East Asia,13,2009-03-31
+1275216,South Asia,5,2009-03-31
+1275216,Middle East,3,2009-03-31
+1275216,Africa,2,2009-03-31
+1275216,Northern America,322,2009-06-30
+1275216,Southeast Asia and Oceania,12,2009-06-30
+1275216,Europe,62,2009-06-30
+1275216,Central and South America,12,2009-06-30
+1275216,Caribbean,15,2009-06-30
+1275216,East Asia,13,2009-06-30
+1275216,South Asia,4,2009-06-30
+1275216,Middle East,3,2009-06-30
+1275216,Africa,2,2009-06-30
+1275216,Northern America,321,2009-09-30
+1275216,Europe,62,2009-09-30
+1275216,Central and South America,12,2009-09-30
+1275216,Caribbean,14,2009-09-30
+1275216,Southeast Asia and Oceania,12,2009-09-30
+1275216,East Asia,13,2009-09-30
+1275216,South Asia,4,2009-09-30
+1275216,Middle East,3,2009-09-30
+1275216,Africa,2,2009-09-30
+1275216,Northern America,317,2009-12-31
+1275216,Europe,62,2009-12-31
+1275216,Southeast Asia and Oceania,12,2009-12-31
+1275216,Central and South America,12,2009-12-31
+1275216,Caribbean,14,2009-12-31
+1275216,East Asia,13,2009-12-31
+1275216,South Asia,3,2009-12-31
+1275216,Middle East,3,2009-12-31
+1275216,Africa,2,2009-12-31
 1275216,Northern America,306,2010-03-31
 1275216,Southeast Asia and Oceania,12,2010-03-31
 1275216,Europe,62,2010-03-31
@@ -2489,15 +4369,59 @@ Id_Rssd,Region,N,asOfDate
 1275216,South Asia,5,2016-09-30
 1275216,Middle East,3,2016-09-30
 1275216,Africa,2,2016-09-30
-1275216,Northern America,251,2016-12-28
-1275216,Europe,84,2016-12-28
-1275216,Caribbean,3,2016-12-28
-1275216,Central and South America,16,2016-12-28
-1275216,East Asia,23,2016-12-28
-1275216,Southeast Asia and Oceania,12,2016-12-28
-1275216,South Asia,5,2016-12-28
-1275216,Middle East,3,2016-12-28
-1275216,Africa,2,2016-12-28
+1275216,Northern America,252,2016-12-31
+1275216,Europe,84,2016-12-31
+1275216,Caribbean,1,2016-12-31
+1275216,Central and South America,16,2016-12-31
+1275216,East Asia,15,2016-12-31
+1275216,Southeast Asia and Oceania,12,2016-12-31
+1275216,South Asia,5,2016-12-31
+1275216,Middle East,3,2016-12-31
+1275216,Africa,2,2016-12-31
+1275216,Northern America,259,2017-03-31
+1275216,Europe,84,2017-03-31
+1275216,Caribbean,1,2017-03-31
+1275216,Central and South America,17,2017-03-31
+1275216,East Asia,15,2017-03-31
+1275216,South Asia,5,2017-03-31
+1275216,Southeast Asia and Oceania,12,2017-03-31
+1275216,Middle East,3,2017-03-31
+1275216,Africa,2,2017-03-31
+1378434,Northern America,73,2004-03-31
+1378434,Central and South America,1,2004-03-31
+1378434,Northern America,78,2004-06-30
+1378434,Central and South America,1,2004-06-30
+1378434,Northern America,78,2004-09-30
+1378434,Central and South America,1,2004-09-30
+1378434,Northern America,79,2004-12-31
+1378434,Central and South America,1,2004-12-31
+1378434,Northern America,82,2005-03-31
+1378434,Central and South America,1,2005-03-31
+1378434,Northern America,85,2005-06-30
+1378434,Central and South America,1,2005-06-30
+1378434,Northern America,87,2005-09-30
+1378434,Central and South America,1,2005-09-30
+1378434,Northern America,91,2005-12-31
+1378434,Central and South America,1,2005-12-31
+1378434,Northern America,89,2006-03-31
+1378434,Central and South America,1,2006-03-31
+1378434,Northern America,93,2006-06-30
+1378434,Central and South America,1,2006-06-30
+1378434,Northern America,95,2006-09-30
+1378434,Central and South America,1,2006-09-30
+1378434,Northern America,99,2006-12-31
+1378434,Northern America,99,2007-03-31
+1378434,Northern America,90,2007-06-30
+1378434,Northern America,90,2007-09-30
+1378434,Northern America,93,2007-12-31
+1378434,Northern America,95,2008-03-31
+1378434,Northern America,94,2008-06-30
+1378434,Northern America,96,2008-09-30
+1378434,Northern America,102,2008-12-31
+1378434,Northern America,104,2009-03-31
+1378434,Northern America,110,2009-06-30
+1378434,Northern America,111,2009-09-30
+1378434,Northern America,113,2009-12-31
 1378434,Northern America,119,2010-03-31
 1378434,Northern America,119,2010-06-30
 1378434,Northern America,119,2010-09-30
@@ -2526,8 +4450,34 @@ Id_Rssd,Region,N,asOfDate
 1378434,Northern America,223,2016-06-30
 1378434,Northern America,238,2016-09-30
 1378434,Southeast Asia and Oceania,1,2016-09-30
-1378434,Northern America,246,2016-12-28
-1378434,Southeast Asia and Oceania,1,2016-12-28
+1378434,Northern America,244,2016-12-31
+1378434,Southeast Asia and Oceania,1,2016-12-31
+1378434,Northern America,246,2017-03-31
+1378434,Southeast Asia and Oceania,1,2017-03-31
+1447376,Northern America,5,2004-03-31
+1447376,Northern America,5,2004-06-30
+1447376,Northern America,5,2004-09-30
+1447376,Northern America,5,2004-12-31
+1447376,Northern America,5,2005-03-31
+1447376,Northern America,5,2005-06-30
+1447376,Northern America,5,2005-09-30
+1447376,Northern America,5,2005-12-31
+1447376,Northern America,5,2006-03-31
+1447376,Northern America,5,2006-06-30
+1447376,Northern America,5,2006-09-30
+1447376,Northern America,5,2006-12-31
+1447376,Northern America,5,2007-03-31
+1447376,Northern America,5,2007-06-30
+1447376,Northern America,5,2007-09-30
+1447376,Northern America,4,2007-12-31
+1447376,Northern America,4,2008-03-31
+1447376,Northern America,4,2008-06-30
+1447376,Northern America,4,2008-09-30
+1447376,Northern America,4,2008-12-31
+1447376,Northern America,4,2009-03-31
+1447376,Northern America,4,2009-06-30
+1447376,Northern America,4,2009-09-30
+1447376,Northern America,4,2009-12-31
 1447376,Northern America,4,2010-03-31
 1447376,Northern America,4,2010-06-30
 1447376,Northern America,4,2010-09-30
@@ -2576,8 +4526,10 @@ Id_Rssd,Region,N,asOfDate
 1447376,Europe,19,2016-06-30
 1447376,Northern America,717,2016-09-30
 1447376,Europe,19,2016-09-30
-1447376,Northern America,664,2016-12-28
-1447376,Europe,18,2016-12-28
+1447376,Northern America,786,2016-12-31
+1447376,Europe,19,2016-12-31
+1447376,Northern America,815,2017-03-31
+1447376,Europe,20,2017-03-31
 1562859,Northern America,155,2008-12-31
 1562859,Middle East,2,2008-12-31
 1562859,Europe,88,2008-12-31
@@ -2796,21 +4748,52 @@ Id_Rssd,Region,N,asOfDate
 1562859,Central and South America,2,2016-09-30
 1562859,Europe,10,2016-09-30
 1562859,South Asia,1,2016-09-30
-1562859,Northern America,66,2016-12-28
-1562859,Europe,7,2016-12-28
-1562859,Central and South America,2,2016-12-28
-1562859,South Asia,1,2016-12-28
+1562859,Northern America,66,2016-12-31
+1562859,Europe,6,2016-12-31
+1562859,Central and South America,2,2016-12-31
+1562859,South Asia,1,2016-12-31
+1562859,Northern America,64,2017-03-31
+1562859,Europe,5,2017-03-31
+1562859,South Asia,1,2017-03-31
+1562859,Central and South America,1,2017-03-31
 1574834,Northern America,536,2016-09-30
 1574834,Caribbean,7,2016-09-30
 1574834,Africa,1,2016-09-30
-1574834,Northern America,515,2016-12-28
-1574834,Caribbean,8,2016-12-28
-1574834,Africa,1,2016-12-28
-1574834,Europe,1,2016-12-28
+1574834,Northern America,532,2016-12-31
+1574834,Africa,1,2016-12-31
+1574834,Caribbean,8,2016-12-31
+1574834,Northern America,533,2017-03-31
+1574834,Africa,1,2017-03-31
+1574834,Caribbean,8,2017-03-31
 1575569,Northern America,77,2016-09-30
 1575569,Southeast Asia and Oceania,1,2016-09-30
-1575569,Northern America,82,2016-12-28
-1575569,Southeast Asia and Oceania,1,2016-12-28
+1575569,Northern America,76,2016-12-31
+1575569,Southeast Asia and Oceania,1,2016-12-31
+1575569,Northern America,76,2017-03-31
+1607170,Northern America,3,2004-03-31
+1607170,Northern America,3,2004-06-30
+1607170,Northern America,3,2004-09-30
+1607170,Northern America,3,2004-12-31
+1607170,Northern America,3,2005-03-31
+1607170,Northern America,3,2005-06-30
+1607170,Northern America,3,2005-09-30
+1607170,Northern America,3,2005-12-31
+1607170,Northern America,3,2006-03-31
+1607170,Northern America,3,2006-06-30
+1607170,Northern America,3,2006-09-30
+1607170,Northern America,3,2006-12-31
+1607170,Northern America,3,2007-03-31
+1607170,Northern America,3,2007-06-30
+1607170,Northern America,3,2007-09-30
+1607170,Northern America,3,2007-12-31
+1607170,Northern America,3,2008-03-31
+1607170,Northern America,3,2008-06-30
+1607170,Northern America,3,2008-09-30
+1607170,Northern America,3,2008-12-31
+1607170,Northern America,3,2009-03-31
+1607170,Northern America,3,2009-06-30
+1607170,Northern America,3,2009-09-30
+1607170,Northern America,3,2009-12-31
 1607170,Northern America,3,2010-03-31
 1607170,Northern America,3,2010-06-30
 1607170,Northern America,3,2010-09-30
@@ -2928,7 +4911,7 @@ Id_Rssd,Region,N,asOfDate
 1607170,East Asia,9,2015-09-30
 1607170,Northern America,834,2015-12-31
 1607170,Southeast Asia and Oceania,21,2015-12-31
-1607170,Europe,181,2015-12-31
+1607170,Europe,182,2015-12-31
 1607170,Caribbean,8,2015-12-31
 1607170,Africa,6,2015-12-31
 1607170,South Asia,2,2015-12-31
@@ -2936,7 +4919,7 @@ Id_Rssd,Region,N,asOfDate
 1607170,East Asia,9,2015-12-31
 1607170,Northern America,840,2016-03-31
 1607170,Southeast Asia and Oceania,21,2016-03-31
-1607170,Europe,182,2016-03-31
+1607170,Europe,183,2016-03-31
 1607170,Caribbean,8,2016-03-31
 1607170,Africa,6,2016-03-31
 1607170,South Asia,2,2016-03-31
@@ -2944,7 +4927,7 @@ Id_Rssd,Region,N,asOfDate
 1607170,East Asia,9,2016-03-31
 1607170,Northern America,864,2016-06-30
 1607170,Southeast Asia and Oceania,24,2016-06-30
-1607170,Europe,187,2016-06-30
+1607170,Europe,188,2016-06-30
 1607170,Caribbean,8,2016-06-30
 1607170,Africa,6,2016-06-30
 1607170,South Asia,3,2016-06-30
@@ -2952,23 +4935,271 @@ Id_Rssd,Region,N,asOfDate
 1607170,East Asia,9,2016-06-30
 1607170,Northern America,909,2016-09-30
 1607170,Southeast Asia and Oceania,25,2016-09-30
-1607170,Europe,227,2016-09-30
+1607170,Europe,228,2016-09-30
 1607170,Caribbean,11,2016-09-30
 1607170,Africa,6,2016-09-30
 1607170,South Asia,3,2016-09-30
 1607170,Central and South America,52,2016-09-30
 1607170,East Asia,16,2016-09-30
-1607170,Northern America,903,2016-12-28
-1607170,Southeast Asia and Oceania,24,2016-12-28
-1607170,Europe,191,2016-12-28
-1607170,Caribbean,11,2016-12-28
-1607170,Africa,4,2016-12-28
-1607170,South Asia,3,2016-12-28
-1607170,Central and South America,51,2016-12-28
-1607170,East Asia,22,2016-12-28
+1607170,Northern America,925,2016-12-31
+1607170,Southeast Asia and Oceania,28,2016-12-31
+1607170,Europe,236,2016-12-31
+1607170,Caribbean,11,2016-12-31
+1607170,Africa,6,2016-12-31
+1607170,South Asia,3,2016-12-31
+1607170,Central and South America,52,2016-12-31
+1607170,East Asia,23,2016-12-31
+1607170,Northern America,940,2017-03-31
+1607170,Southeast Asia and Oceania,29,2017-03-31
+1607170,Europe,232,2017-03-31
+1607170,Caribbean,11,2017-03-31
+1607170,Africa,6,2017-03-31
+1607170,South Asia,3,2017-03-31
+1607170,Central and South America,52,2017-03-31
+1607170,East Asia,23,2017-03-31
+1951350,Northern America,824,2004-03-31
+1951350,East Asia,76,2004-03-31
+1951350,Europe,231,2004-03-31
+1951350,Southeast Asia and Oceania,96,2004-03-31
+1951350,Caribbean,62,2004-03-31
+1951350,Central and South America,136,2004-03-31
+1951350,South Asia,17,2004-03-31
+1951350,Africa,16,2004-03-31
+1951350,Middle East,3,2004-03-31
+1951350,Central Asia,1,2004-03-31
+1951350,Northern America,810,2004-06-30
+1951350,East Asia,81,2004-06-30
+1951350,Europe,230,2004-06-30
+1951350,Southeast Asia and Oceania,96,2004-06-30
+1951350,Caribbean,64,2004-06-30
+1951350,Central and South America,137,2004-06-30
+1951350,South Asia,17,2004-06-30
+1951350,Africa,16,2004-06-30
+1951350,Middle East,4,2004-06-30
+1951350,Central Asia,1,2004-06-30
+1951350,Northern America,836,2004-09-30
+1951350,East Asia,80,2004-09-30
+1951350,Europe,229,2004-09-30
+1951350,Southeast Asia and Oceania,97,2004-09-30
+1951350,Caribbean,68,2004-09-30
+1951350,Central and South America,138,2004-09-30
+1951350,South Asia,17,2004-09-30
+1951350,Africa,16,2004-09-30
+1951350,Middle East,4,2004-09-30
+1951350,Central Asia,1,2004-09-30
+1951350,Northern America,840,2004-12-31
+1951350,East Asia,83,2004-12-31
+1951350,Europe,223,2004-12-31
+1951350,Southeast Asia and Oceania,97,2004-12-31
+1951350,Caribbean,67,2004-12-31
+1951350,Central and South America,137,2004-12-31
+1951350,South Asia,18,2004-12-31
+1951350,Africa,18,2004-12-31
+1951350,Middle East,4,2004-12-31
+1951350,Central Asia,1,2004-12-31
+1951350,Northern America,860,2005-03-31
+1951350,East Asia,83,2005-03-31
+1951350,Caribbean,66,2005-03-31
+1951350,Africa,20,2005-03-31
+1951350,Europe,229,2005-03-31
+1951350,Southeast Asia and Oceania,92,2005-03-31
+1951350,Central and South America,135,2005-03-31
+1951350,South Asia,19,2005-03-31
+1951350,Middle East,4,2005-03-31
+1951350,Central Asia,1,2005-03-31
+1951350,Northern America,868,2005-06-30
+1951350,East Asia,85,2005-06-30
+1951350,Africa,20,2005-06-30
+1951350,Caribbean,67,2005-06-30
+1951350,Europe,230,2005-06-30
+1951350,Southeast Asia and Oceania,95,2005-06-30
+1951350,Central and South America,137,2005-06-30
+1951350,South Asia,19,2005-06-30
+1951350,Central Asia,1,2005-06-30
+1951350,Middle East,4,2005-06-30
+1951350,Northern America,786,2005-09-30
+1951350,Europe,230,2005-09-30
+1951350,Southeast Asia and Oceania,91,2005-09-30
+1951350,East Asia,86,2005-09-30
+1951350,Caribbean,65,2005-09-30
+1951350,Central and South America,132,2005-09-30
+1951350,South Asia,19,2005-09-30
+1951350,Africa,21,2005-09-30
+1951350,Middle East,4,2005-09-30
+1951350,Central Asia,1,2005-09-30
+1951350,Northern America,805,2005-12-31
+1951350,Europe,218,2005-12-31
+1951350,East Asia,85,2005-12-31
+1951350,Southeast Asia and Oceania,89,2005-12-31
+1951350,Caribbean,67,2005-12-31
+1951350,Central and South America,132,2005-12-31
+1951350,South Asia,17,2005-12-31
+1951350,Africa,21,2005-12-31
+1951350,Middle East,4,2005-12-31
+1951350,Central Asia,1,2005-12-31
+1951350,Northern America,818,2006-03-31
+1951350,Europe,214,2006-03-31
+1951350,East Asia,86,2006-03-31
+1951350,Africa,22,2006-03-31
+1951350,Southeast Asia and Oceania,87,2006-03-31
+1951350,Caribbean,66,2006-03-31
+1951350,Central and South America,134,2006-03-31
+1951350,South Asia,16,2006-03-31
+1951350,Middle East,4,2006-03-31
+1951350,Central Asia,1,2006-03-31
+1951350,Northern America,852,2006-06-30
+1951350,Europe,219,2006-06-30
+1951350,East Asia,88,2006-06-30
+1951350,Africa,24,2006-06-30
+1951350,Southeast Asia and Oceania,86,2006-06-30
+1951350,Caribbean,67,2006-06-30
+1951350,Central and South America,136,2006-06-30
+1951350,South Asia,16,2006-06-30
+1951350,Middle East,4,2006-06-30
+1951350,Central Asia,1,2006-06-30
+1951350,Northern America,865,2006-09-30
+1951350,Europe,220,2006-09-30
+1951350,Southeast Asia and Oceania,88,2006-09-30
+1951350,East Asia,91,2006-09-30
+1951350,Africa,24,2006-09-30
+1951350,Caribbean,68,2006-09-30
+1951350,Central and South America,135,2006-09-30
+1951350,South Asia,16,2006-09-30
+1951350,Middle East,4,2006-09-30
+1951350,Central Asia,1,2006-09-30
+1951350,Northern America,878,2006-12-31
+1951350,Europe,219,2006-12-31
+1951350,East Asia,92,2006-12-31
+1951350,Africa,24,2006-12-31
+1951350,Caribbean,67,2006-12-31
+1951350,Southeast Asia and Oceania,86,2006-12-31
+1951350,Central and South America,135,2006-12-31
+1951350,South Asia,17,2006-12-31
+1951350,Middle East,4,2006-12-31
+1951350,Central Asia,1,2006-12-31
+1951350,Northern America,891,2007-03-31
+1951350,East Asia,90,2007-03-31
+1951350,Caribbean,78,2007-03-31
+1951350,Europe,234,2007-03-31
+1951350,Central and South America,164,2007-03-31
+1951350,South Asia,17,2007-03-31
+1951350,Southeast Asia and Oceania,86,2007-03-31
+1951350,Africa,27,2007-03-31
+1951350,Middle East,4,2007-03-31
+1951350,Central Asia,1,2007-03-31
+1951350,Northern America,930,2007-06-30
+1951350,East Asia,211,2007-06-30
+1951350,Caribbean,90,2007-06-30
+1951350,Europe,305,2007-06-30
+1951350,Central and South America,204,2007-06-30
+1951350,South Asia,17,2007-06-30
+1951350,Southeast Asia and Oceania,98,2007-06-30
+1951350,Africa,29,2007-06-30
+1951350,Middle East,4,2007-06-30
+1951350,Central Asia,1,2007-06-30
+1951350,Northern America,959,2007-09-30
+1951350,East Asia,212,2007-09-30
+1951350,Caribbean,97,2007-09-30
+1951350,Europe,312,2007-09-30
+1951350,Central and South America,200,2007-09-30
+1951350,South Asia,17,2007-09-30
+1951350,Southeast Asia and Oceania,97,2007-09-30
+1951350,Africa,29,2007-09-30
+1951350,Middle East,4,2007-09-30
+1951350,Central Asia,1,2007-09-30
+1951350,Northern America,1008,2007-12-31
+1951350,East Asia,197,2007-12-31
+1951350,Caribbean,103,2007-12-31
+1951350,Europe,311,2007-12-31
+1951350,Central and South America,197,2007-12-31
+1951350,South Asia,18,2007-12-31
+1951350,Southeast Asia and Oceania,96,2007-12-31
+1951350,Africa,29,2007-12-31
+1951350,Middle East,5,2007-12-31
+1951350,Central Asia,1,2007-12-31
+1951350,Northern America,999,2008-03-31
+1951350,East Asia,200,2008-03-31
+1951350,Caribbean,100,2008-03-31
+1951350,Europe,312,2008-03-31
+1951350,Central and South America,218,2008-03-31
+1951350,South Asia,18,2008-03-31
+1951350,Southeast Asia and Oceania,95,2008-03-31
+1951350,Africa,29,2008-03-31
+1951350,Middle East,5,2008-03-31
+1951350,Central Asia,1,2008-03-31
+1951350,Northern America,984,2008-06-30
+1951350,East Asia,156,2008-06-30
+1951350,Caribbean,98,2008-06-30
+1951350,Europe,310,2008-06-30
+1951350,Central and South America,215,2008-06-30
+1951350,South Asia,19,2008-06-30
+1951350,Southeast Asia and Oceania,92,2008-06-30
+1951350,Africa,30,2008-06-30
+1951350,Middle East,5,2008-06-30
+1951350,Central Asia,1,2008-06-30
+1951350,Northern America,969,2008-09-30
+1951350,East Asia,150,2008-09-30
+1951350,Caribbean,98,2008-09-30
+1951350,Europe,314,2008-09-30
+1951350,Central and South America,212,2008-09-30
+1951350,South Asia,20,2008-09-30
+1951350,Southeast Asia and Oceania,74,2008-09-30
+1951350,Africa,31,2008-09-30
+1951350,Middle East,5,2008-09-30
+1951350,Central Asia,1,2008-09-30
+1951350,Northern America,968,2008-12-31
+1951350,East Asia,150,2008-12-31
+1951350,Caribbean,100,2008-12-31
+1951350,Europe,299,2008-12-31
+1951350,Central and South America,206,2008-12-31
+1951350,South Asia,20,2008-12-31
+1951350,Southeast Asia and Oceania,74,2008-12-31
+1951350,Africa,31,2008-12-31
+1951350,Middle East,5,2008-12-31
+1951350,Central Asia,1,2008-12-31
+1951350,Northern America,967,2009-03-31
+1951350,East Asia,148,2009-03-31
+1951350,Caribbean,100,2009-03-31
+1951350,Europe,293,2009-03-31
+1951350,Central and South America,205,2009-03-31
+1951350,South Asia,18,2009-03-31
+1951350,Southeast Asia and Oceania,71,2009-03-31
+1951350,Africa,31,2009-03-31
+1951350,Middle East,5,2009-03-31
+1951350,Central Asia,1,2009-03-31
+1951350,Northern America,1005,2009-06-30
+1951350,East Asia,143,2009-06-30
+1951350,Caribbean,100,2009-06-30
+1951350,Europe,291,2009-06-30
+1951350,Central and South America,202,2009-06-30
+1951350,Southeast Asia and Oceania,71,2009-06-30
+1951350,South Asia,18,2009-06-30
+1951350,Africa,31,2009-06-30
+1951350,Middle East,4,2009-06-30
+1951350,Central Asia,1,2009-06-30
+1951350,Northern America,1023,2009-09-30
+1951350,East Asia,140,2009-09-30
+1951350,Caribbean,100,2009-09-30
+1951350,Europe,288,2009-09-30
+1951350,Central and South America,201,2009-09-30
+1951350,Southeast Asia and Oceania,71,2009-09-30
+1951350,South Asia,18,2009-09-30
+1951350,Africa,31,2009-09-30
+1951350,Middle East,4,2009-09-30
+1951350,Central Asia,1,2009-09-30
+1951350,Northern America,1022,2009-12-31
+1951350,Caribbean,94,2009-12-31
+1951350,Europe,271,2009-12-31
+1951350,Central and South America,201,2009-12-31
+1951350,Southeast Asia and Oceania,68,2009-12-31
+1951350,South Asia,18,2009-12-31
+1951350,East Asia,116,2009-12-31
+1951350,Africa,29,2009-12-31
+1951350,Middle East,4,2009-12-31
+1951350,Central Asia,1,2009-12-31
 1951350,Northern America,1036,2010-03-31
 1951350,Caribbean,94,2010-03-31
-1951350,Europe,268,2010-03-31
+1951350,Europe,269,2010-03-31
 1951350,Central and South America,203,2010-03-31
 1951350,Southeast Asia and Oceania,68,2010-03-31
 1951350,South Asia,17,2010-03-31
@@ -2978,7 +5209,7 @@ Id_Rssd,Region,N,asOfDate
 1951350,Central Asia,1,2010-03-31
 1951350,Northern America,1030,2010-06-30
 1951350,Caribbean,95,2010-06-30
-1951350,Europe,259,2010-06-30
+1951350,Europe,260,2010-06-30
 1951350,Central and South America,201,2010-06-30
 1951350,Southeast Asia and Oceania,65,2010-06-30
 1951350,South Asia,10,2010-06-30
@@ -2988,7 +5219,7 @@ Id_Rssd,Region,N,asOfDate
 1951350,Central Asia,1,2010-06-30
 1951350,Northern America,1034,2010-09-30
 1951350,Caribbean,98,2010-09-30
-1951350,Europe,254,2010-09-30
+1951350,Europe,255,2010-09-30
 1951350,Central and South America,201,2010-09-30
 1951350,Southeast Asia and Oceania,63,2010-09-30
 1951350,South Asia,10,2010-09-30
@@ -3236,16 +5467,98 @@ Id_Rssd,Region,N,asOfDate
 1951350,Middle East,5,2016-09-30
 1951350,Southeast Asia and Oceania,56,2016-09-30
 1951350,Central Asia,1,2016-09-30
-1951350,Northern America,585,2016-12-28
-1951350,Caribbean,48,2016-12-28
-1951350,Africa,21,2016-12-28
-1951350,Europe,121,2016-12-28
-1951350,South Asia,5,2016-12-28
-1951350,Central and South America,137,2016-12-28
-1951350,East Asia,40,2016-12-28
-1951350,Middle East,5,2016-12-28
-1951350,Southeast Asia and Oceania,55,2016-12-28
-1951350,Central Asia,1,2016-12-28
+1951350,Northern America,616,2016-12-31
+1951350,Caribbean,46,2016-12-31
+1951350,South Asia,5,2016-12-31
+1951350,Africa,22,2016-12-31
+1951350,Europe,125,2016-12-31
+1951350,Central and South America,140,2016-12-31
+1951350,East Asia,40,2016-12-31
+1951350,Middle East,5,2016-12-31
+1951350,Southeast Asia and Oceania,56,2016-12-31
+1951350,Central Asia,1,2016-12-31
+1951350,Northern America,617,2017-03-31
+1951350,Caribbean,46,2017-03-31
+1951350,South Asia,5,2017-03-31
+1951350,Africa,22,2017-03-31
+1951350,Europe,125,2017-03-31
+1951350,Central and South America,139,2017-03-31
+1951350,East Asia,40,2017-03-31
+1951350,Middle East,5,2017-03-31
+1951350,Southeast Asia and Oceania,56,2017-03-31
+1951350,Central Asia,1,2017-03-31
+2162966,Northern America,6,2004-03-31
+2162966,Northern America,6,2004-06-30
+2162966,Northern America,6,2004-09-30
+2162966,Northern America,6,2004-12-31
+2162966,Northern America,6,2005-03-31
+2162966,Northern America,6,2005-06-30
+2162966,Northern America,6,2005-09-30
+2162966,Northern America,6,2005-12-31
+2162966,Northern America,6,2006-03-31
+2162966,Northern America,6,2006-06-30
+2162966,Northern America,6,2006-09-30
+2162966,Northern America,6,2006-12-31
+2162966,Northern America,6,2007-03-31
+2162966,Northern America,5,2007-06-30
+2162966,Northern America,5,2007-09-30
+2162966,Northern America,5,2007-12-31
+2162966,Northern America,5,2008-03-31
+2162966,Northern America,5,2008-06-30
+2162966,Northern America,2220,2008-09-30
+2162966,Caribbean,441,2008-09-30
+2162966,Europe,576,2008-09-30
+2162966,East Asia,127,2008-09-30
+2162966,Southeast Asia and Oceania,65,2008-09-30
+2162966,Middle East,7,2008-09-30
+2162966,Africa,24,2008-09-30
+2162966,South Asia,11,2008-09-30
+2162966,Central and South America,13,2008-09-30
+2162966,Northern America,2227,2008-12-31
+2162966,Caribbean,446,2008-12-31
+2162966,Europe,580,2008-12-31
+2162966,East Asia,127,2008-12-31
+2162966,Southeast Asia and Oceania,65,2008-12-31
+2162966,Middle East,7,2008-12-31
+2162966,Africa,25,2008-12-31
+2162966,South Asia,11,2008-12-31
+2162966,Central and South America,13,2008-12-31
+2162966,Northern America,2249,2009-03-31
+2162966,Caribbean,447,2009-03-31
+2162966,Europe,582,2009-03-31
+2162966,East Asia,127,2009-03-31
+2162966,Southeast Asia and Oceania,68,2009-03-31
+2162966,Middle East,8,2009-03-31
+2162966,Africa,30,2009-03-31
+2162966,South Asia,11,2009-03-31
+2162966,Central and South America,13,2009-03-31
+2162966,Northern America,2333,2009-06-30
+2162966,Caribbean,458,2009-06-30
+2162966,Southeast Asia and Oceania,75,2009-06-30
+2162966,Europe,597,2009-06-30
+2162966,East Asia,128,2009-06-30
+2162966,Middle East,8,2009-06-30
+2162966,Africa,30,2009-06-30
+2162966,South Asia,11,2009-06-30
+2162966,Central and South America,13,2009-06-30
+2162966,Northern America,2407,2009-09-30
+2162966,Caribbean,476,2009-09-30
+2162966,Southeast Asia and Oceania,75,2009-09-30
+2162966,Europe,600,2009-09-30
+2162966,East Asia,128,2009-09-30
+2162966,Middle East,8,2009-09-30
+2162966,Africa,30,2009-09-30
+2162966,South Asia,11,2009-09-30
+2162966,Central and South America,13,2009-09-30
+2162966,Northern America,2431,2009-12-31
+2162966,Caribbean,481,2009-12-31
+2162966,Southeast Asia and Oceania,78,2009-12-31
+2162966,Europe,597,2009-12-31
+2162966,East Asia,128,2009-12-31
+2162966,Middle East,8,2009-12-31
+2162966,Africa,31,2009-12-31
+2162966,South Asia,11,2009-12-31
+2162966,Central and South America,13,2009-12-31
 2162966,Northern America,2464,2010-03-31
 2162966,Caribbean,478,2010-03-31
 2162966,Southeast Asia and Oceania,80,2010-03-31
@@ -3489,15 +5802,129 @@ Id_Rssd,Region,N,asOfDate
 2162966,Middle East,9,2016-09-30
 2162966,Africa,18,2016-09-30
 2162966,South Asia,8,2016-09-30
-2162966,Northern America,1723,2016-12-28
-2162966,Central and South America,10,2016-12-28
-2162966,Europe,436,2016-12-28
-2162966,Caribbean,274,2016-12-28
-2162966,Southeast Asia and Oceania,94,2016-12-28
-2162966,East Asia,110,2016-12-28
-2162966,Middle East,9,2016-12-28
-2162966,Africa,18,2016-12-28
-2162966,South Asia,8,2016-12-28
+2162966,Northern America,1769,2016-12-31
+2162966,Central and South America,10,2016-12-31
+2162966,Europe,430,2016-12-31
+2162966,Caribbean,267,2016-12-31
+2162966,Southeast Asia and Oceania,94,2016-12-31
+2162966,East Asia,111,2016-12-31
+2162966,Middle East,9,2016-12-31
+2162966,Africa,18,2016-12-31
+2162966,South Asia,8,2016-12-31
+2162966,Northern America,1580,2017-03-31
+2162966,Central and South America,10,2017-03-31
+2162966,Europe,428,2017-03-31
+2162966,Caribbean,261,2017-03-31
+2162966,Southeast Asia and Oceania,90,2017-03-31
+2162966,East Asia,114,2017-03-31
+2162966,Middle East,9,2017-03-31
+2162966,Africa,18,2017-03-31
+2162966,South Asia,9,2017-03-31
+2277860,Northern America,47,2004-12-31
+2277860,Europe,10,2004-12-31
+2277860,Caribbean,1,2004-12-31
+2277860,South Asia,1,2004-12-31
+2277860,Africa,1,2004-12-31
+2277860,Northern America,53,2005-03-31
+2277860,Europe,17,2005-03-31
+2277860,Caribbean,1,2005-03-31
+2277860,South Asia,1,2005-03-31
+2277860,Africa,1,2005-03-31
+2277860,Northern America,59,2005-06-30
+2277860,Europe,17,2005-06-30
+2277860,Caribbean,1,2005-06-30
+2277860,South Asia,1,2005-06-30
+2277860,Africa,1,2005-06-30
+2277860,Northern America,60,2005-09-30
+2277860,Europe,17,2005-09-30
+2277860,Caribbean,1,2005-09-30
+2277860,South Asia,1,2005-09-30
+2277860,Africa,1,2005-09-30
+2277860,Northern America,94,2005-12-31
+2277860,Europe,17,2005-12-31
+2277860,South Asia,1,2005-12-31
+2277860,Africa,1,2005-12-31
+2277860,Caribbean,1,2005-12-31
+2277860,Northern America,94,2006-03-31
+2277860,Europe,13,2006-03-31
+2277860,South Asia,1,2006-03-31
+2277860,Africa,1,2006-03-31
+2277860,Caribbean,1,2006-03-31
+2277860,Northern America,93,2006-06-30
+2277860,Europe,12,2006-06-30
+2277860,South Asia,1,2006-06-30
+2277860,Africa,1,2006-06-30
+2277860,Caribbean,1,2006-06-30
+2277860,Northern America,95,2006-09-30
+2277860,Europe,12,2006-09-30
+2277860,South Asia,1,2006-09-30
+2277860,Africa,1,2006-09-30
+2277860,Caribbean,1,2006-09-30
+2277860,Northern America,134,2006-12-31
+2277860,Europe,12,2006-12-31
+2277860,South Asia,2,2006-12-31
+2277860,Africa,1,2006-12-31
+2277860,Caribbean,1,2006-12-31
+2277860,Northern America,137,2007-03-31
+2277860,Europe,12,2007-03-31
+2277860,South Asia,2,2007-03-31
+2277860,Africa,1,2007-03-31
+2277860,Caribbean,1,2007-03-31
+2277860,Northern America,133,2007-06-30
+2277860,Europe,12,2007-06-30
+2277860,South Asia,2,2007-06-30
+2277860,Africa,1,2007-06-30
+2277860,Caribbean,1,2007-06-30
+2277860,Northern America,133,2007-09-30
+2277860,Europe,12,2007-09-30
+2277860,South Asia,2,2007-09-30
+2277860,Africa,1,2007-09-30
+2277860,Caribbean,1,2007-09-30
+2277860,Northern America,132,2007-12-31
+2277860,Europe,12,2007-12-31
+2277860,South Asia,2,2007-12-31
+2277860,Africa,1,2007-12-31
+2277860,Caribbean,1,2007-12-31
+2277860,Northern America,130,2008-03-31
+2277860,Europe,12,2008-03-31
+2277860,South Asia,2,2008-03-31
+2277860,Africa,1,2008-03-31
+2277860,Caribbean,1,2008-03-31
+2277860,Northern America,126,2008-06-30
+2277860,Europe,12,2008-06-30
+2277860,South Asia,2,2008-06-30
+2277860,Africa,1,2008-06-30
+2277860,Caribbean,1,2008-06-30
+2277860,Northern America,126,2008-09-30
+2277860,Europe,12,2008-09-30
+2277860,South Asia,2,2008-09-30
+2277860,Africa,1,2008-09-30
+2277860,Caribbean,1,2008-09-30
+2277860,Northern America,123,2008-12-31
+2277860,Europe,12,2008-12-31
+2277860,South Asia,2,2008-12-31
+2277860,Africa,1,2008-12-31
+2277860,Caribbean,1,2008-12-31
+2277860,Northern America,133,2009-03-31
+2277860,Europe,12,2009-03-31
+2277860,South Asia,2,2009-03-31
+2277860,Africa,1,2009-03-31
+2277860,Caribbean,1,2009-03-31
+2277860,Northern America,131,2009-06-30
+2277860,Europe,11,2009-06-30
+2277860,South Asia,1,2009-06-30
+2277860,Africa,1,2009-06-30
+2277860,Caribbean,1,2009-06-30
+2277860,Northern America,129,2009-09-30
+2277860,Europe,11,2009-09-30
+2277860,South Asia,1,2009-09-30
+2277860,Africa,1,2009-09-30
+2277860,Caribbean,1,2009-09-30
+2277860,Northern America,128,2009-12-31
+2277860,Europe,11,2009-12-31
+2277860,South Asia,1,2009-12-31
+2277860,Africa,1,2009-12-31
+2277860,Caribbean,1,2009-12-31
 2277860,Northern America,125,2010-03-31
 2277860,Europe,11,2010-03-31
 2277860,South Asia,1,2010-03-31
@@ -3611,79 +6038,83 @@ Id_Rssd,Region,N,asOfDate
 2277860,Europe,9,2016-09-30
 2277860,Southeast Asia and Oceania,1,2016-09-30
 2277860,South Asia,1,2016-09-30
-2277860,Northern America,202,2016-12-28
-2277860,Europe,9,2016-12-28
-2277860,Southeast Asia and Oceania,1,2016-12-28
-2277860,South Asia,1,2016-12-28
+2277860,Northern America,204,2016-12-31
+2277860,Europe,9,2016-12-31
+2277860,Southeast Asia and Oceania,1,2016-12-31
+2277860,South Asia,1,2016-12-31
+2277860,Northern America,205,2017-03-31
+2277860,Europe,9,2017-03-31
+2277860,Southeast Asia and Oceania,1,2017-03-31
+2277860,South Asia,1,2017-03-31
 2380443,Northern America,1784,2008-09-30
-2380443,Caribbean,668,2008-09-30
+2380443,Caribbean,667,2008-09-30
 2380443,Africa,52,2008-09-30
 2380443,South Asia,16,2008-09-30
 2380443,East Asia,104,2008-09-30
-2380443,Europe,479,2008-09-30
+2380443,Europe,480,2008-09-30
 2380443,Southeast Asia and Oceania,163,2008-09-30
 2380443,Middle East,7,2008-09-30
 2380443,Central and South America,20,2008-09-30
 2380443,Northern America,1824,2008-12-31
-2380443,Caribbean,672,2008-12-31
+2380443,Caribbean,671,2008-12-31
 2380443,Africa,55,2008-12-31
 2380443,South Asia,16,2008-12-31
 2380443,East Asia,104,2008-12-31
-2380443,Europe,492,2008-12-31
+2380443,Europe,493,2008-12-31
 2380443,Southeast Asia and Oceania,163,2008-12-31
 2380443,Middle East,7,2008-12-31
 2380443,Central and South America,20,2008-12-31
 2380443,Northern America,1848,2009-03-31
-2380443,Caribbean,680,2009-03-31
+2380443,Caribbean,679,2009-03-31
 2380443,Africa,55,2009-03-31
 2380443,South Asia,9,2009-03-31
 2380443,East Asia,104,2009-03-31
-2380443,Europe,495,2009-03-31
+2380443,Europe,496,2009-03-31
 2380443,Southeast Asia and Oceania,163,2009-03-31
 2380443,Middle East,7,2009-03-31
 2380443,Central and South America,20,2009-03-31
 2380443,Northern America,1873,2009-06-30
-2380443,Caribbean,687,2009-06-30
+2380443,Caribbean,686,2009-06-30
 2380443,Africa,55,2009-06-30
 2380443,South Asia,9,2009-06-30
 2380443,East Asia,105,2009-06-30
-2380443,Europe,518,2009-06-30
+2380443,Europe,519,2009-06-30
 2380443,Southeast Asia and Oceania,164,2009-06-30
 2380443,Middle East,7,2009-06-30
 2380443,Central and South America,21,2009-06-30
 2380443,Northern America,1907,2009-09-30
-2380443,Caribbean,699,2009-09-30
+2380443,Caribbean,698,2009-09-30
 2380443,Africa,56,2009-09-30
 2380443,South Asia,9,2009-09-30
 2380443,East Asia,107,2009-09-30
-2380443,Europe,533,2009-09-30
+2380443,Europe,534,2009-09-30
 2380443,Southeast Asia and Oceania,165,2009-09-30
 2380443,Middle East,7,2009-09-30
 2380443,Central and South America,26,2009-09-30
 2380443,Northern America,1914,2009-12-31
-2380443,Caribbean,708,2009-12-31
+2380443,Caribbean,707,2009-12-31
 2380443,Africa,55,2009-12-31
 2380443,South Asia,9,2009-12-31
 2380443,East Asia,104,2009-12-31
-2380443,Europe,539,2009-12-31
+2380443,Europe,540,2009-12-31
 2380443,Southeast Asia and Oceania,161,2009-12-31
 2380443,Middle East,7,2009-12-31
 2380443,Central and South America,26,2009-12-31
 2380443,Northern America,1944,2010-03-31
-2380443,Caribbean,729,2010-03-31
+2380443,Caribbean,728,2010-03-31
 2380443,Africa,56,2010-03-31
 2380443,South Asia,9,2010-03-31
 2380443,East Asia,107,2010-03-31
-2380443,Europe,541,2010-03-31
+2380443,Europe,542,2010-03-31
 2380443,Southeast Asia and Oceania,160,2010-03-31
 2380443,Middle East,8,2010-03-31
 2380443,Central and South America,27,2010-03-31
 2380443,Northern America,1957,2010-06-30
-2380443,Caribbean,726,2010-06-30
+2380443,Caribbean,725,2010-06-30
 2380443,Africa,57,2010-06-30
 2380443,South Asia,9,2010-06-30
 2380443,East Asia,106,2010-06-30
-2380443,Europe,538,2010-06-30
+2380443,Europe,539,2010-06-30
 2380443,Southeast Asia and Oceania,155,2010-06-30
 2380443,Middle East,8,2010-06-30
 2380443,Central and South America,27,2010-06-30
@@ -3691,8 +6122,8 @@ Id_Rssd,Region,N,asOfDate
 2380443,Africa,57,2010-09-30
 2380443,South Asia,8,2010-09-30
 2380443,East Asia,117,2010-09-30
-2380443,Caribbean,736,2010-09-30
-2380443,Europe,547,2010-09-30
+2380443,Caribbean,735,2010-09-30
+2380443,Europe,548,2010-09-30
 2380443,Southeast Asia and Oceania,154,2010-09-30
 2380443,Middle East,8,2010-09-30
 2380443,Central and South America,33,2010-09-30
@@ -3700,8 +6131,8 @@ Id_Rssd,Region,N,asOfDate
 2380443,Africa,57,2010-12-31
 2380443,South Asia,8,2010-12-31
 2380443,East Asia,112,2010-12-31
-2380443,Caribbean,762,2010-12-31
-2380443,Europe,553,2010-12-31
+2380443,Caribbean,761,2010-12-31
+2380443,Europe,554,2010-12-31
 2380443,Southeast Asia and Oceania,154,2010-12-31
 2380443,Middle East,8,2010-12-31
 2380443,Central and South America,34,2010-12-31
@@ -3709,16 +6140,16 @@ Id_Rssd,Region,N,asOfDate
 2380443,Africa,57,2011-03-31
 2380443,South Asia,8,2011-03-31
 2380443,East Asia,114,2011-03-31
-2380443,Caribbean,768,2011-03-31
-2380443,Europe,576,2011-03-31
+2380443,Caribbean,767,2011-03-31
+2380443,Europe,577,2011-03-31
 2380443,Southeast Asia and Oceania,153,2011-03-31
 2380443,Middle East,8,2011-03-31
 2380443,Central and South America,35,2011-03-31
 2380443,Northern America,1954,2011-06-30
 2380443,Africa,59,2011-06-30
 2380443,East Asia,109,2011-06-30
-2380443,Caribbean,779,2011-06-30
-2380443,Europe,588,2011-06-30
+2380443,Caribbean,778,2011-06-30
+2380443,Europe,589,2011-06-30
 2380443,Southeast Asia and Oceania,152,2011-06-30
 2380443,South Asia,9,2011-06-30
 2380443,Middle East,8,2011-06-30
@@ -3726,8 +6157,8 @@ Id_Rssd,Region,N,asOfDate
 2380443,Northern America,1959,2011-09-30
 2380443,Africa,60,2011-09-30
 2380443,East Asia,107,2011-09-30
-2380443,Caribbean,782,2011-09-30
-2380443,Europe,621,2011-09-30
+2380443,Caribbean,781,2011-09-30
+2380443,Europe,622,2011-09-30
 2380443,Southeast Asia and Oceania,153,2011-09-30
 2380443,South Asia,25,2011-09-30
 2380443,Middle East,8,2011-09-30
@@ -3736,8 +6167,8 @@ Id_Rssd,Region,N,asOfDate
 2380443,Africa,61,2011-12-31
 2380443,South Asia,25,2011-12-31
 2380443,East Asia,110,2011-12-31
-2380443,Caribbean,791,2011-12-31
-2380443,Europe,629,2011-12-31
+2380443,Caribbean,790,2011-12-31
+2380443,Europe,630,2011-12-31
 2380443,Southeast Asia and Oceania,154,2011-12-31
 2380443,Middle East,8,2011-12-31
 2380443,Central and South America,37,2011-12-31
@@ -3745,8 +6176,8 @@ Id_Rssd,Region,N,asOfDate
 2380443,Africa,61,2012-03-31
 2380443,South Asia,26,2012-03-31
 2380443,East Asia,110,2012-03-31
-2380443,Caribbean,787,2012-03-31
-2380443,Europe,624,2012-03-31
+2380443,Caribbean,786,2012-03-31
+2380443,Europe,625,2012-03-31
 2380443,Southeast Asia and Oceania,154,2012-03-31
 2380443,Middle East,8,2012-03-31
 2380443,Central and South America,38,2012-03-31
@@ -3754,8 +6185,8 @@ Id_Rssd,Region,N,asOfDate
 2380443,Africa,97,2012-06-30
 2380443,South Asia,29,2012-06-30
 2380443,East Asia,114,2012-06-30
-2380443,Caribbean,797,2012-06-30
-2380443,Europe,633,2012-06-30
+2380443,Caribbean,796,2012-06-30
+2380443,Europe,634,2012-06-30
 2380443,Southeast Asia and Oceania,157,2012-06-30
 2380443,Middle East,8,2012-06-30
 2380443,Central and South America,59,2012-06-30
@@ -3763,15 +6194,15 @@ Id_Rssd,Region,N,asOfDate
 2380443,Africa,97,2012-09-30
 2380443,South Asia,28,2012-09-30
 2380443,East Asia,115,2012-09-30
-2380443,Caribbean,797,2012-09-30
-2380443,Europe,634,2012-09-30
+2380443,Caribbean,796,2012-09-30
+2380443,Europe,635,2012-09-30
 2380443,Southeast Asia and Oceania,154,2012-09-30
 2380443,Middle East,8,2012-09-30
 2380443,Central and South America,61,2012-09-30
 2380443,Northern America,2029,2012-12-31
 2380443,Africa,98,2012-12-31
-2380443,Europe,625,2012-12-31
-2380443,Caribbean,800,2012-12-31
+2380443,Europe,626,2012-12-31
+2380443,Caribbean,799,2012-12-31
 2380443,East Asia,107,2012-12-31
 2380443,Middle East,8,2012-12-31
 2380443,Central and South America,38,2012-12-31
@@ -3779,8 +6210,8 @@ Id_Rssd,Region,N,asOfDate
 2380443,South Asia,28,2012-12-31
 2380443,Northern America,2014,2013-03-31
 2380443,Africa,94,2013-03-31
-2380443,Europe,609,2013-03-31
-2380443,Caribbean,795,2013-03-31
+2380443,Europe,610,2013-03-31
+2380443,Caribbean,794,2013-03-31
 2380443,East Asia,96,2013-03-31
 2380443,Middle East,8,2013-03-31
 2380443,Central and South America,39,2013-03-31
@@ -3912,15 +6343,151 @@ Id_Rssd,Region,N,asOfDate
 2380443,East Asia,75,2016-09-30
 2380443,South Asia,23,2016-09-30
 2380443,Middle East,4,2016-09-30
-2380443,Northern America,1580,2016-12-28
-2380443,Africa,79,2016-12-28
-2380443,Europe,456,2016-12-28
-2380443,Caribbean,599,2016-12-28
-2380443,Central and South America,36,2016-12-28
-2380443,Southeast Asia and Oceania,78,2016-12-28
-2380443,East Asia,78,2016-12-28
-2380443,South Asia,10,2016-12-28
-2380443,Middle East,4,2016-12-28
+2380443,Northern America,1597,2016-12-31
+2380443,Africa,74,2016-12-31
+2380443,Europe,454,2016-12-31
+2380443,Caribbean,606,2016-12-31
+2380443,Central and South America,37,2016-12-31
+2380443,Southeast Asia and Oceania,80,2016-12-31
+2380443,East Asia,77,2016-12-31
+2380443,South Asia,10,2016-12-31
+2380443,Middle East,4,2016-12-31
+2380443,Northern America,1583,2017-03-31
+2380443,Africa,72,2017-03-31
+2380443,Europe,441,2017-03-31
+2380443,Caribbean,583,2017-03-31
+2380443,Central and South America,37,2017-03-31
+2380443,Southeast Asia and Oceania,51,2017-03-31
+2380443,South Asia,10,2017-03-31
+2380443,East Asia,78,2017-03-31
+2380443,Middle East,4,2017-03-31
+2816906,Northern America,326,2004-03-31
+2816906,Africa,1,2004-03-31
+2816906,Central and South America,10,2004-03-31
+2816906,Middle East,3,2004-03-31
+2816906,Caribbean,39,2004-03-31
+2816906,Europe,39,2004-03-31
+2816906,East Asia,4,2004-03-31
+2816906,Southeast Asia and Oceania,2,2004-03-31
+2816906,Northern America,322,2004-06-30
+2816906,Africa,1,2004-06-30
+2816906,Central and South America,10,2004-06-30
+2816906,Middle East,3,2004-06-30
+2816906,Caribbean,38,2004-06-30
+2816906,Europe,38,2004-06-30
+2816906,East Asia,4,2004-06-30
+2816906,Southeast Asia and Oceania,2,2004-06-30
+2816906,Northern America,327,2004-09-30
+2816906,Africa,1,2004-09-30
+2816906,Central and South America,10,2004-09-30
+2816906,Middle East,3,2004-09-30
+2816906,Caribbean,35,2004-09-30
+2816906,Europe,37,2004-09-30
+2816906,East Asia,2,2004-09-30
+2816906,Southeast Asia and Oceania,2,2004-09-30
+2816906,Northern America,329,2004-12-31
+2816906,Africa,1,2004-12-31
+2816906,Central and South America,9,2004-12-31
+2816906,Middle East,3,2004-12-31
+2816906,Caribbean,35,2004-12-31
+2816906,Europe,35,2004-12-31
+2816906,East Asia,2,2004-12-31
+2816906,Southeast Asia and Oceania,2,2004-12-31
+2816906,Northern America,320,2005-03-31
+2816906,Africa,1,2005-03-31
+2816906,Central and South America,9,2005-03-31
+2816906,Middle East,3,2005-03-31
+2816906,Caribbean,34,2005-03-31
+2816906,Europe,35,2005-03-31
+2816906,Southeast Asia and Oceania,2,2005-03-31
+2816906,Northern America,329,2005-06-30
+2816906,Africa,1,2005-06-30
+2816906,Central and South America,9,2005-06-30
+2816906,Middle East,3,2005-06-30
+2816906,Caribbean,28,2005-06-30
+2816906,Europe,35,2005-06-30
+2816906,Southeast Asia and Oceania,2,2005-06-30
+2816906,Northern America,335,2005-09-30
+2816906,Africa,1,2005-09-30
+2816906,Central and South America,9,2005-09-30
+2816906,Middle East,3,2005-09-30
+2816906,Caribbean,28,2005-09-30
+2816906,Europe,36,2005-09-30
+2816906,Northern America,328,2005-12-31
+2816906,Caribbean,39,2005-12-31
+2816906,Africa,1,2005-12-31
+2816906,Central and South America,10,2005-12-31
+2816906,Middle East,3,2005-12-31
+2816906,Europe,35,2005-12-31
+2816906,Northern America,322,2006-03-31
+2816906,Caribbean,38,2006-03-31
+2816906,Africa,1,2006-03-31
+2816906,Central and South America,10,2006-03-31
+2816906,Middle East,1,2006-03-31
+2816906,Europe,32,2006-03-31
+2816906,Northern America,310,2006-06-30
+2816906,Caribbean,35,2006-06-30
+2816906,Africa,1,2006-06-30
+2816906,Central and South America,13,2006-06-30
+2816906,Middle East,1,2006-06-30
+2816906,Europe,33,2006-06-30
+2816906,Northern America,308,2006-09-30
+2816906,Caribbean,37,2006-09-30
+2816906,Central and South America,12,2006-09-30
+2816906,Middle East,1,2006-09-30
+2816906,Europe,31,2006-09-30
+2816906,Northern America,312,2006-12-31
+2816906,Caribbean,39,2006-12-31
+2816906,Central and South America,12,2006-12-31
+2816906,Europe,31,2006-12-31
+2816906,Northern America,321,2007-03-31
+2816906,Caribbean,39,2007-03-31
+2816906,Central and South America,13,2007-03-31
+2816906,Europe,31,2007-03-31
+2816906,Northern America,319,2007-06-30
+2816906,Caribbean,38,2007-06-30
+2816906,Central and South America,13,2007-06-30
+2816906,Europe,31,2007-06-30
+2816906,Northern America,326,2007-09-30
+2816906,Caribbean,35,2007-09-30
+2816906,Central and South America,13,2007-09-30
+2816906,Europe,30,2007-09-30
+2816906,Northern America,334,2007-12-31
+2816906,Caribbean,43,2007-12-31
+2816906,Central and South America,15,2007-12-31
+2816906,Europe,36,2007-12-31
+2816906,Northern America,329,2008-03-31
+2816906,Caribbean,42,2008-03-31
+2816906,Central and South America,15,2008-03-31
+2816906,Europe,35,2008-03-31
+2816906,Northern America,324,2008-06-30
+2816906,Caribbean,43,2008-06-30
+2816906,Central and South America,15,2008-06-30
+2816906,Europe,36,2008-06-30
+2816906,Northern America,327,2008-09-30
+2816906,Caribbean,43,2008-09-30
+2816906,Central and South America,15,2008-09-30
+2816906,Europe,36,2008-09-30
+2816906,Northern America,322,2008-12-31
+2816906,Caribbean,41,2008-12-31
+2816906,Central and South America,16,2008-12-31
+2816906,Europe,34,2008-12-31
+2816906,Northern America,315,2009-03-31
+2816906,Caribbean,40,2009-03-31
+2816906,Central and South America,19,2009-03-31
+2816906,Europe,31,2009-03-31
+2816906,Northern America,313,2009-06-30
+2816906,Caribbean,37,2009-06-30
+2816906,Central and South America,19,2009-06-30
+2816906,Europe,31,2009-06-30
+2816906,Northern America,296,2009-09-30
+2816906,Caribbean,33,2009-09-30
+2816906,Central and South America,19,2009-09-30
+2816906,Europe,28,2009-09-30
+2816906,Northern America,288,2009-12-31
+2816906,Caribbean,29,2009-12-31
+2816906,Central and South America,20,2009-12-31
+2816906,Europe,28,2009-12-31
 2816906,Northern America,290,2010-03-31
 2816906,Caribbean,29,2010-03-31
 2816906,Central and South America,20,2010-03-31
@@ -3957,10 +6524,38 @@ Id_Rssd,Region,N,asOfDate
 2816906,Central and South America,2,2016-09-30
 2816906,Europe,8,2016-09-30
 2816906,Caribbean,4,2016-09-30
-2816906,Northern America,151,2016-12-28
-2816906,Central and South America,1,2016-12-28
-2816906,Europe,8,2016-12-28
-2816906,Caribbean,4,2016-12-28
+2816906,Northern America,147,2016-12-31
+2816906,Central and South America,1,2016-12-31
+2816906,Europe,8,2016-12-31
+2816906,Caribbean,4,2016-12-31
+2816906,Northern America,136,2017-03-31
+2816906,Central and South America,1,2017-03-31
+2816906,Europe,8,2017-03-31
+2816906,Caribbean,4,2017-03-31
+3226762,Northern America,89,2004-03-31
+3226762,Northern America,83,2004-06-30
+3226762,Northern America,89,2004-09-30
+3226762,Northern America,86,2004-12-31
+3226762,Northern America,83,2005-03-31
+3226762,Northern America,82,2005-06-30
+3226762,Northern America,46,2005-09-30
+3226762,Northern America,46,2005-12-31
+3226762,Northern America,46,2006-03-31
+3226762,Northern America,41,2006-06-30
+3226762,Northern America,41,2006-09-30
+3226762,Northern America,43,2006-12-31
+3226762,Northern America,48,2007-03-31
+3226762,Northern America,49,2007-06-30
+3226762,Northern America,49,2007-09-30
+3226762,Northern America,50,2007-12-31
+3226762,Northern America,69,2008-03-31
+3226762,Northern America,55,2008-06-30
+3226762,Northern America,55,2008-09-30
+3226762,Northern America,53,2008-12-31
+3226762,Northern America,54,2009-03-31
+3226762,Northern America,50,2009-06-30
+3226762,Northern America,48,2009-09-30
+3226762,Northern America,40,2009-12-31
 3226762,Northern America,39,2010-03-31
 3226762,Northern America,39,2010-06-30
 3226762,Northern America,35,2010-09-30
@@ -3969,21 +6564,6 @@ Id_Rssd,Region,N,asOfDate
 3226762,Northern America,26,2011-06-30
 3226762,Northern America,25,2011-09-30
 3226762,Northern America,25,2011-12-31
-3226762,Northern America,10,2012-03-31
-3226762,Northern America,10,2012-06-30
-3226762,Northern America,10,2012-09-30
-3226762,Northern America,10,2012-12-31
-3226762,Northern America,10,2013-03-31
-3226762,Northern America,10,2013-06-30
-3226762,Northern America,10,2013-09-30
-3226762,Northern America,9,2013-12-31
-3226762,Northern America,9,2014-03-31
-3226762,Northern America,9,2014-06-30
-3226762,Northern America,9,2014-09-30
-3226762,Northern America,9,2014-12-31
-3226762,Northern America,10,2015-03-31
-3226762,Northern America,10,2015-06-30
-3226762,Northern America,9,2015-09-30
 3226762,Northern America,87,2015-12-31
 3226762,East Asia,1,2015-12-31
 3226762,Northern America,85,2016-03-31
@@ -3992,8 +6572,127 @@ Id_Rssd,Region,N,asOfDate
 3226762,East Asia,1,2016-06-30
 3226762,Northern America,86,2016-09-30
 3226762,East Asia,1,2016-09-30
-3226762,Northern America,86,2016-12-28
-3226762,East Asia,1,2016-12-28
+3226762,Northern America,78,2016-12-31
+3226762,East Asia,1,2016-12-31
+3226762,Northern America,77,2017-03-31
+3226762,East Asia,1,2017-03-31
+3232316,Northern America,335,2004-03-31
+3232316,Europe,29,2004-03-31
+3232316,Caribbean,3,2004-03-31
+3232316,Central and South America,6,2004-03-31
+3232316,Southeast Asia and Oceania,2,2004-03-31
+3232316,Northern America,335,2004-06-30
+3232316,Europe,29,2004-06-30
+3232316,Caribbean,2,2004-06-30
+3232316,Central and South America,6,2004-06-30
+3232316,Southeast Asia and Oceania,2,2004-06-30
+3232316,Northern America,333,2004-09-30
+3232316,Europe,29,2004-09-30
+3232316,Caribbean,2,2004-09-30
+3232316,Central and South America,2,2004-09-30
+3232316,Southeast Asia and Oceania,2,2004-09-30
+3232316,Northern America,334,2004-12-31
+3232316,Europe,29,2004-12-31
+3232316,Caribbean,2,2004-12-31
+3232316,Central and South America,2,2004-12-31
+3232316,Southeast Asia and Oceania,2,2004-12-31
+3232316,Northern America,337,2005-03-31
+3232316,Europe,29,2005-03-31
+3232316,Caribbean,2,2005-03-31
+3232316,Central and South America,1,2005-03-31
+3232316,Southeast Asia and Oceania,2,2005-03-31
+3232316,Northern America,345,2005-06-30
+3232316,Europe,29,2005-06-30
+3232316,Caribbean,2,2005-06-30
+3232316,Central and South America,1,2005-06-30
+3232316,Southeast Asia and Oceania,2,2005-06-30
+3232316,Northern America,347,2005-09-30
+3232316,Europe,29,2005-09-30
+3232316,Caribbean,2,2005-09-30
+3232316,Central and South America,1,2005-09-30
+3232316,Southeast Asia and Oceania,2,2005-09-30
+3232316,Northern America,325,2005-12-31
+3232316,Europe,28,2005-12-31
+3232316,Caribbean,2,2005-12-31
+3232316,Central and South America,1,2005-12-31
+3232316,Southeast Asia and Oceania,1,2005-12-31
+3232316,Northern America,325,2006-03-31
+3232316,Europe,28,2006-03-31
+3232316,Caribbean,2,2006-03-31
+3232316,Central and South America,1,2006-03-31
+3232316,Southeast Asia and Oceania,1,2006-03-31
+3232316,Northern America,326,2006-06-30
+3232316,Europe,27,2006-06-30
+3232316,Caribbean,2,2006-06-30
+3232316,Central and South America,1,2006-06-30
+3232316,Southeast Asia and Oceania,1,2006-06-30
+3232316,Northern America,330,2006-09-30
+3232316,Europe,27,2006-09-30
+3232316,Caribbean,2,2006-09-30
+3232316,Central and South America,1,2006-09-30
+3232316,Southeast Asia and Oceania,1,2006-09-30
+3232316,Northern America,333,2006-12-31
+3232316,Europe,25,2006-12-31
+3232316,Caribbean,2,2006-12-31
+3232316,Central and South America,1,2006-12-31
+3232316,Southeast Asia and Oceania,1,2006-12-31
+3232316,Northern America,321,2007-03-31
+3232316,Europe,23,2007-03-31
+3232316,Caribbean,3,2007-03-31
+3232316,Central and South America,1,2007-03-31
+3232316,Southeast Asia and Oceania,1,2007-03-31
+3232316,Northern America,320,2007-06-30
+3232316,Europe,21,2007-06-30
+3232316,Caribbean,3,2007-06-30
+3232316,Central and South America,1,2007-06-30
+3232316,Southeast Asia and Oceania,1,2007-06-30
+3232316,Northern America,321,2007-09-30
+3232316,Europe,21,2007-09-30
+3232316,Caribbean,3,2007-09-30
+3232316,Central and South America,1,2007-09-30
+3232316,Southeast Asia and Oceania,1,2007-09-30
+3232316,Northern America,302,2007-12-31
+3232316,Europe,19,2007-12-31
+3232316,Caribbean,3,2007-12-31
+3232316,Central and South America,1,2007-12-31
+3232316,Southeast Asia and Oceania,1,2007-12-31
+3232316,Northern America,299,2008-03-31
+3232316,Europe,19,2008-03-31
+3232316,Caribbean,3,2008-03-31
+3232316,Central and South America,1,2008-03-31
+3232316,Southeast Asia and Oceania,1,2008-03-31
+3232316,Northern America,301,2008-06-30
+3232316,Europe,7,2008-06-30
+3232316,Caribbean,4,2008-06-30
+3232316,Central and South America,1,2008-06-30
+3232316,Southeast Asia and Oceania,1,2008-06-30
+3232316,Northern America,298,2008-09-30
+3232316,Europe,7,2008-09-30
+3232316,Caribbean,5,2008-09-30
+3232316,Central and South America,1,2008-09-30
+3232316,Southeast Asia and Oceania,1,2008-09-30
+3232316,Northern America,296,2008-12-31
+3232316,Europe,7,2008-12-31
+3232316,Caribbean,5,2008-12-31
+3232316,Central and South America,1,2008-12-31
+3232316,Southeast Asia and Oceania,1,2008-12-31
+3232316,Northern America,297,2009-03-31
+3232316,Europe,7,2009-03-31
+3232316,Caribbean,5,2009-03-31
+3232316,Central and South America,1,2009-03-31
+3232316,Southeast Asia and Oceania,1,2009-03-31
+3232316,Northern America,294,2009-06-30
+3232316,Europe,7,2009-06-30
+3232316,Caribbean,4,2009-06-30
+3232316,Central and South America,1,2009-06-30
+3232316,Northern America,291,2009-09-30
+3232316,Europe,7,2009-09-30
+3232316,Caribbean,4,2009-09-30
+3232316,Central and South America,1,2009-09-30
+3232316,Northern America,242,2009-12-31
+3232316,Europe,8,2009-12-31
+3232316,Caribbean,5,2009-12-31
+3232316,Central and South America,1,2009-12-31
 3232316,Northern America,191,2010-03-31
 3232316,Europe,5,2010-03-31
 3232316,Caribbean,2,2010-03-31
@@ -4079,8 +6778,68 @@ Id_Rssd,Region,N,asOfDate
 3232316,Caribbean,1,2016-06-30
 3232316,Northern America,89,2016-09-30
 3232316,Caribbean,1,2016-09-30
-3232316,Northern America,79,2016-12-28
-3232316,Caribbean,1,2016-12-28
+3232316,Northern America,78,2016-12-31
+3232316,Caribbean,1,2016-12-31
+3232316,Northern America,78,2017-03-31
+3232316,Caribbean,1,2017-03-31
+3242838,Northern America,184,2004-09-30
+3242838,East Asia,1,2004-09-30
+3242838,Northern America,178,2004-12-31
+3242838,East Asia,1,2004-12-31
+3242838,Northern America,166,2005-03-31
+3242838,East Asia,1,2005-03-31
+3242838,Northern America,167,2005-06-30
+3242838,East Asia,1,2005-06-30
+3242838,Northern America,124,2005-09-30
+3242838,East Asia,1,2005-09-30
+3242838,Northern America,123,2005-12-31
+3242838,East Asia,1,2005-12-31
+3242838,Northern America,122,2006-03-31
+3242838,East Asia,1,2006-03-31
+3242838,Northern America,124,2006-06-30
+3242838,East Asia,1,2006-06-30
+3242838,Northern America,124,2006-09-30
+3242838,East Asia,1,2006-09-30
+3242838,Northern America,135,2006-12-31
+3242838,Caribbean,1,2006-12-31
+3242838,East Asia,1,2006-12-31
+3242838,Northern America,127,2007-03-31
+3242838,Caribbean,1,2007-03-31
+3242838,East Asia,1,2007-03-31
+3242838,Northern America,119,2007-06-30
+3242838,Caribbean,1,2007-06-30
+3242838,East Asia,1,2007-06-30
+3242838,Northern America,109,2007-09-30
+3242838,Caribbean,1,2007-09-30
+3242838,East Asia,1,2007-09-30
+3242838,Northern America,98,2007-12-31
+3242838,Caribbean,1,2007-12-31
+3242838,East Asia,1,2007-12-31
+3242838,Northern America,88,2008-03-31
+3242838,Caribbean,1,2008-03-31
+3242838,East Asia,1,2008-03-31
+3242838,Northern America,89,2008-06-30
+3242838,Caribbean,1,2008-06-30
+3242838,East Asia,1,2008-06-30
+3242838,Northern America,88,2008-09-30
+3242838,Caribbean,1,2008-09-30
+3242838,East Asia,1,2008-09-30
+3242838,Northern America,79,2008-12-31
+3242838,Caribbean,1,2008-12-31
+3242838,East Asia,1,2008-12-31
+3242838,Northern America,76,2009-03-31
+3242838,Caribbean,1,2009-03-31
+3242838,East Asia,1,2009-03-31
+3242838,Northern America,73,2009-06-30
+3242838,Caribbean,1,2009-06-30
+3242838,East Asia,1,2009-06-30
+3242838,Northern America,70,2009-09-30
+3242838,Caribbean,1,2009-09-30
+3242838,East Asia,1,2009-09-30
+3242838,Northern America,68,2009-12-31
+3242838,Caribbean,1,2009-12-31
+3242838,East Asia,1,2009-12-31
+3242838,Europe,1,2009-12-31
 3242838,Northern America,67,2010-03-31
 3242838,Caribbean,1,2010-03-31
 3242838,East Asia,1,2010-03-31
@@ -4138,9 +6897,90 @@ Id_Rssd,Region,N,asOfDate
 3242838,Northern America,29,2016-03-31
 3242838,Northern America,29,2016-06-30
 3242838,Northern America,29,2016-09-30
-3242838,Northern America,49,2016-12-28
+3242838,Northern America,50,2016-12-31
+3242838,Northern America,50,2017-03-31
+3587146,Northern America,307,2007-09-30
+3587146,Caribbean,60,2007-09-30
+3587146,Europe,188,2007-09-30
+3587146,Central and South America,4,2007-09-30
+3587146,East Asia,15,2007-09-30
+3587146,Southeast Asia and Oceania,13,2007-09-30
+3587146,South Asia,2,2007-09-30
+3587146,Africa,1,2007-09-30
+3587146,Northern America,306,2007-12-31
+3587146,Caribbean,60,2007-12-31
+3587146,Europe,192,2007-12-31
+3587146,Central and South America,4,2007-12-31
+3587146,East Asia,20,2007-12-31
+3587146,Southeast Asia and Oceania,13,2007-12-31
+3587146,South Asia,2,2007-12-31
+3587146,Africa,1,2007-12-31
+3587146,Northern America,316,2008-03-31
+3587146,Caribbean,60,2008-03-31
+3587146,Europe,194,2008-03-31
+3587146,Central and South America,7,2008-03-31
+3587146,East Asia,23,2008-03-31
+3587146,Southeast Asia and Oceania,13,2008-03-31
+3587146,South Asia,2,2008-03-31
+3587146,Africa,1,2008-03-31
+3587146,Northern America,313,2008-06-30
+3587146,Caribbean,62,2008-06-30
+3587146,Europe,200,2008-06-30
+3587146,Central and South America,6,2008-06-30
+3587146,East Asia,24,2008-06-30
+3587146,Southeast Asia and Oceania,13,2008-06-30
+3587146,South Asia,2,2008-06-30
+3587146,Africa,1,2008-06-30
+3587146,Northern America,329,2008-09-30
+3587146,Europe,199,2008-09-30
+3587146,Southeast Asia and Oceania,13,2008-09-30
+3587146,Caribbean,62,2008-09-30
+3587146,East Asia,24,2008-09-30
+3587146,South Asia,2,2008-09-30
+3587146,Central and South America,8,2008-09-30
+3587146,Africa,1,2008-09-30
+3587146,Northern America,326,2008-12-31
+3587146,Europe,200,2008-12-31
+3587146,Southeast Asia and Oceania,14,2008-12-31
+3587146,Caribbean,62,2008-12-31
+3587146,East Asia,24,2008-12-31
+3587146,South Asia,2,2008-12-31
+3587146,Central and South America,8,2008-12-31
+3587146,Africa,1,2008-12-31
+3587146,Northern America,314,2009-03-31
+3587146,Europe,200,2009-03-31
+3587146,Southeast Asia and Oceania,14,2009-03-31
+3587146,Caribbean,63,2009-03-31
+3587146,South Asia,2,2009-03-31
+3587146,Central and South America,8,2009-03-31
+3587146,Africa,1,2009-03-31
+3587146,East Asia,25,2009-03-31
+3587146,Northern America,315,2009-06-30
+3587146,Europe,201,2009-06-30
+3587146,Southeast Asia and Oceania,14,2009-06-30
+3587146,Caribbean,65,2009-06-30
+3587146,South Asia,2,2009-06-30
+3587146,Central and South America,8,2009-06-30
+3587146,Africa,1,2009-06-30
+3587146,East Asia,25,2009-06-30
+3587146,Northern America,316,2009-09-30
+3587146,Europe,207,2009-09-30
+3587146,Southeast Asia and Oceania,15,2009-09-30
+3587146,Caribbean,67,2009-09-30
+3587146,Central and South America,8,2009-09-30
+3587146,Africa,1,2009-09-30
+3587146,South Asia,2,2009-09-30
+3587146,East Asia,25,2009-09-30
+3587146,Northern America,316,2009-12-31
+3587146,Europe,234,2009-12-31
+3587146,Southeast Asia and Oceania,16,2009-12-31
+3587146,Caribbean,68,2009-12-31
+3587146,Central and South America,10,2009-12-31
+3587146,Africa,1,2009-12-31
+3587146,South Asia,2,2009-12-31
+3587146,East Asia,25,2009-12-31
 3587146,Northern America,313,2010-03-31
-3587146,Caribbean,60,2010-03-31
+3587146,Caribbean,65,2010-03-31
 3587146,Europe,235,2010-03-31
 3587146,Southeast Asia and Oceania,16,2010-03-31
 3587146,Central and South America,10,2010-03-31
@@ -4148,7 +6988,7 @@ Id_Rssd,Region,N,asOfDate
 3587146,South Asia,2,2010-03-31
 3587146,East Asia,27,2010-03-31
 3587146,Northern America,317,2010-06-30
-3587146,Caribbean,60,2010-06-30
+3587146,Caribbean,65,2010-06-30
 3587146,Europe,233,2010-06-30
 3587146,Southeast Asia and Oceania,17,2010-06-30
 3587146,Central and South America,10,2010-06-30
@@ -4156,7 +6996,7 @@ Id_Rssd,Region,N,asOfDate
 3587146,South Asia,2,2010-06-30
 3587146,East Asia,27,2010-06-30
 3587146,Northern America,332,2010-09-30
-3587146,Caribbean,66,2010-09-30
+3587146,Caribbean,71,2010-09-30
 3587146,Europe,242,2010-09-30
 3587146,Southeast Asia and Oceania,17,2010-09-30
 3587146,Central and South America,10,2010-09-30
@@ -4164,7 +7004,7 @@ Id_Rssd,Region,N,asOfDate
 3587146,South Asia,2,2010-09-30
 3587146,East Asia,28,2010-09-30
 3587146,Northern America,376,2010-12-31
-3587146,Caribbean,69,2010-12-31
+3587146,Caribbean,74,2010-12-31
 3587146,Europe,242,2010-12-31
 3587146,Southeast Asia and Oceania,17,2010-12-31
 3587146,Central and South America,10,2010-12-31
@@ -4172,7 +7012,7 @@ Id_Rssd,Region,N,asOfDate
 3587146,South Asia,2,2010-12-31
 3587146,East Asia,30,2010-12-31
 3587146,Northern America,532,2011-03-31
-3587146,Caribbean,71,2011-03-31
+3587146,Caribbean,76,2011-03-31
 3587146,Europe,242,2011-03-31
 3587146,Southeast Asia and Oceania,17,2011-03-31
 3587146,Central and South America,11,2011-03-31
@@ -4180,7 +7020,7 @@ Id_Rssd,Region,N,asOfDate
 3587146,South Asia,2,2011-03-31
 3587146,East Asia,32,2011-03-31
 3587146,Northern America,534,2011-06-30
-3587146,Caribbean,73,2011-06-30
+3587146,Caribbean,78,2011-06-30
 3587146,Europe,241,2011-06-30
 3587146,Southeast Asia and Oceania,17,2011-06-30
 3587146,Central and South America,12,2011-06-30
@@ -4188,7 +7028,7 @@ Id_Rssd,Region,N,asOfDate
 3587146,South Asia,2,2011-06-30
 3587146,East Asia,34,2011-06-30
 3587146,Northern America,529,2011-09-30
-3587146,Caribbean,75,2011-09-30
+3587146,Caribbean,80,2011-09-30
 3587146,Europe,240,2011-09-30
 3587146,Southeast Asia and Oceania,17,2011-09-30
 3587146,Central and South America,12,2011-09-30
@@ -4196,7 +7036,7 @@ Id_Rssd,Region,N,asOfDate
 3587146,South Asia,2,2011-09-30
 3587146,East Asia,34,2011-09-30
 3587146,Northern America,523,2011-12-31
-3587146,Caribbean,76,2011-12-31
+3587146,Caribbean,81,2011-12-31
 3587146,Europe,238,2011-12-31
 3587146,Southeast Asia and Oceania,18,2011-12-31
 3587146,Central and South America,12,2011-12-31
@@ -4204,7 +7044,7 @@ Id_Rssd,Region,N,asOfDate
 3587146,South Asia,2,2011-12-31
 3587146,East Asia,35,2011-12-31
 3587146,Northern America,522,2012-03-31
-3587146,Caribbean,78,2012-03-31
+3587146,Caribbean,83,2012-03-31
 3587146,Europe,239,2012-03-31
 3587146,Southeast Asia and Oceania,18,2012-03-31
 3587146,Central and South America,12,2012-03-31
@@ -4212,7 +7052,7 @@ Id_Rssd,Region,N,asOfDate
 3587146,South Asia,2,2012-03-31
 3587146,East Asia,34,2012-03-31
 3587146,Northern America,517,2012-06-30
-3587146,Caribbean,78,2012-06-30
+3587146,Caribbean,83,2012-06-30
 3587146,Europe,241,2012-06-30
 3587146,Southeast Asia and Oceania,18,2012-06-30
 3587146,Central and South America,12,2012-06-30
@@ -4220,7 +7060,7 @@ Id_Rssd,Region,N,asOfDate
 3587146,South Asia,2,2012-06-30
 3587146,East Asia,36,2012-06-30
 3587146,Northern America,515,2012-09-30
-3587146,Caribbean,80,2012-09-30
+3587146,Caribbean,85,2012-09-30
 3587146,Europe,242,2012-09-30
 3587146,Southeast Asia and Oceania,18,2012-09-30
 3587146,Central and South America,12,2012-09-30
@@ -4228,7 +7068,7 @@ Id_Rssd,Region,N,asOfDate
 3587146,South Asia,2,2012-09-30
 3587146,East Asia,36,2012-09-30
 3587146,Northern America,518,2012-12-31
-3587146,Caribbean,81,2012-12-31
+3587146,Caribbean,86,2012-12-31
 3587146,Europe,244,2012-12-31
 3587146,Southeast Asia and Oceania,18,2012-12-31
 3587146,Central and South America,12,2012-12-31
@@ -4236,7 +7076,7 @@ Id_Rssd,Region,N,asOfDate
 3587146,South Asia,2,2012-12-31
 3587146,East Asia,36,2012-12-31
 3587146,Northern America,514,2013-03-31
-3587146,Caribbean,82,2013-03-31
+3587146,Caribbean,87,2013-03-31
 3587146,Europe,251,2013-03-31
 3587146,Southeast Asia and Oceania,17,2013-03-31
 3587146,Central and South America,12,2013-03-31
@@ -4244,7 +7084,7 @@ Id_Rssd,Region,N,asOfDate
 3587146,South Asia,2,2013-03-31
 3587146,East Asia,38,2013-03-31
 3587146,Northern America,504,2013-06-30
-3587146,Caribbean,80,2013-06-30
+3587146,Caribbean,85,2013-06-30
 3587146,Europe,248,2013-06-30
 3587146,Southeast Asia and Oceania,16,2013-06-30
 3587146,Central and South America,11,2013-06-30
@@ -4252,7 +7092,7 @@ Id_Rssd,Region,N,asOfDate
 3587146,South Asia,2,2013-06-30
 3587146,East Asia,42,2013-06-30
 3587146,Northern America,496,2013-09-30
-3587146,Caribbean,80,2013-09-30
+3587146,Caribbean,85,2013-09-30
 3587146,Europe,246,2013-09-30
 3587146,Southeast Asia and Oceania,16,2013-09-30
 3587146,Central and South America,11,2013-09-30
@@ -4260,7 +7100,7 @@ Id_Rssd,Region,N,asOfDate
 3587146,South Asia,3,2013-09-30
 3587146,East Asia,42,2013-09-30
 3587146,Northern America,492,2013-12-31
-3587146,Caribbean,79,2013-12-31
+3587146,Caribbean,84,2013-12-31
 3587146,Europe,249,2013-12-31
 3587146,Southeast Asia and Oceania,17,2013-12-31
 3587146,Central and South America,11,2013-12-31
@@ -4268,7 +7108,7 @@ Id_Rssd,Region,N,asOfDate
 3587146,South Asia,3,2013-12-31
 3587146,East Asia,44,2013-12-31
 3587146,Northern America,501,2014-03-31
-3587146,Caribbean,78,2014-03-31
+3587146,Caribbean,83,2014-03-31
 3587146,Europe,248,2014-03-31
 3587146,Southeast Asia and Oceania,16,2014-03-31
 3587146,Central and South America,11,2014-03-31
@@ -4355,14 +7195,48 @@ Id_Rssd,Region,N,asOfDate
 3587146,Africa,1,2016-09-30
 3587146,South Asia,3,2016-09-30
 3587146,East Asia,55,2016-09-30
-3587146,Northern America,456,2016-12-28
-3587146,Caribbean,70,2016-12-28
-3587146,Europe,210,2016-12-28
-3587146,Southeast Asia and Oceania,19,2016-12-28
-3587146,Central and South America,8,2016-12-28
-3587146,South Asia,3,2016-12-28
-3587146,Africa,1,2016-12-28
-3587146,East Asia,47,2016-12-28
+3587146,Northern America,445,2016-12-31
+3587146,Caribbean,71,2016-12-31
+3587146,Europe,207,2016-12-31
+3587146,Southeast Asia and Oceania,19,2016-12-31
+3587146,Central and South America,8,2016-12-31
+3587146,South Asia,3,2016-12-31
+3587146,Africa,1,2016-12-31
+3587146,East Asia,61,2016-12-31
+3587146,Northern America,440,2017-03-31
+3587146,Caribbean,71,2017-03-31
+3587146,Europe,206,2017-03-31
+3587146,Southeast Asia and Oceania,19,2017-03-31
+3587146,Central and South America,8,2017-03-31
+3587146,South Asia,3,2017-03-31
+3587146,Africa,1,2017-03-31
+3587146,East Asia,64,2017-03-31
+3606542,Northern America,54,2007-06-30
+3606542,Northern America,56,2007-09-30
+3606542,Caribbean,2,2007-09-30
+3606542,Europe,1,2007-09-30
+3606542,Northern America,56,2007-12-31
+3606542,Caribbean,2,2007-12-31
+3606542,Europe,1,2007-12-31
+3606542,Northern America,73,2008-03-31
+3606542,Caribbean,2,2008-03-31
+3606542,Europe,1,2008-03-31
+3606542,Northern America,72,2008-06-30
+3606542,Caribbean,2,2008-06-30
+3606542,Europe,2,2008-06-30
+3606542,Northern America,73,2008-09-30
+3606542,Caribbean,2,2008-09-30
+3606542,Europe,2,2008-09-30
+3606542,Northern America,65,2008-12-31
+3606542,Europe,1,2008-12-31
+3606542,Northern America,65,2009-03-31
+3606542,Europe,1,2009-03-31
+3606542,Northern America,59,2009-06-30
+3606542,Europe,1,2009-06-30
+3606542,Northern America,59,2009-09-30
+3606542,Europe,1,2009-09-30
+3606542,Northern America,59,2009-12-31
+3606542,Europe,1,2009-12-31
 3606542,Northern America,57,2010-03-31
 3606542,Europe,1,2010-03-31
 3606542,Northern America,71,2010-06-30
@@ -4417,8 +7291,23 @@ Id_Rssd,Region,N,asOfDate
 3606542,Europe,1,2016-06-30
 3606542,Northern America,93,2016-09-30
 3606542,Europe,1,2016-09-30
-3606542,Northern America,91,2016-12-28
-3606542,Europe,1,2016-12-28
+3606542,Northern America,91,2016-12-31
+3606542,Europe,1,2016-12-31
+3833526,Europe,31,2008-12-31
+3833526,Northern America,202,2008-12-31
+3833526,East Asia,1,2008-12-31
+3833526,Europe,49,2009-03-31
+3833526,Northern America,215,2009-03-31
+3833526,East Asia,1,2009-03-31
+3833526,Europe,49,2009-06-30
+3833526,Northern America,211,2009-06-30
+3833526,East Asia,1,2009-06-30
+3833526,Europe,48,2009-09-30
+3833526,Northern America,205,2009-09-30
+3833526,East Asia,1,2009-09-30
+3833526,Europe,47,2009-12-31
+3833526,Northern America,198,2009-12-31
+3833526,East Asia,1,2009-12-31
 3833526,Europe,47,2010-03-31
 3833526,Northern America,195,2010-03-31
 3833526,East Asia,1,2010-03-31
@@ -4487,6 +7376,32 @@ Id_Rssd,Region,N,asOfDate
 3833526,Northern America,57,2016-09-30
 3833526,Europe,27,2016-12-31
 3833526,Northern America,50,2016-12-31
+3833526,Europe,25,2017-03-31
+3833526,Northern America,48,2017-03-31
+3840207,Northern America,2,2004-03-31
+3840207,Northern America,2,2004-06-30
+3840207,Northern America,2,2004-09-30
+3840207,Northern America,2,2004-12-31
+3840207,Northern America,2,2005-03-31
+3840207,Northern America,2,2005-06-30
+3840207,Northern America,2,2005-09-30
+3840207,Northern America,2,2005-12-31
+3840207,Northern America,2,2006-03-31
+3840207,Northern America,2,2006-06-30
+3840207,Northern America,2,2006-09-30
+3840207,Northern America,2,2006-12-31
+3840207,Northern America,2,2007-03-31
+3840207,Northern America,2,2007-06-30
+3840207,Northern America,2,2007-09-30
+3840207,Northern America,2,2007-12-31
+3840207,Northern America,2,2008-03-31
+3840207,Northern America,2,2008-06-30
+3840207,Northern America,2,2008-09-30
+3840207,Northern America,2,2008-12-31
+3840207,Northern America,2,2009-03-31
+3840207,Northern America,2,2009-06-30
+3840207,Northern America,2,2009-09-30
+3840207,Northern America,2,2009-12-31
 3840207,Northern America,2,2010-03-31
 3840207,Northern America,2,2010-06-30
 3840207,Northern America,2,2010-09-30
@@ -4514,7 +7429,8 @@ Id_Rssd,Region,N,asOfDate
 3840207,Northern America,78,2016-03-31
 3840207,Northern America,79,2016-06-30
 3840207,Northern America,79,2016-09-30
-3840207,Northern America,79,2016-12-28
+3840207,Northern America,79,2016-12-31
+3840207,Northern America,80,2017-03-31
 3981856,Northern America,51,2010-03-31
 3981856,Northern America,49,2010-06-30
 3981856,Northern America,52,2010-09-30
@@ -4562,15 +7478,23 @@ Id_Rssd,Region,N,asOfDate
 3981856,Northern America,121,2016-09-30
 3981856,Caribbean,5,2016-09-30
 3981856,Europe,1,2016-09-30
-3981856,Northern America,125,2016-12-28
-3981856,Caribbean,5,2016-12-28
-3981856,Europe,1,2016-12-28
+3981856,Northern America,123,2016-12-31
+3981856,Caribbean,5,2016-12-31
+3981856,Europe,1,2016-12-31
+3981856,Northern America,122,2017-03-31
+3981856,Caribbean,5,2017-03-31
+3981856,Europe,1,2017-03-31
 4846998,Northern America,103,2016-09-30
-4846998,Northern America,95,2016-12-28
-4846998,Caribbean,1,2016-12-28
+4846998,Northern America,96,2016-12-31
+4846998,Caribbean,1,2016-12-31
+4846998,Northern America,93,2017-03-31
+4846998,Caribbean,1,2017-03-31
 5006575,Northern America,66,2016-09-30
 5006575,Europe,8,2016-09-30
 5006575,Caribbean,2,2016-09-30
-5006575,Northern America,59,2016-12-28
-5006575,Europe,8,2016-12-28
-5006575,Caribbean,1,2016-12-28
+5006575,Northern America,59,2016-12-31
+5006575,Europe,9,2016-12-31
+5006575,Caribbean,1,2016-12-31
+5006575,Northern America,65,2017-03-31
+5006575,Europe,8,2017-03-31
+5006575,Caribbean,1,2017-03-31

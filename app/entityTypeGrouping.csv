@@ -1,29 +1,29 @@
-Type.code,domain,count,group
-A,Domestic Entity Other,27131,Domestic Nonbank
-B,International Nonbank Sub of Domestic Entities,19207,International Nonbank
-C,Foreign Entity Other,775,International Nonbank
-D,Finance Company,371,Finance Company
-E,Data Processing Servicer,136,Data Processing Servicer
-F,Securities Broker/Dealer,107,Securities Broker/Dealer
-G,International Bank of U.S. Depository - Edge or Trust Co.,47,International Bank
-H,Financial Holding Company - Domestic,42,Holding Company
-I,National Bank,38,Domestic Bank
-J,Non-deposit Trust Company - Non- member,25,Domestic Nonbank
-K,Bank Holding Company,22,Holding Company
-L,Non-deposit Trust Company - Member,14,Domestic Nonbank
-M,Non-member Bank,14,Domestic Bank
-N,State Member Bank,13,Domestic Bank
-O,Edge Corporation - Investment,12,Domestic Nonbank
-P,Agreement Corporation - Investment,11,Domestic Nonbank
-Q,Intermediate Holding Companies,11,Holding Company
-R,Savings & Loan Holding Company,6,Holding Company
-S,Federal Savings Bank,4,Domestic Bank
-T,Edge Corporation - Banking,3,Domestic Nonbank
-U,Savings & Loan Association,2,Domestic Nonbank
-V,Foreign Banking Organization,1,International Bank
-W,State Savings Bank,1,Domestic Bank
-X,Article XII New York Investment Company,1,Domestic Nonbank
-Y,Foreign Bank,1,International Bank
-Z,Financial Holding Company - Foreign,,Holding Company
-AA,Foreign Bank,,Domestic Bank
-AB,Foreign Banking Organization as a BHC,,Holding Company
+Type.code,domain,group
+A,Domestic Entity Other,Domestic Nonbank
+B,International Nonbank Sub of Domestic Entities,International Nonbank
+C,Foreign Entity Other,International Nonbank
+D,Finance Company,Finance Company
+E,Data Processing Servicer,Data Processing Servicer
+F,Securities Broker/Dealer,Securities Broker/Dealer
+G,International Bank of U.S. Depository - Edge or Trust Co.,International Bank
+H,Financial Holding Company - Domestic,Holding Company
+I,National Bank,Domestic Bank
+J,Non-deposit Trust Company - Non- member,Domestic Nonbank
+K,Bank Holding Company,Holding Company
+L,Non-deposit Trust Company - Member,Domestic Nonbank
+M,Non-member Bank,Domestic Bank
+N,State Member Bank,Domestic Bank
+O,Edge Corporation - Investment,Domestic Nonbank
+P,Agreement Corporation - Investment,Domestic Nonbank
+Q,Intermediate Holding Companies,Holding Company
+R,Savings & Loan Holding Company,Holding Company
+S,Federal Savings Bank,Domestic Bank
+T,Edge Corporation - Banking,Domestic Nonbank
+U,Savings & Loan Association,Domestic Nonbank
+V,Foreign Banking Organization,International Bank
+W,State Savings Bank,Domestic Bank
+X,Article XII New York Investment Company,Domestic Nonbank
+Y,Foreign Bank,International Bank
+Z,Financial Holding Company - Foreign,Holding Company
+AA,Foreign Bank,Domestic Bank
+AB,Foreign Banking Organization as a BHC,Holding Company

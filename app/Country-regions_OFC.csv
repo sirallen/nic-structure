@@ -1,0 +1,269 @@
+Country,Region,IMF_OFC
+Algeria,Africa,0
+Egypt,Africa,0
+Libya,Africa,0
+Morocco,Africa,0
+Sudan,Africa,0
+Tunisia,Africa,0
+Western Sahara,Africa,0
+British Indian Ocean Territory,Africa,0
+Burundi,Africa,0
+Comoros,Africa,0
+Djibouti,Africa,0
+Eritrea,Africa,0
+Ethiopia,Africa,0
+French Southern Territories,Africa,0
+Kenya,Africa,0
+Madagascar,Africa,0
+Malawi,Africa,0
+Mauritius,Africa,1
+Mayotte,Africa,0
+Mozambique,Africa,0
+Réunion,Africa,0
+Rwanda,Africa,0
+Seychelles,Africa,1
+Somalia,Africa,0
+South Sudan,Africa,0
+Uganda,Africa,0
+United Republic of Tanzania,Africa,0
+Zambia,Africa,0
+Zimbabwe,Africa,0
+Angola,Africa,0
+Cameroon,Africa,0
+Central African Republic,Africa,0
+Chad,Africa,0
+Congo,Africa,0
+Democratic Republic of the Congo,Africa,0
+Equatorial Guinea,Africa,0
+Gabon,Africa,0
+Sao Tome and Principe,Africa,0
+Botswana,Africa,1
+Lesotho,Africa,0
+Namibia,Africa,0
+South Africa,Africa,0
+Swaziland,Africa,0
+Benin,Africa,0
+Burkina Faso,Africa,0
+Cabo Verde,Africa,1
+Côte d'Ivoire,Africa,0
+Gambia,Africa,0
+Ghana,Africa,0
+Guinea,Africa,0
+Guinea-Bissau,Africa,0
+Liberia,Africa,0
+Mali,Africa,0
+Mauritania,Africa,0
+Niger,Africa,0
+Nigeria,Africa,0
+Saint Helena,Africa,0
+Senegal,Africa,0
+Sierra Leone,Africa,0
+Togo,Africa,0
+Anguilla,Caribbean,1
+Antigua and Barbuda,Caribbean,1
+Aruba,Caribbean,1
+Bahamas,Caribbean,1
+Barbados,Caribbean,1
+"Bonaire, Sint Eustatius and Saba",Caribbean,0
+British Virgin Islands,Caribbean,1
+Cayman Islands,Caribbean,1
+Cuba,Caribbean,0
+Curaçao,Caribbean,1
+Dominica,Caribbean,1
+Dominican Republic,Caribbean,0
+Grenada,Caribbean,1
+Guadeloupe,Caribbean,0
+Haiti,Caribbean,0
+Jamaica,Caribbean,0
+Martinique,Caribbean,0
+Montserrat,Caribbean,1
+Puerto Rico,Caribbean,0
+Saint Barthélemy,Caribbean,0
+Saint Kitts and Nevis,Caribbean,1
+Saint Lucia,Caribbean,1
+Saint Martin (French Part),Caribbean,0
+Saint Vincent and the Grenadines,Caribbean,1
+Sint Maarten (Dutch part),Caribbean,1
+Trinidad and Tobago,Caribbean,0
+Turks and Caicos Islands,Caribbean,1
+United States Virgin Islands,Caribbean,0
+Belize,Central and South America,1
+Costa Rica,Central and South America,1
+El Salvador,Central and South America,0
+Guatemala,Central and South America,0
+Honduras,Central and South America,0
+Mexico,Central and South America,0
+Nicaragua,Central and South America,0
+Panama,Central and South America,1
+Argentina,Central and South America,0
+Bolivia (Plurinational State of),Central and South America,0
+Bouvet Island,Central and South America,0
+Brazil,Central and South America,0
+Chile,Central and South America,0
+Colombia,Central and South America,0
+Ecuador,Central and South America,0
+Falkland Islands (Malvinas),Central and South America,0
+French Guiana,Central and South America,0
+Guyana,Central and South America,0
+Paraguay,Central and South America,0
+Peru,Central and South America,0
+South Georgia and the South Sandwich Islands,Central and South America,0
+Suriname,Central and South America,0
+Uruguay,Central and South America,1
+Venezuela (Bolivarian Republic of),Central and South America,0
+Bermuda,Northern America,1
+Canada,Northern America,0
+Greenland,Northern America,0
+Saint Pierre and Miquelon,Northern America,0
+United States of America,Northern America,0
+Kazakhstan,Central Asia,0
+Kyrgyzstan,Central Asia,0
+Tajikistan,Central Asia,0
+Turkmenistan,Central Asia,0
+Uzbekistan,Central Asia,0
+China,East Asia,0
+"China, Hong Kong Special Administrative Region",East Asia,1
+"China, Macao Special Administrative Region",East Asia,1
+Democratic People's Republic of Korea,East Asia,0
+Japan,East Asia,0
+Mongolia,East Asia,0
+Republic of Korea,East Asia,0
+Brunei Darussalam,Southeast Asia and Oceania,0
+Cambodia,Southeast Asia and Oceania,0
+Indonesia,Southeast Asia and Oceania,0
+Lao People's Democratic Republic,Southeast Asia and Oceania,0
+Malaysia,Southeast Asia and Oceania,0
+Myanmar,Southeast Asia and Oceania,0
+Philippines,Southeast Asia and Oceania,0
+Singapore,Southeast Asia and Oceania,1
+Thailand,Southeast Asia and Oceania,0
+Timor-Leste,Southeast Asia and Oceania,0
+Viet Nam,Southeast Asia and Oceania,0
+Afghanistan,South Asia,0
+Bangladesh,South Asia,0
+Bhutan,South Asia,0
+India,South Asia,0
+Iran (Islamic Republic of),South Asia,0
+Maldives,South Asia,0
+Nepal,South Asia,0
+Pakistan,South Asia,0
+Sri Lanka,South Asia,0
+Armenia,Middle East,0
+Azerbaijan,Middle East,0
+Bahrain,Middle East,1
+Cyprus,Middle East,1
+Georgia,Middle East,0
+Iraq,Middle East,0
+Israel,Middle East,0
+Jordan,Middle East,0
+Kuwait,Middle East,0
+Lebanon,Middle East,1
+Oman,Middle East,0
+Qatar,Middle East,0
+Saudi Arabia,Middle East,0
+State of Palestine,Middle East,0
+Syrian Arab Republic,Middle East,0
+Turkey,Middle East,0
+United Arab Emirates,Middle East,1
+Yemen,Middle East,0
+Belarus,Europe,0
+Bulgaria,Europe,0
+Czechia,Europe,0
+Hungary,Europe,0
+Poland,Europe,0
+Republic of Moldova,Europe,0
+Romania,Europe,0
+Russian Federation,Europe,0
+Slovakia,Europe,0
+Ukraine,Europe,0
+Åland Islands,Europe,0
+Guernsey,Europe,1
+Jersey,Europe,1
+Sark,Europe,0
+Denmark,Europe,0
+Estonia,Europe,0
+Faroe Islands,Europe,0
+Finland,Europe,0
+Iceland,Europe,0
+Ireland,Europe,1
+Isle of Man,Europe,1
+Latvia,Europe,0
+Lithuania,Europe,0
+Norway,Europe,0
+Svalbard and Jan Mayen Islands,Europe,0
+Sweden,Europe,0
+United Kingdom of Great Britain and Northern Ireland,Europe,0
+Albania,Europe,0
+Andorra,Europe,1
+Bosnia and Herzegovina,Europe,0
+Croatia,Europe,0
+Gibraltar,Europe,1
+Greece,Europe,0
+Holy See,Europe,0
+Italy,Europe,0
+Malta,Europe,1
+Montenegro,Europe,0
+Portugal,Europe,0
+San Marino,Europe,0
+Serbia,Europe,0
+Slovenia,Europe,0
+Spain,Europe,0
+The former Yugoslav Republic of Macedonia,Europe,0
+Austria,Europe,0
+Belgium,Europe,0
+France,Europe,0
+Germany,Europe,0
+Liechtenstein,Europe,1
+Luxembourg,Europe,1
+Monaco,Europe,1
+Netherlands,Europe,0
+Switzerland,Europe,1
+Australia,Southeast Asia and Oceania,0
+Christmas Island,Southeast Asia and Oceania,0
+Cocos (Keeling) Islands,Southeast Asia and Oceania,0
+Heard Island and McDonald Islands,Southeast Asia and Oceania,0
+New Zealand,Southeast Asia and Oceania,0
+Norfolk Island,Southeast Asia and Oceania,0
+Fiji,Southeast Asia and Oceania,0
+New Caledonia,Southeast Asia and Oceania,0
+Papua New Guinea,Southeast Asia and Oceania,0
+Solomon Islands,Southeast Asia and Oceania,0
+Vanuatu,Southeast Asia and Oceania,1
+Guam,Southeast Asia and Oceania,0
+Kiribati,Southeast Asia and Oceania,0
+Marshall Islands,Southeast Asia and Oceania,1
+Micronesia (Federated States of),Southeast Asia and Oceania,0
+Nauru,Southeast Asia and Oceania,1
+Northern Mariana Islands,Southeast Asia and Oceania,0
+Palau,Southeast Asia and Oceania,1
+United States Minor Outlying Islands,Southeast Asia and Oceania,0
+American Samoa,Southeast Asia and Oceania,0
+Cook Islands,Southeast Asia and Oceania,1
+French Polynesia,Southeast Asia and Oceania,0
+Niue,Southeast Asia and Oceania,1
+Pitcairn,Southeast Asia and Oceania,0
+Samoa,Southeast Asia and Oceania,1
+Tokelau,Southeast Asia and Oceania,0
+Tonga,Southeast Asia and Oceania,0
+Tuvalu,Southeast Asia and Oceania,0
+Wallis and Futuna Islands,Southeast Asia and Oceania,0
+USA,Northern America,0
+UK,Europe,0
+Hong Kong,East Asia,1
+Russia,Europe,0
+Taiwan,East Asia,0
+South Korea,East Asia,0
+The Bahamas,Caribbean,1
+Venezuela,Central and South America,0
+Tanzania,Africa,0
+Vietnam,Southeast Asia and Oceania,0
+Dubai - United Arab Emirates,Middle East,1
+Riyadh Saudi Arabia,Middle East,0
+RMI,Southeast Asia and Oceania,1
+CuraÃ§ao,Caribbean,1
+Brunei,Southeast Asia and Oceania,1
+CÃ´te d'Ivoire,Africa,0
+Macao,East Asia,1
+Macau,East Asia,1
+Labuan,Southeast Asia and Oceania,1
+USVI,Caribbean,0

@@ -4,6 +4,12 @@ entity.region = fread('data/EntitiesByRegion.csv')
 entity.region[, asOfDate:= as.Date(asOfDate)]
 entity.ofc = fread('data/EntitiesByOFC.csv')
 entity.ofc[, asOfDate:= as.Date(asOfDate)]
+link.node.ratio = fread('data/linkNodeRatio.csv')
+link.node.ratio[, asOfDate:= as.Date(asOfDate)]
+assets = fread('data/Assets.csv')
+assets[, yearqtr:= as.Date(yearqtr)]
+# measure in billions
+assets[, BHCK2170:= BHCK2170/1e6]
 
 quoteStr = function(v) paste(paste0('\"', v, '\"'), collapse=',')
 
@@ -64,6 +70,17 @@ updateBhcList = function() {
 get_ymax = function(ggplot_object) {
   # return y-value of highest minor gridline
   tail(ggplot_build(ggplot_object)$layout$panel_ranges[[1]]$y.minor_source, 1)
+}
+
+zero_pad_plot1 = function(dat) {
+  # Expand dat to include N=0 for missing regions for each asOfDate
+  # (will fill in unwanted gaps in geom_area due to interpolation)
+  dat.0 = expand.grid(Id_Rssd=dat[, Id_Rssd[1]], Region=dat[, unique(Region)],
+                      asOfDate=dat[, unique(asOfDate)])
+  setDT(dat.0)
+  dat.0[dat, on=.(Id_Rssd, Region, asOfDate), N:= N]
+  dat.0[is.na(N), N:= 0]
+  dat.0
 }
 
 null_pad_plot3 = function(dat) {

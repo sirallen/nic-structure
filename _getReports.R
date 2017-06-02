@@ -61,7 +61,7 @@ txt2clean = function(f, save_name) {
   txt = txt[!duplicated(V1)][!grepl('Repeat', V1)]
   
   # manual fix (affects Goldman, Citigroup)
-  txt[, V1:= sub('(SALVADOR)(Foreign|International)', '\\1 \\2', V1)]
+  txt[, V1:= sub('(SALVADOR)(Foreign|International|Finance)', '\\1 \\2', V1)]
   
   # Insert "~" delimiters, split
   txt[, V1:= sub('(\\d+) ', '\\1~', V1)]
@@ -225,13 +225,12 @@ getRssdPrimaryActivities = function(rssdsList) {
 
 
 # Get data
-# load('app/bhcList.R')
+# load('app/bhcList.RData')
 # source('_getBhcSpan.R')
-# as_of_dates = lapply(bhcList, getBhcSpan, start_date='2010-04-01')
-# # ignore 2016-12-31
-# as_of_dates = lapply(as_of_dates, head, -1)
-# for (j in 1:length(bhcList)) {
-#   if (length(as_of_dates[]) > 0) {
+# as_of_dates = lapply(bhcList, getBhcSpan, start_date='2004-04-01')
+# for (j in (j+1):length(bhcList)) {
+#   cat('Requesting', names(bhcList)[j], '...\n')
+#   if (length(as_of_dates[[j]]) > 0) {
 #     mapply(getReport, rssd=bhcList[j], as_of_date=as_of_dates[[j]])
 #   } }
 

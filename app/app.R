@@ -9,12 +9,14 @@ library(gplots)
 library(ggplot2)
 library(gridExtra)
 source('_functions.R') # also loads some data
+theme_set(theme_bw() + theme(panel.border=element_rect(color=NA)))
 
 load('bhcList.RData')
 # updated in observeEvent()
 bhcMaxTier = NULL
 
-suppressWarnings(knit('About.Rmd', quiet=TRUE))
+# knit manually to decrease application load time
+#suppressWarnings(knit('About.Rmd', quiet=TRUE))
 
 legend.key = list(
   'Holding Company'       = 'red',
@@ -40,17 +42,29 @@ ui = fluidPage(
     tags$link(rel='shortcut icon', href=''),
     # var countries
     includeScript('ne_50m_admin.json'),
-
-    includeCSS('_bhcMap.css')
+    includeCSS('_bhcMap.css'),
+    includeScript('_bhcMap.js'),
+    includeScript('_toggleLegend.js'),
+    
+    # size of <svg> canvas controlled inside _bhcMap.js
+    tags$script(
+      'var dimension = [0, 0];
+      $(document).on("shiny:connected", function(e) {
+      dimension[0] = window.innerWidth;
+      dimension[1] = window.innerHeight;
+      Shiny.onInputChange("dimension", dimension)});
+      $(window).resize(function(e) {
+      dimension[0] = window.innerWidth;
+      dimension[1] = window.innerHeight;
+      Shiny.onInputChange("dimension", dimension)});')
   ),
   
   # inside <body>
-  tags$style(type='text/css', 'body { overflow-y: scroll; }'),
-  tags$head(tags$script(paste0(
-    '$(document).on("shiny:connected", function(e) {',
-    'Shiny.onInputChange("innerWidth", window.innerWidth);});
-    $(window).resize(function(e) {
-    Shiny.onInputChange("innerWidth", window.innerWidth);});'))),
+  tags$style(type='text/css', 'body {overflow-y: scroll;}'),
+  tags$style(id='legend.style', type='text/css',
+             'g.legend {opacity: 1; pointer-events: none;}'),
+  # subtract off size of header + tabs (~102px)
+  tags$style(type='text/css', '#network {height: calc(100vh - 102px) !important;}'),
   
   titlePanel(
     tags$p(style='font-size:22px', 'Visualizing the Structure of U.S. Bank 
@@ -60,19 +74,22 @@ ui = fluidPage(
   sidebarLayout(
     
     sidebarPanel(
+      # "sticky" sidebar
       style = 'position:fixed;width:23%;',
       selectInput(inputId='bhc', label='Select holding company:',
                   choices=bhcList),
       
-      selectInput(inputId='asOfDate', label='Date:', choices=''),
+      selectInput(inputId='asOfDate', label='Date:', choices='2017-03-31'),
       
       radioButtons(inputId='dispType', label='Select display type:',
                    choices=c('Network','Map')),
       
       selectInput(inputId='maxDist', label='Max node distance (map only)',
-                  choices=''),
+                  choices='4'),
       
       checkboxInput(inputId='legend', label='Show legend', value=TRUE),
+      checkboxInput(inputId='bundle', label='Bundle nodes (speeds up rendering 
+                    for some large networks)', value=FALSE),
       width = 3),
     
     mainPanel(
@@ -81,11 +98,11 @@ ui = fluidPage(
           title='Display',
           conditionalPanel(
             "input.dispType == 'Network'",
-            forceNetworkOutput('network', height='670px')),
+            forceNetworkOutput('network')),
 
           conditionalPanel(
             "input.dispType == 'Map'",
-            includeScript('_bhcMap.js'),
+            #includeScript('_bhcMap.js'),
             div(id='d3io', class='d3io') )),
         
         tabPanel(
@@ -95,17 +112,28 @@ ui = fluidPage(
         tabPanel(
           title='Plots',
           tags$h2('Some Plots'),
-          paste0('The following plots are updated in response to changes in ',
-                 'user-selected input. Not all holding companies have enough ',
-                 'data with which to generate plots, so for some selections ',
-                 'the plot areas may appear blank.'),
+          'The following plots are updated in response to changes in 
+          user-selected input. (May take several seconds to render.) 
+          Not all holding companies have enough data with which to 
+          generate plots, so for some selections the plot areas may 
+          appear blank.',
+          
           plotOutput('plot1', width='80%', height='600px'),
+          'Connected scatterplot to track growth along two dimensions:',
+          plotOutput('plot5', width='80%', height='600px'),
           plotOutput('plot2', width='80%', height='600px'),
-          plotOutput('plot3', width='80%', height='600px')),
+          plotOutput('plot3', width='80%', height='600px'),
+          'Plots below use the ratio of links (connections) to nodes minus one
+          (subsidiaries) as a measure of complexity. If each subsidiary has
+          exactly one direct parent, the structure is minimally complex with a
+          link-node ratio equal to one:',
+          plotOutput('plot4', width='80%', height='600px'),
+          plotOutput('plot6', width='80%', height='600px')),
         
         tabPanel(
           title='About',
-          withMathJax(includeMarkdown('About.md')))
+          #withMathJax(includeMarkdown('About.md')))
+          includeMarkdown('About.md'))
       ),
       
       width = 9 )
@@ -142,7 +170,7 @@ server = function(input,output,session) {
 
     updateSelectInput(
       session, 'maxDist', choices = 1:bhcMaxDist,
-      selected = min(4, bhcMaxDist))
+      selected = bhcMaxDist)
   })
 
   json_data = reactive({
@@ -164,13 +192,37 @@ server = function(input,output,session) {
 
   output$network = renderForceNetwork({
     if (!is.null(data())) {
+      links = copy(data()[[1]])
+      nodes = copy(data()[[2]])
+      nodes[, Nodesize:= .1]
+      
+      if (input$bundle) {
+        # set of links to "terminal" nodes (no children)
+        links.toTerminal = links[!links[, .(from.id)], on=.(to.id==from.id)]
+        # counts of total children (N) and terminal children (M)
+        numChildren = links[, .N, by='from.id'][
+          links.toTerminal[, .(M=.N), by='from.id'], on='from.id']
+        bundleNodes = numChildren[N > 3, .(from.id, M)]
+        
+        # Remove links to terminal children of parents in bundleNodes
+        links = links[!links.toTerminal[bundleNodes[, .(from.id)], on='from.id'],
+                      on=.(from.id, to.id)]
+        # Remove those terminal children from nodes
+        nodes = nodes[id %in% c(0, unique(links$to.id))]
+        nodes[bundleNodes, on=.(id==from.id), Nodesize:= as.double(M+4)]
+        # update ids
+        nodes[, i:= .I - 1L]
+        links[nodes, on=.(to.id==id), to.id:= i]
+        links[nodes, on=.(from.id==id), from.id:= i]
+      }
 
       forceNetwork(
-        Links=data()[[1]], Nodes=data()[[2]], Source='from.id', Target='to.id',
-        NodeID='name', Group='Group', Value='value', zoom=T, opacity=.8,
+        Links=links, Nodes=nodes, Source='from.id', Target='to.id',
+        NodeID='name', Group='Group', Value='value', Nodesize='Nodesize',
+        zoom=T, opacity=.8,
         opacityNoHover=.5, fontSize=10, fontFamily='sans-serif', arrows = T,
-        linkDistance = JS('function(d){return 50}'), legend=input$legend,
-        colourScale = JS(ColorScale))
+        linkDistance = JS('function(d){return 50}'),
+        legend=TRUE, colourScale = JS(ColorScale))
 
     } })
   
@@ -178,21 +230,32 @@ server = function(input,output,session) {
     rssd = input$bhc
     if (entity.region[Id_Rssd==rssd, uniqueN(asOfDate) > 2]) {
       dat = entity.region[Id_Rssd==rssd]
+      dat.ofc = entity.ofc[Id_Rssd==rssd]
       lev = dat[, N[.N], by='Region'][order(V1), Region]
       dat[, Region:= factor(Region, lev)]
+      dat = zero_pad_plot1(dat)
+      
+      # Define "groups" to plot discontinuous geom_areas separately
+      # (i.e., breaks when a firm was not an HC)
+      dat[, group:= cumsum(c(TRUE, diff(asOfDate) > 92))]
+      dat.ofc[, group:= cumsum(c(TRUE, diff(asOfDate) > 92))]
 
-      ggplot(dat, aes(x=asOfDate, y=N)) +
-        geom_area(aes(fill=Region), color='lightgray', position='stack',
-                  size=.2, alpha=.9) +
-        geom_line(data=entity.ofc[Id_Rssd==rssd],
-                  aes(x=asOfDate, y=N, color=factor('OFC', labels= str_wrap(
-                    'Offshore Financial Centers (IMF Classification)', 30))),
-                  lwd=1.3, lty=2) +
-        scale_color_manual(values='black') +
+      p = ggplot(dat, aes(x=asOfDate, y=N))
+      
+      for (g in dat[, unique(group)]) {
+        p = p + geom_area(data=dat[group==g], aes(fill=Region),
+                          col='lightgray', pos='stack', size=.2, alpha=.9) +
+          geom_line(data=dat.ofc[group==g],
+                    aes(x=asOfDate, y=N, color=factor('OFC', labels= str_wrap(
+                      'Offshore Financial Centers (IMF Classification)', 30))),
+                    lwd=1.3, lty=2)
+      }
+      
+      p + scale_color_manual(values='black') +
+        scale_x_date(date_breaks='2 years', labels=function(x) year(x)) +
         labs(x='', y='Number of entities', color='') +
         guides(fill = guide_legend(order=1),
                color = guide_legend(order=2))
-
     } })
   
   output$plot2 = renderPlot({
@@ -249,20 +312,102 @@ server = function(input,output,session) {
     }
   })
   
+  output$plot4 = renderPlot({
+    # Simple time series: link-node ratio
+    rssd = input$bhc
+    if (link.node.ratio[Id_Rssd==rssd, .N > 2]) {
+      dat = link.node.ratio[Id_Rssd==rssd]
+      dat[, discontinuity:= c(FALSE, diff(asOfDate) > 92)]
+      dat[, group:= cumsum(discontinuity)]
+      
+      p = ggplot(dat, aes(x=asOfDate, y=link.node.ratio)) +
+        geom_line(aes(group=group)) +
+        scale_x_date(date_breaks='2 years', labels=function(x) year(x)) +
+        scale_y_continuous(limits=c(1,NA)) +
+        labs(x='', y='#Connections / #Subsidiaries')
+      
+      # dotted lines for discontinuities
+      for (d in dat[, which(discontinuity)]) {
+        p = p + geom_path(data=dat[c(d-1,d)], lty=3) }
+      
+      p
+    }
+  })
+  
+  output$plot5 = renderPlot({
+    # Connected scatterplot: (n_entities, assets)
+    rssd = input$bhc
+    if (assets[Id_Rssd==rssd, .N > 2]) {
+      dat = entity.region[Id_Rssd==rssd, .(N=sum(N)), by='asOfDate']
+      dat.asset = assets[Id_Rssd==rssd]
+      
+      dat = dat[dat.asset, on=.(asOfDate==yearqtr), nomatch=0]
+      dat[, discontinuity:= c(FALSE, diff(asOfDate) > 92)]
+      dat[, group:= cumsum(discontinuity)]
+      
+      p = ggplot(dat, aes(x=BHCK2170, y=N)) +
+        geom_point() + geom_point(data=dat[month(asOfDate)==12], col='red') +
+        geom_path(aes(group=group)) +
+        scale_x_continuous(limits=c(0,NA)) +
+        scale_y_continuous(limits=c(0,NA)) +
+        labs(x='Assets (billions)', y='Number of entities')
+      
+      # dotted lines for discontinuities
+      for (d in dat[, which(discontinuity)]) {
+        p = p + geom_path(data=dat[c(d-1,d)], lty=3) }
+      
+      p + geom_text(data=dat[month(asOfDate)==12],
+                    aes(label=year(asOfDate) + 1), size=3, col='red',
+                    nudge_x = -.02*dat[, max(BHCK2170)])
+    }
+    
+  })
+  
+  output$plot6 = renderPlot({
+    # Connected scatterplot: (n_entitites, link-node ratio)
+    rssd = input$bhc
+    if (link.node.ratio[Id_Rssd==rssd, .N] > 2) {
+      dat = entity.region[Id_Rssd==rssd, .(N=sum(N)), by='asOfDate']
+      dat.ratio = link.node.ratio[Id_Rssd==rssd]
+      
+      dat = dat[dat.ratio, on='asOfDate']
+      dat[, discontinuity:= c(FALSE, diff(asOfDate) > 92)]
+      dat[, group:= cumsum(discontinuity)]
+      
+      p = ggplot(dat, aes(x=link.node.ratio, y=N)) +
+        geom_point() + geom_point(data=dat[month(asOfDate)==12], col='red') +
+        geom_path(aes(group=group)) +
+        scale_x_continuous(limits=c(1,NA)) +
+        scale_y_continuous(limits=c(0,NA)) +
+        labs(x='#Connections / #Subsidiaries', y='Number of entities')
+      
+      # dotted lines for discontinuities
+      for (d in dat[, which(discontinuity)]) {
+        p = p + geom_path(data=dat[c(d-1,d)], lty=3) }
+      
+      p + geom_text(data=dat[month(asOfDate)==12],
+                    aes(label=year(asOfDate) + 1), size=3, col='red',
+                    nudge_x = -.02*dat[, max(link.node.ratio) - 1])
+      
+    }
+  })
+  
   output$bhcTable = renderDataTable({
     if (!is.null(data())) {
 
       data()[[1]][, .(i=.I, from, to, to.Rssd=Id_Rssd, to.Type=Type)]
 
     }} )
-
+  
+  
   ### Observers send messages to _bhcMap.js
+  observe({session$sendCustomMessage('toggleLegend', list(input$legend))})
+  
+  observe({session$sendCustomMessage('jsondata', json_data())})
 
-  observe({session$sendCustomMessage(type='jsondata', json_data())})
+  observe({session$sendCustomMessage('windowResize', list(input$dimension))})
 
-  observe({session$sendCustomMessage(type='windowResize', list(input$innerWidth))})
-
-  observe({session$sendCustomMessage(type='maxDist', if (input$maxDist != '') {
+  observe({session$sendCustomMessage('maxDist', if (input$maxDist != '') {
     list(input$maxDist) } else NULL )})
   
 }
