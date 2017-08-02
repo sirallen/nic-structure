@@ -1,6 +1,6 @@
 # Bank Holding Company Organizational Structures
 
-Large banking and financial institutions are highly complex, but it is difficult to know just how complex. I made this application to visualize bank holding company structures and allow users to explore these institutions interactively. The size and organizational complexity of the largest among them---Goldman Sachs, Bank of America, J.P. Morgan Chase, and others---is stunning.
+Large banking and financial institutions are highly complex, but it is difficult to know just how complex. I made this application to visualize bank holding company structures and allow users to explore these institutions interactively. The size and organizational complexity of the largest among them—Goldman Sachs, Bank of America, J.P. Morgan Chase, and others—is stunning.
 
 Application link:
 [https://sirallen.shinyapps.io/nicStructure/](https://sirallen.shinyapps.io/nicStructure/)
