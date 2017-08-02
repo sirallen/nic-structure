@@ -7,3 +7,10 @@ Application link:
 
 Underlying data comes from the [National Information Center](https://www.ffiec.gov/nicpubweb/nicweb/SearchForm.aspx).
 
+You can read more about bank holding companies and the project in the `About` tab in the application.
+
+### Screenshots:
+
+![](https://github.com/sirallen/nic-structure/blob/master/img/screenCapture.png)
+
+![](https://github.com/sirallen/nic-structure/blob/master/img/screenCapture2.png)
