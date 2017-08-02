@@ -11,6 +11,6 @@ You can read more about bank holding companies and the project in the `About` ta
 
 ### Screenshots:
 
-![](https://github.com/sirallen/nic-structure/raw/master/img/screenCapture.png)
+<img src="https://github.com/sirallen/nic-structure/raw/master/img/screenCapture.png">
 
-![](https://github.com/sirallen/nic-structure/raw/master/img/screenCapture2.png)
+<img src="https://github.com/sirallen/nic-structure/raw/master/img/screenCapture2.png">
