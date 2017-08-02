@@ -1,8 +1,9 @@
-# nic-structure
-Visualize bank holding company structures with R/shiny, D3
+# Bank Holding Company Organizational Structures
 
-https://sirallen.shinyapps.io/nicStructure/
+Visualize bank holding company structures with R/shiny, D3.
 
-Underlying data from the National Information Center:
+Application link:
+[https://sirallen.shinyapps.io/nicStructure/](https://sirallen.shinyapps.io/nicStructure/)
 
-https://www.ffiec.gov/nicpubweb/nicweb/SearchForm.aspx
+Underlying data comes from the [National Information Center](https://www.ffiec.gov/nicpubweb/nicweb/SearchForm.aspx).
+
