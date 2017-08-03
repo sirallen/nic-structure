@@ -9,10 +9,13 @@ histories = fread('bhc-institution-histories.txt')
 setnames(histories, 'Historical Event', 'Event')
 
 # Really, everything except "moved" and "renamed"; but events can be
-# combined into one line, so not enough to just exclude those;
+# combined into one line, so not enough to just exclude those (i.e.,
+# want to keep events where entity "changed" AND "moved");
 histories = histories[Event=='' | grepl(
   'established|changed|acquired|closed|inactive|sold|split', Event)]
 
+# Mark events with "x" and then use a Reduce() trick to figure out when
+# an RSSD was a BHC.
 # Note: Type can be "Foreign Banking Organization as a BHC"
 histories[grepl('established', Event),
           x:= as.numeric(grepl('Holding|BHC', Event))]
@@ -28,9 +31,8 @@ histories[grepl('changed', Event),
 histories[, bhc:= Reduce(function(a,b) as.numeric(a+b > 0),
                          x, accumulate=TRUE), by='Id_Rssd']
 
-histories[, next_Event_Date:= shift(`Event Date`, type='lead'), by='Id_Rssd']
-histories[is.na(next_Event_Date), next_Event_Date:= '9999-12-31']
-setkey(histories, 'Id_Rssd')
+histories[, next_Event_Date:= shift(`Event Date`, type='lead',
+                                    fill='9999-12-31'), keyby='Id_Rssd']
 
 
 getBhcSpan = function(rssd, start_date='2008-04-01', returnQtrs=TRUE) {
