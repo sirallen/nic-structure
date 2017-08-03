@@ -8,8 +8,13 @@ library(rjson)
 library(gplots)
 library(ggplot2)
 library(gridExtra)
-source('_functions.R') # also loads some data
-theme_set(theme_bw() + theme(panel.border=element_rect(color=NA)))
+source('_loadData.R')
+source('_functions.R')
+
+theme_set(
+  theme_bw() +
+    theme(panel.border=element_rect(color=NA))
+)
 
 load('bhcList.RData')
 # updated in observeEvent()
@@ -35,110 +40,155 @@ ColorScale = paste0(
   'd3.scaleOrdinal().domain([',quoteStr(names(legend.key)),'])',
   '.range([',quoteStr(legend.key),'])')
 
-ui = fluidPage(
-  shinyjs::useShinyjs(),
+ui = navbarPage(
+  title = 'Visualizing the Structure of U.S. Bank 
+           Holding Companies',
   
-  tags$head(
-    tags$link(rel='shortcut icon', href=''),
-    # var countries
-    includeScript('ne_50m_admin.json'),
-    includeCSS('_bhcMap.css'),
-    includeScript('_bhcMap.js'),
-    includeScript('_toggleLegend.js'),
+  tabPanel(
+    shinyjs::useShinyjs(),
     
-    # size of <svg> canvas controlled inside _bhcMap.js
-    tags$script(
-      'var dimension = [0, 0];
-      $(document).on("shiny:connected", function(e) {
-      dimension[0] = window.innerWidth;
-      dimension[1] = window.innerHeight;
-      Shiny.onInputChange("dimension", dimension)});
-      $(window).resize(function(e) {
-      dimension[0] = window.innerWidth;
-      dimension[1] = window.innerHeight;
-      Shiny.onInputChange("dimension", dimension)});')
-  ),
-  
-  # inside <body>
-  tags$style(type='text/css', 'body {overflow-y: scroll;}'),
-  tags$style(id='legend.style', type='text/css',
-             'g.legend {opacity: 1; pointer-events: none;}'),
-  # subtract off size of header + tabs (~102px)
-  tags$style(type='text/css', '#network {height: calc(100vh - 102px) !important;}'),
-  
-  titlePanel(
-    tags$p(style='font-size:22px', 'Visualizing the Structure of U.S. Bank 
-           Holding Companies'),
-    windowTitle = 'shinyApp'),
-  
-  sidebarLayout(
+    title = 'Main',
     
-    sidebarPanel(
-      # "sticky" sidebar
-      style = 'position:fixed;width:23%;',
-      selectInput(inputId='bhc', label='Select holding company:',
-                  choices=bhcList),
+    tags$head(
+      tags$link(rel='shortcut icon', href=''),
+      # var countries
+      includeScript('ne_50m_admin.json'),
+      includeCSS('_bhcMap.css'),
+      includeScript('_bhcMap.js'),
+      includeScript('_toggleLegend.js'),
       
-      selectInput(inputId='asOfDate', label='Date:', choices='2017-03-31'),
-      
-      radioButtons(inputId='dispType', label='Select display type:',
-                   choices=c('Network','Map')),
-      
-      selectInput(inputId='maxDist', label='Max node distance (map only)',
-                  choices='4'),
-      
-      checkboxInput(inputId='legend', label='Show legend', value=TRUE),
-      checkboxInput(inputId='bundle', label='Bundle nodes (speeds up rendering 
-                    for some large networks)', value=FALSE),
-      width = 3),
-    
-    mainPanel(
-      tabsetPanel(
-        tabPanel(
-          title='Display',
-          conditionalPanel(
-            "input.dispType == 'Network'",
-            forceNetworkOutput('network')),
-
-          conditionalPanel(
-            "input.dispType == 'Map'",
-            #includeScript('_bhcMap.js'),
-            div(id='d3io', class='d3io') )),
-        
-        tabPanel(
-          title='Table',
-          div(dataTableOutput(outputId='bhcTable'), style='font-size:85%')),
-        
-        tabPanel(
-          title='Plots',
-          tags$h2('Some Plots'),
-          'The following plots are updated in response to changes in 
-          user-selected input. (May take several seconds to render.) 
-          Not all holding companies have enough data with which to 
-          generate plots, so for some selections the plot areas may 
-          appear blank.',
-          
-          plotOutput('plot1', width='80%', height='600px'),
-          'Connected scatterplot to track growth along two dimensions:',
-          plotOutput('plot5', width='80%', height='600px'),
-          plotOutput('plot2', width='80%', height='600px'),
-          plotOutput('plot3', width='80%', height='600px'),
-          'Plots below use the ratio of links (connections) to nodes minus one
-          (subsidiaries) as a measure of complexity. If each subsidiary has
-          exactly one direct parent, the structure is minimally complex with a
-          link-node ratio equal to one:',
-          plotOutput('plot4', width='80%', height='600px'),
-          plotOutput('plot6', width='80%', height='600px')),
-        
-        tabPanel(
-          title='About',
-          #withMathJax(includeMarkdown('About.md')))
-          includeMarkdown('About.md'))
+      # size of <svg> canvas controlled inside _bhcMap.js
+      tags$script(
+        'var dimension = [0, 0];
+        $(document).on("shiny:connected", function(e) {
+        dimension[0] = window.innerWidth;
+        dimension[1] = window.innerHeight;
+        Shiny.onInputChange("dimension", dimension)});
+        $(window).resize(function(e) {
+        dimension[0] = window.innerWidth;
+        dimension[1] = window.innerHeight;
+        Shiny.onInputChange("dimension", dimension)});')
       ),
-      
-      width = 9 )
     
-  ))
+    # inside <body>
+    # Added 'padding-top' since I set navbar position to 'fixed-top'
+    tags$style(type='text/css', 'body {overflow-y: scroll; padding-top: 60px}'),
+    tags$style(id='legend.style', type='text/css',
+               'g.legend {opacity: 1; pointer-events: none;}'),
+    # subtract off size of header + tabs (~102px)
+    tags$style(type='text/css',
+               '#network {height: calc(100vh - 107px) !important;}'),
+    
+    sidebarLayout(
+      
+      sidebarPanel(
+        # "sticky" sidebar
+        style = 'position:fixed;width:23%;',
+        selectInput(inputId='bhc', label='Select holding company:',
+                    choices=bhcList),
+        
+        selectInput(inputId='asOfDate', label='Date:', choices='2017-03-31'),
+        
+        radioButtons(inputId='dispType', label='Select display type:',
+                     choices=c('Network','Map')),
+        
+        selectInput(inputId='maxDist', label='Max node distance (map only)',
+                    choices='4'),
+        
+        checkboxInput(inputId='legend', label='Show legend', value=TRUE),
+        checkboxInput(inputId='bundle', label='Bundle nodes (speeds up rendering 
+                    for some large networks)', value=FALSE),
+        width = 3),
+      
+      mainPanel(
+        tabsetPanel(
+          tabPanel(
+            title='Display',
+            conditionalPanel(
+              "input.dispType == 'Network'",
+              forceNetworkOutput('network')),
+            
+            conditionalPanel(
+              "input.dispType == 'Map'",
+              #includeScript('_bhcMap.js'),
+              div(id='d3io', class='d3io') )),
+          
+          tabPanel(
+            title='Table',
+            DT::dataTableOutput(outputId='bhcTable'),
+            style='font-size:85%'),
+          
+          tabPanel(
+            title='Plots',
+            tags$h2('Some Plots'),
+            
+            'The following plots are updated in response to changes in 
+            user-selected input. (May take several seconds to render.) 
+            Not all holding companies have enough data with which to 
+            generate plots, so for some selections the plot areas may 
+            appear blank.',
+            
+            plotOutput('plot1', width='80%', height='600px'),
+            
+            'Connected scatterplot to track growth along two dimensions:',
+            
+            plotOutput('plot5', width='80%', height='600px'),
+            plotOutput('plot2', width='80%', height='600px'),
+            plotOutput('plot3', width='80%', height='600px'),
+            
+            'Plots below use the ratio of links (connections) to nodes minus one
+            (subsidiaries) as a measure of complexity. If each subsidiary has
+            exactly one direct parent, the structure is minimally complex with a
+            link-node ratio equal to one:',
+            
+            plotOutput('plot4', width='80%', height='600px'),
+            plotOutput('plot6', width='80%', height='600px'))
+          
+        ),
+        
+        width = 9 )
+      
+    )),
+  
+  tabPanel(
+    title='HCs > $10B',
+    fluidRow(
+      column(3, 'Holding Companies with Assets Greater than $10 Billion'),
+      
+      column(9, DT::dataTableOutput(outputId='HC10bnTable'),
+             style='font-size:85%')
+    )),
+  
+  tabPanel(
+    title='Coverage',
+    fluidRow(
+     column(3, 'This chart shows the time period(s) for which structure
+            data is available for each holding company. Discontinuous
+            segments indicate that an institution may have changed its status
+            to something other than a holding company.',
+            
+            HTML('<br><br>'),
+
+            'Note that each row really traces a particular RSSD; the name
+            displayed is the one most recently associated with the RSSD, which
+            is not shown.'),
+     
+     column(9, plotOutput(outputId='coveragePlot', height='1200px'))
+    )),
+  
+  tabPanel(
+    title='About',
+    fluidRow(
+      column(2),
+      column(8, includeMarkdown('About.md')),
+      column(2)
+    )),
+  
+  # Additional navbarPage() options
+  fluid = TRUE, inverse = TRUE, position = 'fixed-top',
+  windowTitle = 'shinyApp'
+)
+
 
 server = function(input,output,session) {
   
@@ -392,12 +442,35 @@ server = function(input,output,session) {
     }
   })
   
-  output$bhcTable = renderDataTable({
+  # Make sure to use renderDataTable() from /DT/, not /shiny/
+  output$bhcTable = DT::renderDataTable({
     if (!is.null(data())) {
-
-      data()[[1]][, .(i=.I, from, to, to.Rssd=Id_Rssd, to.Type=Type)]
-
-    }} )
+      DT::datatable(
+        data()[[1]][, .(Entity=to, Parent=from, RSSD=Id_Rssd, Type)]
+      )
+    }
+  })
+  
+  output$HC10bnTable = DT::renderDataTable({
+    DT::datatable(HC10bn, options=list(dom='t', paging=FALSE, ordering=FALSE))
+  })
+  
+  output$coveragePlot = renderPlot({
+    start_date = as.Date('2000-03-31')
+    load('data/coverage.RData')
+    
+    ggplot(spans, aes(x=Name, y=seq.Date(min(start), max(end),
+                                         along.with=spans$start))) +
+      geom_segment(aes(x=Name, xend=Name,
+                       y=pmax(start, start_date),
+                       yend=pmax(end, start_date))) +
+      geom_point(aes(x=Name, y=pmax(start, start_date)), color='red', size=2) +
+      geom_point(aes(x=Name, y=pmax(end, start_date)), color='red', size=2) +
+      #scale_y_date(sec.axis=dup_axis()) + # can't do this
+      scale_y_date(position='top') +
+      coord_flip() +
+      labs(x='', y='')
+  })
   
   
   ### Observers send messages to _bhcMap.js

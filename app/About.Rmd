@@ -13,7 +13,7 @@ theme_set(theme_bw() + theme(panel.border=element_rect(color=NA)))
 
 I made this application with R's <code>shiny</code>, <code>RMarkdown</code>, and <code>networkD3</code> packages and the <code>D3.js</code> JavaScript library by Mike Bostock; some of the source files are available on <a href='https://github.com/sirallen/nic-structure' target='_blank'>my Github page</a>. It's a work in progress, so don't mind the bugs!
 
-This project complements recent research produced by economists at the New York Fed (referenced at the bottom), who assembled "a complete, time-consistent panel of all BHCs since 1990" to conduct a novel analysis of the U.S. banking industry. However, they have not yet made the panel public, and, while part of their underlying data source is "publicly available" online, the format in which it is made public is not amenable to the kind of the detailed study that they have done. My main purpose in making this app has been to reconstruct the data source and make it accessible in a visucentric, interactive form.
+This project complements recent research produced by economists at the New York Fed (referenced at the bottom), who assembled "a complete, time-consistent panel of all BHCs since 1990" to conduct a novel analysis of the U.S. banking industry. However, they have not yet made the panel public, and, while part of their underlying data source is "publicly available" online, the format in which it is made public is not amenable to the kind of detailed study that they have done. My main purpose in making this app has been to reconstruct the data source and make it accessible in a visucentric, interactive form.
 
 <hr>
 

@@ -1,15 +1,3 @@
-# Load data
-cc = fread('entityTypeGrouping.csv')
-entity.region = fread('data/EntitiesByRegion.csv')
-entity.region[, asOfDate:= as.Date(asOfDate)]
-entity.ofc = fread('data/EntitiesByOFC.csv')
-entity.ofc[, asOfDate:= as.Date(asOfDate)]
-link.node.ratio = fread('data/linkNodeRatio.csv')
-link.node.ratio[, asOfDate:= as.Date(asOfDate)]
-assets = fread('data/Assets.csv')
-assets[, yearqtr:= as.Date(yearqtr)]
-# measure in billions
-assets[, BHCK2170:= BHCK2170/1e6]
 
 quoteStr = function(v) paste(paste0('\"', v, '\"'), collapse=',')
 
@@ -31,13 +19,9 @@ load_data = function(bhc, asOfDate) {
   df = df[cc[, .(domain, group)], on=.(Type==domain), Group:= group]
   
   dfnet = df[, .(
-    from = Name[match(Parent, Idx)], to = Name, Id_Rssd, Type, Tier,
-    from.lat = lat[match(Parent, Idx)], from.lng = lng[match(Parent, Idx)],
+    from = Name[match(Parent, Id_Rssd)], to = Name, Id_Rssd, Type, Tier,
+    from.lat = lat[match(Parent, Id_Rssd)], from.lng = lng[match(Parent, Id_Rssd)],
     to.lat = lat, to.lng = lng)][-1,]
-  
-  dfnet[, Tier:= min(Tier), by=.(from,to)]
-  
-  dfnet = dfnet[!duplicated(dfnet)]
   
   nodes = dfnet[, .(id = 0:uniqueN(to), name = c(from[1], unique(to)))]
   nodes[df, on=.(name==Name), Group:= Group]

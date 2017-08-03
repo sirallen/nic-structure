@@ -64,12 +64,12 @@ txt2clean = function(f, save_name) {
   txt[, V1:= sub('(SALVADOR)(Foreign|International|Finance)', '\\1 \\2', V1)]
   
   # Insert "~" delimiters, split
-  txt[, V1:= sub('(\\d+) ', '\\1~', V1)]
-  txt[, V1:= sub('(~-*\\*?) ?', '\\1~', V1)]
-  txt[, V1:= sub('(.*)(~\\+?) ?', '\\1\\2~', V1)]
-  txt[, V1:= sub('(.*) \\((\\d{3,})\\) ?', '\\1~\\2~', V1)]
-  txt[, V1:= sub('(~\\d{3,}~\\d*) ?', '\\1~', V1)]
-  txt[, V1:= sub(' ([A-Z][a-z]+)', '~\\1', V1)]
+  txt[, V1:= V1 %>% str_replace('(\\d+) ', '\\1~') %>%
+        str_replace('(~-*\\*?) ?', '\\1~') %>%
+        str_replace('(.*)(~\\+?) ?', '\\1\\2~') %>%
+        str_replace('(.*) \\((\\d{3,})\\) ?', '\\1~\\2~') %>%
+        str_replace('(~\\d{3,}~\\d*) ?', '\\1~') %>%
+        str_replace(' ([A-Z][a-z]+)', '~\\1')]
   
   dt = txt[, tstrsplit(V1, '~', type.convert=T)]
   
@@ -87,6 +87,12 @@ txt2clean = function(f, save_name) {
   dt[, Level:= NULL]
   
   dt = dt[!duplicated(Idx)]
+  # An rssd has an entry for each of its parents; results
+  # in having multiple Idx; each of its children has an entry
+  # for each Idx, so there are duplicate links. Remove these.
+  dt[, Parent:= Id_Rssd[match(Parent,Idx)]]
+  dt[, Tier:= min(Tier), by=.(Id_Rssd, Parent)]
+  dt = dt[!duplicated(dt[, .(Id_Rssd, Parent)])]
   
   fwrite(dt, save_name, quote=T)
   
@@ -126,9 +132,11 @@ getInstHistory = function(rssd, dt_end=99991231) {
     'https://www.ffiec.gov/nicpubweb/nicweb/InstitutionHistory.aspx',
     '?parID_RSSD=', rssd, '&parDT_END=', dt_end )
   
-  html = read_html(url)
-  nodes = html_nodes(html, xpath='//table[@class="datagrid"]')
-  table = html_table(nodes[[1]], header=T)
+  table = read_html(url) %>%
+    html_nodes(xpath='//table[@class="datagrid"]') %>%
+    .[[1]] %>%
+    html_table(header=TRUE)
+  
   table$Id_Rssd = rssd
   table
 }
@@ -139,10 +147,13 @@ getInstPrimaryActivity = function(rssd, dt_end=99991231) {
     'https://www.ffiec.gov/nicpubweb/nicweb/InstitutionProfile.aspx',
     '?parID_RSSD=', rssd, '&parDT_END=', dt_end )
   
-  html = read_html(url)
-  nodes = html_nodes(html, xpath='//table[@id="Table2"]')
-  table = html_table(nodes[[1]], fill=TRUE)
-  activity = table$X1[grepl('Activity:', table$X1)]
+  table = read_html(url) %>%
+    html_nodes(xpath='//table[@id="Table2"]') %>%
+    .[[1]] %>%
+    html_table(fill=TRUE) %>%
+    setDT()
+  
+  activity = table[grepl('Activity:', X1), X1]
   
   data.table(Id_Rssd=rssd, Activity=gsub('Activity:\\s', '', activity))
 }
@@ -153,8 +164,9 @@ getBhcParent = function(rssd, dtend=99991231) {
     'https://www.ffiec.gov/nicpubweb/nicweb/OrgHierarchySearchForm.aspx',
     '?parID_RSSD=', rssd, '&parDT_END=', dt_end )
   
-  html = read_html(url)
-  nodes = html_nodes(html, xpath='//select[@id="lbTopHolders"]/option')
+  nodes = read_html(url) %>%
+    html_nodes(xpath='//select[@id="lbTopHolders"]/option')
+  
   if (length(nodes) > 0) {
     parents = sapply(nodes, html_attr, 'value')
   }
@@ -227,7 +239,7 @@ getRssdPrimaryActivities = function(rssdsList) {
 # Get data
 # load('app/bhcList.RData')
 # source('_getBhcSpan.R')
-# as_of_dates = lapply(bhcList, getBhcSpan, start_date='2004-04-01')
+# as_of_dates = lapply(bhcList, getBhcSpan, start_date='2000-04-01')
 # for (j in (j+1):length(bhcList)) {
 #   cat('Requesting', names(bhcList)[j], '...\n')
 #   if (length(as_of_dates[[j]]) > 0) {
