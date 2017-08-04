@@ -96,8 +96,12 @@ ui = navbarPage(
                     choices='4'),
         
         checkboxInput(inputId='legend', label='Show legend', value=TRUE),
+        checkboxInput(inputId='domOnly', label='Hide international entities',
+                      value=FALSE),
         checkboxInput(inputId='bundle', label='Bundle nodes (speeds up rendering 
-                    for some large networks)', value=FALSE),
+                      for some large structures)', value=FALSE),
+        # checkboxInput(inputID='highlight', label='Highlight nodes added since
+        #               previous time period', value=FALSE),
         width = 3),
       
       mainPanel(
@@ -110,17 +114,17 @@ ui = navbarPage(
             
             conditionalPanel(
               "input.dispType == 'Map'",
-              #includeScript('_bhcMap.js'),
               div(id='d3io', class='d3io') )),
           
           tabPanel(
             title='Table',
+            HTML('<br>'),
             DT::dataTableOutput(outputId='bhcTable'),
             style='font-size:85%'),
           
           tabPanel(
             title='Plots',
-            tags$h2('Some Plots'),
+            HTML('<br>'),
             
             'The following plots are updated in response to changes in 
             user-selected input. (May take several seconds to render.) 
@@ -142,7 +146,15 @@ ui = navbarPage(
             link-node ratio equal to one:',
             
             plotOutput('plot4', width='80%', height='600px'),
-            plotOutput('plot6', width='80%', height='600px'))
+            plotOutput('plot6', width='80%', height='600px')),
+          
+          tabPanel(
+            title='History',
+            HTML('<br>'),
+            
+            DT::dataTableOutput(outputId='historyTable'),
+            style='font-size:85%'
+          )
           
         ),
         
@@ -246,6 +258,26 @@ server = function(input,output,session) {
       nodes = copy(data()[[2]])
       nodes[, Nodesize:= .1]
       
+      if (input$domOnly) {
+        # Remove foreign nodes and any descendants which become disconnected
+        # from the main graph (may include nodes which are not foreign)
+        links[nodes, on=.(from.id==id), from.Group:= i.Group]
+        links = links[!(grepl('International', Group) |
+                          grepl('International', from.Group))]
+        
+        # Prune the disconnected pieces
+        while (links[, any(!from.id %in% c(0, links$to.id))]) {
+          links = links[from.id %in% c(0, to.id)]
+        }
+        
+        nodes = nodes[c(TRUE, id[-1] %in% links$to.id)]
+        # update ids
+        nodes[, i:= .I - 1L]
+        links[nodes, on=.(to.id==id), to.id:= i]
+        links[nodes, on=.(from.id==id), from.id:= i]
+        nodes[, `:=`(id = i, i = NULL)]
+      }
+      
       if (input$bundle) {
         # set of links to "terminal" nodes (no children)
         links.toTerminal = links[!links[, .(from.id)], on=.(to.id==from.id)]
@@ -264,6 +296,7 @@ server = function(input,output,session) {
         nodes[, i:= .I - 1L]
         links[nodes, on=.(to.id==id), to.id:= i]
         links[nodes, on=.(from.id==id), from.id:= i]
+        nodes[, `:=`(id = i, i = NULL)]
       }
 
       forceNetwork(
@@ -277,169 +310,42 @@ server = function(input,output,session) {
     } })
   
   output$plot1 = renderPlot({
+    # Area plot -- number of entities by region
     rssd = input$bhc
-    if (entity.region[Id_Rssd==rssd, uniqueN(asOfDate) > 2]) {
-      dat = entity.region[Id_Rssd==rssd]
-      dat.ofc = entity.ofc[Id_Rssd==rssd]
-      lev = dat[, N[.N], by='Region'][order(V1), Region]
-      dat[, Region:= factor(Region, lev)]
-      dat = zero_pad_plot1(dat)
-      
-      # Define "groups" to plot discontinuous geom_areas separately
-      # (i.e., breaks when a firm was not an HC)
-      dat[, group:= cumsum(c(TRUE, diff(asOfDate) > 92))]
-      dat.ofc[, group:= cumsum(c(TRUE, diff(asOfDate) > 92))]
-
-      p = ggplot(dat, aes(x=asOfDate, y=N))
-      
-      for (g in dat[, unique(group)]) {
-        p = p + geom_area(data=dat[group==g], aes(fill=Region),
-                          col='lightgray', pos='stack', size=.2, alpha=.9) +
-          geom_line(data=dat.ofc[group==g],
-                    aes(x=asOfDate, y=N, color=factor('OFC', labels= str_wrap(
-                      'Offshore Financial Centers (IMF Classification)', 30))),
-                    lwd=1.3, lty=2)
-      }
-      
-      p + scale_color_manual(values='black') +
-        scale_x_date(date_breaks='2 years', labels=function(x) year(x)) +
-        labs(x='', y='Number of entities', color='') +
-        guides(fill = guide_legend(order=1),
-               color = guide_legend(order=2))
-    } })
+    source('plot_code/plot1.R', local=TRUE)$value
+  })
   
   output$plot2 = renderPlot({
+    # Distribution of entities by distance from HC
     if (!is.null(data())) {
-      dat = data()[[3]][-1, .(Id_Rssd, Tier)]
-      
-      dat[, linkDist:= min(Tier) - 1, by='Id_Rssd']
-      dat = dat[!duplicated(Id_Rssd)][order(linkDist)][, .N, by='linkDist']
-      dat[, cumShare:= cumsum(N)/sum(N)]
-      
-      p = ggplot(dat, aes(x = as.factor(linkDist), y = N)) +
-        geom_bar(stat='identity', fill='royalblue') +
-        labs(x='Distance from center', y='Number of entities')
-      
-      p + geom_line(aes(x = linkDist, y = cumShare*get_ymax(p)),
-                    lty=2, lwd=1.3, col='red') +
-        scale_y_continuous(sec.axis = sec_axis(
-          ~./get_ymax(p), 'Cum. fraction of entities',
-          breaks = seq(0,1,.25)))
-      
-    } })
+      source('plot_code/plot2.R', local=TRUE)$value
+    }
+  })
   
   output$plot3 = renderPlot({
     # Most common states / countries
     if (!is.null(data())) {
-      dat = data()[[3]][, .(Id_Rssd, label)]
-      dat = dat[!duplicated(Id_Rssd)]
-      dat[, label:= gsub('.*, *(.*)', '\\1', label)]
-      
-      dat = dat[, .N, by='label']
-      dat[, unit:= ifelse(label %in% c(state.abb,'DC'), 'States', 'Countries')]
-      # full names for states
-      dat[unit=='States', label:= c(state.name, 'District of Columbia')[
-        match(label, c(state.abb,'DC'))]]
-      # pad with 'NULL' labels (N=0) if number of states or countries < 10
-      dat = null_pad_plot3(dat)
-      
-      dat = dat[order(unit, N)]
-      dat = dat[dat[, tail(.I, 10), by='unit']$V1]
-      
-      p1 = ggplot(dat[unit=='States'], aes(x=factor(label, label), y=N)) +
-        geom_bar(stat='identity', fill='coral') +
-        coord_flip() +
-        labs(x='', y='Number of entities') +
-        ggtitle('Top 10 States')
-      
-      p2 = ggplot(dat[unit=='Countries'], aes(x=factor(label, label), y=N)) +
-        geom_bar(stat='identity', fill='coral') +
-        coord_flip() +
-        labs(x='', y='Number of entities') +
-        ggtitle('Top 10 Countries/Territories (outside U.S.)')
-      
-      grid.arrange(p1, p2, ncol=2)
+      source('plot_code/plot3.R', local=TRUE)$value
     }
   })
   
   output$plot4 = renderPlot({
     # Simple time series: link-node ratio
     rssd = input$bhc
-    if (link.node.ratio[Id_Rssd==rssd, .N > 2]) {
-      dat = link.node.ratio[Id_Rssd==rssd]
-      dat[, discontinuity:= c(FALSE, diff(asOfDate) > 92)]
-      dat[, group:= cumsum(discontinuity)]
-      
-      p = ggplot(dat, aes(x=asOfDate, y=link.node.ratio)) +
-        geom_line(aes(group=group)) +
-        scale_x_date(date_breaks='2 years', labels=function(x) year(x)) +
-        scale_y_continuous(limits=c(1,NA)) +
-        labs(x='', y='#Connections / #Subsidiaries')
-      
-      # dotted lines for discontinuities
-      for (d in dat[, which(discontinuity)]) {
-        p = p + geom_path(data=dat[c(d-1,d)], lty=3) }
-      
-      p
-    }
+    source('plot_code/plot4.R', local=TRUE)$value
   })
   
   output$plot5 = renderPlot({
     # Connected scatterplot: (n_entities, assets)
     rssd = input$bhc
-    if (assets[Id_Rssd==rssd, .N > 2]) {
-      dat = entity.region[Id_Rssd==rssd, .(N=sum(N)), by='asOfDate']
-      dat.asset = assets[Id_Rssd==rssd]
-      
-      dat = dat[dat.asset, on=.(asOfDate==yearqtr), nomatch=0]
-      dat[, discontinuity:= c(FALSE, diff(asOfDate) > 92)]
-      dat[, group:= cumsum(discontinuity)]
-      
-      p = ggplot(dat, aes(x=BHCK2170, y=N)) +
-        geom_point() + geom_point(data=dat[month(asOfDate)==12], col='red') +
-        geom_path(aes(group=group)) +
-        scale_x_continuous(limits=c(0,NA)) +
-        scale_y_continuous(limits=c(0,NA)) +
-        labs(x='Assets (billions)', y='Number of entities')
-      
-      # dotted lines for discontinuities
-      for (d in dat[, which(discontinuity)]) {
-        p = p + geom_path(data=dat[c(d-1,d)], lty=3) }
-      
-      p + geom_text(data=dat[month(asOfDate)==12],
-                    aes(label=year(asOfDate) + 1), size=3, col='red',
-                    nudge_x = -.02*dat[, max(BHCK2170)])
-    }
+    source('plot_code/plot5.R', local=TRUE)$value
     
   })
   
   output$plot6 = renderPlot({
     # Connected scatterplot: (n_entitites, link-node ratio)
     rssd = input$bhc
-    if (link.node.ratio[Id_Rssd==rssd, .N] > 2) {
-      dat = entity.region[Id_Rssd==rssd, .(N=sum(N)), by='asOfDate']
-      dat.ratio = link.node.ratio[Id_Rssd==rssd]
-      
-      dat = dat[dat.ratio, on='asOfDate']
-      dat[, discontinuity:= c(FALSE, diff(asOfDate) > 92)]
-      dat[, group:= cumsum(discontinuity)]
-      
-      p = ggplot(dat, aes(x=link.node.ratio, y=N)) +
-        geom_point() + geom_point(data=dat[month(asOfDate)==12], col='red') +
-        geom_path(aes(group=group)) +
-        scale_x_continuous(limits=c(1,NA)) +
-        scale_y_continuous(limits=c(0,NA)) +
-        labs(x='#Connections / #Subsidiaries', y='Number of entities')
-      
-      # dotted lines for discontinuities
-      for (d in dat[, which(discontinuity)]) {
-        p = p + geom_path(data=dat[c(d-1,d)], lty=3) }
-      
-      p + geom_text(data=dat[month(asOfDate)==12],
-                    aes(label=year(asOfDate) + 1), size=3, col='red',
-                    nudge_x = -.02*dat[, max(link.node.ratio) - 1])
-      
-    }
+    source('plot_code/plot6.R', local=TRUE)$value
   })
   
   # Make sure to use renderDataTable() from /DT/, not /shiny/
@@ -451,25 +357,16 @@ server = function(input,output,session) {
     }
   })
   
+  output$historyTable = DT::renderDataTable({
+    NULL
+  })
+  
   output$HC10bnTable = DT::renderDataTable({
     DT::datatable(HC10bn, options=list(dom='t', paging=FALSE, ordering=FALSE))
   })
   
   output$coveragePlot = renderPlot({
-    start_date = as.Date('2000-03-31')
-    load('data/coverage.RData')
-    
-    ggplot(spans, aes(x=Name, y=seq.Date(min(start), max(end),
-                                         along.with=spans$start))) +
-      geom_segment(aes(x=Name, xend=Name,
-                       y=pmax(start, start_date),
-                       yend=pmax(end, start_date))) +
-      geom_point(aes(x=Name, y=pmax(start, start_date)), color='red', size=2) +
-      geom_point(aes(x=Name, y=pmax(end, start_date)), color='red', size=2) +
-      #scale_y_date(sec.axis=dup_axis()) + # can't do this
-      scale_y_date(position='top') +
-      coord_flip() +
-      labs(x='', y='')
+    source('plot_code/coveragePlot.R', local=TRUE)$value
   })
   
   
@@ -482,6 +379,8 @@ server = function(input,output,session) {
 
   observe({session$sendCustomMessage('maxDist', if (input$maxDist != '') {
     list(input$maxDist) } else NULL )})
+  
+  #observe({session$sendCustomMessage('toggleHighlight', list(input$highlight))})
   
 }
 

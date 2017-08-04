@@ -54,11 +54,11 @@ txt2clean = function(f, save_name) {
   txt[, V3:= ifelse(grepl('^Report created', V1), V2, 0)]
   txt[, drop:= V2 - cummax(V3) == 0]
   
-  txt = txt[1:(grep('^Total Records', V1)-1)][!as.logical(drop), .(V1,V2)]
-  
-  txt = txt[, paste(V1, collapse=' '), by='V2']
-  
-  txt = txt[!duplicated(V1)][!grepl('Repeat', V1)]
+  txt = txt[1:(grep('^Total Records', V1)-1)][
+    !as.logical(drop), .(V1,V2)][
+      , paste(V1, collapse=' '), by='V2'][
+        !duplicated(V1)][
+          !grepl('Repeat', V1)]
   
   # manual fix (affects Goldman, Citigroup)
   txt[, V1:= sub('(SALVADOR)(Foreign|International|Finance)', '\\1 \\2', V1)]
@@ -153,9 +153,8 @@ getInstPrimaryActivity = function(rssd, dt_end=99991231) {
     html_table(fill=TRUE) %>%
     setDT()
   
-  activity = table[grepl('Activity:', X1), X1]
-  
-  data.table(Id_Rssd=rssd, Activity=gsub('Activity:\\s', '', activity))
+  data.table(Id_Rssd=rssd, Activity=table[grepl('Activity:', X1),
+                                          gsub('Activity:\\s', '', X1)])
 }
 
 

@@ -13,29 +13,40 @@ load_data = function(bhc, asOfDate) {
       error = function(e) NULL )
     return(NULL) }
   
-  load(file)
+  load(file) # object "df"
   df[, Type.code:= cc$domain[match(Type.code, cc$Type.code)]]
   setnames(df, 'Type.code', 'Type')
   df = df[cc[, .(domain, group)], on=.(Type==domain), Group:= group]
   
-  dfnet = df[, .(
-    from = Name[match(Parent, Id_Rssd)], to = Name, Id_Rssd, Type, Tier,
+  links = df[, .(
+    from = Name[match(Parent, Id_Rssd)], to = Name, Id_Rssd, Parent, Type, Tier,
     from.lat = lat[match(Parent, Id_Rssd)], from.lng = lng[match(Parent, Id_Rssd)],
-    to.lat = lat, to.lng = lng)][-1,]
+    to.lat = lat, to.lng = lng, Group)][-1,]
   
-  nodes = dfnet[, .(id = 0:uniqueN(to), name = c(from[1], unique(to)))]
-  nodes[df, on=.(name==Name), Group:= Group]
+  nodes = rbind(
+    data.table(Id_Rssd=as.integer(bhc), name=links[1, from]),
+    unique(links[, .(Id_Rssd, name=to)])
+  )
   
-  dfnet[nodes, on=.(from==name), from.id:= id]
-  dfnet[nodes, on=.(to==name), to.id:= id]
-  dfnet[, value:= 1L]
+  # id needs to be zero-indexed
+  nodes[, id:= .I - 1L]; setcolorder(nodes, c(3,1,2))
+  nodes[df, on='Id_Rssd', Group:= Group]
   
-  list(dfnet, nodes, df)
+  # Add the node ids to links
+  links[nodes, on=.(Parent==Id_Rssd), from.id:= id]
+  links[nodes, on='Id_Rssd', to.id:= id]
+  links[, value:= 1L]
+  
+  # links: <from, to, Id_Rssd, Parent, Type, Tier, from.lat, from.lng, to.lat,
+  #         to.lng, from.id, to.id, value, Group>
+  # nodes: <id, Id_Rssd, name, Group>
+  # df:    <Note, Name, Id_Rssd, Parent, Type, Tier, label, lat, lng, Group>
+  list(links, nodes, df)
 }
 
 updateBhcList = function() {
   mostRecentTxt = dir('../txt/', '.txt', full.names=T)
-  # Index of last file for each rssd
+  # Index of last file for each rssd... since I need the most recent name
   lastIdxByRssd = by(mostRecentTxt, str_extract(mostRecentTxt, '\\d+'),
                      FUN=function(x) tail(x, 1))
   mostRecentTxt = mostRecentTxt[lastIdxByRssd]
