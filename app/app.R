@@ -1,5 +1,6 @@
 library(shiny)
 library(shinyjs)
+library(shinyBS)
 library(knitr)
 library(data.table)
 library(networkD3)
@@ -17,11 +18,9 @@ theme_set(
 )
 
 load('bhcList.RData')
-# updated in observeEvent()
-bhcMaxTier = NULL
-
-# knit manually to decrease application load time
-#suppressWarnings(knit('About.Rmd', quiet=TRUE))
+bhcMaxTier = NULL      # updated in observeEvent()
+glob.Nodes = NULL      # updated in renderForceNetwork()
+glob.Links = NULL      # updated in renderForceNetwork()
 
 legend.key = list(
   'Holding Company'       = 'red',
@@ -40,6 +39,7 @@ ColorScale = paste0(
   'd3.scaleOrdinal().domain([',quoteStr(names(legend.key)),'])',
   '.range([',quoteStr(legend.key),'])')
 
+
 ui = navbarPage(
   title = 'Visualizing the Structure of U.S. Bank 
            Holding Companies',
@@ -56,6 +56,7 @@ ui = navbarPage(
       includeCSS('_bhcMap.css'),
       includeScript('_bhcMap.js'),
       includeScript('_toggleLegend.js'),
+      includeScript('_toggleHighlight.js'),
       
       # size of <svg> canvas controlled inside _bhcMap.js
       tags$script(
@@ -92,16 +93,24 @@ ui = navbarPage(
         radioButtons(inputId='dispType', label='Select display type:',
                      choices=c('Network','Map')),
         
-        selectInput(inputId='maxDist', label='Max node distance (map only)',
-                    choices='4'),
-        
         checkboxInput(inputId='legend', label='Show legend', value=TRUE),
         checkboxInput(inputId='domOnly', label='Hide international entities',
                       value=FALSE),
         checkboxInput(inputId='bundle', label='Bundle nodes (speeds up rendering 
                       for some large structures)', value=FALSE),
-        # checkboxInput(inputID='highlight', label='Highlight nodes added since
-        #               previous time period', value=FALSE),
+        
+        selectInput(inputId='highlight', label='Compare with:', choices=''),
+        
+        bsTooltip(id='highlight',
+                  # need paste0() here
+                  title=paste0('Highlight differences with past or future ',
+                               'date. If past, entities created/acquired. ',
+                               'Otherwise destroyed/sold/etc.'),
+                  placement='right'),
+        
+        selectInput(inputId='maxDist', label='Max node distance (map only)',
+                    choices='4'),
+        
         width = 3),
       
       mainPanel(
@@ -204,16 +213,31 @@ ui = navbarPage(
 
 server = function(input,output,session) {
   
+  observe({
+    # Disable options that aren't relevant for active display
+    shinyjs::toggleState(selector='input[type="checkbox"]',
+                         condition=input$dispType=='Network')
+    shinyjs::toggleState(id='highlight',
+                         condition=input$dispType=='Network')
+    shinyjs::toggleState(id='maxDist',
+                         condition=input$dispType=='Map')
+  })
+  
   observeEvent(input$bhc, {
     new_choices = rev(gsub(
       '.*-(\\d{4})(\\d{2})(\\d{2}).RData', '\\1-\\2-\\3',
       dir('rdata/', paste0(isolate(input$bhc),'-.*.RData'))))
     
+    # If a new bhc is selected and the selected asOfDate is still available,
+    # then don't change it; otherwise reset
     x = intersect(isolate(input$asOfDate), new_choices)
     
     updateSelectInput(
       session, 'asOfDate', choices = new_choices,
       selected = if (length(x) > 0) x else new_choices[1] )
+    
+    updateSelectInput(
+      session, 'highlight', choices = c('', new_choices))
   })
   
   data = reactive({
@@ -224,7 +248,9 @@ server = function(input,output,session) {
     } else NULL })
   
   observeEvent(data(), {
+    
     bhcMaxTier <<- data()[[1]][, max(Tier)]
+    
   }, priority=1)
 
   observeEvent(data(), {
@@ -233,6 +259,9 @@ server = function(input,output,session) {
     updateSelectInput(
       session, 'maxDist', choices = 1:bhcMaxDist,
       selected = bhcMaxDist)
+    
+    updateSelectInput(
+      session, 'highlight', selected='')
   })
 
   json_data = reactive({
@@ -251,6 +280,13 @@ server = function(input,output,session) {
       fromJSON(toJSON(list(nodes, links)))
 
     } else NULL })
+  
+  compare_data = reactive({
+    if (input$highlight != '') {
+      # only need nodes (for now)
+      load_data(input$bhc, input$highlight)[[2]]
+      
+    } else NA })
 
   output$network = renderForceNetwork({
     if (!is.null(data())) {
@@ -298,6 +334,9 @@ server = function(input,output,session) {
         links[nodes, on=.(from.id==id), from.id:= i]
         nodes[, `:=`(id = i, i = NULL)]
       }
+      
+      glob.Nodes <<- nodes
+      glob.Links <<- links
 
       forceNetwork(
         Links=links, Nodes=nodes, Source='from.id', Target='to.id',
@@ -358,7 +397,10 @@ server = function(input,output,session) {
   })
   
   output$historyTable = DT::renderDataTable({
-    NULL
+    DT::datatable(
+      histories[Id_Rssd==as.integer(input$bhc), -1],
+      options = list(dom='t', paging=FALSE, ordering=FALSE)
+    )
   })
   
   output$HC10bnTable = DT::renderDataTable({
@@ -380,7 +422,27 @@ server = function(input,output,session) {
   observe({session$sendCustomMessage('maxDist', if (input$maxDist != '') {
     list(input$maxDist) } else NULL )})
   
-  #observe({session$sendCustomMessage('toggleHighlight', list(input$highlight))})
+  observeEvent(compare_data(), {
+    if (is.data.table(compare_data())) {
+      # reset
+      glob.Links[, highlight:= F]
+      # Add/modify column to identify which nodes/links to highlight
+      # (what about new links between existing nodes? ignoring these
+      # for now)
+      glob.Nodes[, highlight:= !c(T, Id_Rssd[-1] %in% compare_data()$Id_Rssd)]
+      glob.Links[glob.Nodes[highlight==T], on='Id_Rssd', highlight:= T]
+      glob.Links[glob.Nodes[highlight==T], on=.(Parent==Id_Rssd), highlight:= T]
+      glob.Links[, id:= .I - 1L]
+      
+      session$sendCustomMessage('toggleHighlight',
+                                list(input$highlight,
+                                     glob.Nodes[highlight==T, id],
+                                     glob.Links[highlight==T, id]))
+    } else {
+      
+      session$sendCustomMessage('toggleHighlight', list(FALSE))
+    }
+  })
   
 }
 

@@ -60,6 +60,13 @@ updateBhcList = function() {
   bhcList = setNames(bhcList$Id_Rssd, bhcList$Name)
   
   save(bhcList, file = 'bhcList.RData')
+  
+  ### Also update the histories saved file (saving a subset to
+  # save space)
+  histories = fread('../bhc-institution-histories.txt', key='Id_Rssd')
+  histories = histories[J(bhcList)]
+  
+  save(histories, file='data/histories.RData')
 }
 
 get_ymax = function(ggplot_object) {

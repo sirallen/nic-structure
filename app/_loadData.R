@@ -14,3 +14,5 @@ assets[, BHCK2170:= BHCK2170/1e6]
 HC10bn = fread('data/HC10bn.csv', select=2:4)
 setnames(HC10bn, 3, paste0(names(HC10bn)[3], ' (Thousands)'))
 
+load('data/histories.RData')
+
