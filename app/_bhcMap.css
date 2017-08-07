@@ -36,6 +36,7 @@ path.graticule{
 	fill: none;
 	stroke-width: .5px;
 	stroke: lightgray;
+	pointer-events: all;
 }
 
 path.graticule.outline{

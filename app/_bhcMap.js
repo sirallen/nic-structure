@@ -33,7 +33,9 @@ Shiny.addCustomMessageHandler('windowResize', function(message) {
 	//console.log('height:', height);
 	projection.translate([3*width/7, height/2]);
 
-	var svg = d3.select('#d3io svg').attr('width', width).attr('height', height);
+	var svg = d3.select('#d3io svg')
+				.attr('width', width)
+				.attr('height', height);
 	
 	updatePaths(svg);
 });
@@ -47,98 +49,77 @@ Shiny.addCustomMessageHandler('maxDist', function(message) {
 });
 
 // global vars (need to access in both createMap and updateMap)
-var width = 1000;
-var height = 670;
-// initial scale and rotation (lng, lat)
-var scale = 300;
-var origin = {x: 55, y:-40};
-var cities;
-var dfnet;
-var nodes;
+var width = 1000,
+    height = 670,
+    // initial scale and rotation (lng, lat)
+    scale = 300,
+    origin = {x: 55, y:-40};
+
+var cities, dfnet, nodes;
 
 var projection = d3.geoOrthographic()
-	.scale(scale)
-	.translate([3*width/7, height/2])
-	.rotate([origin.x, origin.y])
-	.center([0,0])
-	.clipAngle(90);
+				   .scale(scale)
+				   .translate([3*width/7, height/2])
+				   .rotate([origin.x, origin.y])
+				   .center([0,0])
+				   .clipAngle(90);
 
-var geoPath = d3.geoPath().projection(projection);
+var geoPath = d3.geoPath()
+				.projection(projection);
 
 var graticule = d3.geoGraticule();
 
 
 function createMap(svg) {
-	// zoom AND rotate
-	var mapZoom = d3.zoom().on('zoom', zoomed)
 
-	svg.call(mapZoom)
-
-	// code snippet from http://stackoverflow.com/questions/36614251/
-	// dj3s-graticule-removed-when-rotation-is-done-in-orthographic-projection
+	// code snippet from http://stackoverflow.com/questions/36614251
 	var λ = d3.scaleLinear()
-        .domain([-width, width])
-        .range([-180, 180]);
+        	  .domain([-width, width])
+        	  .range([-180, 180]),
 
-    var φ = d3.scaleLinear()
-        .domain([-height, height])
-        .range([90, -90]);
+        φ = d3.scaleLinear()
+        	  .domain([-height, height])
+        	  .range([90, -90]);
 
-	svg.append('path')
-	  .datum(graticule)
-	  .attr('class','graticule')
-	  .attr('d', geoPath);
+    var globe = svg.append('g').datum({x: 0, y: 0});
 
-	svg.selectAll('path').data(countries.geometries)
-	  .enter()
-	  .append('path')
-	  .attr('d', geoPath)
-	  .attr('class', 'countries')
-	  .style('fill', '#FF9186');
+	globe.append('path')
+	   .datum(graticule)
+	   .attr('class','graticule')
+	   .attr('d', geoPath);
 
-	 //https://bl.ocks.org/emeeks/af3c0114adfd9ead565e6c0f4a9c494e
+	globe.selectAll('path')
+	   .data(countries.geometries)
+	   .enter()
+	   .append('path')
+	   .attr('d', geoPath)
+	   .attr('class', 'countries')
+	   .style('fill', '#FF9186');
+
+	// https://stackoverflow.com/questions/43772975
+	svg.call(d3.zoom().on('zoom', zoomed));
+	globe.call(d3.drag().on('drag', dragged));
+
+
+	function dragged(d){
+		var r = {
+			x: λ((d.x = d3.event.x)),
+			y: φ((d.y = d3.event.y))
+		};
+
+    	projection.rotate([origin.x + r.x, origin.y + r.y]);
+    	updatePaths(svg);
+	};
+
 	function zoomed(){
 		var transform = d3.event.transform;
 		var r = {x: λ(transform.x), y: φ(transform.y)};
 		var k = Math.sqrt(300/projection.scale());
 
-		//console.log(transform);
-		projection.scale(scale*transform.k)
-				  .rotate([origin.x + r.x * k, origin.y + r.y]);
+		projection.scale(scale*transform.k);
 
 		updatePaths(svg);
 	};
-
-	// Add legend
-/*	var color = d3.scaleOrdinal()
-				  .domain(["Holding Company","Domestic Bank","Domestic Nonbank","International Bank","International Nonbank",
-				  	"Finance Company","Data Processing Servicer","Securities Broker/Dealer"])
-				  .range(["#FF0000","#CD6600","#3182BD","#000000","#8B008B","#32CD32","#116043","#FF7373"]);
-	var legendRectSize = 18;
-	var legendSpacing = 4;
-	var legend = svg.selectAll('.legend')
-					.data(color.domain())
-					.enter()
-					.append('g')
-					.attr('class', 'legend')
-					.attr('transform', function(d, i) {
-						var height = legendRectSize + legendSpacing;
-						var offset =  height * color.domain().length / 2;
-						var horz = legendRectSize;
-						var vert = i * height+4;
-						return 'translate(' + horz + ',' + vert + ')';
-					});
-
-	legend.append('rect')
-		  .attr('width', legendRectSize)
-		  .attr('height', legendRectSize)
-		  .style('fill', color)
-		  .style('stroke', color);
-
-	legend.append('text')
-		  .attr('x', legendRectSize + legendSpacing)
-		  .attr('y', legendRectSize - legendSpacing)
-		  .text(function(d) { return d; });*/
 
 };
 
@@ -178,9 +159,11 @@ function updateMap(svg, cities, dfnet, maxTier) {
 
 	svg.selectAll('g.cities').data([]).exit().remove();
 
-	city = svg.selectAll('g.cities').data(nodes).enter()
-		.append('g')
-		.attr('class', 'cities');
+	city = svg.selectAll('g.cities')
+			  .data(nodes)
+			  .enter()
+			  .append('g')
+			  .attr('class', 'cities');
 
 	city.append('path')
 		.attr('class','citynode')
@@ -203,24 +186,32 @@ function updateMap(svg, cities, dfnet, maxTier) {
 		//nodes.move(j, nodes.length)
 		nodes.splice(nodes.length, 0, nodes.splice(j, 1)[0])
 
-		d3.select(this).transition()
+		d3.select(this)
+		  .transition()
 		  .duration(750)
 		  .attr('d', geoPath.pointRadius(5));
-		d3.select(this.parentNode).select('text').transition()
+
+		d3.select(this.parentNode).select('text')
+		  .transition()
 		  .duration(750)
 		  .style('opacity', 1)
 	};
 
 	function mouseout(d){
-		d3.select(this).transition()
+		d3.select(this)
+		  .transition()
 		  .duration(750)
 		  .attr('d', geoPath.pointRadius(3));
-		d3.select(this.parentNode).select('text').transition()
+
+		d3.select(this.parentNode).select('text')
+		  .transition()
 		  .duration(750)
 		  .style('opacity', 0)
 	};
 
-	svg.selectAll('path').filter('.citynode, .arc').attr('d', geoPath);
+	svg.selectAll('path')
+	   .filter('.citynode, .arc')
+	   .attr('d', geoPath);
 };
 
 function updatePaths(svg) {
