@@ -4,26 +4,32 @@ output: md_document
 ```{r, echo=FALSE}
 library(data.table)
 library(ggplot2)
-source('_functions.R')
-theme_set(theme_bw() + theme(panel.border=element_rect(color=NA)))
+source('_plotFunctions.R')
+theme_set(
+  theme_bw() +
+    theme(panel.border=element_rect(color=NA))
+)
+knitr::opts_chunk$set(
+  fig.path = 'figure/'
+)
 ```
 
 
 ## About
 
-I made this application with R's <code>shiny</code>, <code>RMarkdown</code>, and <code>networkD3</code> packages and the <code>D3.js</code> JavaScript library by Mike Bostock; some of the source files are available on <a href='https://github.com/sirallen/nic-structure' target='_blank'>my Github page</a>. It's a work in progress, so don't mind the bugs!
+Large banking and financial institutions are remarkably complex, but data on their inner workings is difficult to access and analyze in a useful way. In the spirit of greater transparency, this project helps illuminate one aspect of their complexity&mdash;organizational structure&mdash;and its evolution over time. The institutions in question are _bank holding companies_, which are described in greater detail below.
 
-This project complements recent research produced by economists at the New York Fed (referenced at the bottom), who assembled "a complete, time-consistent panel of all BHCs since 1990" to conduct a novel analysis of the U.S. banking industry. However, they have not yet made the panel public, and, while part of their underlying data source is "publicly available" online, the format in which it is made public is not amenable to the kind of detailed study that they have done. My main purpose in making this app has been to reconstruct the data source and make it accessible in a visucentric, interactive form.
+I made this application with R's <code>shiny</code>, <code>RMarkdown</code>, and <code>networkD3</code> packages and the <code>D3.js</code> JavaScript library by Mike Bostock. Some of the source files are available on <a href='https://github.com/sirallen/nic-structure' target='_blank'>my Github page</a>.
 
 <hr>
 
-**Note:** For now, the available holding companies are those currently active with at least $100 billion in assets, plus several others included for no particular reason. I do plan to make more available soon.
+**Note:** For now, the available holding companies are those currently active with at least $100 billion in assets, plus several others included for no particular reason. I plan to make more available soon.
 
 <hr>
 
 ## Background
 
-A _bank holding company_ (BHC) is simply a firm that controls one or more banks. I've made an attempt here to visualize the structures of such firms, with an eye toward portraying the scale and complexity of organization. The underlying data come from the <a href='https://www.ffiec.gov/nicpubweb/nicweb/nichome.aspx' target='_blank'>National Information Center</a> (NIC) website, where holding company data can be queried via the Institution Search form. While the NIC reports complete data for U.S. companies only, some of them control a large number of international subsidiaries based in Europe, Asia, and elsewhere (think Bermuda, Nassau, the Caymans, and other idyllic vacation destinations). Some holding companies are themselves U.S. subsidiaries of foreign banking and financial organizations such as UBS, Barclays, and Credit Suisse. Together, these companies control over $15 trillion in assets.
+A _bank holding company_ (BHC) is simply a firm that controls one or more banks. I've made an attempt here to visualize the structures of such firms, with an eye toward portraying the scale and complexity of organization. The underlying data comes from the <a href='https://www.ffiec.gov/nicpubweb/nicweb/nichome.aspx' target='_blank'>National Information Center</a> (NIC) website, where holding company data can be queried via the Institution Search form. While the NIC reports complete data for U.S. companies only, some of them control a large number of international subsidiaries based in Europe, Asia, and elsewhere. Some holding companies are themselves U.S. subsidiaries of foreign banking and financial organizations such as UBS, Barclays, and Credit Suisse. Together, these companies control over $15 trillion in assets.
 
 <hr>
 

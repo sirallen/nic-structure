@@ -11,6 +11,7 @@ library(ggplot2)
 library(gridExtra)
 source('_loadData.R')
 source('_functions.R')
+source('_plotFunctions.R')
 
 theme_set(
   theme_bw() +
@@ -47,7 +48,7 @@ ui = navbarPage(
   tabPanel(
     shinyjs::useShinyjs(),
     
-    title = 'Main',
+    title = 'Explore',
     
     tags$head(
       tags$link(rel='shortcut icon', href=''),
@@ -71,12 +72,13 @@ ui = navbarPage(
         Shiny.onInputChange("dimension", dimension)});')
       ),
     
-    # inside <body>
-    # Added 'padding-top' since I set navbar position to 'fixed-top'
+    ### inside <body>
+    # Need 'padding-top' since I set navbar position to 'fixed-top'
     tags$style(type='text/css', 'body {overflow-y: scroll; padding-top: 60px}'),
+    # Is it possible to take the legend out of the zoomable layer?
     tags$style(id='legend.style', type='text/css',
                'g.legend {opacity: 1; pointer-events: none;}'),
-    # subtract off size of header + tabs (~102px)
+    # subtract off size of navbar + tabs (~107px)
     tags$style(type='text/css',
                '#network {height: calc(100vh - 107px) !important;}'),
     
@@ -84,11 +86,11 @@ ui = navbarPage(
       
       sidebarPanel(
         # "sticky" sidebar
-        style = 'position:fixed;width:23%;',
+        style = 'position:fixed; width:23%;',
         selectInput(inputId='bhc', label='Select holding company:',
                     choices=bhcList),
         
-        selectInput(inputId='asOfDate', label='Date:', choices='2017-03-31'),
+        selectInput(inputId='asOfDate', label='Date:', choices='2017-06-30'),
         
         radioButtons(inputId='dispType', label='Select display type:',
                      choices=c('Network','Map')),
@@ -101,6 +103,7 @@ ui = navbarPage(
         
         selectInput(inputId='highlight', label='Compare with:', choices=''),
         
+        # Note: this isn't working in the deployed app
         bsTooltip(id='highlight',
                   # need paste0() here
                   title=paste0('Highlight differences with past or future ',
@@ -298,7 +301,7 @@ server = function(input,output,session) {
         # Remove foreign nodes and any descendants which become disconnected
         # from the main graph (may include nodes which are not foreign)
         links[nodes, on=.(from.id==id), from.Group:= i.Group]
-        links = links[!(grepl('International', Group) |
+        links = links[!(grepl('International', to.Group) |
                           grepl('International', from.Group))]
         
         # Prune the disconnected pieces
@@ -307,44 +310,49 @@ server = function(input,output,session) {
         }
         
         nodes = nodes[c(TRUE, id[-1] %in% links$to.id)]
-        # update ids
-        nodes[, i:= .I - 1L]
-        links[nodes, on=.(to.id==id), to.id:= i]
-        links[nodes, on=.(from.id==id), from.id:= i]
-        nodes[, `:=`(id = i, i = NULL)]
+        
+        updateIds(nodes, links)
       }
       
       if (input$bundle) {
-        # set of links to "terminal" nodes (no children)
-        links.toTerminal = links[!links[, .(from.id)], on=.(to.id==from.id)]
-        # counts of total children (N) and terminal children (M)
-        numChildren = links[, .N, by='from.id'][
-          links.toTerminal[, .(M=.N), by='from.id'], on='from.id']
+        # Set of links to "terminal" nodes (nodes with 0 children),
+        # excluding holding companies
+        links.toTerminal = links[!links[, .(from.id)], on=.(to.id==from.id)][
+          !grepl('Holding', to.Group)]
+        # Counts of non-HC total children (N) & terminal children (M) for
+        # each from.id with M > 0.
+        numChildren = links[!grepl('Holding', to.Group), .N, by='from.id'][
+          links.toTerminal[, .(M=.N), by='from.id'],
+          on='from.id']
+        
+        # Choose the 'from' nodes whose children should be bundled
         bundleNodes = numChildren[N > 3, .(from.id, M)]
         
-        # Remove links to terminal children of parents in bundleNodes
-        links = links[!links.toTerminal[bundleNodes[, .(from.id)], on='from.id'],
+        # Remove links to (non-HC) terminal children of each node in
+        # bundleNodes. Use nomatch=0 in case all terminal children are HCs
+        links = links[!links.toTerminal[bundleNodes, on='from.id', nomatch=0],
                       on=.(from.id, to.id)]
-        # Remove those terminal children from nodes
-        nodes = nodes[id %in% c(0, unique(links$to.id))]
-        nodes[bundleNodes, on=.(id==from.id), Nodesize:= as.double(M+4)]
-        # update ids
-        nodes[, i:= .I - 1L]
-        links[nodes, on=.(to.id==id), to.id:= i]
-        links[nodes, on=.(from.id==id), from.id:= i]
-        nodes[, `:=`(id = i, i = NULL)]
+        # Remove those terminal children from 'nodes', update Nodesize
+        nodes = nodes[id %in% c(0, unique(links$to.id))][
+          bundleNodes, on=.(id==from.id), Nodesize:= as.double(M+4)]
+        
+        updateIds(nodes, links)
       }
       
+      # Update globals to keep track of what is plotted (Careful with this --
+      # see https://stackoverflow.com/questions/2628621)
       glob.Nodes <<- nodes
       glob.Links <<- links
-
+      
+      # USE THE FORCE
       forceNetwork(
         Links=links, Nodes=nodes, Source='from.id', Target='to.id',
         NodeID='name', Group='Group', Value='value', Nodesize='Nodesize',
-        zoom=T, opacity=.8,
-        opacityNoHover=.5, fontSize=10, fontFamily='sans-serif', arrows = T,
+        zoom=TRUE, opacity=.8,
+        opacityNoHover=.5, fontSize=10, fontFamily='sans-serif', arrows = TRUE,
         linkDistance = JS('function(d){return 50}'),
-        legend=TRUE, colourScale = JS(ColorScale))
+        legend=TRUE, colourScale = JS(ColorScale)
+      )
 
     } })
   
@@ -389,11 +397,9 @@ server = function(input,output,session) {
   
   # Make sure to use renderDataTable() from /DT/, not /shiny/
   output$bhcTable = DT::renderDataTable({
-    if (!is.null(data())) {
-      DT::datatable(
-        data()[[1]][, .(Entity=to, Parent=from, RSSD=Id_Rssd, Type)]
-      )
-    }
+    DT::datatable(
+      data()[[1]][, .(Entity=to, Parent=from, RSSD=Id_Rssd, Type)]
+    )
   })
   
   output$historyTable = DT::renderDataTable({
@@ -404,7 +410,9 @@ server = function(input,output,session) {
   })
   
   output$HC10bnTable = DT::renderDataTable({
-    DT::datatable(HC10bn, options=list(dom='t', paging=FALSE, ordering=FALSE))
+    DT::datatable(
+      HC10bn, options=list(dom='t', paging=FALSE, ordering=FALSE)
+    )
   })
   
   output$coveragePlot = renderPlot({
@@ -426,8 +434,9 @@ server = function(input,output,session) {
     if (is.data.table(compare_data())) {
       # reset
       glob.Links[, highlight:= F]
-      # Add/modify column to identify which nodes/links to highlight
-      # (what about new links between existing nodes? ignoring these
+      # Add/modify column to identify which nodes/links to highlight. Assuming
+      # that the order of the node/link elements in the DOM is the same as the
+      # ids. (What about new links between existing nodes? ignoring these
       # for now)
       glob.Nodes[, highlight:= !c(T, Id_Rssd[-1] %in% compare_data()$Id_Rssd)]
       glob.Links[glob.Nodes[highlight==T], on='Id_Rssd', highlight:= T]

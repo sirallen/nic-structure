@@ -35,7 +35,7 @@ histories[, next_Event_Date:= shift(`Event Date`, type='lead',
                                     fill='9999-12-31'), keyby='Id_Rssd']
 
 
-getBhcSpan = function(rssd, start_date='2008-04-01', returnQtrs=TRUE) {
+getBhcSpan = function(rssd, start_date, returnQtrs=TRUE) {
   # Given rssd, figure out when it was a BHC or FHC
   intervals = histories[J(rssd)][bhc==1, .(
     start=as.Date(`Event Date`), end=as.Date(next_Event_Date))]

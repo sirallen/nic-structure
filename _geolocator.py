@@ -5,6 +5,7 @@ import argparse
 
 argparser = argparse.ArgumentParser(description='Geolocate entities in NIC Organization Hierarchies.')
 argparser.add_argument('-r', '--rssd', nargs='+', help='list of rssds to geolocate')
+argparser.add_argument('-f', '--files', nargs='+', help='list of files to geolocate')
 argparser.add_argument('-a', '--after', help='select files after a date yyyymmdd (inclusive)')
 argparser.add_argument('-b', '--before', help='select files before a date yyyymmdd (exclusive)')
 args = argparser.parse_args()
@@ -32,7 +33,8 @@ if args.before:
   readfiles = filter(lambda x: re.search('(?<=-)\\d+', x).group() < args.before, readfiles)
 if args.after:
   readfiles = filter(lambda x: re.search('(?<=-)\\d+', x).group() >= args.after, readfiles)
-
+if args.files:
+  readfiles = args.files
 
 for readfile in readfiles:
   print('Reading  ', readfile)
@@ -58,6 +60,8 @@ for readfile in readfiles:
         addr = addr.replace(', USA', '')
         addr = re.sub('([^,]*,).*, (.*)', '\\1 \\2', addr)
         addr = re.sub('[0-9]', '', addr).strip()
+
+        #print('\t\tFound  ' + addr)
         
         master[u] = dict()
         master[u]['label'] = addr
@@ -65,6 +69,7 @@ for readfile in readfiles:
         master[u]['lng'] = float(np.round(coord['lng'], 7))
         
       else:
+        #print('\t\t*no result')
         print(u + '  returned result of length zero')
         continue
         

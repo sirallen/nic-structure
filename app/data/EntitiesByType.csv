@@ -480,6 +480,12 @@ Id_Rssd,Type,N,asOfDate
 1026632,Foreign Entity Other,11,2017-03-31
 1026632,Data Processing Servicer,3,2017-03-31
 1026632,Savings & Loan Association,1,2017-03-31
+1026632,Savings & Loan Holding Company,1,2017-06-30
+1026632,Domestic Entity Other,28,2017-06-30
+1026632,Securities Broker/Dealer,2,2017-06-30
+1026632,Foreign Entity Other,11,2017-06-30
+1026632,Data Processing Servicer,3,2017-06-30
+1026632,Savings & Loan Association,1,2017-06-30
 1037003,Bank Holding Company,2,2000-03-31
 1037003,Domestic Entity Other,26,2000-03-31
 1037003,National Bank,1,2000-03-31
@@ -995,6 +1001,12 @@ Id_Rssd,Type,N,asOfDate
 1037003,Securities Broker/Dealer,1,2017-03-31
 1037003,National Bank,1,2017-03-31
 1037003,International Nonbank Sub of Domestic Entities,7,2017-03-31
+1037003,Financial Holding Company - Domestic,2,2017-06-30
+1037003,Domestic Entity Other,29,2017-06-30
+1037003,State Member Bank,1,2017-06-30
+1037003,Securities Broker/Dealer,1,2017-06-30
+1037003,National Bank,1,2017-06-30
+1037003,International Nonbank Sub of Domestic Entities,7,2017-06-30
 1039502,Financial Holding Company - Domestic,4,2000-03-31
 1039502,Domestic Entity Other,800,2000-03-31
 1039502,Securities Broker/Dealer,11,2000-03-31
@@ -1916,6 +1928,19 @@ Id_Rssd,Type,N,asOfDate
 1039502,Bank Holding Company,1,2017-03-31
 1039502,State Member Bank,1,2017-03-31
 1039502,Non-deposit Trust Company - Non- member,1,2017-03-31
+1039502,Financial Holding Company - Domestic,2,2017-06-30
+1039502,National Bank,2,2017-06-30
+1039502,Domestic Entity Other,751,2017-06-30
+1039502,Data Processing Servicer,4,2017-06-30
+1039502,Edge Corporation - Investment,2,2017-06-30
+1039502,International Bank of U.S. Depository - Edge or Trust Co.,10,2017-06-30
+1039502,International Nonbank Sub of Domestic Entities,392,2017-06-30
+1039502,Finance Company,2,2017-06-30
+1039502,Foreign Entity Other,2,2017-06-30
+1039502,Bank Holding Company,1,2017-06-30
+1039502,State Member Bank,1,2017-06-30
+1039502,Securities Broker/Dealer,4,2017-06-30
+1039502,Non-deposit Trust Company - Non- member,1,2017-06-30
 1068025,Financial Holding Company - Domestic,1,2000-03-31
 1068025,National Bank,2,2000-03-31
 1068025,Domestic Entity Other,724,2000-03-31
@@ -2534,6 +2559,14 @@ Id_Rssd,Type,N,asOfDate
 1068025,Non-deposit Trust Company - Member,1,2017-03-31
 1068025,Securities Broker/Dealer,1,2017-03-31
 1068025,International Nonbank Sub of Domestic Entities,1,2017-03-31
+1068025,Financial Holding Company - Domestic,1,2017-06-30
+1068025,National Bank,1,2017-06-30
+1068025,Domestic Entity Other,66,2017-06-30
+1068025,Finance Company,18,2017-06-30
+1068025,Agreement Corporation - Investment,1,2017-06-30
+1068025,Non-deposit Trust Company - Member,1,2017-06-30
+1068025,Securities Broker/Dealer,1,2017-06-30
+1068025,International Nonbank Sub of Domestic Entities,1,2017-06-30
 1068191,Financial Holding Company - Domestic,1,2000-03-31
 1068191,National Bank,1,2000-03-31
 1068191,Domestic Entity Other,45,2000-03-31
@@ -3070,6 +3103,13 @@ Id_Rssd,Type,N,asOfDate
 1068191,Finance Company,6,2017-03-31
 1068191,International Nonbank Sub of Domestic Entities,1,2017-03-31
 1068191,Securities Broker/Dealer,1,2017-03-31
+1068191,Financial Holding Company - Domestic,1,2017-06-30
+1068191,National Bank,1,2017-06-30
+1068191,Domestic Entity Other,88,2017-06-30
+1068191,Agreement Corporation - Investment,1,2017-06-30
+1068191,Finance Company,6,2017-06-30
+1068191,International Nonbank Sub of Domestic Entities,1,2017-06-30
+1068191,Securities Broker/Dealer,1,2017-06-30
 1069778,Financial Holding Company - Domestic,1,2000-03-31
 1069778,Non-deposit Trust Company - Non- member,2,2000-03-31
 1069778,Domestic Entity Other,914,2000-03-31
@@ -3877,6 +3917,18 @@ Id_Rssd,Type,N,asOfDate
 1069778,Securities Broker/Dealer,3,2017-03-31
 1069778,Non-deposit Trust Company - Member,1,2017-03-31
 1069778,Data Processing Servicer,1,2017-03-31
+1069778,Financial Holding Company - Domestic,1,2017-06-30
+1069778,Bank Holding Company,1,2017-06-30
+1069778,National Bank,1,2017-06-30
+1069778,Edge Corporation - Investment,1,2017-06-30
+1069778,International Nonbank Sub of Domestic Entities,159,2017-06-30
+1069778,Finance Company,1,2017-06-30
+1069778,Domestic Entity Other,688,2017-06-30
+1069778,Agreement Corporation - Investment,2,2017-06-30
+1069778,Non-deposit Trust Company - Non- member,2,2017-06-30
+1069778,Securities Broker/Dealer,3,2017-06-30
+1069778,Non-deposit Trust Company - Member,1,2017-06-30
+1069778,Data Processing Servicer,1,2017-06-30
 1070345,Financial Holding Company - Domestic,1,2000-03-31
 1070345,National Bank,1,2000-03-31
 1070345,Domestic Entity Other,189,2000-03-31
@@ -4467,6 +4519,14 @@ Id_Rssd,Type,N,asOfDate
 1070345,International Nonbank Sub of Domestic Entities,2,2017-03-31
 1070345,Data Processing Servicer,1,2017-03-31
 1070345,Finance Company,1,2017-03-31
+1070345,Financial Holding Company - Domestic,2,2017-06-30
+1070345,Domestic Entity Other,928,2017-06-30
+1070345,State Member Bank,1,2017-06-30
+1070345,Agreement Corporation - Investment,1,2017-06-30
+1070345,Securities Broker/Dealer,2,2017-06-30
+1070345,International Nonbank Sub of Domestic Entities,2,2017-06-30
+1070345,Data Processing Servicer,1,2017-06-30
+1070345,Finance Company,1,2017-06-30
 1073757,Financial Holding Company - Domestic,2,2000-03-31
 1073757,Domestic Entity Other,818,2000-03-31
 1073757,Finance Company,140,2000-03-31
@@ -5439,6 +5499,17 @@ Id_Rssd,Type,N,asOfDate
 1073757,Non-deposit Trust Company - Non- member,1,2017-03-31
 1073757,Non-deposit Trust Company - Member,1,2017-03-31
 1073757,Securities Broker/Dealer,4,2017-03-31
+1073757,Financial Holding Company - Domestic,4,2017-06-30
+1073757,Domestic Entity Other,1095,2017-06-30
+1073757,International Nonbank Sub of Domestic Entities,239,2017-06-30
+1073757,Finance Company,53,2017-06-30
+1073757,National Bank,2,2017-06-30
+1073757,Edge Corporation - Investment,2,2017-06-30
+1073757,International Bank of U.S. Depository - Edge or Trust Co.,2,2017-06-30
+1073757,Data Processing Servicer,4,2017-06-30
+1073757,Non-deposit Trust Company - Non- member,1,2017-06-30
+1073757,Non-deposit Trust Company - Member,1,2017-06-30
+1073757,Securities Broker/Dealer,4,2017-06-30
 1074156,Bank Holding Company,3,2000-03-31
 1074156,Federal Savings Bank,3,2000-03-31
 1074156,Domestic Entity Other,76,2000-03-31
@@ -5944,6 +6015,12 @@ Id_Rssd,Type,N,asOfDate
 1074156,Domestic Entity Other,944,2017-03-31
 1074156,Finance Company,8,2017-03-31
 1074156,International Nonbank Sub of Domestic Entities,4,2017-03-31
+1074156,Financial Holding Company - Domestic,1,2017-06-30
+1074156,Non-member Bank,1,2017-06-30
+1074156,Securities Broker/Dealer,1,2017-06-30
+1074156,Domestic Entity Other,934,2017-06-30
+1074156,Finance Company,8,2017-06-30
+1074156,International Nonbank Sub of Domestic Entities,4,2017-06-30
 1111435,Financial Holding Company - Domestic,1,2000-03-31
 1111435,State Member Bank,1,2000-03-31
 1111435,Non-deposit Trust Company - Member,6,2000-03-31
@@ -6746,6 +6823,17 @@ Id_Rssd,Type,N,asOfDate
 1111435,Finance Company,1,2017-03-31
 1111435,Non-deposit Trust Company - Non- member,2,2017-03-31
 1111435,Securities Broker/Dealer,1,2017-03-31
+1111435,Financial Holding Company - Domestic,1,2017-06-30
+1111435,State Member Bank,1,2017-06-30
+1111435,Non-deposit Trust Company - Member,2,2017-06-30
+1111435,Edge Corporation - Investment,1,2017-06-30
+1111435,International Nonbank Sub of Domestic Entities,106,2017-06-30
+1111435,Data Processing Servicer,14,2017-06-30
+1111435,International Bank of U.S. Depository - Edge or Trust Co.,1,2017-06-30
+1111435,Domestic Entity Other,51,2017-06-30
+1111435,Finance Company,1,2017-06-30
+1111435,Non-deposit Trust Company - Non- member,2,2017-06-30
+1111435,Securities Broker/Dealer,1,2017-06-30
 1113514,Bank Holding Company,1,1998-12-31
 1113514,Non-deposit Trust Company - Member,1,1998-12-31
 1113514,Finance Company,30,1998-12-31
@@ -7616,6 +7704,15 @@ Id_Rssd,Type,N,asOfDate
 1119794,International Nonbank Sub of Domestic Entities,15,2017-03-31
 1119794,Data Processing Servicer,1,2017-03-31
 1119794,Securities Broker/Dealer,2,2017-03-31
+1119794,Financial Holding Company - Domestic,1,2017-06-30
+1119794,National Bank,1,2017-06-30
+1119794,Domestic Entity Other,67,2017-06-30
+1119794,Finance Company,2,2017-06-30
+1119794,Non-deposit Trust Company - Member,3,2017-06-30
+1119794,Agreement Corporation - Investment,2,2017-06-30
+1119794,International Nonbank Sub of Domestic Entities,15,2017-06-30
+1119794,Data Processing Servicer,1,2017-06-30
+1119794,Securities Broker/Dealer,2,2017-06-30
 1120754,Financial Holding Company - Domestic,2,2000-03-31
 1120754,National Bank,39,2000-03-31
 1120754,Domestic Entity Other,369,2000-03-31
@@ -8524,6 +8621,19 @@ Id_Rssd,Type,N,asOfDate
 1120754,Non-deposit Trust Company - Member,1,2017-03-31
 1120754,Agreement Corporation - Investment,1,2017-03-31
 1120754,Data Processing Servicer,1,2017-03-31
+1120754,Financial Holding Company - Domestic,1,2017-06-30
+1120754,Domestic Entity Other,482,2017-06-30
+1120754,Finance Company,28,2017-06-30
+1120754,International Nonbank Sub of Domestic Entities,108,2017-06-30
+1120754,Securities Broker/Dealer,6,2017-06-30
+1120754,Bank Holding Company,1,2017-06-30
+1120754,Non-member Bank,1,2017-06-30
+1120754,National Bank,4,2017-06-30
+1120754,Edge Corporation - Investment,1,2017-06-30
+1120754,Foreign Banking Organization,1,2017-06-30
+1120754,Non-deposit Trust Company - Member,1,2017-06-30
+1120754,Agreement Corporation - Investment,1,2017-06-30
+1120754,Data Processing Servicer,1,2017-06-30
 1131787,Financial Holding Company - Domestic,2,2000-03-31
 1131787,State Member Bank,1,2000-03-31
 1131787,Domestic Entity Other,139,2000-03-31
@@ -9137,6 +9247,14 @@ Id_Rssd,Type,N,asOfDate
 1131787,Data Processing Servicer,1,2017-03-31
 1131787,International Nonbank Sub of Domestic Entities,2,2017-03-31
 1131787,Non-deposit Trust Company - Non- member,1,2017-03-31
+1131787,Financial Holding Company - Domestic,2,2017-06-30
+1131787,State Member Bank,1,2017-06-30
+1131787,Domestic Entity Other,60,2017-06-30
+1131787,Finance Company,4,2017-06-30
+1131787,Securities Broker/Dealer,2,2017-06-30
+1131787,Data Processing Servicer,1,2017-06-30
+1131787,International Nonbank Sub of Domestic Entities,2,2017-06-30
+1131787,Non-deposit Trust Company - Non- member,1,2017-06-30
 1132449,Bank Holding Company,1,2000-03-31
 1132449,Non-member Bank,3,2000-03-31
 1132449,Domestic Entity Other,52,2000-03-31
@@ -9677,6 +9795,11 @@ Id_Rssd,Type,N,asOfDate
 1132449,Finance Company,4,2017-03-31
 1132449,State Savings Bank,1,2017-03-31
 1132449,National Bank,1,2017-03-31
+1132449,Financial Holding Company - Domestic,1,2017-06-30
+1132449,Domestic Entity Other,32,2017-06-30
+1132449,State Savings Bank,1,2017-06-30
+1132449,Finance Company,4,2017-06-30
+1132449,National Bank,1,2017-06-30
 1199611,Bank Holding Company,8,2000-03-31
 1199611,State Member Bank,1,2000-03-31
 1199611,Edge Corporation - Banking,1,2000-03-31
@@ -10468,6 +10591,15 @@ Id_Rssd,Type,N,asOfDate
 1199611,Non-deposit Trust Company - Non- member,4,2017-03-31
 1199611,Securities Broker/Dealer,1,2017-03-31
 1199611,Finance Company,1,2017-03-31
+1199611,Financial Holding Company - Domestic,1,2017-06-30
+1199611,State Member Bank,1,2017-06-30
+1199611,Edge Corporation - Banking,1,2017-06-30
+1199611,International Nonbank Sub of Domestic Entities,46,2017-06-30
+1199611,Data Processing Servicer,1,2017-06-30
+1199611,Domestic Entity Other,8,2017-06-30
+1199611,Non-deposit Trust Company - Non- member,4,2017-06-30
+1199611,Securities Broker/Dealer,1,2017-06-30
+1199611,Finance Company,1,2017-06-30
 1245415,Bank Holding Company,4,2000-03-31
 1245415,State Member Bank,4,2000-03-31
 1245415,Securities Broker/Dealer,3,2000-03-31
@@ -11010,6 +11142,12 @@ Id_Rssd,Type,N,asOfDate
 1245415,Securities Broker/Dealer,3,2017-03-31
 1245415,Non-deposit Trust Company - Non- member,1,2017-03-31
 1245415,International Nonbank Sub of Domestic Entities,2,2017-03-31
+1245415,Intermediate Holding Companies,1,2017-06-30
+1245415,National Bank,2,2017-06-30
+1245415,Domestic Entity Other,25,2017-06-30
+1245415,Securities Broker/Dealer,3,2017-06-30
+1245415,Non-deposit Trust Company - Non- member,1,2017-06-30
+1245415,International Nonbank Sub of Domestic Entities,2,2017-06-30
 1275216,Financial Holding Company - Domestic,2,2008-12-31
 1275216,Non-member Bank,1,2008-12-31
 1275216,Domestic Entity Other,324,2008-12-31
@@ -11226,6 +11364,11 @@ Id_Rssd,Type,N,asOfDate
 1275216,Domestic Entity Other,250,2017-03-31
 1275216,International Nonbank Sub of Domestic Entities,144,2017-03-31
 1275216,Federal Savings Bank,1,2017-03-31
+1275216,Financial Holding Company - Domestic,2,2017-06-30
+1275216,Non-member Bank,1,2017-06-30
+1275216,Domestic Entity Other,261,2017-06-30
+1275216,International Nonbank Sub of Domestic Entities,144,2017-06-30
+1275216,Federal Savings Bank,1,2017-06-30
 1378434,Bank Holding Company,2,2000-03-31
 1378434,National Bank,1,2000-03-31
 1378434,Edge Corporation - Banking,1,2000-03-31
@@ -11689,6 +11832,13 @@ Id_Rssd,Type,N,asOfDate
 1378434,Securities Broker/Dealer,3,2017-03-31
 1378434,Bank Holding Company,1,2017-03-31
 1378434,International Nonbank Sub of Domestic Entities,1,2017-03-31
+1378434,Intermediate Holding Companies,1,2017-06-30
+1378434,National Bank,1,2017-06-30
+1378434,Domestic Entity Other,234,2017-06-30
+1378434,Finance Company,2,2017-06-30
+1378434,Securities Broker/Dealer,3,2017-06-30
+1378434,Bank Holding Company,1,2017-06-30
+1378434,International Nonbank Sub of Domestic Entities,1,2017-06-30
 1447376,Savings & Loan Holding Company,3,2000-03-31
 1447376,Federal Savings Bank,1,2000-03-31
 1447376,Non-member Bank,1,2000-03-31
@@ -11950,6 +12100,11 @@ Id_Rssd,Type,N,asOfDate
 1447376,Non-member Bank,1,2017-03-31
 1447376,Domestic Entity Other,811,2017-03-31
 1447376,Foreign Entity Other,20,2017-03-31
+1447376,Savings & Loan Holding Company,2,2017-06-30
+1447376,Savings & Loan Association,1,2017-06-30
+1447376,Non-member Bank,1,2017-06-30
+1447376,Domestic Entity Other,826,2017-06-30
+1447376,Foreign Entity Other,27,2017-06-30
 1562859,Bank Holding Company,2,2008-12-31
 1562859,Domestic Entity Other,118,2008-12-31
 1562859,International Nonbank Sub of Domestic Entities,106,2008-12-31
@@ -12142,6 +12297,13 @@ Id_Rssd,Type,N,asOfDate
 1562859,Securities Broker/Dealer,4,2017-03-31
 1562859,Bank Holding Company,1,2017-03-31
 1562859,State Member Bank,1,2017-03-31
+1562859,Financial Holding Company - Domestic,1,2017-06-30
+1562859,Domestic Entity Other,51,2017-06-30
+1562859,Finance Company,9,2017-06-30
+1562859,International Nonbank Sub of Domestic Entities,5,2017-06-30
+1562859,Bank Holding Company,1,2017-06-30
+1562859,State Member Bank,1,2017-06-30
+1562859,Securities Broker/Dealer,4,2017-06-30
 1574834,Intermediate Holding Companies,1,2016-09-30
 1574834,Domestic Entity Other,505,2016-09-30
 1574834,Foreign Entity Other,33,2016-09-30
@@ -12157,6 +12319,11 @@ Id_Rssd,Type,N,asOfDate
 1574834,Foreign Entity Other,32,2017-03-31
 1574834,Finance Company,2,2017-03-31
 1574834,Securities Broker/Dealer,3,2017-03-31
+1574834,Intermediate Holding Companies,1,2017-06-30
+1574834,Domestic Entity Other,511,2017-06-30
+1574834,Finance Company,2,2017-06-30
+1574834,Foreign Entity Other,31,2017-06-30
+1574834,Securities Broker/Dealer,3,2017-06-30
 1575569,Intermediate Holding Companies,1,2016-09-30
 1575569,Article XII New York Investment Company,1,2016-09-30
 1575569,Domestic Entity Other,64,2016-09-30
@@ -12184,6 +12351,14 @@ Id_Rssd,Type,N,asOfDate
 1575569,Securities Broker/Dealer,3,2017-03-31
 1575569,Finance Company,2,2017-03-31
 1575569,Non-deposit Trust Company - Non- member,1,2017-03-31
+1575569,Intermediate Holding Companies,1,2017-06-30
+1575569,Domestic Entity Other,63,2017-06-30
+1575569,Securities Broker/Dealer,3,2017-06-30
+1575569,Non-deposit Trust Company - Non- member,1,2017-06-30
+1575569,Finance Company,2,2017-06-30
+1575569,Bank Holding Company,2,2017-06-30
+1575569,Financial Holding Company - Domestic,1,2017-06-30
+1575569,Non-member Bank,2,2017-06-30
 1607170,Savings & Loan Holding Company,2,2000-03-31
 1607170,Federal Savings Bank,1,2000-03-31
 1607170,Savings & Loan Holding Company,2,2000-06-30
@@ -12382,6 +12557,12 @@ Id_Rssd,Type,N,asOfDate
 1607170,Federal Savings Bank,1,2017-03-31
 1607170,Securities Broker/Dealer,1,2017-03-31
 1607170,Data Processing Servicer,3,2017-03-31
+1607170,Savings & Loan Holding Company,2,2017-06-30
+1607170,Federal Savings Bank,1,2017-06-30
+1607170,Domestic Entity Other,932,2017-06-30
+1607170,Securities Broker/Dealer,2,2017-06-30
+1607170,Foreign Entity Other,373,2017-06-30
+1607170,Data Processing Servicer,3,2017-06-30
 1951350,Financial Holding Company - Domestic,2,2000-03-31
 1951350,Non-deposit Trust Company - Non- member,8,2000-03-31
 1951350,Domestic Entity Other,833,2000-03-31
@@ -13573,6 +13754,20 @@ Id_Rssd,Type,N,asOfDate
 1951350,International Bank of U.S. Depository - Edge or Trust Co.,15,2017-03-31
 1951350,Securities Broker/Dealer,4,2017-03-31
 1951350,Non-deposit Trust Company - Non- member,2,2017-03-31
+1951350,Financial Holding Company - Domestic,1,2017-06-30
+1951350,Domestic Entity Other,510,2017-06-30
+1951350,International Nonbank Sub of Domestic Entities,411,2017-06-30
+1951350,Foreign Entity Other,1,2017-06-30
+1951350,Data Processing Servicer,10,2017-06-30
+1951350,Finance Company,87,2017-06-30
+1951350,Bank Holding Company,6,2017-06-30
+1951350,Non-member Bank,1,2017-06-30
+1951350,National Bank,2,2017-06-30
+1951350,Non-deposit Trust Company - Member,1,2017-06-30
+1951350,Edge Corporation - Investment,1,2017-06-30
+1951350,International Bank of U.S. Depository - Edge or Trust Co.,15,2017-06-30
+1951350,Securities Broker/Dealer,4,2017-06-30
+1951350,Non-deposit Trust Company - Non- member,2,2017-06-30
 2162966,Savings & Loan Holding Company,1,2000-03-31
 2162966,Non-member Bank,3,2000-03-31
 2162966,Finance Company,1,2000-03-31
@@ -14031,6 +14226,15 @@ Id_Rssd,Type,N,asOfDate
 2162966,Securities Broker/Dealer,1,2017-03-31
 2162966,Bank Holding Company,1,2017-03-31
 2162966,National Bank,2,2017-03-31
+2162966,Financial Holding Company - Domestic,3,2017-06-30
+2162966,Domestic Entity Other,1558,2017-06-30
+2162966,International Nonbank Sub of Domestic Entities,960,2017-06-30
+2162966,Foreign Entity Other,1,2017-06-30
+2162966,Data Processing Servicer,2,2017-06-30
+2162966,Finance Company,2,2017-06-30
+2162966,Securities Broker/Dealer,1,2017-06-30
+2162966,Bank Holding Company,1,2017-06-30
+2162966,National Bank,2,2017-06-30
 2277860,Bank Holding Company,1,2004-12-31
 2277860,State Member Bank,1,2004-12-31
 2277860,Domestic Entity Other,38,2004-12-31
@@ -14432,6 +14636,14 @@ Id_Rssd,Type,N,asOfDate
 2277860,International Nonbank Sub of Domestic Entities,12,2017-03-31
 2277860,Agreement Corporation - Investment,1,2017-03-31
 2277860,Securities Broker/Dealer,1,2017-03-31
+2277860,Financial Holding Company - Domestic,1,2017-06-30
+2277860,National Bank,2,2017-06-30
+2277860,Domestic Entity Other,204,2017-06-30
+2277860,Data Processing Servicer,4,2017-06-30
+2277860,Finance Company,5,2017-06-30
+2277860,International Nonbank Sub of Domestic Entities,12,2017-06-30
+2277860,Agreement Corporation - Investment,1,2017-06-30
+2277860,Securities Broker/Dealer,1,2017-06-30
 2380443,Bank Holding Company,5,2008-09-30
 2380443,Securities Broker/Dealer,5,2008-09-30
 2380443,Domestic Entity Other,1736,2008-09-30
@@ -14795,6 +15007,15 @@ Id_Rssd,Type,N,asOfDate
 2380443,State Member Bank,1,2017-03-31
 2380443,Non-deposit Trust Company - Member,1,2017-03-31
 2380443,Non-deposit Trust Company - Non- member,1,2017-03-31
+2380443,Financial Holding Company - Domestic,1,2017-06-30
+2380443,Securities Broker/Dealer,3,2017-06-30
+2380443,Domestic Entity Other,1549,2017-06-30
+2380443,International Nonbank Sub of Domestic Entities,1210,2017-06-30
+2380443,Foreign Entity Other,14,2017-06-30
+2380443,Data Processing Servicer,22,2017-06-30
+2380443,State Member Bank,1,2017-06-30
+2380443,Non-deposit Trust Company - Member,1,2017-06-30
+2380443,Non-deposit Trust Company - Non- member,1,2017-06-30
 2816906,Financial Holding Company - Domestic,2,2000-03-31
 2816906,Domestic Entity Other,377,2000-03-31
 2816906,Securities Broker/Dealer,6,2000-03-31
@@ -15514,6 +15735,17 @@ Id_Rssd,Type,N,asOfDate
 2816906,Non-deposit Trust Company - Non- member,1,2017-03-31
 2816906,Finance Company,1,2017-03-31
 2816906,Data Processing Servicer,1,2017-03-31
+2816906,Intermediate Holding Companies,1,2017-06-30
+2816906,Financial Holding Company - Domestic,1,2017-06-30
+2816906,Domestic Entity Other,129,2017-06-30
+2816906,International Nonbank Sub of Domestic Entities,17,2017-06-30
+2816906,Non-deposit Trust Company - Member,2,2017-06-30
+2816906,State Member Bank,1,2017-06-30
+2816906,Non-member Bank,1,2017-06-30
+2816906,Securities Broker/Dealer,2,2017-06-30
+2816906,Non-deposit Trust Company - Non- member,1,2017-06-30
+2816906,Finance Company,1,2017-06-30
+2816906,Data Processing Servicer,1,2017-06-30
 2961897,Foreign Banking Organization as a BHC,3,2001-06-30
 2961897,Non-member Bank,2,2001-06-30
 2961897,Finance Company,14,2001-06-30
@@ -16325,6 +16557,16 @@ Id_Rssd,Type,N,asOfDate
 2961897,Bank Holding Company,1,2017-03-31
 2961897,International Nonbank Sub of Domestic Entities,1,2017-03-31
 2961897,Financial Holding Company - Domestic,1,2017-03-31
+2961897,Financial Holding Company - Foreign,2,2017-06-30
+2961897,Foreign Banking Organization,1,2017-06-30
+2961897,Domestic Entity Other,238,2017-06-30
+2961897,Finance Company,3,2017-06-30
+2961897,Intermediate Holding Companies,1,2017-06-30
+2961897,National Bank,1,2017-06-30
+2961897,Securities Broker/Dealer,3,2017-06-30
+2961897,Bank Holding Company,1,2017-06-30
+2961897,International Nonbank Sub of Domestic Entities,1,2017-06-30
+2961897,Financial Holding Company - Domestic,1,2017-06-30
 3226762,Financial Holding Company - Domestic,4,2003-12-31
 3226762,State Member Bank,2,2003-12-31
 3226762,Domestic Entity Other,79,2003-12-31
@@ -16559,6 +16801,13 @@ Id_Rssd,Type,N,asOfDate
 3226762,Finance Company,2,2017-03-31
 3226762,International Nonbank Sub of Domestic Entities,1,2017-03-31
 3226762,Non-deposit Trust Company - Non- member,1,2017-03-31
+3226762,Intermediate Holding Companies,1,2017-06-30
+3226762,National Bank,2,2017-06-30
+3226762,Securities Broker/Dealer,3,2017-06-30
+3226762,Domestic Entity Other,68,2017-06-30
+3226762,Finance Company,2,2017-06-30
+3226762,International Nonbank Sub of Domestic Entities,1,2017-06-30
+3226762,Non-deposit Trust Company - Non- member,1,2017-06-30
 3232316,Financial Holding Company - Domestic,4,2004-03-31
 3232316,Domestic Entity Other,143,2004-03-31
 3232316,Securities Broker/Dealer,3,2004-03-31
@@ -17079,6 +17328,15 @@ Id_Rssd,Type,N,asOfDate
 3232316,Domestic Entity Other,36,2017-03-31
 3232316,Edge Corporation - Investment,1,2017-03-31
 3232316,Securities Broker/Dealer,1,2017-03-31
+3232316,Intermediate Holding Companies,1,2017-06-30
+3232316,Financial Holding Company - Domestic,1,2017-06-30
+3232316,Finance Company,35,2017-06-30
+3232316,National Bank,2,2017-06-30
+3232316,Edge Corporation - Banking,1,2017-06-30
+3232316,International Nonbank Sub of Domestic Entities,1,2017-06-30
+3232316,Domestic Entity Other,36,2017-06-30
+3232316,Edge Corporation - Investment,1,2017-06-30
+3232316,Securities Broker/Dealer,1,2017-06-30
 3242838,Financial Holding Company - Domestic,2,2004-09-30
 3242838,State Member Bank,1,2004-09-30
 3242838,Domestic Entity Other,160,2004-09-30
@@ -17455,6 +17713,11 @@ Id_Rssd,Type,N,asOfDate
 3242838,Domestic Entity Other,42,2017-03-31
 3242838,Finance Company,4,2017-03-31
 3242838,Securities Broker/Dealer,2,2017-03-31
+3242838,Financial Holding Company - Domestic,1,2017-06-30
+3242838,State Member Bank,1,2017-06-30
+3242838,Domestic Entity Other,42,2017-06-30
+3242838,Finance Company,4,2017-06-30
+3242838,Securities Broker/Dealer,2,2017-06-30
 3587146,Financial Holding Company - Domestic,2,2007-09-30
 3587146,National Bank,5,2007-09-30
 3587146,Domestic Entity Other,239,2007-09-30
@@ -17936,6 +18199,18 @@ Id_Rssd,Type,N,asOfDate
 3587146,International Bank of U.S. Depository - Edge or Trust Co.,2,2017-03-31
 3587146,Non-deposit Trust Company - Non- member,2,2017-03-31
 3587146,Non-member Bank,1,2017-03-31
+3587146,Financial Holding Company - Domestic,2,2017-06-30
+3587146,National Bank,2,2017-06-30
+3587146,International Nonbank Sub of Domestic Entities,383,2017-06-30
+3587146,Domestic Entity Other,383,2017-06-30
+3587146,Data Processing Servicer,10,2017-06-30
+3587146,Finance Company,2,2017-06-30
+3587146,Securities Broker/Dealer,6,2017-06-30
+3587146,State Member Bank,1,2017-06-30
+3587146,Edge Corporation - Investment,2,2017-06-30
+3587146,International Bank of U.S. Depository - Edge or Trust Co.,2,2017-06-30
+3587146,Non-deposit Trust Company - Non- member,2,2017-06-30
+3587146,Non-member Bank,1,2017-06-30
 3606542,Financial Holding Company - Domestic,2,2007-06-30
 3606542,Domestic Entity Other,45,2007-06-30
 3606542,National Bank,1,2007-06-30
@@ -18162,6 +18437,12 @@ Id_Rssd,Type,N,asOfDate
 3606542,Domestic Entity Other,83,2017-03-31
 3606542,Finance Company,4,2017-03-31
 3606542,International Nonbank Sub of Domestic Entities,2,2017-03-31
+3606542,Intermediate Holding Companies,1,2017-06-30
+3606542,Financial Holding Company - Domestic,1,2017-06-30
+3606542,National Bank,2,2017-06-30
+3606542,Domestic Entity Other,81,2017-06-30
+3606542,Finance Company,4,2017-06-30
+3606542,International Nonbank Sub of Domestic Entities,2,2017-06-30
 3833526,Financial Holding Company - Foreign,7,2008-12-31
 3833526,Data Processing Servicer,4,2008-12-31
 3833526,Domestic Entity Other,174,2008-12-31
@@ -18514,6 +18795,12 @@ Id_Rssd,Type,N,asOfDate
 3833526,Domestic Entity Other,43,2017-03-31
 3833526,Securities Broker/Dealer,2,2017-03-31
 3833526,Finance Company,3,2017-03-31
+3833526,Financial Holding Company - Foreign,6,2017-06-30
+3833526,Foreign Bank,4,2017-06-30
+3833526,Foreign Entity Other,15,2017-06-30
+3833526,Domestic Entity Other,43,2017-06-30
+3833526,Securities Broker/Dealer,2,2017-06-30
+3833526,Finance Company,3,2017-06-30
 3840207,Savings & Loan Holding Company,1,2000-03-31
 3840207,Federal Savings Bank,1,2000-03-31
 3840207,Savings & Loan Holding Company,1,2000-06-30
@@ -18727,6 +19014,285 @@ Id_Rssd,Type,N,asOfDate
 3840207,Domestic Entity Other,75,2017-03-31
 3840207,Securities Broker/Dealer,1,2017-03-31
 3840207,Foreign Entity Other,2,2017-03-31
+3840207,Savings & Loan Holding Company,1,2017-06-30
+3840207,Federal Savings Bank,1,2017-06-30
+3840207,Domestic Entity Other,73,2017-06-30
+3840207,Securities Broker/Dealer,1,2017-06-30
+3840207,Foreign Entity Other,2,2017-06-30
+3846375,Financial Holding Company - Domestic,1,2009-03-31
+3846375,Non-member Bank,2,2009-03-31
+3846375,Domestic Entity Other,12,2009-03-31
+3846375,International Nonbank Sub of Domestic Entities,5,2009-03-31
+3846375,Financial Holding Company - Domestic,1,2009-06-30
+3846375,Non-member Bank,2,2009-06-30
+3846375,Domestic Entity Other,13,2009-06-30
+3846375,International Nonbank Sub of Domestic Entities,5,2009-06-30
+3846375,Financial Holding Company - Domestic,1,2009-09-30
+3846375,Non-member Bank,2,2009-09-30
+3846375,Domestic Entity Other,13,2009-09-30
+3846375,International Nonbank Sub of Domestic Entities,5,2009-09-30
+3846375,Financial Holding Company - Domestic,1,2009-12-31
+3846375,Non-member Bank,2,2009-12-31
+3846375,Domestic Entity Other,13,2009-12-31
+3846375,International Nonbank Sub of Domestic Entities,5,2009-12-31
+3846375,Financial Holding Company - Domestic,1,2010-03-31
+3846375,Non-member Bank,2,2010-03-31
+3846375,Domestic Entity Other,13,2010-03-31
+3846375,International Nonbank Sub of Domestic Entities,5,2010-03-31
+3846375,Financial Holding Company - Domestic,1,2010-06-30
+3846375,Non-member Bank,2,2010-06-30
+3846375,Domestic Entity Other,14,2010-06-30
+3846375,International Nonbank Sub of Domestic Entities,5,2010-06-30
+3846375,Financial Holding Company - Domestic,1,2010-09-30
+3846375,Non-member Bank,2,2010-09-30
+3846375,Domestic Entity Other,14,2010-09-30
+3846375,International Nonbank Sub of Domestic Entities,5,2010-09-30
+3846375,Data Processing Servicer,1,2010-09-30
+3846375,Financial Holding Company - Domestic,1,2010-12-31
+3846375,Non-member Bank,2,2010-12-31
+3846375,Domestic Entity Other,14,2010-12-31
+3846375,International Nonbank Sub of Domestic Entities,5,2010-12-31
+3846375,Data Processing Servicer,1,2010-12-31
+3846375,Financial Holding Company - Domestic,1,2011-03-31
+3846375,Non-member Bank,2,2011-03-31
+3846375,Domestic Entity Other,16,2011-03-31
+3846375,Finance Company,1,2011-03-31
+3846375,International Nonbank Sub of Domestic Entities,5,2011-03-31
+3846375,Data Processing Servicer,1,2011-03-31
+3846375,Financial Holding Company - Domestic,1,2011-06-30
+3846375,Non-member Bank,2,2011-06-30
+3846375,Finance Company,1,2011-06-30
+3846375,Domestic Entity Other,17,2011-06-30
+3846375,International Nonbank Sub of Domestic Entities,5,2011-06-30
+3846375,Data Processing Servicer,2,2011-06-30
+3846375,Financial Holding Company - Domestic,1,2011-09-30
+3846375,Non-member Bank,2,2011-09-30
+3846375,Finance Company,1,2011-09-30
+3846375,Domestic Entity Other,18,2011-09-30
+3846375,International Nonbank Sub of Domestic Entities,5,2011-09-30
+3846375,Data Processing Servicer,2,2011-09-30
+3846375,Financial Holding Company - Domestic,1,2011-12-31
+3846375,Non-member Bank,2,2011-12-31
+3846375,Finance Company,1,2011-12-31
+3846375,Domestic Entity Other,19,2011-12-31
+3846375,International Nonbank Sub of Domestic Entities,5,2011-12-31
+3846375,Data Processing Servicer,2,2011-12-31
+3846375,Financial Holding Company - Domestic,1,2012-03-31
+3846375,Non-member Bank,2,2012-03-31
+3846375,Finance Company,1,2012-03-31
+3846375,Domestic Entity Other,19,2012-03-31
+3846375,International Nonbank Sub of Domestic Entities,5,2012-03-31
+3846375,Data Processing Servicer,2,2012-03-31
+3846375,Financial Holding Company - Domestic,1,2012-06-30
+3846375,Non-member Bank,2,2012-06-30
+3846375,Finance Company,1,2012-06-30
+3846375,Domestic Entity Other,21,2012-06-30
+3846375,International Nonbank Sub of Domestic Entities,5,2012-06-30
+3846375,Data Processing Servicer,2,2012-06-30
+3846375,Financial Holding Company - Domestic,1,2012-09-30
+3846375,Non-member Bank,2,2012-09-30
+3846375,Finance Company,1,2012-09-30
+3846375,Domestic Entity Other,21,2012-09-30
+3846375,International Nonbank Sub of Domestic Entities,7,2012-09-30
+3846375,Data Processing Servicer,2,2012-09-30
+3846375,Financial Holding Company - Domestic,1,2012-12-31
+3846375,Non-member Bank,2,2012-12-31
+3846375,Finance Company,1,2012-12-31
+3846375,Domestic Entity Other,22,2012-12-31
+3846375,International Nonbank Sub of Domestic Entities,7,2012-12-31
+3846375,Data Processing Servicer,1,2012-12-31
+3846375,Financial Holding Company - Domestic,1,2013-03-31
+3846375,Non-member Bank,2,2013-03-31
+3846375,Finance Company,1,2013-03-31
+3846375,Domestic Entity Other,22,2013-03-31
+3846375,International Nonbank Sub of Domestic Entities,7,2013-03-31
+3846375,Data Processing Servicer,2,2013-03-31
+3846375,Financial Holding Company - Domestic,1,2013-06-30
+3846375,Non-member Bank,2,2013-06-30
+3846375,Finance Company,1,2013-06-30
+3846375,Domestic Entity Other,22,2013-06-30
+3846375,International Nonbank Sub of Domestic Entities,8,2013-06-30
+3846375,Data Processing Servicer,4,2013-06-30
+3846375,Financial Holding Company - Domestic,1,2013-09-30
+3846375,Non-member Bank,2,2013-09-30
+3846375,Finance Company,1,2013-09-30
+3846375,Domestic Entity Other,22,2013-09-30
+3846375,International Nonbank Sub of Domestic Entities,8,2013-09-30
+3846375,Data Processing Servicer,4,2013-09-30
+3846375,Financial Holding Company - Domestic,1,2013-12-31
+3846375,Non-member Bank,2,2013-12-31
+3846375,Finance Company,1,2013-12-31
+3846375,Domestic Entity Other,22,2013-12-31
+3846375,International Nonbank Sub of Domestic Entities,8,2013-12-31
+3846375,Data Processing Servicer,4,2013-12-31
+3846375,Financial Holding Company - Domestic,1,2014-03-31
+3846375,Non-member Bank,2,2014-03-31
+3846375,Finance Company,1,2014-03-31
+3846375,Domestic Entity Other,23,2014-03-31
+3846375,International Nonbank Sub of Domestic Entities,7,2014-03-31
+3846375,Data Processing Servicer,4,2014-03-31
+3846375,Financial Holding Company - Domestic,1,2014-06-30
+3846375,Non-member Bank,2,2014-06-30
+3846375,Finance Company,1,2014-06-30
+3846375,Domestic Entity Other,23,2014-06-30
+3846375,International Nonbank Sub of Domestic Entities,7,2014-06-30
+3846375,Data Processing Servicer,4,2014-06-30
+3846375,Financial Holding Company - Domestic,1,2014-09-30
+3846375,Non-member Bank,2,2014-09-30
+3846375,Finance Company,1,2014-09-30
+3846375,Domestic Entity Other,20,2014-09-30
+3846375,International Nonbank Sub of Domestic Entities,7,2014-09-30
+3846375,Data Processing Servicer,4,2014-09-30
+3846375,Financial Holding Company - Domestic,1,2014-12-31
+3846375,Non-member Bank,2,2014-12-31
+3846375,Finance Company,1,2014-12-31
+3846375,Domestic Entity Other,20,2014-12-31
+3846375,International Nonbank Sub of Domestic Entities,7,2014-12-31
+3846375,Data Processing Servicer,4,2014-12-31
+3846375,Financial Holding Company - Domestic,1,2015-03-31
+3846375,Non-member Bank,2,2015-03-31
+3846375,Finance Company,1,2015-03-31
+3846375,Domestic Entity Other,19,2015-03-31
+3846375,International Nonbank Sub of Domestic Entities,7,2015-03-31
+3846375,Data Processing Servicer,4,2015-03-31
+3846375,Financial Holding Company - Domestic,1,2015-06-30
+3846375,Non-member Bank,2,2015-06-30
+3846375,Finance Company,1,2015-06-30
+3846375,Domestic Entity Other,21,2015-06-30
+3846375,International Nonbank Sub of Domestic Entities,7,2015-06-30
+3846375,Data Processing Servicer,4,2015-06-30
+3846375,Financial Holding Company - Domestic,1,2015-09-30
+3846375,Non-member Bank,2,2015-09-30
+3846375,Finance Company,1,2015-09-30
+3846375,Domestic Entity Other,21,2015-09-30
+3846375,International Nonbank Sub of Domestic Entities,7,2015-09-30
+3846375,Data Processing Servicer,4,2015-09-30
+3846375,Financial Holding Company - Domestic,1,2015-12-31
+3846375,Non-member Bank,2,2015-12-31
+3846375,Finance Company,1,2015-12-31
+3846375,Domestic Entity Other,20,2015-12-31
+3846375,International Nonbank Sub of Domestic Entities,6,2015-12-31
+3846375,Data Processing Servicer,3,2015-12-31
+3846375,Financial Holding Company - Domestic,1,2016-03-31
+3846375,Non-member Bank,2,2016-03-31
+3846375,Finance Company,1,2016-03-31
+3846375,Domestic Entity Other,20,2016-03-31
+3846375,International Nonbank Sub of Domestic Entities,6,2016-03-31
+3846375,Data Processing Servicer,3,2016-03-31
+3846375,Financial Holding Company - Domestic,1,2016-06-30
+3846375,Non-member Bank,2,2016-06-30
+3846375,Finance Company,1,2016-06-30
+3846375,Domestic Entity Other,18,2016-06-30
+3846375,International Nonbank Sub of Domestic Entities,6,2016-06-30
+3846375,Data Processing Servicer,3,2016-06-30
+3846375,Financial Holding Company - Domestic,1,2016-09-30
+3846375,Non-member Bank,2,2016-09-30
+3846375,Finance Company,1,2016-09-30
+3846375,Domestic Entity Other,18,2016-09-30
+3846375,International Nonbank Sub of Domestic Entities,6,2016-09-30
+3846375,Data Processing Servicer,3,2016-09-30
+3846375,Financial Holding Company - Domestic,1,2016-12-31
+3846375,Non-member Bank,2,2016-12-31
+3846375,Finance Company,1,2016-12-31
+3846375,Domestic Entity Other,18,2016-12-31
+3846375,International Nonbank Sub of Domestic Entities,6,2016-12-31
+3846375,Data Processing Servicer,3,2016-12-31
+3846375,Financial Holding Company - Domestic,1,2017-03-31
+3846375,Non-member Bank,2,2017-03-31
+3846375,Finance Company,1,2017-03-31
+3846375,Domestic Entity Other,18,2017-03-31
+3846375,International Nonbank Sub of Domestic Entities,6,2017-03-31
+3846375,Data Processing Servicer,3,2017-03-31
+3846375,Financial Holding Company - Domestic,1,2017-06-30
+3846375,Non-member Bank,2,2017-06-30
+3846375,Finance Company,1,2017-06-30
+3846375,Domestic Entity Other,18,2017-06-30
+3846375,International Nonbank Sub of Domestic Entities,6,2017-06-30
+3846375,Data Processing Servicer,2,2017-06-30
+3853449,Savings & Loan Holding Company,4,2006-03-31
+3853449,Federal Savings Bank,1,2006-03-31
+3853449,Savings & Loan Holding Company,4,2006-06-30
+3853449,Federal Savings Bank,1,2006-06-30
+3853449,Savings & Loan Holding Company,4,2006-09-30
+3853449,Federal Savings Bank,1,2006-09-30
+3853449,Savings & Loan Holding Company,4,2006-12-31
+3853449,Federal Savings Bank,1,2006-12-31
+3853449,Savings & Loan Holding Company,4,2007-03-31
+3853449,Federal Savings Bank,1,2007-03-31
+3853449,Savings & Loan Holding Company,4,2007-06-30
+3853449,Federal Savings Bank,1,2007-06-30
+3853449,Savings & Loan Holding Company,4,2007-09-30
+3853449,Federal Savings Bank,1,2007-09-30
+3853449,Savings & Loan Holding Company,4,2007-12-31
+3853449,Federal Savings Bank,1,2007-12-31
+3853449,Savings & Loan Holding Company,4,2008-03-31
+3853449,Federal Savings Bank,1,2008-03-31
+3853449,Savings & Loan Holding Company,4,2008-06-30
+3853449,Federal Savings Bank,1,2008-06-30
+3853449,Savings & Loan Holding Company,4,2008-09-30
+3853449,Federal Savings Bank,1,2008-09-30
+3853449,Savings & Loan Holding Company,4,2008-12-31
+3853449,Federal Savings Bank,1,2008-12-31
+3853449,Savings & Loan Holding Company,4,2009-03-31
+3853449,Federal Savings Bank,1,2009-03-31
+3853449,Savings & Loan Holding Company,4,2009-06-30
+3853449,Federal Savings Bank,1,2009-06-30
+3853449,Savings & Loan Holding Company,4,2009-09-30
+3853449,Federal Savings Bank,1,2009-09-30
+3853449,Savings & Loan Holding Company,4,2009-12-31
+3853449,Federal Savings Bank,1,2009-12-31
+3853449,Savings & Loan Holding Company,4,2010-03-31
+3853449,Federal Savings Bank,1,2010-03-31
+3853449,Savings & Loan Holding Company,4,2010-06-30
+3853449,Federal Savings Bank,1,2010-06-30
+3853449,Savings & Loan Holding Company,4,2010-09-30
+3853449,Federal Savings Bank,1,2010-09-30
+3853449,Savings & Loan Holding Company,4,2010-12-31
+3853449,Federal Savings Bank,1,2010-12-31
+3853449,Savings & Loan Holding Company,4,2011-03-31
+3853449,Federal Savings Bank,1,2011-03-31
+3853449,Savings & Loan Holding Company,4,2011-06-30
+3853449,Federal Savings Bank,1,2011-06-30
+3853449,Savings & Loan Holding Company,4,2011-09-30
+3853449,Foreign Entity Other,41,2011-09-30
+3853449,Domestic Entity Other,46,2011-09-30
+3853449,Federal Savings Bank,1,2011-09-30
+3853449,Savings & Loan Holding Company,4,2011-12-31
+3853449,Foreign Entity Other,41,2011-12-31
+3853449,Domestic Entity Other,46,2011-12-31
+3853449,Federal Savings Bank,1,2011-12-31
+3853449,Savings & Loan Holding Company,4,2012-03-31
+3853449,Foreign Entity Other,41,2012-03-31
+3853449,Domestic Entity Other,46,2012-03-31
+3853449,Federal Savings Bank,1,2012-03-31
+3853449,Savings & Loan Holding Company,4,2012-06-30
+3853449,Foreign Entity Other,41,2012-06-30
+3853449,Domestic Entity Other,46,2012-06-30
+3853449,Federal Savings Bank,1,2012-06-30
+3853449,Savings & Loan Holding Company,4,2012-09-30
+3853449,Foreign Entity Other,41,2012-09-30
+3853449,Domestic Entity Other,46,2012-09-30
+3853449,Federal Savings Bank,1,2012-09-30
+3853449,Savings & Loan Holding Company,4,2012-12-31
+3853449,Foreign Entity Other,71,2012-12-31
+3853449,Domestic Entity Other,62,2012-12-31
+3853449,Federal Savings Bank,1,2012-12-31
+3853449,Savings & Loan Holding Company,4,2013-03-31
+3853449,Foreign Entity Other,73,2013-03-31
+3853449,Domestic Entity Other,62,2013-03-31
+3853449,Federal Savings Bank,1,2013-03-31
+3853449,Savings & Loan Holding Company,4,2013-06-30
+3853449,Foreign Entity Other,73,2013-06-30
+3853449,Domestic Entity Other,62,2013-06-30
+3853449,Federal Savings Bank,1,2013-06-30
+3853449,Savings & Loan Holding Company,4,2013-09-30
+3853449,Foreign Entity Other,73,2013-09-30
+3853449,Domestic Entity Other,62,2013-09-30
+3853449,Federal Savings Bank,1,2013-09-30
+3853449,Savings & Loan Holding Company,4,2013-12-31
+3853449,Foreign Entity Other,74,2013-12-31
+3853449,Domestic Entity Other,63,2013-12-31
+3853449,Federal Savings Bank,1,2013-12-31
 3981856,Savings & Loan Holding Company,1,2010-03-31
 3981856,Federal Savings Bank,1,2010-03-31
 3981856,Domestic Entity Other,48,2010-03-31
@@ -18897,6 +19463,16 @@ Id_Rssd,Type,N,asOfDate
 3981856,Securities Broker/Dealer,2,2017-03-31
 3981856,Financial Holding Company - Domestic,1,2017-03-31
 3981856,Non-member Bank,1,2017-03-31
+3981856,Intermediate Holding Companies,1,2017-06-30
+3981856,Edge Corporation - Banking,1,2017-06-30
+3981856,Domestic Entity Other,117,2017-06-30
+3981856,Finance Company,1,2017-06-30
+3981856,National Bank,1,2017-06-30
+3981856,Agreement Corporation - Investment,2,2017-06-30
+3981856,International Nonbank Sub of Domestic Entities,1,2017-06-30
+3981856,Securities Broker/Dealer,2,2017-06-30
+3981856,Financial Holding Company - Domestic,1,2017-06-30
+3981856,Non-member Bank,1,2017-06-30
 4846998,Intermediate Holding Companies,1,2016-09-30
 4846998,Securities Broker/Dealer,2,2016-09-30
 4846998,Domestic Entity Other,94,2016-09-30
@@ -18917,6 +19493,13 @@ Id_Rssd,Type,N,asOfDate
 4846998,Non-member Bank,1,2017-03-31
 4846998,Non-deposit Trust Company - Non- member,1,2017-03-31
 4846998,Foreign Entity Other,1,2017-03-31
+4846998,Intermediate Holding Companies,1,2017-06-30
+4846998,Securities Broker/Dealer,2,2017-06-30
+4846998,Domestic Entity Other,92,2017-06-30
+4846998,Finance Company,4,2017-06-30
+4846998,Non-member Bank,1,2017-06-30
+4846998,Foreign Entity Other,10,2017-06-30
+4846998,Non-deposit Trust Company - Non- member,1,2017-06-30
 5006575,Intermediate Holding Companies,1,2016-09-30
 5006575,Bank Holding Company,1,2016-09-30
 5006575,Domestic Entity Other,61,2016-09-30
@@ -18938,3 +19521,10 @@ Id_Rssd,Type,N,asOfDate
 5006575,International Nonbank Sub of Domestic Entities,9,2017-03-31
 5006575,Securities Broker/Dealer,1,2017-03-31
 5006575,Finance Company,1,2017-03-31
+5006575,Intermediate Holding Companies,1,2017-06-30
+5006575,Bank Holding Company,1,2017-06-30
+5006575,Domestic Entity Other,68,2017-06-30
+5006575,Non-member Bank,1,2017-06-30
+5006575,International Nonbank Sub of Domestic Entities,9,2017-06-30
+5006575,Securities Broker/Dealer,1,2017-06-30
+5006575,Finance Company,1,2017-06-30
