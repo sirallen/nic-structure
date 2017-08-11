@@ -30,8 +30,8 @@ Shiny.addCustomMessageHandler('windowResize', function(message) {
 	// don't use getBoundingClientRect().height -- it is constant (cannot specify height='100%')
 	// but how do get this number 102 without hard-coding...?
 	height = window.innerHeight - 110;
-	//console.log('height:', height);
-	projection.translate([3*width/7, height/2]);
+	
+	projection.translate([width/2, height/2]);
 
 	var svg = d3.select('#d3io svg')
 				.attr('width', width)
@@ -59,7 +59,7 @@ var cities, dfnet, nodes;
 
 var projection = d3.geoOrthographic()
 				   .scale(scale)
-				   .translate([3*width/7, height/2])
+				   .translate([width/2, height/2])
 				   .rotate([origin.x, origin.y])
 				   .center([0,0])
 				   .clipAngle(90);
@@ -69,17 +69,9 @@ var geoPath = d3.geoPath()
 
 var graticule = d3.geoGraticule();
 
-
 function createMap(svg) {
 
-	// code snippet from http://stackoverflow.com/questions/36614251
-	var λ = d3.scaleLinear()
-        	  .domain([-width, width])
-        	  .range([-180, 180]),
-
-        φ = d3.scaleLinear()
-        	  .domain([-height, height])
-        	  .range([90, -90]);
+	// http://stackoverflow.com/questions/36614251
 
     var globe = svg.append('g').datum({x: 0, y: 0});
 
@@ -96,28 +88,42 @@ function createMap(svg) {
 	   .attr('class', 'countries')
 	   .style('fill', '#FF9186');
 
+	var λ = d3.scaleLinear()
+			  .domain([-width, width])
+			  .range([-180, 180]),
+
+		φ = d3.scaleLinear()
+	  		  .domain([-height, height])
+	  		  .range([90, -90]);
+
 	// https://stackoverflow.com/questions/43772975
-	svg.call(d3.zoom().on('zoom', zoomed));
-	globe.call(d3.drag().on('drag', dragged));
+	svg.call(
+		d3.zoom()
+		  .on('zoom', zoomed)
+		  .on('end', function() {
+		  	// Adjust sensitivity of scale functions (for dragged())
+		  	var s = projection.scale();
+		  	λ.range([-180*scale/s, 180*scale/s]);
+		  	φ.range([90*scale/s, -90*scale/s]);
+		  })
+	);
+	
+	globe.call(
+		d3.drag()
+		  .on('drag', dragged)
+	);
 
-
-	function dragged(d){
-		var r = {
-			x: λ((d.x = d3.event.x)),
-			y: φ((d.y = d3.event.y))
-		};
-
-    	projection.rotate([origin.x + r.x, origin.y + r.y]);
+	function dragged(){
+		// this function is effectively called at high
+		// frequency for the duration of the drag event
+      	var r = projection.rotate();
+    	projection.rotate([r[0] + λ(d3.event.dx), r[1] + φ(d3.event.dy)]);
     	updatePaths(svg);
 	};
 
 	function zoomed(){
 		var transform = d3.event.transform;
-		var r = {x: λ(transform.x), y: φ(transform.y)};
-		var k = Math.sqrt(300/projection.scale());
-
 		projection.scale(scale*transform.k);
-
 		updatePaths(svg);
 	};
 
