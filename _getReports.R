@@ -12,10 +12,18 @@ params = list(
   btnSubmit = 'Submit'
 )
 
+pdfName = function(rssd, as_of_date) {
+  paste0('pdf/', rssd, '-', gsub('-', '', as_of_date), '.pdf')
+}
+
 pdf2txt = function(file_name) {
   # Install xpdf from http://www.foolabs.com/xpdf/download.html
   # and add to system PATH
-  system2('pdftotext', args=c('-raw','-nopgbrk',file_name,'-'), stdout=T)
+  system2(
+    command = 'pdftotext',
+    args = c('-raw', '-nopgbrk', file_name, '-'),
+    stdout = TRUE
+  )
 
 }
 
@@ -99,11 +107,11 @@ txt2clean = function(f, save_name) {
 }
 
 
-getReport = function(rssd, dt_end=99991231, as_of_date) {
+getReport = function(rssd, dt_end=99991231, as_of_date, redownload=FALSE) {
   # as_of_date: yyyy-mm-dd
-  file_name = paste0('pdf/', rssd, '-', gsub('-','',as_of_date), '.pdf')
+  file_name = pdfName(rssd, as_of_date)
   
-  if (!file.exists(file_name)) {
+  if (!file.exists(file_name) | redownload) {
     url = paste0(
       'https://www.ffiec.gov/nicpubweb/nicweb/OrgHierarchySearchForm.aspx',
       '?parID_RSSD=', rssd, '&parDT_END=', dt_end )
@@ -176,7 +184,7 @@ getBhcInstHistories = function() {
   bhcNameList = fread('hc-name-list.txt', key='ID_RSSD')
   bhcHistories_file = 'bhc-institution-histories.txt'
   bhcHistories_done = if (file.exists(bhcHistories_file)) {
-    fread('bhc-institution-histories.txt') } else NULL
+    fread(bhcHistories_file) } else NULL
   
   # Include large IHCs -- Credit Suisse USA, UBS Americas, BNP Paribas
   hc10bnRssds = fread('app/data/HC10bn.csv')$`RSSD ID`
@@ -234,24 +242,82 @@ getRssdPrimaryActivities = function(rssdsList) {
 }
 
 
+updateBhcList = function() {
+  # Use most recent file for each rssd (need to get most recent HC name)
+  bhcList = dir('txt/', '.txt', full.names=T) %>%
+    `[`(!duplicated(str_extract(., '\\d+'), fromLast=TRUE)) %>%
+    lapply(fread, nrows=1, select=c('Name','Id_Rssd')) %>%
+    rbindlist() %>%
+    setkey(Name)
+  
+  bhcList = setNames(bhcList$Id_Rssd, bhcList$Name)
+  
+  save(bhcList, file = 'app/bhcList.RData')
+  
+  ### Also update the histories saved file (saving a subset to
+  # save space)
+  histories = fread('bhc-institution-histories.txt', key='Id_Rssd')
+  histories = histories[J(bhcList)]
+  
+  save(histories, file='app/data/histories.RData')
+}
 
-# Get data
-# load('app/bhcList.RData')
-# source('_getBhcSpan.R')
-# as_of_dates = lapply(bhcList, getBhcSpan, start_date='2000-04-01')
-# for (j in (j+1):length(bhcList)) {
-#   cat('Requesting', names(bhcList)[j], '...\n')
-#   if (length(as_of_dates[[j]]) > 0) {
-#     mapply(getReport, rssd=bhcList[j], as_of_date=as_of_dates[[j]])
-#   } }
 
-# rssds = rbindlist(lapply(
-#   dir('txt/', '20161228', full.names=T), function(z) {
-#   dat = fread(z, select='Id_Rssd')
-#   dat[!duplicated(Id_Rssd)]
-# }))
-# rssds = rssds[!duplicated(Id_Rssd)]
-# getRssdPrimaryActivities(unlist(rssds))
 
+updateAll = function(rssds=NULL, start_date='2000-01-01', redownload=FALSE) {
+  # Master function to update the data
+  load('app/bhcList.RData')
+  bhcList = c(bhcList, rssds)
+  
+  # Load/process 'histories' & function getBhcSpan()
+  source('_getBhcSpan.R', local=TRUE)
+  
+  as_of_dates = lapply(bhcList, getBhcSpan, start_date)
+  
+  oldFiles = setdiff(
+    dir('txt/', full.names=TRUE),
+    if (redownload) gsub('pdf', 'txt',
+                         unlist(Map(pdfName, bhcList, as_of_dates)))
+  )
+  
+  # Download new pdfs and convert to txt
+  for (j in seq_along(bhcList)) {
+    if (length(as_of_dates[[j]]) > 0) {
+      cat('Requesting', names(bhcList)[j], '...\n')
+      
+      mapply(getReport, rssd = bhcList[j], as_of_date = as_of_dates[[j]],
+             redownload = redownload)
+    }
+  }
+  
+  cat('\n\nUpdating app/BhcList.Rdata...\n')
+  updateBhcList()
+  
+  newFiles = setdiff(dir('txt/', full.names=TRUE), oldFiles)
+  
+  # Run the geolocator
+  system2('python', args=c('_geolocator.py', '--files', newFiles), invis=F)
+  
+  # Prompt to continue (may need to update _locationMasterEdits first)
+  menu(c('Yes','No'), title='Continue?')
+  
+  system2('python', args=c('_locationMasterEdits.py'))
+  
+  # Run the geolocator again (in case updates were made)
+  system2('python', args=c('_geolocator.py', '--files', newFiles), invis=F)
+  
+  cat('Converting txt/ to app/rdata/...\n')
+  source('_txt2rdata.R', local=TRUE)
+  
+  cat('Tabulating entities...\n')
+  source('_tabulateEntities.R', local=TRUE)
+  
+  cat('Tabulating assets...\n')
+  source('_tabulateAssets.R', local=TRUE)
+  
+  cat('Updating coverage plot...\n')
+  source('_plotCoverage.R', local=TRUE)
+  
+}
 
 
