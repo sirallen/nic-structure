@@ -201,6 +201,15 @@ ui = navbarPage(
     )),
   
   tabPanel(
+    title='Background',
+    fluidRow(
+      column(2),
+      column(8, includeMarkdown('Background.md')),
+      column(2)
+    )
+  ),
+  
+  tabPanel(
     title='About',
     fluidRow(
       column(2),

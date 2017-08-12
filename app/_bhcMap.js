@@ -9,14 +9,13 @@ Shiny.addCustomMessageHandler('jsondata', function(message) {
 
 	var d3io = d3.select('#d3io');
 
-	if (d3io['_groups'][0][0].children.length == 0) {
-		// create svg, map
+	if (d3io.select('svg').empty()) {
 		var svg = d3io.append('svg')
 					  .attr('width', width)
 					  .attr('height', height);
 
 		createMap(svg);
-	}
+	};
 
 	var svg = d3io.select('svg');
 
@@ -72,8 +71,9 @@ var graticule = d3.geoGraticule();
 function createMap(svg) {
 
 	// http://stackoverflow.com/questions/36614251
-
-    var globe = svg.append('g').datum({x: 0, y: 0});
+	var globe = svg.append('g').datum({x: 0, y: 0});
+	svg.append('g').attr('class', 'arcGroup');
+	svg.append('g').attr('class', 'nodeGroup');
 
 	globe.append('path')
 	   .datum(graticule)
@@ -113,15 +113,15 @@ function createMap(svg) {
 		  .on('drag', dragged)
 	);
 
-	function dragged(){
+	function dragged() {
 		// this function is effectively called at high
 		// frequency for the duration of the drag event
-      	var r = projection.rotate();
-    	projection.rotate([r[0] + λ(d3.event.dx), r[1] + φ(d3.event.dy)]);
-    	updatePaths(svg);
+		var r = projection.rotate();
+		projection.rotate([r[0] + λ(d3.event.dx), r[1] + φ(d3.event.dy)]);
+		updatePaths(svg);
 	};
 
-	function zoomed(){
+	function zoomed() {
 		var transform = d3.event.transform;
 		projection.scale(scale*transform.k);
 		updatePaths(svg);
@@ -147,45 +147,58 @@ function updateMap(svg, cities, dfnet, maxTier) {
 		}
 	});
 
-	svg.selectAll('path.arc').data([]).exit().remove();
+	var arcGroup = svg.select('g.arcGroup');
+	var nodeGroup = svg.select('g.nodeGroup');
 
-	svg.selectAll('path.arc').data(links).enter()
-	   .append('path')
-	   .attr('class','arc');
+	arcGroup.selectAll('path.arc')
+			.data([])
+			.exit()
+			.remove();
+
+	arcGroup.selectAll('path.arc')
+			.data(links)
+			.enter()
+			.append('path')
+			.attr('class','arc');
 
 	cities.forEach(function(d, i) {
 		if (d.Tier <= maxTier) {
 			nodes.push({
 				type: 'Point',
 				coordinates: [d.lng, d.lat],
-				citylabel: d.label
+				citylabel: d.label.toUpperCase()
 			});
 		}
 	});
 
-	svg.selectAll('g.cities').data([]).exit().remove();
+	nodeGroup.selectAll('g.city')
+			 .data([])
+			 .exit()
+			 .remove();
 
-	city = svg.selectAll('g.cities')
-			  .data(nodes)
-			  .enter()
-			  .append('g')
-			  .attr('class', 'cities');
+	// nodeGroup now refers to the set of g.city elements
+	// within <g class='node'>
+	nodeGroup = nodeGroup.selectAll('g.city')
+						 .data(nodes)
+						 .enter()
+						 .append('g')
+						 .attr('class', 'city');
 
-	city.append('path')
-		.attr('class','citynode')
-		.attr('d', geoPath.pointRadius(3))
-		.on('mouseover',mouseover)
-		.on('mouseout', mouseout);
+	nodeGroup.append('path')
+			 .attr('class','citynode')
+			 .attr('d', geoPath.pointRadius(3))
+			 .on('mouseover',mouseover)
+			 .on('mouseout', mouseout);
 
-	city.append('text')
-		.attr('class', 'citylabel')
-		.attr('x', function(d) {return projection(d.coordinates)[0]})
-		.attr('y', function(d) {return projection(d.coordinates)[1]})
-		.text(function(d) {return d.citylabel})
-		.style('pointer-events', 'none');
+	nodeGroup.append('text')
+			 .attr('class', 'citylabel')
+			 .attr('x', function(d) {return projection(d.coordinates)[0]})
+			 .attr('y', function(d) {return projection(d.coordinates)[1]})
+			 .text(function(d) {return d.citylabel})
+			 .style('pointer-events', 'none');
 
 	function mouseover(d){
-		var j = Array.from(d3.selectAll('g.cities')._groups[0]).indexOf(this.parentNode)
+		var j = Array.from(d3.selectAll('g.city')._groups[0]).indexOf(this.parentNode)
 		// move <g> element to end so text appears in front
 		this.parentNode.parentNode.appendChild(this.parentNode);
 		// update nodes order to preserve correspondence with {<g>}
@@ -221,11 +234,11 @@ function updateMap(svg, cities, dfnet, maxTier) {
 };
 
 function updatePaths(svg) {
-	svg.selectAll('path.graticule').datum(graticule).attr('d', geoPath);
-	svg.selectAll('path').filter('.countries, .citynode, .arc').attr('d', geoPath);
 	d3.selectAll('text.citylabel').data(nodes)
 	  .attr('x', function(d) {return projection(d.coordinates)[0]})
 	  .attr('y', function(d) {return projection(d.coordinates)[1]});
+	svg.selectAll('path.graticule').datum(graticule).attr('d', geoPath);
+	svg.selectAll('path').filter('.countries, .citynode, .arc').attr('d', geoPath);
 };
 
 

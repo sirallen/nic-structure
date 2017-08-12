@@ -14,9 +14,10 @@ path.citynode {
 
 text.citylabel {
 	color: black;
-	font: 5px;
+	font-size: 12px;
 	font-family: sans-serif;
 	opacity: 0;
+	pointer-events: none;
 }
 
 path.centroid{
