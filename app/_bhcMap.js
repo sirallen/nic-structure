@@ -24,10 +24,10 @@ Shiny.addCustomMessageHandler('jsondata', function(message) {
 });
 
 Shiny.addCustomMessageHandler('windowResize', function(message) {
-	// when change in window size detected, update svg width & projection
+	/*When change in window size detected, update svg width & projection*/
 	width = d3.select('.tabbable').node().getBoundingClientRect().width;
-	// don't use getBoundingClientRect().height -- it is constant (cannot specify height='100%')
-	// but how do get this number 102 without hard-coding...?
+	/*Don't use getBoundingClientRect().height -- it is constant (cannot specify height='100%')
+	but how do get this number 102 without hard-coding...?*/
 	height = window.innerHeight - 110;
 	
 	projection.translate([width/2, height/2]);
@@ -47,20 +47,22 @@ Shiny.addCustomMessageHandler('maxDist', function(message) {
 	updateMap(svg, cities, dfnet, maxTier);
 });
 
-// global vars (need to access in both createMap and updateMap)
+/*Vars that I need to access in both createMap() and updateMap().
+These are not accessible globally (i.e., in the console or in
+other scripts) since this script wrapped by a function call. See
+https://stackoverflow.com/questions/5493997*/
 var width = 1000,
     height = 670,
-    // initial scale and rotation (lng, lat)
-    scale = 300,
-    origin = {x: 55, y:-40};
+    init_scale = 300,
+    init_rotate = [55, -40]; /*sets the initial "origin" at <-55, 40> in <lng, lat>*/
 
 var cities, dfnet, nodes;
 
 var projection = d3.geoOrthographic()
-				   .scale(scale)
+				   .scale(init_scale)
 				   .translate([width/2, height/2])
-				   .rotate([origin.x, origin.y])
-				   .center([0,0])
+				   .rotate(init_rotate)
+				   .center([0, 0])
 				   .clipAngle(90);
 
 var geoPath = d3.geoPath()
@@ -68,9 +70,10 @@ var geoPath = d3.geoPath()
 
 var graticule = d3.geoGraticule();
 
+
 function createMap(svg) {
 
-	// http://stackoverflow.com/questions/36614251
+	/*http://stackoverflow.com/questions/36614251*/
 	var globe = svg.append('g').datum({x: 0, y: 0});
 	svg.append('g').attr('class', 'arcGroup');
 	svg.append('g').attr('class', 'nodeGroup');
@@ -96,15 +99,16 @@ function createMap(svg) {
 	  		  .domain([-height, height])
 	  		  .range([90, -90]);
 
-	// https://stackoverflow.com/questions/43772975
+	/*https://stackoverflow.com/questions/43772975*/
 	svg.call(
 		d3.zoom()
 		  .on('zoom', zoomed)
 		  .on('end', function() {
-		  	// Adjust sensitivity of scale functions (for dragged())
-		  	var s = projection.scale();
-		  	λ.range([-180*scale/s, 180*scale/s]);
-		  	φ.range([90*scale/s, -90*scale/s]);
+		  	/*Adjust sensitivity of scale functions (for dragged())*/
+		  	var s = init_scale / projection.scale();
+
+		  	λ.range([-180*s, 180*s]);
+		  	φ.range([90*s, -90*s]);
 		  })
 	);
 	
@@ -114,16 +118,39 @@ function createMap(svg) {
 	);
 
 	function dragged() {
-		// this function is effectively called at high
-		// frequency for the duration of the drag event
+		/*This function is effectively called at high
+		frequency for the duration of the drag event*/
 		var r = projection.rotate();
 		projection.rotate([r[0] + λ(d3.event.dx), r[1] + φ(d3.event.dy)]);
 		updatePaths(svg);
 	};
 
+	var old_k = 1;
+
 	function zoomed() {
 		var transform = d3.event.transform;
-		projection.scale(scale*transform.k);
+		var r = projection.rotate();
+		var scf = transform.k / old_k;
+		old_k = transform.k;
+
+		/*mpos: Mouse position/coordinates (x, y),
+		center: Center of the canvas (w/2, h/2)*/
+		var mpos = d3.mouse(this);
+		var center = projection.translate();
+
+		projection.scale(init_scale*transform.k);
+
+		/*Rotate the globe so the same point remains under the mouse before &
+		after zooming. Maybe need to make some adjustments so this is more
+		effective when the mouse is near the outer edge
+
+		p0: <lng, lat> of the point under the mouse before zooming
+		p1: <lng, lat> of the point under the mouse after zooming*/
+		var p0 = projection.invert([center[0] + scf*(mpos[0] - center[0]), center[1] + scf*(mpos[1] - center[1])]);
+		var p1 = projection.invert(mpos);
+
+		projection.rotate([r[0] + p1[0] - p0[0], r[1] + p1[1] - p0[1]]);
+
 		updatePaths(svg);
 	};
 
@@ -176,8 +203,8 @@ function updateMap(svg, cities, dfnet, maxTier) {
 			 .exit()
 			 .remove();
 
-	// nodeGroup now refers to the set of g.city elements
-	// within <g class='node'>
+	/*nodeGroup now refers to the set of g.city elements
+	within <g class='node'>*/
 	nodeGroup = nodeGroup.selectAll('g.city')
 						 .data(nodes)
 						 .enter()
@@ -199,11 +226,10 @@ function updateMap(svg, cities, dfnet, maxTier) {
 
 	function mouseover(d){
 		var j = Array.from(d3.selectAll('g.city')._groups[0]).indexOf(this.parentNode)
-		// move <g> element to end so text appears in front
+		/*Move <g> element to end so text appears in front, then update nodes order
+		to preserve correspondence with {<g>}*/
 		this.parentNode.parentNode.appendChild(this.parentNode);
-		// update nodes order to preserve correspondence with {<g>}
-		//nodes.move(j, nodes.length)
-		nodes.splice(nodes.length, 0, nodes.splice(j, 1)[0])
+		nodes.splice(nodes.length, 0, nodes.splice(j, 1)[0]);
 
 		d3.select(this)
 		  .transition()
@@ -213,6 +239,7 @@ function updateMap(svg, cities, dfnet, maxTier) {
 		d3.select(this.parentNode).select('text')
 		  .transition()
 		  .duration(750)
+		  .attr('dx', 13)
 		  .style('opacity', 1)
 	};
 
@@ -225,6 +252,7 @@ function updateMap(svg, cities, dfnet, maxTier) {
 		d3.select(this.parentNode).select('text')
 		  .transition()
 		  .duration(750)
+		  .attr('dx', 0)
 		  .style('opacity', 0)
 	};
 
