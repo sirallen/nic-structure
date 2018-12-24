@@ -54,10 +54,7 @@ updateAll <- function(rssds = NULL, start_date = '2000-01-01', redownload = FALS
   cat('\n\nUpdating app/BhcList.Rdata...\n')
   updateBhcList()
   
-  #newFiles <- setdiff(dir(TXT_DIR, full.names = TRUE), oldFiles)
-  newFiles <- file.info(dir(TXT_DIR, full.names = TRUE))
-  newFiles <- rownames(newFiles)[newFiles$mtime > '2018-12-20']
-  newFiles <- paste0('../', newFiles)
+  newFiles <- setdiff(dir(TXT_DIR, full.names = TRUE), oldFiles)
   
   # Run the geolocator
   cat('Running geolocator...\n')
