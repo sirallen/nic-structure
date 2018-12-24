@@ -6,7 +6,7 @@ updateBhcList <- function() {
   # Use most recent file for each rssd (need to get most recent HC name)
   bhcList <- dir(TXT_DIR, '.txt', full.names = TRUE) %>%
     `[`(!duplicated(str_extract(., '\\d+'), fromLast = TRUE)) %>%
-    lapply(fread, nrows = 1, select = c('Name','Id_Rssd')) %>%
+    lapply(fread, nrows = 1, select = c('Name', 'Id_Rssd')) %>%
     rbindlist() %>%
     setkey(Name)
   
@@ -54,16 +54,16 @@ updateAll <- function(rssds = NULL, start_date = '2000-01-01', redownload = FALS
   cat('\n\nUpdating app/BhcList.Rdata...\n')
   updateBhcList()
   
-  #newFiles <- setdiff(dir(TXT_DIR, full.names = TRUE), oldFiles)
-  newFiles <- file.info(dir(TXT_DIR, full.names = TRUE))
-  newFiles <- rownames(newFiles)[newFiles$mtime > '2018-12-20']
+  newFiles <- setdiff(dir(TXT_DIR, full.names = TRUE), oldFiles)
   
   # Run the geolocator
   cat('Running geolocator...\n')
   system2('python', args = c('py/_geolocator.py', '--files', newFiles), invis = FALSE)
   
   # Prompt to continue (may need to update _locationMasterEdits first)
-  menu(c('Yes','No'), title = 'Continue?')
+  continue <- menu(c('Yes', 'No'), title = 'Continue?')
+  
+  if (continue == 2) stop()
   
   system2('python', args = c('py/_locationMasterEdits.py'))
   
@@ -78,7 +78,7 @@ updateAll <- function(rssds = NULL, start_date = '2000-01-01', redownload = FALS
   tabulateEntities()
   
   cat('Tabulating assets...\n')
-  tabulateAssets()
+  if (dir.exists(CSV_DIR)) tabulateAssets()
   
   cat('Updating coverage plot...\n')
   plotCoverage()
@@ -87,3 +87,23 @@ updateAll <- function(rssds = NULL, start_date = '2000-01-01', redownload = FALS
 }
 
 
+updatePlots <- function() {
+  # Load and transform bhc-institution-histories; bhc==1 indicates
+  # whether firm was an HC during each interval between events
+  histories <- getHistories()
+  histories[bhc == 1, Type:= gsub('.*(?<=as |to )(a )?([^\\.]*)\\.?$',
+                                  '\\2', Event, perl = TRUE)]
+  histories[Type == 'BHC', Type:= 'Foreign Banking Organization as a BHC']
+  
+  yearqtrs <- seq.Date(as.Date('1960-04-01'), as.Date('2017-01-01'), by = '3 months') - 1
+  
+  getHcCounts(yearqtrs, histories)
+  getHcEvents(yearqtrs, histories)
+  plotLinkNodeRatioTs()
+  plotAssetsVsLinkNodeRatio10Bn()
+  plotNumberVsComplexity()
+  # Goldman Sachs
+  #plotNumberVsComplexity('2380443')
+  
+  return(NULL)
+}
