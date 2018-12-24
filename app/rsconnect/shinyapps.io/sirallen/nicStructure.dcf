@@ -2,7 +2,8 @@ name: nicStructure
 title:
 account: sirallen
 server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
 appId: 177088
-bundleId: 945087
+bundleId: 1781539
 url: https://sirallen.shinyapps.io/nicStructure/
-when: 1503018796.964
+when: 1545643385.9175

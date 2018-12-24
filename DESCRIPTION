@@ -1,10 +1,23 @@
 Package: nicStructure
 Type: Package
-Title: What the package does (short line)
+Title: Visualize corporate structures of large bank holding companies.
 Version: 1.0
 Date: 2018-12-23
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
+Author: Allen Sirolly <allen.sirolly@gmail.com>
+Maintainer: Allen Sirolly <allen.sirolly@gmail.com>
+Description: Visualize corporate structures of large bank holding companies.
+Depends: R (>= 3.1.0)
+Imports:
+  data.table,
+  dplyr,
+  ggplot2,
+  httr,
+  networkD3,
+  rvest,
+  stringr,
+  xts,
+  zoo
+Suggests:
+  testthat
 License: What license is it under?
 RoxygenNote: 6.1.1

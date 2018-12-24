@@ -3,6 +3,7 @@
 PDF_DIR <- 'data/pdf/'
 TXT_DIR <- 'data/txt/'
 CSV_DIR <- 'E:/FR Y-9C/csv'
+RDATA_DIR <- 'app/rdata/'
 
 HTTR_POST_PARAMS <- list(
   rbRptFormatPDF = 'rbRptFormatPDF',

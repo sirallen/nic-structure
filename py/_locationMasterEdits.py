@@ -1,10 +1,16 @@
-import pickle
+import os, pickle
 import pandas as pd
 
-master = pickle.load(open('app/LocationMaster', 'rb+'))
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
+
+master = pickle.load(open('../app/LocationMaster', 'rb+'))
 
 
 master['AMSTERDAM NETHERLAN DS ANTILLES'] = {'label': 'Amsterdam, Netherlands', 'lat': 52.3702157, 'lng': 4.8951679}
+master['ATLANTA DE'] = {'label': 'Newark, DE', 'lat': 39.6837226, 'lng': -75.7496572}
+master['BAYONNE MA'] = {'label': 'Bayonne, NJ', 'lat': 40.6687141, 'lng': -74.1143091}
 master['CENTRAL HONG KONG CHINA, PEOPLES REPUBLIC OF'] = {'label': 'Central, Hong Kong', 'lat': 22.2821181, 'lng': 114.1510632}
 # State Street Corporation -- 2004q1 - 2005q1
 master['CURACO ANTILLES CURACAO, BONAIRE, SABA, ST. MARTIN & ST.'] = {'label': 'Curaçao', 'lat': 12.1695700, 'lng': -68.9900200}
@@ -16,6 +22,7 @@ master['EXTENDED RIPLEY MS'] = {'label': 'Ripley, MS', 'lat': 34.733526, 'lng': 
 master['GEORGE TOWN UNITED KINGDOM'] = {'label': 'George Town, Cayman Islands', 'lat': 19.2869323, 'lng': -81.3674389}
 master['HALIFAX CANADA']['label'] = 'Halifax, Canada'
 master['HONG KONG CAYMAN ISLANDS'] = {'label': 'Hong Kong', 'lat': 22.3964280, 'lng': 114.1094970}
+master['LONDON UNITED ARAB EMIRATES'] = {'label': 'London, UK', 'lat': 51.5073509, 'lng': -0.1277583}
 master['LONDON WALES'] = {'label': 'London, UK', 'lat': 51.5073510, 'lng': -0.1277583}
 master['LUXEMBOURG ENGLAND'] = {'label': 'Luxembourg City, Luxembourg', 'lat': 49.6116210, 'lng': 6.1319346}
 master['LUXEMBOURG GERMANY'] = {'label': 'Luxembourg City, Luxembourg', 'lat': 49.6116210, 'lng': 6.1319346}
@@ -40,9 +47,9 @@ master['WANCHAI CHINA, PEOPLES REPUBLIC OF'] = {'label': 'Wan Chai, Hong Kong', 
 # Citigroup idrssd 1951350 ? - 2001q2
 master['ZOETERMEER NETHERLAN DS ANTILLES'] = {'label': 'Zoetermeer, Netherlands', 'lat': 52.0621451, 'lng': 4.4165747}
 
-pickle.dump(master, open('app/LocationMaster', 'wb+'))
+pickle.dump(master, open('../app/LocationMaster', 'wb+'))
 
-pd.DataFrame.from_dict(master, orient='index').to_csv('LocationMaster.csv')
+pd.DataFrame.from_dict(master, orient='index').to_csv('../data/LocationMaster.csv')
 
 
 
