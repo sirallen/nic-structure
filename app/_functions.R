@@ -21,7 +21,7 @@ load_data = function(bhc, asOfDate) {
   links = df[, .(
     from = Name[match(Parent, Id_Rssd)], to = Name, Id_Rssd, Parent, Type, Tier,
     from.lat = lat[match(Parent, Id_Rssd)], from.lng = lng[match(Parent, Id_Rssd)],
-    to.lat = lat, to.lng = lng, to.Group = Group, value = 1L)][-1,]
+    to.lat = lat, to.lng = lng, to.Group = Group, to.Loc = label, value = 1L)][-1,]
   
   nodes = rbind(
     data.table(Id_Rssd=as.integer(bhc), name=links[1, from]),

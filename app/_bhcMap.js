@@ -5,6 +5,8 @@ Shiny.addCustomMessageHandler('jsondata', function(message) {
     dfnet  = message[1];
 
     width = d3.select('.tabbable').node().getBoundingClientRect().width;
+    /*Don't use getBoundingClientRect().height -- it is constant
+    but how do get this number 110 without hard-coding...?*/
     height = window.innerHeight - 110;
 
     var d3io = d3.select('#d3io');
@@ -26,8 +28,6 @@ Shiny.addCustomMessageHandler('jsondata', function(message) {
 Shiny.addCustomMessageHandler('windowResize', function(message) {
     /*When change in window size detected, update svg width & projection*/
     width = d3.select('.tabbable').node().getBoundingClientRect().width;
-    /*Don't use getBoundingClientRect().height -- it is constant (cannot specify height='100%')
-    but how do get this number 102 without hard-coding...?*/
     height = window.innerHeight - 110;
     
     projection.translate([width/2, height/2]);
@@ -110,7 +110,7 @@ function createMap(svg) {
             λ.range([-180*s, 180*s]);
             φ.range([90*s, -90*s]);
           })
-    );
+    ).on('dblclick.zoom', null);
     
     globe.call(
         d3.drag()

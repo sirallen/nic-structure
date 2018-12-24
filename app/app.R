@@ -52,12 +52,20 @@ ui = navbarPage(
     
     tags$head(
       tags$link(rel='shortcut icon', href=''),
-      # var countries
       includeScript('ne_50m_admin.json'),
+      includeCSS('app.css'),
       includeCSS('_bhcMap.css'),
       includeScript('_bhcMap.js'),
       includeScript('_toggleLegend.js'),
       includeScript('_toggleHighlight.js'),
+      
+      # Can't use d3.select().style() to update legend opacity since drawing
+      # new network will override it; need to create a style block, update text
+      # directly
+      tags$style(
+        id='legend.style', type='text/css',
+        'g.legend {opacity: 1; pointer-events: none;}'
+      ),
       
       # size of <svg> canvas controlled inside _bhcMap.js
       tags$script(
@@ -69,18 +77,9 @@ ui = navbarPage(
         $(window).resize(function(e) {
         dimension[0] = window.innerWidth;
         dimension[1] = window.innerHeight;
-        Shiny.onInputChange("dimension", dimension)});')
-      ),
-    
-    ### inside <body>
-    # Need 'padding-top' since I set navbar position to 'fixed-top'
-    tags$style(type='text/css', 'body {overflow-y: scroll; padding-top: 60px}'),
-    # Is it possible to take the legend out of the zoomable layer?
-    tags$style(id='legend.style', type='text/css',
-               'g.legend {opacity: 1; pointer-events: none;}'),
-    # subtract off size of navbar + tabs (~107px)
-    tags$style(type='text/css',
-               '#network {height: calc(100vh - 107px) !important;}'),
+        Shiny.onInputChange("dimension", dimension)});'
+      )
+    ),
     
     sidebarLayout(
       
@@ -407,7 +406,7 @@ server = function(input,output,session) {
   # Make sure to use renderDataTable() from /DT/, not /shiny/
   output$bhcTable = DT::renderDataTable({
     DT::datatable(
-      data()[[1]][, .(Entity=to, Parent=from, RSSD=Id_Rssd, Type)]
+      data()[[1]][, .(Entity=to, Parent=from, Location=to.Loc, Type)]
     )
   })
   
