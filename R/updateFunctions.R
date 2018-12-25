@@ -12,14 +12,14 @@ updateBhcList <- function() {
   
   bhcList <- setNames(bhcList$Id_Rssd, bhcList$Name)
   
-  save(bhcList, file = 'app/bhcList.RData')
+  save(bhcList, file = 'data/app/bhcList.RData')
   
   ### Also update the histories saved file (saving a subset to
   # save space)
   histories <- fread('data/bhc-institution-histories.txt', key = 'Id_Rssd')
   histories <- histories[J(bhcList)]
   
-  save(histories, file = 'app/data/histories.RData')
+  save(histories, file = 'data/app/histories.RData')
   
   return(NULL)
 }
@@ -27,9 +27,8 @@ updateBhcList <- function() {
 
 updateAll <- function(rssds = NULL, start_date = '2000-01-01', redownload = FALSE) {
   # Master function to update the data
-  load('app/bhcList.RData')
+  load('data/app/bhcList.RData')
   bhcList <- c(bhcList, rssds)
-  bhcList <- bhcList[bhcList != 3833526]
   
   # Load/process 'histories' & function getBhcSpan()
   histories <- getHistories()
@@ -51,7 +50,7 @@ updateAll <- function(rssds = NULL, start_date = '2000-01-01', redownload = FALS
     }
   }
   
-  cat('\n\nUpdating app/BhcList.Rdata...\n')
+  cat('\n\nUpdating data/app/BhcList.Rdata...\n')
   updateBhcList()
   
   newFiles <- setdiff(dir(TXT_DIR, full.names = TRUE), oldFiles)
@@ -78,7 +77,7 @@ updateAll <- function(rssds = NULL, start_date = '2000-01-01', redownload = FALS
   tabulateEntities()
   
   cat('Tabulating assets...\n')
-  if (dir.exists(CSV_DIR)) tabulateAssets()
+  if (dir.exists(CSV_DIR)) tabulateAssets() else cat('SKIPPED\n')
   
   cat('Updating coverage plot...\n')
   plotCoverage()

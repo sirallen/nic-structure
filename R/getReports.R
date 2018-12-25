@@ -173,7 +173,7 @@ getBhcInstHistories <- function() {
     fread(bhcHistories_file) } else NULL
   
   # Include large IHCs -- Credit Suisse USA, UBS Americas, BNP Paribas
-  hc10bnRssds <- fread('app/data/HC10bn.csv')$`RSSD ID`
+  hc10bnRssds <- fread('data/app/HC10bn.csv')$`RSSD ID`
   rssdList <- union(bhcNameList$ID_RSSD, hc10bnRssds)
   rssdList <- setdiff(rssdList, bhcHistories_done$Id_Rssd)
   

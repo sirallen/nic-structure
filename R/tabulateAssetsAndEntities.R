@@ -2,7 +2,7 @@
 #' @import stringr
 
 tabulateAssets <- function() {
-  load('app/bhcList.RData')
+  load('data/app/bhcList.RData')
   csvFiles <- dir(CSV_DIR, pattern = 'csv$', full.names = TRUE)
   
   assets <- rbindlist(
@@ -19,7 +19,7 @@ tabulateAssets <- function() {
   assets[, yearqtr:= as.Date(as.character(yearqtr), '%Y%m%d')]
   setkey(assets, Id_Rssd, yearqtr)
   
-  fwrite(assets, 'app/data/Assets.csv')
+  fwrite(assets, 'data/app/Assets.csv')
   
   return(NULL)
 }
@@ -54,7 +54,7 @@ tabulateEntities <- function() {
     })
   )
   
-  fwrite(dt, 'app/data/EntitiesByRegion.csv')
+  fwrite(dt, 'data/app/EntitiesByRegion.csv')
   
   
   # By OFC status (IMF Classification)
@@ -83,7 +83,7 @@ tabulateEntities <- function() {
     })
   )
   
-  fwrite(dt, 'app/data/EntitiesByOFC.csv')
+  fwrite(dt, 'data/app/EntitiesByOFC.csv')
   
   
   # By entity type
@@ -109,7 +109,7 @@ tabulateEntities <- function() {
   
   setnames(dt, 'Type.code', 'Type')
   
-  fwrite(dt, 'app/data/EntitiesByType.csv')
+  fwrite(dt, 'data/app/EntitiesByType.csv')
   
   
   # Link-node ratio
@@ -129,7 +129,7 @@ tabulateEntities <- function() {
     })
   ); rm(files)
   
-  fwrite(dt, 'app/data/linkNodeRatio.csv')
+  fwrite(dt, 'data/app/linkNodeRatio.csv')
   
   return(NULL)
 }
