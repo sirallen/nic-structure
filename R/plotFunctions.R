@@ -11,7 +11,7 @@ theme_set(
 
 plotCoverage <- function(start_date = as.Date('2000-03-31')) {
   
-  load('app/bhcList.RData')
+  load('data/app/bhcList.RData')
   histories <- getHistories()
   
   spans <- lapply(bhcList, getBhcSpan, histories = histories, returnQtrs = FALSE)
@@ -27,7 +27,7 @@ plotCoverage <- function(start_date = as.Date('2000-03-31')) {
   spans[, Name:= str_wrap(Name, width = 23)]
   spans[, Name:= factor(Name, levels = rev(unique(Name)))]
   
-  save(spans, file = 'app/data/coverage.RData')
+  save(spans, file = 'data/app/coverage.RData')
   
   ggplot(spans, aes(x = Name, y = seq.Date(min(start), max(end),
                                            along.with = spans$start))) +
@@ -50,7 +50,7 @@ plotCoverage <- function(start_date = as.Date('2000-03-31')) {
 plotLinkNodeRatioTs <- function() {
   # Heterogeneity in link-node ratios -- make this interactive
   # (hover over line --> bold + bhc label)
-  linkNodeRatio <- fread('app/data/linkNodeRatio.csv')
+  linkNodeRatio <- fread('data/app/linkNodeRatio.csv')
   linkNodeRatio[, asOfDate:= as.Date(asOfDate)]
   
   plot <- ggplot(linkNodeRatio, aes(x = asOfDate, y = 1 / link.node.ratio)) +
@@ -67,7 +67,7 @@ plotLinkNodeRatioTs <- function() {
 # ------------------------------------------------------------------
 
 plotAssetsVsLinkNodeRatio10Bn <- function() {
-  hc10bn <- fread('app/data/HC10bn.csv')
+  hc10bn <- fread('data/app/HC10bn.csv')
   setnames(hc10bn, c('12/31/2016 Total Assets', 'RSSD ID'), c('asset', 'rssd'))
   hc10bn[, asset:= as.numeric(gsub('[^0-9]', '', asset))]
   

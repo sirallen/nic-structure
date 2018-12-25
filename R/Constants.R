@@ -3,7 +3,7 @@
 PDF_DIR <- 'data/pdf/'
 TXT_DIR <- 'data/txt/'
 CSV_DIR <- 'E:/FR Y-9C/csv'
-RDATA_DIR <- 'app/rdata/'
+RDATA_DIR <- '../app/rdata/'
 
 HTTR_POST_PARAMS <- list(
   rbRptFormatPDF = 'rbRptFormatPDF',
@@ -29,6 +29,6 @@ BHC_CATEGORIES <- c(
   `FBO as BHC` = 'Foreign Banking Organization as a BHC'
   )
 
-ENTITY_TYPE_GROUPING <- fread('app/entityTypeGrouping.csv')
+ENTITY_TYPE_GROUPING <- fread('data/app/entityTypeGrouping.csv')
 HC_TYPES <- ENTITY_TYPE_GROUPING[group == 'Holding Company', Type.code]
-COUNTRY_REGIONS <- fread('app/Country-regions_OFC.csv')
+COUNTRY_REGIONS <- fread('data/app/Country-regions_OFC.csv')

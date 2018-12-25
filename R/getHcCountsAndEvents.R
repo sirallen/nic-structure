@@ -21,7 +21,7 @@ getHcCounts <- function(yearqtrs, histories) {
   HCcounts[, Type:= factor(Type, levels = BHC_CATEGORIES, labels = names(BHC_CATEGORIES))]
   
   # Save for use in About.Rmd
-  fwrite(HCcounts, 'app/data/HCcounts.csv', quote = TRUE)
+  fwrite(HCcounts, 'data/app/HCcounts.csv', quote = TRUE)
   
   return(NULL)
 }
@@ -74,7 +74,7 @@ getHcEvents <- function(histories, yearqtrs) {
                     'entry', 'exit')]
   
   # Save for use in About.Rmd
-  fwrite(HCevents, 'app/data/HCevents.csv', quote = TRUE)
+  fwrite(HCevents, 'data/app/HCevents.csv', quote = TRUE)
   
   return(NULL)
 }
