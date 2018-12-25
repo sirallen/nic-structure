@@ -21,8 +21,8 @@ gmaps = googlemaps.Client(key=api_key)
 # LocationMaster -- dictionary used to store geodata; if an entity's location has
 # already been geolocated, just pull the information from here; if it hasn't,
 # then add the geodata retrieved from Google Maps
-if os.path.isfile('../app/LocationMaster'):
-  master = pickle.load(open('../app/LocationMaster', 'rb+'))
+if os.path.isfile('../data/app/LocationMaster'):
+  master = pickle.load(open('../data/app/LocationMaster', 'rb+'))
 else:
   master = dict()
 
@@ -81,7 +81,7 @@ for readfile in readfiles:
   df.to_csv(readfile, index=False, encoding='utf-8')
   #df.to_json(readfile.replace('txt', 'json'), orient='records')
 
-pickle.dump(master, open('../app/LocationMaster', 'wb+'))
+pickle.dump(master, open('../data/app/LocationMaster', 'wb+'))
 
 pd.DataFrame.from_dict(master, orient='index').to_csv('../data/LocationMaster.csv')
 

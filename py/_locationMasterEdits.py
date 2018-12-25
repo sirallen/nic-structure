@@ -5,7 +5,7 @@ abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
 os.chdir(dname)
 
-master = pickle.load(open('../app/LocationMaster', 'rb+'))
+master = pickle.load(open('../data/app/LocationMaster', 'rb+'))
 
 
 master['AMSTERDAM NETHERLAN DS ANTILLES'] = {'label': 'Amsterdam, Netherlands', 'lat': 52.3702157, 'lng': 4.8951679}
@@ -47,7 +47,7 @@ master['WANCHAI CHINA, PEOPLES REPUBLIC OF'] = {'label': 'Wan Chai, Hong Kong', 
 # Citigroup idrssd 1951350 ? - 2001q2
 master['ZOETERMEER NETHERLAN DS ANTILLES'] = {'label': 'Zoetermeer, Netherlands', 'lat': 52.0621451, 'lng': 4.4165747}
 
-pickle.dump(master, open('../app/LocationMaster', 'wb+'))
+pickle.dump(master, open('../data/app/LocationMaster', 'wb+'))
 
 pd.DataFrame.from_dict(master, orient='index').to_csv('../data/LocationMaster.csv')
 
