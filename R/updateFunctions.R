@@ -79,14 +79,14 @@ updateAll <- function(rssds = NULL, start_date = '2000-01-01', redownload = FALS
   cat('Tabulating assets...\n')
   if (dir.exists(CSV_DIR)) tabulateAssets() else cat('SKIPPED\n')
   
-  cat('Updating coverage plot...\n')
-  plotCoverage()
+  cat('Updating plots...\n')
+  updatePlots()
   
   return(NULL)
 }
 
 
-updatePlots <- function() {
+updateHcCountsAndEvents <- function() {
   # Load and transform bhc-institution-histories; bhc==1 indicates
   # whether firm was an HC during each interval between events
   histories <- getHistories()
@@ -94,10 +94,20 @@ updatePlots <- function() {
                                   '\\2', Event, perl = TRUE)]
   histories[Type == 'BHC', Type:= 'Foreign Banking Organization as a BHC']
   
-  yearqtrs <- seq.Date(as.Date('1960-04-01'), as.Date('2017-01-01'), by = '3 months') - 1
+  yearqtrs <- seq.Date(START_QTR, END_QTR, by = '3 months') - 1
   
-  getHcCounts(yearqtrs, histories)
-  getHcEvents(yearqtrs, histories)
+  hcCounts <- getHcCounts(yearqtrs, histories)
+  fwrite(HCcounts, 'data/app/HCcounts.csv', quote = TRUE)
+  
+  hcEvents <- getHcEvents(yearqtrs, histories)
+  fwrite(HCevents, 'data/app/HCevents.csv', quote = TRUE)
+  
+  return(NULL)
+}
+
+
+updatePlots <- function() {
+  plotCoverage()
   plotLinkNodeRatioTs()
   plotAssetsVsLinkNodeRatio10Bn()
   plotNumberVsComplexity()

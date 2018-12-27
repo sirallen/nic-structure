@@ -3,6 +3,7 @@
 #' @import dplyr
 #' @import stringr
 #' @import rvest
+#' @importFrom xml2 read_html
 
 getPdfName <- function(rssd, as_of_date) {
   paste0(PDF_DIR, rssd, '-', gsub('-', '', as_of_date), '.pdf')
@@ -161,7 +162,7 @@ getBhcParent <- function(rssd, dtend = 99991231) {
     html_nodes(xpath = '//select[@id="lbTopHolders"]/option')
   
   if (length(nodes) > 0) {
-    parents = sapply(nodes, html_attr, 'value')
+    parents <- sapply(nodes, html_attr, 'value')
   }
 }
 

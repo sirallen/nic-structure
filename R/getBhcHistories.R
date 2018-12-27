@@ -52,3 +52,25 @@ getBhcSpan <- function(rssd, start_date, histories, returnQtrs =TRUE) {
   return(qtrs[qtrs %inrange% intervals])
 }
 
+
+getCoveragePlotData <- function() {
+  load('data/app/bhcList.RData')
+  histories <- getHistories()
+  
+  spans <- lapply(bhcList, getBhcSpan, histories = histories, returnQtrs = FALSE)
+  spans <- rbindlist(spans, idcol = 'Name')
+  spans[end == '9999-12-31', end:= Sys.Date()]
+  
+  ### Join contiguous intervals together
+  while (nrow(spans[spans, on = .(Name, end = start), nomatch = 0]) > 0) {
+    spans[spans, on = .(Name, end = start), end:= i.end]
+  }
+  
+  spans <- spans[!duplicated(spans[, .(Name, end)])]
+  spans[, Name:= str_wrap(Name, width = 23)]
+  spans[, Name:= factor(Name, levels = rev(unique(Name)))]
+  
+  save(spans, file = 'data/app/coverage.RData')
+  
+  return(spans)
+}

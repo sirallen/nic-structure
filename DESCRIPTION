@@ -15,6 +15,7 @@ Imports:
   networkD3,
   rvest,
   stringr,
+  xml2,
   xts,
   zoo
 Suggests:

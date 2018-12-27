@@ -20,14 +20,11 @@ getHcCounts <- function(yearqtrs, histories) {
   
   HCcounts[, Type:= factor(Type, levels = BHC_CATEGORIES, labels = names(BHC_CATEGORIES))]
   
-  # Save for use in About.Rmd
-  fwrite(HCcounts, 'data/app/HCcounts.csv', quote = TRUE)
-  
-  return(NULL)
+  return(HCcounts)
 }
 
 
-getHcEvents <- function(histories, yearqtrs) {
+getHcEvents <- function(yearqtrs, histories) {
   # Breakdown of change in HCcounts by event type
   # For simplicity, change label of "Foreign Banking Organization as a BHC"
   histories[, Event:= gsub('as a BHC', 'Holding', Event)]
@@ -73,8 +70,5 @@ getHcEvents <- function(histories, yearqtrs) {
              ifelse(`Event Type` %in% c('Established', 'Changed_to_hc'),
                     'entry', 'exit')]
   
-  # Save for use in About.Rmd
-  fwrite(HCevents, 'data/app/HCevents.csv', quote = TRUE)
-  
-  return(NULL)
+  return(HCevents)
 }
