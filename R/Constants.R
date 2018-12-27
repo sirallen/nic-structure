@@ -1,5 +1,8 @@
 #' @import data.table
 
+START_QTR <- as.Date('1960-04-01')
+END_QTR <- as.Date('2018-10-01')
+
 PDF_DIR <- 'data/pdf/'
 TXT_DIR <- 'data/txt/'
 CSV_DIR <- 'E:/FR Y-9C/csv'
@@ -19,6 +22,11 @@ INST_PROFILE_URL <- 'https://www.ffiec.gov/nicpubweb/nicweb/InstitutionProfile.a
 
 STATES_RX <- paste0('(', paste(state.abb, collapse = '|'), '|DC)$')
 HC_TYPES <- c('H','K','Q','R','Z','AB')
+
+FED_NAMES <- c('Atlanta', 'Boston', 'Chicago', 'Cleveland', 'Dallas', 'Kansas City',
+               'Minneapolis', 'New York', 'Philadelphia', 'Richmond', 'San Francisco',
+               'St. Louis')
+FED_NAMES_RX <- paste0('(', paste(FED_NAMES, collapse = '|'), ')')
 
 BHC_CATEGORIES <- c(
   `BHC` = 'Bank Holding Company',
