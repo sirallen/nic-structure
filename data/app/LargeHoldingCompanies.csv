@@ -1,0 +1,136 @@
+Rank,Name,RSSDID,Location,TotalAsset
+1,JPMORGAN CHASE & CO.                                                                                                    ,1039502,"NEW YORK,NY",2615183000.0
+2,BANK OF AMERICA CORPORATION                                                                                             ,1073757,"CHARLOTTE,NC",2338913000.0
+3,CITIGROUP INC.                                                                                                          ,1951350,"NEW YORK,NY",1925165000.0
+4,WELLS FARGO & COMPANY                                                                                                   ,1120754,"SAN FRANCISCO,CA",1872981000.0
+5,"GOLDMAN SACHS GROUP, INC., THE                                                                                          ",2380443,"NEW YORK,NY",957196000.0
+6,MORGAN STANLEY                                                                                                          ,2162966,"NEW YORK,NY",865517000.0
+7,U.S. BANCORP                                                                                                            ,1119794,"MINNEAPOLIS,MN",464607000.0
+8,TD GROUP US HOLDINGS LLC                                                                                                ,3606542,"WILMINGTON,DE",380646026.0
+9,"PNC FINANCIAL SERVICES GROUP, INC., THE                                                                                 ",1069778,"PITTSBURGH,PA",380275666.0
+10,CAPITAL ONE FINANCIAL CORPORATION                                                                                       ,2277860,"MCLEAN,VA",362909356.0
+11,"BANK OF NEW YORK MELLON CORPORATION, THE                                                                                ",3587146,"NEW YORK,NY",349783000.0
+12,TEACHERS INSURANCE & ANNUITY ASSOCIATION OF AMERICA                                                                     ,1607170,"NEW YORK,NY",302803063.0
+13,HSBC NORTH AMERICA HOLDINGS INC.                                                                                        ,3232316,"NEW YORK,NY",274313812.0
+14,"CHARLES SCHWAB CORPORATION, THE                                                                                         ",1026632,"SAN FRANCISCO,CA",272102000.0
+15,STATE STREET CORPORATION                                                                                                ,1111435,"BOSTON,MA",234006617.0
+16,BB&T CORPORATION                                                                                                        ,1074156,"WINSTON-SALEM,NC",222885000.0
+17,"SUNTRUST BANKS, INC.                                                                                                    ",1131787,"ATLANTA,GA",211641171.0
+18,AMERICAN EXPRESS COMPANY                                                                                                ,1275216,"NEW YORK,NY",189083000.0
+19,ALLY FINANCIAL INC.                                                                                                     ,1562859,"DETROIT,MI",173101000.0
+20,STATE FARM MUTUAL AUTOMOBILE INSURANCE COMPANY                                                                          ,3840207,"BLOOMINGTON,IL",165953266.0
+21,MUFG AMERICAS HOLDINGS CORPORATION                                                                                      ,1378434,"NEW YORK,NY",161035825.0
+22,UNITED SERVICES AUTOMOBILE ASSOCIATION                                                                                  ,1447376,"SAN ANTONIO,TX",159943618.0
+23,"CITIZENS FINANCIAL GROUP, INC.                                                                                          ",1132449,"PROVIDENCE,RI",158989030.0
+24,BMO FINANCIAL CORP.                                                                                                     ,1245415,"WILMINGTON,DE",155083445.0
+25,BARCLAYS US LLC                                                                                                         ,5006575,"NEW YORK,NY",154641000.0
+26,FIFTH THIRD BANCORP                                                                                                     ,1070345,"CINCINNATI,OH",141684879.0
+27,KEYCORP                                                                                                                 ,1068025,"CLEVELAND,OH",139184992.0
+28,UBS AMERICAS HOLDING LLC                                                                                                ,4846998,"NEW YORK,NY",137405594.0
+29,NORTHERN TRUST CORPORATION                                                                                              ,1199611,"CHICAGO,IL",132378457.0
+30,"SANTANDER HOLDINGS USA, INC.                                                                                            ",3981856,"BOSTON,MA",131628075.0
+31,"CREDIT SUISSE HOLDINGS (USA), INC.                                                                                      ",1574834,"NEW YORK,NY",131381257.0
+32,"BNP PARIBAS USA, INC.                                                                                                   ",1575569,"NEW YORK,NY",127518917.0
+33,REGIONS FINANCIAL CORPORATION                                                                                           ,3242838,"BIRMINGHAM,AL",124821814.0
+34,DB USA CORPORATION                                                                                                      ,2816906,"NEW YORK,NY",124722000.0
+35,RBC US GROUP HOLDINGS LLC                                                                                               ,5280254,"TORONTO,0 ",120114994.0
+36,M&T BANK CORPORATION                                                                                                    ,1037003,"BUFFALO,NY",116827637.0
+37,DISCOVER FINANCIAL SERVICES                                                                                             ,3846375,"RIVERWOODS,IL",105842272.0
+38,HUNTINGTON BANCSHARES INCORPORATED                                                                                      ,1068191,"COLUMBUS,OH",105652344.0
+39,SYNCHRONY FINANCIAL                                                                                                     ,4504654,"STAMFORD,CT",104546000.0
+40,"BBVA COMPASS BANCSHARES, INC.                                                                                           ",1078529,"HOUSTON,TX",90047656.0
+41,COMERICA INCORPORATED                                                                                                   ,1199844,"DALLAS,TX",71590232.0
+42,E*TRADE FINANCIAL CORPORATION                                                                                           ,3412583,"NEW YORK,NY",64706347.0
+43,SVB FINANCIAL GROUP                                                                                                     ,1031449,"SANTA CLARA,CA",58178762.0
+44,"NEW YORK COMMUNITY BANCORP, INC.                                                                                        ",2132932,"WESTBURY,NY",51246654.0
+45,CIT GROUP INC.                                                                                                          ,1036967,"LIVINGSTON,NJ",49262412.0
+46,"POPULAR, INC.                                                                                                           ",1129382,"SAN JUAN,PR",47919000.0
+47,"PEOPLE'S UNITED FINANCIAL, INC.                                                                                         ",3650152,"BRIDGEPORT,CT",44131699.0
+48,MUTUAL OF OMAHA INSURANCE COMPANY                                                                                       ,1583836,"OMAHA,NE",42766641.0
+49,MIZUHO AMERICAS LLC                                                                                                     ,5034792,"NEW YORK,NY",40919000.0
+50,FIRST HORIZON NATIONAL CORPORATION                                                                                      ,1094640,"MEMPHIS,TN",40638136.0
+51,"EAST WEST BANCORP, INC.                                                                                                 ",2734233,"PASADENA,CA",39073106.0
+52,CIBC BANCORP USA INC.                                                                                                   ,5014141,"CHICAGO,IL",38979294.0
+53,JOHN DEERE CAPITAL CORPORATION                                                                                          ,3843075,"RENO,NV",37730028.0
+54,"RAYMOND JAMES FINANCIAL, INC.                                                                                           ",3815157,"SAINT PETERSBURG,FL",37412070.0
+55,"FIRST CITIZENS BANCSHARES, INC.                                                                                         ",1075612,"RALEIGH,NC",34954659.0
+56,NATIONWIDE MUTUAL INSURANCE COMPANY                                                                                     ,3828072,"COLUMBUS,OH",34767591.0
+57,ASSOCIATED BANC-CORP                                                                                                    ,1199563,"GREEN BAY,WI",33489002.0
+58,BOK FINANCIAL CORPORATION                                                                                               ,1883693,"TULSA,OK",33370445.0
+59,F.N.B. CORPORATION                                                                                                      ,3005332,"PITTSBURGH,PA",32617595.0
+60,SYNOVUS FINANCIAL CORP.                                                                                                 ,1078846,"COLUMBUS,GA",32075120.0
+61,"BANKUNITED, INC.                                                                                                        ",4028712,"MIAMI LAKES,FL",31513636.0
+62,"CULLEN/FROST BANKERS, INC.                                                                                              ",1102367,"SAN ANTONIO,TX",31335431.0
+63,STERLING BANCORP                                                                                                        ,3083291,"MONTEBELLO,NY",31273066.0
+64,VALLEY NATIONAL BANCORP                                                                                                 ,1048773,"WAYNE,NJ",30881948.0
+65,WINTRUST FINANCIAL CORPORATION                                                                                          ,2260406,"ROSEMONT,IL",30142589.0
+66,IBERIABANK CORPORATION                                                                                                  ,2291914,"LAFAYETTE,LA",30118387.0
+67,HANCOCK WHITNEY CORPORATION                                                                                             ,1086533,"GULFPORT,MS",28107566.0
+68,WEBSTER FINANCIAL CORPORATION                                                                                           ,1145476,"WATERBURY,CT",27377572.0
+69,"TEXAS CAPITAL BANCSHARES, INC.                                                                                          ",2706735,"DALLAS,TX",27127328.0
+70,UMPQUA HOLDINGS CORPORATION                                                                                             ,2747644,"PORTLAND,OR",26615067.0
+71,"INVESTORS BANCORP, INC.                                                                                                 ",2477754,"SHORT HILLS,NJ",25522972.0
+72,"COMMERCE BANCSHARES, INC.                                                                                               ",1049341,"KANSAS CITY,MO",25098702.0
+73,PACWEST BANCORP                                                                                                         ,2875332,"BEVERLY HILLS,CA",24782126.0
+74,"PINNACLE FINANCIAL PARTNERS, INC.                                                                                       ",2925657,"NASHVILLE,TN",24557545.0
+75,"UTRECHT-AMERICA HOLDINGS, INC.                                                                                          ",2307280,"NEW YORK,NY",24186364.0
+76,STIFEL FINANCIAL CORP.                                                                                                  ,3063622,"SAINT LOUIS,MO",23760048.0
+77,TCF FINANCIAL CORPORATION                                                                                               ,2389941,"WAYZATA,MN",22921112.0
+78,"PROSPERITY BANCSHARES, INC.                                                                                             ",1109599,"HOUSTON,TX",22624728.0
+79,WESTERN ALLIANCE BANCORPORATION                                                                                         ,2349815,"PHOENIX,AZ",22176147.0
+80,UMB FINANCIAL CORPORATION                                                                                               ,1049828,"KANSAS CITY,MO",21462360.0
+81,CHEMICAL FINANCIAL CORPORATION                                                                                          ,1201934,"DETROIT,MI",20905489.0
+82,"FIRST NATIONAL OF NEBRASKA, INC.                                                                                        ",1020902,"OMAHA,NE",20505910.0
+83,FULTON FINANCIAL CORPORATION                                                                                            ,1117129,"LANCASTER,PA",20335390.0
+84,"FIRST HAWAIIAN, INC.                                                                                                    ",1025608,"HONOLULU,HI",19983838.0
+85,"MB FINANCIAL, INC.                                                                                                      ",1090987,"CHICAGO,IL",19719971.0
+86,"UNITED BANKSHARES, INC.                                                                                                 ",1076217,"CHARLESTON,WV",19187643.0
+87,"FLAGSTAR BANCORP, INC.                                                                                                  ",3852022,"TROY,MI",18697239.0
+88,"MACY'S, INC.                                                                                                            ",4103310,"CINCINNATI,OH",18667538.0
+89,"ARVEST BANK GROUP, INC.                                                                                                 ",1095674,"BENTONVILLE,AR",18576115.0
+90,FIRSTBANK HOLDING COMPANY                                                                                               ,1060627,"LAKEWOOD,CO",18438807.0
+91,OLD NATIONAL BANCORP                                                                                                    ,1098303,"EVANSVILLE,IN",17567877.0
+92,BANK OF HAWAII CORPORATION                                                                                              ,1025309,"HONOLULU,HI",16991734.0
+93,MODERN WOODMEN OF AMERICA                                                                                               ,3057395,"ROCK ISLAND,IL",16671751.0
+94,MIDLAND FINANCIAL CO.                                                                                                   ,2568278,"OKLAHOMA CITY,OK",16490778.0
+95,CATHAY GENERAL BANCORP                                                                                                  ,1843080,"LOS ANGELES,CA",16461721.0
+96,SIMMONS FIRST NATIONAL CORPORATION                                                                                      ,1094828,"PINE BLUFF,AR",16286322.0
+97,"WASHINGTON FEDERAL, INC.                                                                                                ",3065617,"SEATTLE,WA",15865724.0
+98,"HOPE BANCORP, INC.                                                                                                      ",2961879,"LOS ANGELES,CA",15229743.0
+99,"FIRST MIDWEST BANCORP, INC.                                                                                             ",1208184,"CHICAGO,IL",14961499.0
+100,"HOME BANCSHARES, INC.                                                                                                   ",1491409,"CONWAY,AR",14912738.0
+101,SOUTH STATE CORPORATION                                                                                                 ,1133437,"COLUMBIA,SC",14522215.0
+102,"THIRD FEDERAL SAVINGS AND LOAN ASSOCIATION OF CLEVELAND, MHC                                                            ",3828036,"CLEVELAND,OH",14137279.0
+103,"BCI FINANCIAL GROUP, INC.                                                                                               ",3762457,"MIAMI,FL",13958642.0
+104,FIRST FINANCIAL BANCORP                                                                                                 ,1071276,"CINCINNATI,OH",13842667.0
+105,"HILLTOP HOLDINGS, INC                                                                                                   ",3838727,"DALLAS,TX",13764536.0
+106,"APPLE FINANCIAL HOLDINGS, INC.                                                                                          ",3446412,"NEW YORK,NY",13623727.0
+107,TRUSTMARK CORPORATION                                                                                                   ,1079562,"JACKSON,MS",13439812.0
+108,UNION BANKSHARES CORPORATION                                                                                            ,1971693,"RICHMOND,VA",13377400.0
+109,"FIRST INTERSTATE BANCSYSTEM, INC.                                                                                       ",1123670,"BILLINGS,MT",13355352.0
+110,"COLUMBIA BANKING SYSTEM, INC.                                                                                           ",2078816,"TACOMA,WA",12956596.0
+111,"HAWAIIAN ELECTRIC INDUSTRIES, INC.                                                                                      ",3842957,"HONOLULU,HI",12911554.0
+112,RENASANT CORPORATION                                                                                                    ,1098844,"TUPELO,MS",12746939.0
+113,"CENTRAL BANCOMPANY, INC                                                                                                 ",1094314,"JEFFERSON CITY,MO",12697646.0
+114,"WESBANCO, INC.                                                                                                          ",1070448,"WHEELING,WV",12604418.0
+115,"FCB FINANCIAL HOLDINGS, INC.                                                                                            ",3944628,"WESTON,FL",12433356.0
+116,"UNITED COMMUNITY BANKS, INC.                                                                                            ",1249347,"BLAIRSVILLE,GA",12406803.0
+117,CENTERSTATE BANK CORPORATION                                                                                            ,2868129,"WINTER HAVEN,FL",12274365.0
+118,FIRST BANCORP                                                                                                           ,2744894,"SAN JUAN,PR",12209700.0
+119,BREMER FINANCIAL CORPORATION                                                                                            ,1020180,"SAINT PAUL,MN",12119987.0
+120,"GREAT WESTERN BANCORP, INC.                                                                                             ",4809920,"SIOUX FALLS,SD",12116752.0
+121,"BERKSHIRE HILLS BANCORP, INC                                                                                            ",2333663,"BOSTON,MA",12032785.0
+122,"GLACIER BANCORP, INC.                                                                                                   ",2003975,"KALISPELL,MT",11909102.0
+123,INTERNATIONAL BANCSHARES CORPORATION                                                                                    ,1104231,"LAREDO,TX",11845501.0
+124,CADENCE BANCORPORATION                                                                                                  ,4882802,"HOUSTON,TX",11759837.0
+125,"PACIFIC PREMIER BANCORP, INC.                                                                                           ",3489594,"IRVINE,CA",11503881.0
+126,CVB FINANCIAL CORP.                                                                                                     ,1029222,"ONTARIO,CA",11480341.0
+127,AMERIS BANCORP                                                                                                          ,1082067,"MOULTRIE,GA",11428994.0
+128,FIRST AMERICAN FINANCIAL CORPORATION                                                                                    ,1250101,"SANTA ANA,CA",11380129.0
+129,"HEARTLAND FINANCIAL USA, INC.                                                                                           ",1206546,"DUBUQUE,IA",11335132.0
+130,EASTERN BANK CORPORATION                                                                                                ,1427239,"BOSTON,MA",11213393.0
+131,"PINNACLE BANCORP, INC.                                                                                                  ",1053272,"OMAHA,NE",10751882.0
+132,"COMMUNITY BANK SYSTEM, INC.                                                                                             ",1048867,"DEWITT,NY",10659567.0
+133,"CUSTOMERS BANCORP, INC                                                                                                  ",4284536,"WYOMISSING,PA",10617198.0
+134,BANNER CORPORATION                                                                                                      ,2126977,"WALLA WALLA,WA",10514303.0
+135,"BANC OF CALIFORNIA, INC.                                                                                                ",3153130,"SANTA ANA,CA",10260822.0

@@ -6,7 +6,7 @@ END_QTR <- as.Date('2018-10-01')
 PDF_DIR <- 'data/pdf/'
 TXT_DIR <- 'data/txt/'
 CSV_DIR <- 'E:/FR Y-9C/csv'
-RDATA_DIR <- '../app/rdata/'
+RDATA_DIR <- '../nicStructureApp/rdata/'
 
 HTTR_POST_PARAMS <- list(
   rbRptFormatPDF = 'rbRptFormatPDF',

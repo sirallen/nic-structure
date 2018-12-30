@@ -73,8 +73,8 @@ updateAll <- function(rssds = NULL, start_date = '2000-01-01', redownload = FALS
   cat('Converting txt/ to app/rdata/...\n')
   convertTxt2RData()
   
-  cat('Tabulating entities...\n')
-  tabulateEntities()
+  cat('Computing graph summaries...\n')
+  computeGraphSummaries()
   
   cat('Tabulating assets...\n')
   if (dir.exists(CSV_DIR)) tabulateAssets() else cat('SKIPPED\n')
@@ -107,7 +107,8 @@ updateHcCountsAndEvents <- function() {
 
 
 updatePlots <- function() {
-  plotCoverage()
+  spans <- getBhcSpans()
+  plotCoverage(spans)
   plotLinkNodeRatioTs()
   plotAssetsVsLinkNodeRatio10Bn()
   plotNumberVsComplexity()
