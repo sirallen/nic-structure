@@ -39,7 +39,7 @@ getHistories <- function() {
 }
 
 
-getBhcSpan <- function(rssd, start_date, histories, returnQtrs =TRUE) {
+getBhcSpan <- function(rssd, start_date, histories, returnQtrs = TRUE) {
   # Given rssd, figure out when it was a BHC or FHC
   intervals <- histories[J(rssd)][bhc == 1, .(
     start = as.Date(`Event Date`), end = as.Date(next_Event_Date))]
@@ -53,11 +53,12 @@ getBhcSpan <- function(rssd, start_date, histories, returnQtrs =TRUE) {
 }
 
 
-getCoveragePlotData <- function() {
+getBhcSpans <- function(start_date = as.Date('2000-03-31')) {
   load('data/app/bhcList.RData')
   histories <- getHistories()
   
-  spans <- lapply(bhcList, getBhcSpan, histories = histories, returnQtrs = FALSE)
+  spans <- lapply(bhcList, getBhcSpan, start_date = start_date,
+                  histories = histories, returnQtrs = FALSE)
   spans <- rbindlist(spans, idcol = 'Name')
   spans[end == '9999-12-31', end:= Sys.Date()]
   

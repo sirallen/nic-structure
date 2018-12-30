@@ -9,11 +9,9 @@ theme_set(
     theme(panel.border = element_rect(color = NA))
 )
 
-plotCoverage <- function(start_date = as.Date('2000-03-31')) {
+plotCoverage <- function(spans, start_date = as.Date('2000-03-31')) {
   
-  spans <- getCoveragePlotData()
-  
-  ggplot(spans, aes(x = Name, y = seq.Date(min(start), max(end),
+  plot <- ggplot(spans, aes(x = Name, y = seq.Date(min(start), max(end),
                                            along.with = spans$start))) +
     geom_segment(aes(x = Name, xend = Name,
                      y = pmax(start, start_date),
@@ -25,10 +23,10 @@ plotCoverage <- function(start_date = as.Date('2000-03-31')) {
     coord_flip() +
     labs(x = '', y = '') +
     theme(axis.text.y = element_text(size = 6)) +
-    ggsave('charts/HoldingCompanyCoverage.pdf', dev = 'pdf', width = 8, height = 12) +
+    # ggsave('charts/HoldingCompanyCoverage.pdf', dev = 'pdf', width = 8, height = 12) +
     ggsave('charts/HoldingCompanyCoverage.png', dev = 'png', width = 8, height = 12, dpi = 150)
   
-  return(NULL)
+  return(plot)
 }
 
 plotLinkNodeRatioTs <- function() {

@@ -117,9 +117,9 @@ getReport <- function(rssd, dt_end = 99991231, as_of_date,
     params[['txtAsOfDate']] <- format.Date(as_of_date, '%m/%d/%Y')
     
     POST(url, body = params, write_disk(file_name, overwrite = TRUE))
-    
-    txt2clean( pdf2txt(file_name), save_name = gsub('pdf', 'txt', file_name) )
   }
+    
+  txt2clean( pdf2txt(file_name), save_name = gsub('pdf', 'txt', file_name) )
   
   return(NULL)
 }
@@ -188,11 +188,10 @@ getBhcInstHistories <- function() {
     
     # Will miss those that became inactive since hc-name-list updated
     tryCatch({
-      dt_end <- bhcNameList[J(rssd), NAME_END_DATE[.N]]
-      bhcHistories[[j]] <- getInstHistory(
-        rssd, dt_end = if (!is.na(dt_end)) dt_end else 99991231)
+      dt_end <- coalesce(bhcNameList[J(rssd), NAME_END_DATE[.N]], 99991231)
+      bhcHistories[[j]] <- getInstHistory(rssd, dt_end)
       },
-      error = function(e) message(e)
+      error = function(e) message(e, ' - ID_RSSD=', rssd, '; DT_END=', dt_end, '\n')
     )
   }
   
@@ -221,7 +220,7 @@ getRssdPrimaryActivities <- function(rssdsList) {
     tryCatch({
       rssdActivities[[j]] <- getInstPrimaryActivity(rssd)
       },
-      error = function(e) NULL,
+      error = function(e) message(e, ' - ID_RSSD=', rssd, '\n'),
       warning = function(w) NULL
     )
   }

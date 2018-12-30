@@ -12,6 +12,7 @@ Imports:
   dplyr,
   ggplot2,
   httr,
+  igraph,
   networkD3,
   rvest,
   stringr,
